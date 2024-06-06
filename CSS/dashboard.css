@@ -1,0 +1,198 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+/* NAVBAR */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: fixed; /* Membuat navbar tetap di tempat */
+  top: 0; /* Memastikan navbar di atas halaman */
+  left: 0; /* Memastikan navbar dimulai dari sisi kiri halaman */
+  z-index: 1000; /* Memastikan navbar berada di atas elemen lainnya */
+}
+
+.menu {
+  margin-left: auto; /* Menempatkan menu di sisi kanan */
+  list-style-type: none; /* Menghilangkan bullet list */
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block; /* Menyusun menu secara horizontal */
+  margin-right: 20px; /* Jarak antar menu */
+}
+
+.menu li:last-child {
+  margin-right: 0; /* Menghilangkan margin-right pada menu terakhir */
+}
+
+.menu li a {
+  text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+  color: #e9f7f9; /* Warna teks */
+  font-weight: bold; /* Ketebalan teks */
+  transition: color 0.3s; /* Efek transisi pada warna teks */
+}
+
+.menu li a:hover {
+  color: rgba(0, 119, 255, 0.578); /* Warna teks saat digulirkan (misalnya, merah) */
+}
+
+.menu li button {
+  padding: 4px 10px;
+  background-color: #ffc107;
+  color: #070707;
+  text-decoration: none;
+  border-radius: 7px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 10px;
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #2196f3;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: #0b7dda;
+}
+
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+.form .message a {
+  color: #2196f3;
+  text-decoration: none;
+}
+
+.form .register-form {
+  display: none;
+}
+
+/* DASHBOARD */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 200px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
