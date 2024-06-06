@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exatrain</title>
-    <link rel="stylesheet" href="csslandingpage.css">
+    <link rel="stylesheet" href="CSS/landingpage.css">
 </head>
 
 <body>
