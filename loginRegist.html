@@ -17,7 +17,7 @@
         <li><a href="#">Mata Kuliah</a></li>
         <li><a href="#">Papan Peringkat</a></li>
         <li><a href="#">Tentang Kami</a></li>
-        <li><a href="#">Logo Sign Up</a></li>
+        <li><button>Sign Up</button></li>
       </ul>
     </nav>
 
