@@ -12,7 +12,7 @@
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo">
-            <img src="img/logo.png" alt="Logo" />
+            <img src="img/logo.png" alt="Logo"/>
         </div>
         <ul class="menu">
             <li><a href="#">Beranda</a></li>

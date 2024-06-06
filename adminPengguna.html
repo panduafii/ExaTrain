@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pengguna</title>
+    <link rel="stylesheet" href="adminpengguna.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo"/>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-user"></i> Edit Pengguna</a></li>
+                    <li><a href="#"><i class="fas fa-tasks"></i> Manajemen Soal</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Data & Statistik</a></li>
+                    <li><a href="#"><i class="fas fa-credit-card"></i> Pembayaran</a></li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+        <main class="content">
+            <header>
+                <div class="header-left">
+                    <h2>Edit Pengguna</h2>
+                </div>
+                <div class="header-right">
+                    <a href="#" class="notification"><i class="fas fa-bell"></i></a>
+                    <a href="#" class="profile"><i class="fas fa-user"></i> Admin</a>
+                </div>
+            </header>
+            <section class="user-edit">
+                <div class="user-search">
+                    <input type="text" class="search-bar" placeholder="Cari Pengguna">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Password</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Xavier</td>
+                                <td>xavierpradana33@gmail.com</td>
+                                <td>087855551234</td>
+                                <td>**********</td>
+                                <td>
+                                    <a href="#"><i class="fas fa-edit"></i></a>
+                                    <a href="#"><i class="fas fa-trash"></i></a>
+                                    <a href="#"><i class="fas fa-plus"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="charts">
+                    <div class="chart-card">
+                        <h3>Profil Pengguna</h3>
+                        <ul>
+                            <li>Username</li>
+                            <li>User ID</li>
+                            <li>Ranking</li>
+                            <li>Status Pembayaran</li>
+                            <li>Total Pengerjaan</li>
+                            <li>Mata Kuliah</li>
+                            <li>Total Soal</li>
+                        </ul>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Pengerjaan Mata Kuliah</h3>
+                        <div class="chart-placeholder" id="courseChart"></div>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Salah dan Benar</h3>
+                    <div class="chart-placeholder" id="correctWrongChart"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- JavaScript for dynamic content will be added here later -->
+</body>
+</html>
