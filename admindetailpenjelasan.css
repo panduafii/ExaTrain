@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info span {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.back-button {
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.question-section {
+    text-align: center;
+}
+
+.answer-box, .explanation-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    min-height: 150px;
+}
+
+.answer-box {
+    height: 250px;
+}
+
+.explanation-box {
+    height: 250px;
+}
+
+.save-button {
+    background-color: #adff2f;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+}
+
+@media (max-width: 1200px) {
+    .answer-box, .explanation-box {
+        padding: 15px;
+    }
+    .save-button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .back-button {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .answer-box, .explanation-box {
+        padding: 10px;
+    }
+    .save-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    .back-button {
+        font-size: 18px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    .answer-box, .explanation-box {
+        padding: 8px;
+    }
+    .save-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
