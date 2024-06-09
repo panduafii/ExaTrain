@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pembayaran</title>
-    <link rel="stylesheet" href="adminpembayaran.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>EXATrain Dashboard - Pembayaran</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="CSS/adminpembayaran.css">
 </head>
+
 <body>
     <div class="container">
-        <aside class="sidebar">
+        <nav class="sidebar">
             <div class="logo">
-                <h1>EX<span>TRAIN</span></h1>
+                <img src="img/logo1.png" alt="EXATrain Logo">
+                <div class="logo-line"></div> <!-- Div untuk garis putih -->
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#"><i class="fas fa-user"></i> Edit Pengguna</a></li>
-                    <li><a href="#"><i class="fas fa-tasks"></i> Manajemen Soal</a></li>
-                    <li><a href="#"><i class="fas fa-chart-bar"></i> Data & Statistik</a></li>
-                    <li><a href="#" class="active"><i class="fas fa-credit-card"></i> Pembayaran</a></li>
+            <ul class="sidebar-menu">
+                <li class="sidebar-item">
+                    <img src="img/penggunaicon.png" alt="Icon">
+                    <span>Edit Pengguna</span>
+                </li>
+                <li class="sidebar-item">
+                    <img src="img/manajemenicon.png" alt="Icon">
+                    <span>Manajemen Soal</span>
+                </li>
+                <li class="sidebar-item">
+                    <img src="img/statistikicon.png" alt="Icon">
+                    <span>Data & Statistik</span>
+                </li>
+                <li class="sidebar-item active">
+                    <img src="img/wallet-2.png" alt="Icon">
+                    <span>Pembayaran</span>
+                </li>
+            </ul>
+            <ul class="logout">
+                <li class="sidebar-item">
+                    <img src="img/logouticon.png" alt="Icon">
+                    <span>Logout</span>
+                </li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <header class="header">
+                <ul class="header-menu">
+                    <li class="menu-icon">
+                        <img src="img/garistiga.png" alt="Menu">
+                    </li>
+                    <li class="header-right">
+                        <div class="notification-icon">
+                            <img src="img/Notifikasi.png" alt="Notification">
+                        </div>
+                        <div class="user-icon">
+                            <img src="img/adminicon.png" alt="User">
+                        </div>
+                        <span>Admin</span>
+                    </li>
                 </ul>
-            </nav>
-            <div class="logout">
-                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
-            </div>
-        </aside>
-        <main class="content">
-            <header>
-                <div class="header-left">
-                    <h2>Pembayaran</h2>
-                </div>
-                <div class="header-right">
-                    <a href="#" class="notification"><i class="fas fa-bell"></i></a>
-                    <a href="#" class="profile"><i class="fas fa-user"></i> Admin</a>
-                </div>
             </header>
-            <section class="payment">
-                <div class="payment-card">
-                    <input type="text" class="search-bar" placeholder="Cari Pengguna">
+            <div class="sub-header">
+                <span>Pembayaran</span>
+            </div>
+            <div class="content">
+                <div class="payment-table">
+                    <div class="search-payment">
+                        <input type="text" class="search-bar" placeholder="Cari Pengguna">
+                    </div>
                     <table>
                         <thead>
                             <tr>
@@ -53,18 +82,23 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
+                                <td></td>
                                 <td>Xavier</td>
-                                <td>Rp20.000</td>
-                                <td>12-05-2024</td>
-                                <td>08:10 WIB</td>
+                                <td>Rp 20.000</td>
+                                <td>12-05-2024  08.10 WIB</td>
                                 <td>6 Bulan</td>
-                                <td><span class="status aktif">Aktif</span></td>
+                                <td class="table-icons">
+                                    <span class="status-text active">Aktif</span>
+                                    <span class="icon-container">
+                                        <img src="img/editicon.png" alt="Edit Icon">
+                                    </span>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="transaction-history">
-                    <h3>Riwayat Transaksi</h3>
+                    <h4>Riwayat Transaksi</h4>
                     <table>
                         <thead>
                             <tr>
@@ -78,13 +112,41 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Data will be filled dynamically from the database -->
+                            <tr>
+                                <td>1189356</td>
+                                <td>
+                                    <div class="table-icons">
+                                        <img src="img/iconriwayat.png" alt="User Icon" class="icon-container">
+                                        <span>Dubi1</span>
+                                    </div>
+                                </td>
+                                <td>11-05-2024</td>
+                                <td>Rp30.000</td>
+                                <td>Transfer Bank</td>
+                                <td>3 Bulan</td>
+                                <td><span class="status approved">Disetujui</span></td>
+                            </tr>
+                            <tr>
+                                <td>1189356</td>
+                                <td>
+                                    <div class="table-icons">
+                                        <img src="img/iconriwayat.png" alt="User Icon" class="icon-container">
+                                        <span>RyaBlessing</span>
+                                    </div>
+                                </td>
+                                <td>01-05-2024</td>
+                                <td>Rp30.000</td>
+                                <td>Transfer Bank</td>
+                                <td>3 Bulan</td>
+                                <td><span class="status pending">Tertunda</span></td>
+                            </tr>
+                            <!-- Tambahkan baris data lain sesuai kebutuhan -->
                         </tbody>
                     </table>
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
     </div>
-    <!-- JavaScript for dynamic content will be added here later -->
 </body>
+
 </html>

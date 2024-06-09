@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+.container {
+    max-width: 1920px;
+    height: 2160px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    width: 277px;
+    background-color: #152259;
+    color: #ffffff;
+    display: flex;
+    flex-direction:column;
+    position: relative;
+}
+
+.logo {
+    margin-bottom: 50px; /* Add some space below the logo */
+    padding-left: 70px;
+    padding-top: 15px;
+    position: relative;
+}
+
+.logo img {
+    width: 140px;
+    height: 55px;
+    align-items: center;
+    position: relative;
+}
+
+.logo-line {
+    position: absolute;
+    bottom:-10px;
+    left: 0;
+    width: 100%; /* Lebar garis sama dengan lebar sidebar */
+    height: 0.5px; /* Tinggi garis */
+    background-color: white; /* Warna garis */
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 600; /* Semibold */
+}
+
+.sidebar-item {
+    width: 277px;
+    height: 77px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 20px;
+}
+
+.sidebar-item:hover {
+    background-color: #4FAAFF;
+}
+
+.sidebar-item img {
+    margin-right: 10px;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 10px;
+    padding-left: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 277px;
+    height: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 50px;
+    border-radius: 5px;
+}
+
+.logout:hover {
+    background-color: #4FAAFF;
+}
+
+.main-content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #19286A;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 86px;
+}
+
+.header-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px; /* Jarak antar elemen header */
+    width: 100%;
+    font-weight: 600; /* Semibold */
+}
+
+.menu-icon img {
+    width: 24px;
+    height: auto;
+    cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon img, .user-icon img {
+    width: 18px;
+    height: auto;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.header-right span {
+    margin-left: 20px; /* Jarak yang sama dengan ikon */
+}
+
+.sub-header {
+    background-color: #7681AF;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    height: 35px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.database-table input.search-bar {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.database-table {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.database-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.database-table th,
+.database-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+
+.database-table th {
+    background-color: #d3d3d3;
+}
+
+.pagination {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.pagination span {
+    margin-right: 5px;
+}
+
+.pagination select {
+    margin-right: 5px;
+}
+
+.user-review {
+    background-color: #485AA7;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(240, 240, 240, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.review-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-icon {
+   margin-left: 20px;
+}
+
+.review-header span {
+    flex-grow: 1; /* Mengambil ruang sisa antara dua gambar */
+    margin-left: 30px;
+    font-size: 24px; /* Ukuran teks 32px */
+    color: #ffffff; /* Warna putih */
+    font-weight: 600; /* semibold */
+}
+
+.polygon-icon {
+    margin-left: auto; /* Memindahkan gambar ke pinggir kanan */
+}
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.chart {
+    background-color: #ffffff;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Membuat pojok lebih melengkung */
+}
+
+#correct-incorrect {
+    grid-column: span 2;
+    height: 400px;
+}
+
+#average-grades, #average-scores {
+    grid-column: span 2;
+    height: 300px;
+}
