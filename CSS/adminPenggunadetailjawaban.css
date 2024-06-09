@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+.container {
+    max-width: 1920px;
+    height: 1080px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    width: 277px;
+    background-color: #152259;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100vh; /* Ensures the sidebar takes full height */
+}
+.logo {
+    margin-bottom: 50px; /* Add some space below the logo */
+    padding-left: 70px;
+    padding-top: 15px;
+    position: relative;
+}
+
+.logo img {
+    width: 140px;
+    height: 55px;
+    align-items: center;
+    position: relative;
+}
+
+.logo-line {
+    position: absolute;
+    bottom:-10px;
+    left: 0;
+    width: 100%; /* Lebar garis sama dengan lebar sidebar */
+    height: 0.5px; /* Tinggi garis */
+    background-color: white; /* Warna garis */
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 600; /* Semibold */
+}
+
+.sidebar-item {
+    width: 277px;
+    height: 77px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 20px;
+}
+
+.sidebar-item:hover {
+    background-color: #4FAAFF;
+}
+
+.sidebar-item img {
+    margin-right: 10px;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 10px;
+    padding-left: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 277px;
+    height: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 50px;
+    border-radius: 5px;
+}
+
+.logout:hover {
+    background-color: #4FAAFF;
+}
+
+.main-content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #19286A;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 86px;
+}
+
+.header-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px; /* Jarak antar elemen header */
+    width: 100%;
+    font-weight: 600; /* Semibold */
+}
+
+.menu-icon img {
+    width: 24px;
+    height: auto;
+    cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon img, .user-icon img {
+    width: 18px;
+    height: auto;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.header-right span {
+    margin-left: 20px; /* Jarak yang sama dengan ikon */
+}
+
+.sub-header {
+    background-color: #7681AF;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    height: 35px;
+}
+
+.title {
+    text-align: center;
+    margin-top: 8px; /* Sesuaikan jika perlu */
+    font-size: 24px; /* Sesuaikan jika perlu */
+    font-weight: bold;
+    position: relative; /* Ensure relative positioning for the pseudo-element */
+    display: inline-block; /* Ensure the element's width matches its content */
+}
+
+.title h3 {
+    display: inline-block; /* Ensure the element's width matches its content */
+    position: relative; /* Ensure relative positioning for the pseudo-element */
+}
+
+.title h3::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Make the line as wide as the h3 */
+    height: 2px; /* Adjust height as needed */
+    background-color: rgb(6, 6, 6); /* Warna garis */
+}
+
+
+.content {
+    padding: 40px;
+}
+
+
+.filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-top: -5px;
+    position: relative;
+}
+
+.filter label {
+    margin-right: 10px;
+    margin-top: -5px;
+    font-weight: 600; /* Semibold */
+}
+
+.filter select {
+    padding: 5px;
+    margin-right: 20px;
+    margin-top: -5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 230px;
+    position: relative;
+}
+
+.year-buttons {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    margin-top: -5px;
+}
+
+.year-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600; /* Semibold */
+    transition: background-color 0.3s ease;
+    width: 100px;
+    position: relative;
+}
+
+.year-button:hover {
+    background-color: #4FAAFF;
+    color: white;
+}
+
+.line-atas {
+    position: absolute;
+    bottom:-10px;
+    left: 0;
+    width: 100%; /* Lebar garis sama dengan lebar sidebar */
+    height: 0.5px; /* Tinggi garis */
+    background-color: rgb(6, 6, 6); /* Warna garis */
+}
+
+.questions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Mengatur grid dengan auto-fit */
+    grid-gap: 30px;
+}
+
+.question-card {
+    background-color: #AFCFFF;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 600; /* Semibold */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.question-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #4FAAFF;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.question-card:hover {
+    background-color: #4FAAFF;
+    color: #ffffff;
+}
+
+.question-card img {
+    margin-right: 10px;
+    width: 80px;
+}
