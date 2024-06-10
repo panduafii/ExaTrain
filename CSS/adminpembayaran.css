@@ -2,227 +2,275 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    overflow-y: scroll;
 }
 
 .container {
+    max-width: 1920px;
+    height: 1080px;
     display: flex;
-    min-height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 .sidebar {
-    width: 250px;
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    width: 277px;
+    background-color: #152259;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    position: relative;
+    height: 100vh; /* Ensures the sidebar takes full height */
+}
+.logo {
+    margin-bottom: 50px; /* Add some space below the logo */
+    padding-left: 70px;
+    padding-top: 15px;
+    position: relative;
 }
 
-.sidebar .logo {
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
+.logo img {
+    width: 140px;
+    height: 55px;
+    align-items: center;
+    position: relative;
 }
 
-.sidebar .logo span {
-    color: #3498db;
+.logo-line {
+    position: absolute;
+    bottom:-10px;
+    left: 0;
+    width: 100%; /* Lebar garis sama dengan lebar sidebar */
+    height: 0.5px; /* Tinggi garis */
+    background-color: white; /* Warna garis */
 }
 
-.sidebar nav ul {
+.sidebar-menu {
     list-style: none;
-    padding: 20px 0;
+    padding: 0;
+    margin: 0;
+    font-weight: 600; /* Semibold */
 }
 
-.sidebar nav ul li {
+.sidebar-item {
+    width: 277px;
+    height: 77px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 20px;
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+    background-color: #4FAAFF;
+}
+
+.sidebar-item img {
+    margin-right: 10px;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 10px;
+    padding-left: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 277px;
+    height: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 50px;
+    border-radius: 5px;
+}
+
+.logout:hover {
+    background-color: #4FAAFF;
+}
+
+.main-content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #19286A;
+    color: #ffffff;
     padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 86px;
 }
 
-.sidebar nav ul li a {
-    color: #ecf0f1;
-    text-decoration: none;
+.header-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px; /* Jarak antar elemen header */
+    width: 100%;
+    font-weight: 600; /* Semibold */
+}
+
+.menu-icon img {
+    width: 24px;
+    height: auto;
+    cursor: pointer;
+}
+
+.header-right {
     display: flex;
     align-items: center;
 }
 
-.sidebar nav ul li a .fas {
-    margin-right: 10px;
+.notification-icon img, .user-icon img {
+    width: 18px;
+    height: auto;
+    cursor: pointer;
+    margin-left: 20px;
 }
 
-.sidebar nav ul li a.active {
-    background-color: #34495e;
-    border-left: 4px solid #3498db;
+.header-right span {
+    margin-left: 20px; /* Jarak yang sama dengan ikon */
 }
 
-.sidebar .logout {
-    padding: 20px;
-    text-align: center;
-}
-
-.sidebar .logout a {
-    color: #ecf0f1;
-    text-decoration: none;
+.sub-header {
+    background-color: #7681AF;
+    color: #000000;
+    padding: 10px 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.sidebar .logout a .fas {
-    margin-right: 10px;
+    height: 35px;
 }
 
 .content {
-    flex: 1;
-    background-color: #ecf0f1;
     padding: 20px;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-header h2 {
-    margin: 0;
-}
-
-header .header-right a {
-    margin-left: 20px;
-    color: #2c3e50;
-    text-decoration: none;
-}
-
-.payment {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.payment-card,
-.transaction-history {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.payment-card input.search-bar {
-    width: 100%;
+.payment-table input.search-bar {
+    width: 50%;
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
-.payment-card table,
+.payment-table {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.payment-table th,
+.payment-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+
+.payment-table th {
+    background-color: #d3d3d3;
+}
+
+.payment-table .table-icons {
+    border-top: none;
+    border-left: none;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Jarak antara teks dan ikon */
+}
+
+.status-text {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+/* Specific styles for different status types */
+.status-text.active {
+    background-color: #B6FF69; /* Light green background color */
+}
+
+.icon-container {
+    width: 24px; /* Width of the edit icon */
+    height: 24px; /* Height of the edit icon */
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.icon-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.transaction-history {
+    background-color: #1A406C;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.transaction-history h4 {
+    margin-bottom: 20px;
+}
+
 .transaction-history table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.payment-card table th,
-.payment-card table td,
-.transaction-history table th,
-.transaction-history table td {
-    border: 1px solid #ccc;
+.transaction-history th, .transaction-history td {
     padding: 10px;
     text-align: left;
 }
 
-.transaction-history {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-}
-
-.transaction-history table th,
-.transaction-history table td {
-    border: none;
-}
-
-.transaction-history img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-    vertical-align: middle;
+.transaction-history tbody tr:nth-child(even) {
+    background-color: #13204D;
 }
 
 .status {
     display: inline-block;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 12px;
-    color: #fff;
+    font-weight: bold;
+    color: white;
 }
 
-.status.aktif {
-    background-color: #27ae60;
+.status.approved {
+    background-color: #28A745;
 }
 
-.status.disetujui {
-    background-color: #27ae60;
+.status.pending {
+    background-color: #FFC107;
 }
 
-.status.tertunda {
-    background-color: #f1c40f;
+.status.rejected {
+    background-color: #DC3545;
+}
+.table-icons {
+    display: flex;
+    justify-content: flex-start; /* Align icons and text to the left */
+    gap: 5px;
 }
 
-/* Responsive Styles */
-@media (max-width: 1440px) {
-    .content {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 1080px) {
-    .sidebar {
-        width: 200px;
-    }
-
-    .content {
-        padding: 10px;
-    }
-
-    .payment-card,
-    .transaction-history {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 720px) {
-    .sidebar {
-        width: 150px;
-    }
-
-    .content {
-        padding: 5px;
-    }
-
-    .payment-card,
-    .transaction-history {
-        padding: 10px;
-    }
-}
-
-@media (max-width: 360px) {
-    .sidebar {
-        width: 100px;
-    }
-
-    .content {
-        padding: 2px;
-    }
-
-    .payment-card,
-    .transaction-history {
-        padding: 5px;
-    }
+/* Add bottom border to thead */
+.transaction-history thead {
+    border-bottom: 1px solid #ffffff;
 }
