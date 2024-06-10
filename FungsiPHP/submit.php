@@ -24,14 +24,17 @@ if (isset($_POST['essay_answer'])) {
 
         // Menyusun query untuk menyimpan jawaban ke database
         $question_id = $key + 1; // Menyesuaikan dengan indeks pertanyaan
-        $sql = "INSERT INTO essay_answers (user_id, question_id, answer) VALUES (1, $question_id, '$sanitized_answer')"; // Sesuaikan dengan ID pengguna dan ID pertanyaan yang sesuai
+        $sql = "INSERT INTO answers (user_id, question_id, answer) VALUES (1, $question_id, '$sanitized_answer')"; // Sesuaikan dengan ID pengguna dan ID pertanyaan yang sesuai
         if ($conn->query($sql) === FALSE) {
-            echo "Error: " . $sql . "<br>" . $conn->error; // Menampilkan pesan kesalahan jika query gagal dieksekusi
+            // Menampilkan pesan kesalahan yang lebih informatif jika query gagal dieksekusi
+            echo "Error saat menyimpan jawaban untuk pertanyaan $question_id: " . $conn->error;
         }
     }
 } else {
+    // Menampilkan pesan jika data jawaban tidak diterima dari formulir
     echo "Data jawaban tidak diterima.";
 }
+
 
 // Menutup koneksi
 $conn->close();
