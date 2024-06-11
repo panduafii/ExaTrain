@@ -129,26 +129,25 @@ body {
   display: none;
 }
 
-/* PILIHAN MATAKULIAH */
+/* PEMBAYARAN */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
+  background-color: #f9f9f9;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
 .container {
-  background-color: #fff;
-  padding: 40px;
+  background-color: white;
+  width: 700px; /* Make the container wider */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   text-align: center;
-  width: 100%;
-  max-width: 1200px;
+  position: relative;
 }
 
 .back-button {
@@ -175,60 +174,70 @@ body {
 }
 
 h1 {
-  margin-bottom: 20px;
+  font-size: 36px;
+  margin: 0;
+  padding: 40px 0;
 }
 
-.filter {
-  margin-bottom: 20px;
-}
-
-.year-buttons {
-  margin-bottom: 20px;
-}
-
-.year-buttons .year-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.year-buttons .year-button.active {
-  background-color: #0056b3;
-}
-
-.courses {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.course-button {
-  background-color: #e0f7fa;
+.payment-box {
+  background-color: #e0f0ff;
   border-radius: 10px;
-  margin: 10px;
   padding: 20px;
-  width: 200px;
-  text-align: center;
-  cursor: pointer;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.package {
+  background-color: #b3d4fc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.package p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.price {
+  background-color: #9abfe3;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.payment-method {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-method label {
+  background-color: #b3d4fc;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.payment-method input {
+  margin-right: 10px;
+}
+
+.confirm-button {
+  background-color: #ffa500;
+  color: white;
   border: none;
-}
-
-.course-button img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-.course-button span {
-  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
   font-size: 16px;
-  color: #333;
+}
+
+.confirm-button:hover {
+  background-color: #e69500;
 }

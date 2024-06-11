@@ -129,45 +129,32 @@ body {
   display: none;
 }
 
-/* PILIHAN MATAKULIAH */
+/* MENU */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #f4f4f9;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .container {
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 100%;
-  max-width: 1200px;
+  padding: 80px 20px 20px;
+  position: relative;
 }
 
 .back-button {
-  font-size: 30px;
-  padding: 10px 30px;
+  font-size: 40px; /* Larger font size for the arrow */
+  padding: 10px 30px; /* Wider button */
   cursor: pointer;
   background-color: transparent;
   color: #0056b3;
   border: none;
   border-radius: 5px;
   position: absolute;
-  top: 100px;
-  left: 20px;
+  top: 80px; /* Move down below the navbar */
+  left: -200px; /* Position within the viewport */
   transition: color 0.3s;
-}
-
-.back-button a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit color from parent */
 }
 
 .back-button:hover {
@@ -175,60 +162,39 @@ body {
 }
 
 h1 {
-  margin-bottom: 20px;
+  font-size: 40px; /* Larger font size for the title */
+  margin-bottom: 40px;
 }
 
-.filter {
-  margin-bottom: 20px;
-}
-
-.year-buttons {
-  margin-bottom: 20px;
-}
-
-.year-buttons .year-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.year-buttons .year-button.active {
-  background-color: #0056b3;
-}
-
-.courses {
+.content {
+  padding-top: 50px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 90px;
 }
 
-.course-button {
-  background-color: #e0f7fa;
+.card {
+  background-color: #97adcd;
   border-radius: 10px;
-  margin: 10px;
-  padding: 20px;
-  width: 200px;
+  padding: 40px; /* Larger padding for bigger cards */
+  width: 250px; /* Wider cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  cursor: pointer;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: none;
+  transition: transform 0.3s;
 }
 
-.course-button img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
+.card img {
+  width: 200px; /* Larger images */
+  height: 200px;
+  margin-bottom: 20px;
 }
 
-.course-button span {
-  display: block;
-  font-size: 16px;
-  color: #333;
+.card p {
+  font-size: 28px; /* Larger font size for the text */
+  font-weight: bold;
+  margin: 0;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }

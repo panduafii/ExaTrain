@@ -23,7 +23,16 @@
       </nav>
     </header>
     <!-- End Navbar -->
+
+    <!-- Tombol Back -->
+    <div class="back-button" onclick="goBack()">
+      <a href="#">&larr;</a>
+    </div>
+    <!-- End -->
+
+    <!-- Pilihan Matkul -->
     <div class="container">
+      <button class="back-button" onclick="goBack()">&#8592;</button>
       <h1>Pilihan Mata Kuliah</h1>
       <div class="filter">
         <label for="yearFilter">Filter By:</label>
@@ -63,9 +72,16 @@
           <img src="img/islam.png" alt="Islam Ulil Albab" />
           <span>Islam Ulil Albab</span>
         </button>
-      </div>
+      <!-- End -->
     </div>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
 
-    <script src="Js.js"></script>
+      function selectCourse(courseName) {
+        alert('You have selected: ' + courseName);
+      }
+    </script>
   </body>
 </html>
