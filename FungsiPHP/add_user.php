@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
     if ($conn->query($sql) === TRUE) {
         // Mengarahkan pengguna kembali ke halaman index.php setelah menambahkan pengguna baru
-        header("Location: index.php");
+        header("Location: ../index.php");
         exit; // Memastikan tidak ada kode ekstra yang dijalankan setelah pengalihan header
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error; // Menampilkan pesan kesalahan jika query gagal dieksekusi

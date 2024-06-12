@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Tambah Pengguna Baru</h1>
-    <form action="add_user.php" method="post">
+    <form action="fungsiPHP/add_user.php" method="post">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br><br>
 

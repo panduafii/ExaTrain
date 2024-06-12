@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+
 CREATE TABLE IF NOT EXISTS payments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -18,22 +19,20 @@ CREATE TABLE IF NOT EXISTS questions (
     question_text TEXT NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS multiple_choice_answers (
+CREATE TABLE IF NOT EXISTS subject (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    question_id INT,
-    answer INT, -- Jawaban yang dipilih (ID dari opsi pilihan ganda)
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (question_id) REFERENCES questions(id)
+    subject_name VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS essay_answers (
+CREATE TABLE IF NOT EXISTS answers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
+    subject_id INT,
     question_id INT,
     answer TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (question_id) REFERENCES questions(id)
+    FOREIGN KEY (subject_id) REFERENCES subject(id)
 );
 
 INSERT INTO questions (question_text) VALUES
