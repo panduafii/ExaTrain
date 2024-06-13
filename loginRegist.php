@@ -26,6 +26,7 @@
       <div class="form">
         <!-- Register -->
         <form class="register-form">
+          <h2>Register</h2>
           <input type="text" placeholder="name" />
           <input type="password" placeholder="password" />
           <input type="text" placeholder="email address" />
@@ -34,10 +35,12 @@
         </form>
         <!-- Login -->
         <form class="login-form">
+          <h2>Login Page</h2>
           <input type="text" placeholder="username" />
           <input type="password" placeholder="password" />
-          <button>login</button>
+          <button class="login-button">login</button>
           <p class="message">Not registered? <a href="#">Create an account</a></p>
+          <button class="admin-button">I'm admin</button>
         </form>
       </div>
     </div>
