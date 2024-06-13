@@ -7,6 +7,7 @@
     <title>Login and Register</title>
   </head>
   <body>
+    
     <!-- NAVBAR -->
     <nav class="navbar">
       <div class="logo">

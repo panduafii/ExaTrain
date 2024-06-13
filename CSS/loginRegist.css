@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-/* NAVBAR */
 body {
   margin: 0;
   padding: 0;
@@ -16,6 +15,7 @@ body {
   height: 100vh; /* Tinggi body sesuai dengan tinggi viewport */
 }
 
+/* NAVBAR */
 .navbar {
   width: 100%;
   height: 60px;
@@ -154,3 +154,68 @@ p {
 .form .register-form {
   display: none;
 }
+
+/* RESPONSIVE DESIGN */
+/* @media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .login-page {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .form {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .login-page {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .form {
+    padding: 20px;
+  }
+} */
