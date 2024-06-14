@@ -242,7 +242,7 @@ body {
 
 .questions {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Mengatur grid dengan auto-fit */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Mengatur grid dengan auto-fit */
     grid-gap: 30px;
 }
 

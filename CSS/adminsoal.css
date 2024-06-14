@@ -242,7 +242,7 @@ body {
 
 .questions {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Mengatur grid dengan auto-fit */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mengatur grid dengan auto-fit */
     grid-gap: 30px;
 }
 
@@ -280,4 +280,28 @@ body {
 .question-card img {
     margin-right: 10px;
     width: 80px;
+}
+.add-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4FAAFF;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.add-icon:hover {
+    background-color: #19286A;
 }

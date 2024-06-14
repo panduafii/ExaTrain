@@ -11,6 +11,7 @@ body {
 
 .container {
     max-width: 1920px;
+    max-height: 1080px;
     display: flex;
     width: 100%;
     height: 100%;
@@ -24,6 +25,7 @@ body {
     flex-direction: column;
     position: fixed;
     height: 100vh;
+   
 }
 
 .logo {
@@ -110,11 +112,6 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 86px;
-    position: fixed;
-    width: calc(100vw - 277px);
-    left: 277px;
-    top: 0;
-    z-index: 1000;
 }
 
 .header-menu {
@@ -135,12 +132,9 @@ body {
 .header-right {
     display: flex;
     align-items: center;
-    margin-left: auto;
-    padding-right: 20px;
 }
 
-.notification-icon img,
-.user-icon img {
+.notification-icon img, .user-icon img {
     width: 18px;
     height: auto;
     cursor: pointer;
@@ -158,115 +152,86 @@ body {
     display: flex;
     align-items: center;
     height: 35px;
-    position: fixed;
-    width: calc(100vw - 277px);
-    left: 277px;
-    top: 86px;
-    z-index: 999;
+}
+
+.title {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.title h3 {
+    display: inline-block;
+    position: relative;
+}
+
+.title h3::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: rgb(6, 6, 6);
 }
 
 .content {
-    padding: 20px;
-    margin-top: 121px;
+    padding: 40px;
 }
 
-.database-table input.search-bar {
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.question-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.database-table {
-    background-color: #ffffff;
+.question-card, .answer-card {
+    background-color: #f0f0f0;
     padding: 20px;
-    margin-bottom: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.database-table table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.database-table th,
-.database-table td {
-    border: 1px solid #000;
-    padding: 8px;
-    text-align: left;
-}
-
-.database-table th {
-    background-color: #d3d3d3;
+.question-box, .answer-box {
+    background-color: #ffffff;
+    height: 310px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
 .pagination {
-    margin-top: 10px;
     display: flex;
+    justify-content: center;
     align-items: center;
+    gap: 10px;
+    padding-top: 70px;
 }
 
-.pagination span {
-    margin-right: 5px;
+.pagination-button, .save-button {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
-.pagination select {
-    margin-right: 5px;
+.pagination-button:hover, .save-button:hover {
+    background-color: #C0392B;
 }
 
-.user-review {
-    background-color: #485AA7;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(240, 240, 240, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.pagination-button.active {
+    background-color: #000000;
 }
 
-.review-header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.search-icon {
+.save-button {
+    background-color: #007BFF;
     margin-left: 20px;
-}
-
-.review-header span {
-    flex-grow: 1;
-    margin-left: 30px;
-    font-size: 24px;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.polygon-icon {
-    margin-left: auto;
-}
-
-.charts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-}
-
-.chart {
-    background-color: #ffffff;
-    height: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-#correct-incorrect {
-    grid-column: span 2;
-    height: 400px;
-}
-
-#average-grades,
-#average-scores {
-    grid-column: span 2;
-    height: 300px;
 }
