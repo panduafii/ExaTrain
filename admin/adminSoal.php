@@ -106,6 +106,9 @@
                     </div>
                 </div>
             </div>
+            <div class="add-icon">
+                <img src="img/addicon.png" alt="Add Icon">
+            </div>
         </div>
     </div>
 </body>

@@ -35,7 +35,7 @@ header {
 }
 
 .content {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
@@ -68,15 +68,14 @@ h2 {
     margin-bottom: 20px;
     box-sizing: border-box;
     text-align: left;
-    min-height: 150px;
 }
 
 .answer-box {
-    height: 250px;
+    height: 350px;
 }
 
 .explanation-box {
-    height: 250px;
+    height: 350px;
 }
 
 .save-button {

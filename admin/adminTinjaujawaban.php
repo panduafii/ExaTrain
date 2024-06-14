@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exatrain - Soal</title>
-    <link rel="stylesheet" href="CSS/admintinjaujawaban.css">
+    <link rel="stylesheet" href="../CSS/admintinjaujawaban.css">
 </head>
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <img src="path/to/logo.png" alt="Exatrain">
+                <img src="img/logo1.png" alt="Exatrain">
             </div>
             <div class="user-info">
                 <span>Admin</span>

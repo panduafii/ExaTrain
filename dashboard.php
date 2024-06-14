@@ -1,3 +1,15 @@
+<?php
+// Memulai sesi
+session_start();
+
+// Memeriksa apakah pengguna sudah login
+if (!isset($_SESSION['username'])) {
+    // Jika tidak ada sesi username, arahkan pengguna kembali ke halaman login
+    header("Location: loginRegist.php");
+    exit; // Pastikan tidak ada kode ekstra yang dijalankan setelah pengalihan header
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,6 +31,16 @@
         <li><a href="#">Papan Peringkat</a></li>
         <li><a href="#">Tentang Kami</a></li>
         <li>
+          <?php
+            session_start();
+            // Menampilkan nama pengguna jika ada yang masuk
+            if (isset($_SESSION["username"])) {
+                $username = $_SESSION["username"];
+                echo "Hi! $username";
+            } else {
+                echo "Hi!";
+            }
+            ?>
           <a href="#"><img src="img/.png" alt="user" /></a>
         </li>
       </ul>

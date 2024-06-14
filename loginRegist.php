@@ -24,6 +24,7 @@
 
     <!-- LOGIN DAN REGISTER -->
     <div class="login-page">
+<<<<<<< HEAD
         <div class="form">
             <form class="register-form">
               <!-- Pembayaran -->
@@ -66,6 +67,37 @@
                 <button class="admin-button">I'm admin</button>
             </form>
         </div>
+=======
+      <div class="form">
+        <!-- Register -->
+        <form class="register-form" action="fungsiPHP/add_user.php" method="post">
+          <h2>Register</h2>
+          <!-- <label for="username">Username:</label><br> -->
+          <input type="text" id="username" name="username" placeholder="username" required><br><br>
+
+          <!-- <label for="password">Password:</label><br> -->
+          <input type="password" id="password" name="password" required><br><br>
+
+          <button type="submit" name="submit">Tambah Pengguna</button>
+          <p class="message">Belum Punya Akun? <a href="#">Sign In</a></p>
+        </form>
+        
+        <!-- Login -->
+        <form class="login-form" action="fungsiPHP/login.php" method="post">
+          <h2>Login Page</h2>
+          <!-- <label for="username">Username:</label><br> -->
+          <input type="text" id="username" name="username" placeholder="username" required><br><br>
+
+          <!-- <label for="password">Password:</label><br> -->
+          <input type="password" id="password" name="password" placeholder="password" required><br><br>
+
+          <button class="login-button" type="submit" name="submit">Login</button>
+
+          <p class="message">Not registered? <br> <a href="#">Create an account</a></p>
+          <button class="admin-button">I'm admin</button>
+        </form>
+      </div>
+>>>>>>> c326ab2be7762cd232ab00b681cf29e40f818420
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="JS/login.js"></script>
