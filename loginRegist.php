@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="CSS/loginRegist.css" />
     <title>Login and Register</title>
   </head>
-  <body>
+  <body  style="background-image: url('img/background.png'); background-repeat:no-repeat; background-size:cover;">
     
     <!-- NAVBAR -->
     <nav class="navbar">

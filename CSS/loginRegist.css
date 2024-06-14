@@ -8,11 +8,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('img/label.png');
-  background-repeat: no-repeat;
-  background-size: cover; /* Menutupi seluruh layar */
-  background-position: center; /* Menempatkan gambar di tengah */
-  height: 100vh; /* Tinggi body sesuai dengan tinggi viewport */
 }
 
 /* NAVBAR */
@@ -61,8 +56,9 @@ body {
   padding: 4px 10px;
   background-color: #ffc107;
   color: #070707;
-  text-decoration: none;
-  border-radius: 7px;
+  border-radius: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 100%;
 }
 
 .logo img {
@@ -76,6 +72,7 @@ p {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
+
 .login-page {
   width: 360px;
   padding: 10% 0 0;
@@ -88,7 +85,7 @@ p {
   background: #ffffff;
   max-width: 360px;
   margin: 0 auto 100px;
-  padding: 45px;
+  padding: 35px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 10px;
@@ -154,68 +151,3 @@ p {
 .form .register-form {
   display: none;
 }
-
-/* RESPONSIVE DESIGN */
-/* @media (max-width: 768px) {
-  .navbar {
-    height: auto;
-    padding: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-
-  .menu li {
-    margin: 10px 0;
-  }
-
-  .logo img {
-    height: 30px;
-  }
-
-  .login-page {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .form {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar {
-    height: auto;
-    padding: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu li {
-    margin: 10px 0;
-  }
-
-  .logo img {
-    height: 30px;
-  }
-
-  .login-page {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .form {
-    padding: 20px;
-  }
-} */
