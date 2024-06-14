@@ -21,36 +21,36 @@ body {
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
-  position: fixed; /* Membuat navbar tetap di tempat */
-  top: 0; /* Memastikan navbar di atas halaman */
-  left: 0; /* Memastikan navbar dimulai dari sisi kiri halaman */
-  z-index: 1000; /* Memastikan navbar berada di atas elemen lainnya */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .menu {
-  margin-left: auto; /* Menempatkan menu di sisi kanan */
-  list-style-type: none; /* Menghilangkan bullet list */
+  margin-left: auto;
+  list-style-type: none;
   padding: 0;
 }
 
 .menu li {
-  display: inline-block; /* Menyusun menu secara horizontal */
-  margin-right: 20px; /* Jarak antar menu */
+  display: inline-block;
+  margin-right: 20px;
 }
 
 .menu li:last-child {
-  margin-right: 0; /* Menghilangkan margin-right pada menu terakhir */
+  margin-right: 0;
 }
 
 .menu li a {
-  text-decoration: none; /* Menghilangkan garis bawah pada tautan */
-  color: #808080; /* Warna teks */
-  font-weight: bold; /* Ketebalan teks */
-  transition: color 0.3s; /* Efek transisi pada warna teks */
+  text-decoration: none;
+  color: #808080;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 .menu li a:hover {
-  color: black; /* Warna teks saat digulirkan (misalnya, merah) */
+  color: black;
 }
 
 .menu li button {
@@ -68,6 +68,7 @@ body {
 
 /* LOGIN DAN REGISTER */
 .form h2,
+.form h3,
 a,
 p {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -150,4 +151,27 @@ p {
 
 .form .register-form {
   display: none;
+}
+
+.payment-plan {
+  background: #e8f4fc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.payment-plan p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.payment-plan label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.payment-plan input[type="radio"] {
+  margin-right: 10px;
 }
