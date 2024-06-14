@@ -1,3 +1,15 @@
+<?php
+// Memulai sesi
+session_start();
+
+// Memeriksa apakah pengguna sudah login
+if (!isset($_SESSION['username'])) {
+    // Jika tidak ada sesi username, arahkan pengguna kembali ke halaman login
+    header("Location: loginRegist.php");
+    exit; // Pastikan tidak ada kode ekstra yang dijalankan setelah pengalihan header
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,68 +18,66 @@
     <title>Pilihan Mata Kuliah</title>
     <link rel="stylesheet" href="CSS/pilihanMatkul.css" />
   </head>
-
   <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <div class="logo">
-        <img src="img/logo.png" alt="Logo" />
-      </div>
-      <ul class="menu">
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Mata Kuliah</a></li>
-        <li><a href="#">Papan Peringkat</a></li>
-        <li><a href="#">Tentang Kami</a></li>
-        <li><button>Logo Sign Up</button></li>
-      </ul>
-    </nav>
-    <!-- PILIHAN MATKUL -->
-    <div class="timeline">
-      <div class="year-section">
-        <div class="year">2023</div>
-        <div class="courses">
-          <div class="course">Pengembangan Sistem Informasi</div>
-          <div class="course">Grafika dan Multimedia</div>
-          <div class="course">Bahasa Inggris Teknologi Informasi</div>
-          <div class="course">Kewirausahaan Syariah</div>
-          <div class="course">Bahasa Indonesia untuk Komunikasi Ilmiah</div>
-          <div class="course">Rekayasa Perangkat Lunak</div>
-          <div class="course">Islam Ulil Albab</div>
-          <div class="course">Matematika Lanjut</div>
-          <div class="course">Algoritma dan Struktur Data</div>
-          <div class="course">Fundamen Pengembangan Aplikasi</div>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo" />
         </div>
+        <ul class="menu">
+          <li><a href="#">Beranda</a></li>
+          <li><a href="#">Mata Kuliah</a></li>
+          <li><a href="#">Papan Peringkat</a></li>
+          <li><a href="#">Tentang Kami</a></li>
+          <li><button>Sign Up</button></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- End Navbar -->
+    <div class="container">
+      <h1>Pilihan Mata Kuliah</h1>
+      <div class="filter">
+        <label for="yearFilter">Filter By:</label>
+        <select id="yearFilter">
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+        </select>
       </div>
-      <div class="year-section">
-        <div class="year">2022</div>
-        <div class="courses">
-          <div class="course">Pengembangan Sistem Informasi</div>
-          <div class="course">Grafika dan Multimedia</div>
-          <div class="course">Bahasa Inggris Teknologi Informasi</div>
-          <div class="course">Kewirausahaan Syariah</div>
-          <div class="course">Bahasa Indonesia untuk Komunikasi Ilmiah</div>
-          <div class="course">Rekayasa Perangkat Lunak</div>
-          <div class="course">Islam Ulil Albab</div>
-          <div class="course">Matematika Lanjut</div>
-          <div class="course">Algoritma dan Struktur Data</div>
-          <div class="course">Fundamen Pengembangan Aplikasi</div>
-        </div>
+      <div class="year-buttons">
+        <button id="2023" class="year-button">2023</button>
+        <button id="2022" class="year-button active">2022</button>
+        <button id="2021" class="year-button">2021</button>
       </div>
-      <div class="year-section">
-        <div class="year">2021</div>
-        <div class="courses">
-          <div class="course">Pengembangan Sistem Informasi</div>
-          <div class="course">Grafika dan Multimedia</div>
-          <div class="course">Bahasa Inggris Teknologi Informasi</div>
-          <div class="course">Kewirausahaan Syariah</div>
-          <div class="course">Bahasa Indonesia untuk Komunikasi Ilmiah</div>
-          <div class="course">Rekayasa Perangkat Lunak</div>
-          <div class="course">Islam Ulil Albab</div>
-          <div class="course">Matematika Lanjut</div>
-          <div class="course">Algoritma dan Struktur Data</div>
-          <div class="course">Fundamen Pengembangan Aplikasi</div>
-        </div>
+      <div class="courses">
+        <button class="course-button" onclick="selectCourse('Pengembangan Sistem Informasi')">
+          <img src="img/psi.png" alt="Pengembangan Sistem Informasi" />
+          <span>Pengembangan Sistem Informasi</span>
+        </button>
+        <button class="course-button" onclick="selectCourse('Grafika dan Multimedia')">
+          <img src="img/grafmul.png" alt="Grafika dan Multimedia" />
+          <span>Grafika dan Multimedia</span>
+        </button>
+        <button class="course-button" onclick="selectCourse('Sistem Cerdas dan Pendukung Keputusan')">
+          <img src="img/scpk.png" alt="Sistem Cerdas dan Pendukung Keputusan" />
+          <span>Sistem Cerdas dan Pendukung Keputusan</span>
+        </button>
+        <button class="course-button" onclick="selectCourse('Bahasa Indonesia Komunikasi Ilmiah')">
+          <img src="img/bindo.png" alt="Bahasa Indonesia Komunikasi Ilmiah" />
+          <span>Bahasa Indonesia Komunikasi Ilmiah</span>
+        </button>
+        <button class="course-button" onclick="selectCourse('Bahasa Inggris Teknologi Informasi')">
+          <img src="img/bingris.png" alt="Bahasa Inggris Teknologi Informasi" />
+          <span>Bahasa Inggris Teknologi Informasi</span>
+        </button>
+        <button class="course-button" onclick="selectCourse('Islam Ulil Albab')">
+          <img src="img/islam.png" alt="Islam Ulil Albab" />
+          <span>Islam Ulil Albab</span>
+        </button>
       </div>
     </div>
+
+    <script src="Js.js"></script>
   </body>
 </html>

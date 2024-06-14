@@ -25,18 +25,25 @@
     <div class="login-page">
       <div class="form">
         <!-- Register -->
-        <form class="register-form">
-          <input type="text" placeholder="name" />
-          <input type="password" placeholder="password" />
-          <input type="text" placeholder="email address" />
-          <button>create</button>
+        <form class="register-form" action="fungsiPHP/add_user.php" method="post">
+          <label for="username">Username:</label><br>
+          <input type="text" id="username" name="username" required><br><br>
+
+          <label for="password">Password:</label><br>
+          <input type="password" id="password" name="password" required><br><br>
+
+          <button type="submit" name="submit">Tambah Pengguna</button>
           <p class="message">Already registered? <a href="#">Sign In</a></p>
         </form>
         <!-- Login -->
-        <form class="login-form">
-          <input type="text" placeholder="username" />
-          <input type="password" placeholder="password" />
-          <button>login</button>
+        <form class="login-form" action="fungsiPHP/login.php" method="post">
+          <label for="username">Username:</label><br>
+          <input type="text" id="username" name="username" required><br><br>
+
+          <label for="password">Password:</label><br>
+          <input type="password" id="password" name="password" required><br><br>
+
+          <button type="submit" name="submit">Login</button>
           <p class="message">Not registered? <a href="#">Create an account</a></p>
         </form>
       </div>
