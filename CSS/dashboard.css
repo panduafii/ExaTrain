@@ -12,7 +12,6 @@ body {
   background-image: url("img/label.png");
 }
 
-
 /* NAVBAR */
 .navbar {
   width: 100%;
@@ -80,9 +79,9 @@ main {
 }
 
 h1 {
-  font-size: 36px;
-  margin: 0;
-  padding: 20px 0;
+  font-size: 50px;
+  padding: 50px 0;
+  
 }
 
 .dashboard {

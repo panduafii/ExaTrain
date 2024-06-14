@@ -23,6 +23,12 @@ body {
   z-index: 1000;
 }
 
+.user-icon {
+  width: 30px; /* Atur lebar sesuai kebutuhan */
+  height: auto; /* Otomatis menyesuaikan tinggi agar proporsional */
+  border-radius: 50%; /* Membuat gambar berbentuk lingkaran jika diperlukan */
+}
+
 .menu {
   margin-left: auto;
   list-style-type: none;

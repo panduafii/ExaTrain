@@ -1,14 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: #f9f9f9;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0 10px 0 0;
-  background-image: url('img/label.png');
+  background-image: url("img/wave.png");
 }
 
 /* NAVBAR */
@@ -162,7 +162,7 @@ h1 {
   cursor: pointer;
   width: 100%;
   font-size: 16px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .confirm-button:hover {

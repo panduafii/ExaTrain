@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: #f0f0f0;
   margin: 0;
   padding: 0;
@@ -9,6 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url('img/wave.png');
 }
 
 /* NAVBAR */
@@ -36,6 +37,7 @@ body {
 .menu li {
   display: inline-block; /* Menyusun menu secara horizontal */
   margin-right: 20px; /* Jarak antar menu */
+  margin-bottom: 15px;
 }
 
 .menu li:last-child {
@@ -53,17 +55,19 @@ body {
   color: black; /* Warna teks saat digulirkan (misalnya, merah) */
 }
 
-.menu li button {
-  padding: 4px 10px;
-  background-color: #ffc107;
-  color: #070707;
-  text-decoration: none;
-  border-radius: 7px;
+.menu li img {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.user-icon{
+  margin-top: 15px;
 }
 
 .logo img {
   height: 40px;
 }
+
 /* PILIHAN MATAKULIAH */
 .container {
   background-color: #fff;
@@ -72,12 +76,13 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
+  margin-top: 50px;
 }
 
 .back-button {
   font-size: 30px;
-  padding: 10px 30px;
+  padding: 5px 30px;
   cursor: pointer;
   background-color: transparent;
   color: #0056b3;
@@ -99,15 +104,11 @@ body {
 }
 
 h1 {
-  margin-bottom: 20px;
-}
-
-.filter {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .year-buttons {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .year-buttons .year-button {
@@ -125,17 +126,19 @@ h1 {
 }
 
 .courses {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .course-button {
-  background-color: #e0f7fa;
+  background-color: #AFCFFF;
   border-radius: 10px;
-  margin: 10px;
-  padding: 20px;
-  width: 200px;
+  margin: 20px;
+  padding: 20px; 
+  width: 200px; 
+  text-align: center;
   text-align: center;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -154,5 +157,6 @@ h1 {
 .course-button span {
   display: block;
   font-size: 16px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #333;
 }
