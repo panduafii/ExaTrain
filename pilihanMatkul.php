@@ -18,7 +18,7 @@ if (!isset($_SESSION['username'])) {
     <title>Pilihan Mata Kuliah</title>
     <link rel="stylesheet" href="CSS/pilihanMatkul.css" />
   </head>
-  <body>
+  <body style="background-image: url('img/background.png'); width: 100%;">
     <!-- Navbar -->
     <header>
       <nav class="navbar">
@@ -30,21 +30,22 @@ if (!isset($_SESSION['username'])) {
           <li><a href="#">Mata Kuliah</a></li>
           <li><a href="#">Papan Peringkat</a></li>
           <li><a href="#">Tentang Kami</a></li>
-          <li><button>Sign Up</button></li>
+          <li><a href="#"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
         </ul>
       </nav>
     </header>
     <!-- End Navbar -->
+
+    <!-- Tombol Back -->
+    <div class="back-button" onclick="goBack()">
+      <a href="#">&larr;</a>
+    </div>
+    <!-- End -->
+
+    <!-- Pilihan Matkul -->
     <div class="container">
+      <button class="back-button" onclick="goBack()">&#8592;</button>
       <h1>Pilihan Mata Kuliah</h1>
-      <div class="filter">
-        <label for="yearFilter">Filter By:</label>
-        <select id="yearFilter">
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
-        </select>
-      </div>
       <div class="year-buttons">
         <button id="2023" class="year-button">2023</button>
         <button id="2022" class="year-button active">2022</button>
@@ -63,21 +64,30 @@ if (!isset($_SESSION['username'])) {
           <img src="img/scpk.png" alt="Sistem Cerdas dan Pendukung Keputusan" />
           <span>Sistem Cerdas dan Pendukung Keputusan</span>
         </button>
-        <button class="course-button" onclick="selectCourse('Bahasa Indonesia Komunikasi Ilmiah')">
-          <img src="img/bindo.png" alt="Bahasa Indonesia Komunikasi Ilmiah" />
-          <span>Bahasa Indonesia Komunikasi Ilmiah</span>
-        </button>
-        <button class="course-button" onclick="selectCourse('Bahasa Inggris Teknologi Informasi')">
-          <img src="img/bingris.png" alt="Bahasa Inggris Teknologi Informasi" />
-          <span>Bahasa Inggris Teknologi Informasi</span>
-        </button>
-        <button class="course-button" onclick="selectCourse('Islam Ulil Albab')">
-          <img src="img/islam.png" alt="Islam Ulil Albab" />
-          <span>Islam Ulil Albab</span>
-        </button>
       </div>
-    </div>
 
-    <script src="Js.js"></script>
+      <div class="courses">
+      <button class="course-button" onclick="selectCourse('Bahasa Indonesia Komunikasi Ilmiah')">
+        <img src="img/bindo.png" alt="Bahasa Indonesia Komunikasi Ilmiah" />
+        <span>Bahasa Indonesia Komunikasi Ilmiah</span>
+      </button>
+      <button class="course-button" onclick="selectCourse('Bahasa Inggris Teknologi Informasi')">
+        <img src="img/bingris.png" alt="Bahasa Inggris Teknologi Informasi" />
+        <span>Bahasa Inggris Teknologi Informasi</span>
+      </button>
+      <button class="course-button" onclick="selectCourse('Islam Ulil Albab')">
+        <img src="img/islam.png" alt="Islam Ulil Albab" />
+        <span>Islam Ulil Albab</span>
+      </button>
+     </div>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+
+      function selectCourse(courseName) {
+        alert('You have selected: ' + courseName);
+      }
+    </script>
   </body>
 </html>

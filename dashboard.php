@@ -18,7 +18,8 @@ if (!isset($_SESSION['username'])) {
     <title>Dashboard</title>
     <link rel="stylesheet" href="CSS/dashboard.css" />
   </head>
-  <body>
+
+  <body style="background-image: url('img/wave.png'); background-repeat: no-repeat; background-size: cover">
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo">
@@ -40,6 +41,7 @@ if (!isset($_SESSION['username'])) {
                 echo "Hi!";
             }
             ?>
+          <a href="#"><img src="img/.png" alt="user" /></a>
         </li>
       </ul>
     </nav>
@@ -55,7 +57,7 @@ if (!isset($_SESSION['username'])) {
             <p>Mata Kuliah</p>
           </div>
         </a>
-        <a href="papan_peringkat.html" class="card-link">
+        <a href="paring.html" class="card-link">
           <div class="card">
             <img src="img/icon paring.png" alt="Papan Peringkat" />
             <p>Papan Peringkat</p>

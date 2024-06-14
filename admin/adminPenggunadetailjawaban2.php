@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manajemen Soal</title>
-    <link rel="stylesheet" href="CSS/adminsoal.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-
+    <title>EXATrain Dashboard - Detail Jawaban Pengguna</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="CSS/adminPenggunadetailjawaban2.css">
 </head>
-
 <body>
     <div class="container">
         <nav class="sidebar">
             <div class="logo">
                 <img src="img/logo1.png" alt="EXATrain Logo">
-                <div class="logo-line"></div> <!-- Div untuk garis putih -->
+                <div class="logo-line"></div>
             </div>
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
@@ -64,53 +61,44 @@
                 <span>Manajemen Soal</span>
             </div>
             <div class="title">
-                <h3>Manajemen Soal</h3>
+                <h3>Detail Jawaban Pengguna</h3>
             </div>
             <div class="content">
-                <div class="filter">
-                    <label for="filter-by">Filter By:</label>
-                    <select id="filter-by">
-                        <option value="">Select...</option>
-                    </select>
-                    <div class="year-buttons">
-                        <button class="year-button">2023</button>
-                        <button class="year-button">2022</button>
-                        <button class="year-button">2021</button>
-                    </div>
-                    <div class="line-atas"></div> <!-- Div untuk garis putih -->
-                </div>
-                <div class="questions">
+                <div class="question-container">
                     <div class="question-card">
-                        <img src="img/iconpsi.png" alt="Icon">
-                        <span>Pengembangan Sistem Informasi</span>
+                        <h4>Soal</h4>
+                        <div class="question-box"></div>
                     </div>
-                    <div class="question-card">
-                        <img src="img/icongmm.png" alt="Icon">
-                        <span>Grafika dan Multimedia</span>
-                    </div>
-                    <div class="question-card">
-                        <img src="img/iconscpk.png" alt="Icon">
-                        <span>Sistem Cerdas dan Pendukung Keputusan</span>
-                    </div>
-                    <div class="question-card">
-                        <img src="img/iconbiki.png" alt="Icon">
-                        <span>Bahasa Indonesia Komunikasi Ilmiah</span>
-                    </div>
-                    <div class="question-card">
-                        <img src="img/iconbiti.png" alt="Icon">
-                        <span>Bahasa Inggris Teknologi Informasi</span>
-                    </div>
-                    <div class="question-card">
-                        <img src="img/iconulil.png" alt="Icon">
-                        <span>Islam Ulil Albab</span>
+                    <div class="answer-card">
+                        <h4>Kunci Jawaban</h4>
+                        <div class="answer-box"></div>
                     </div>
                 </div>
-            </div>
-            <div class="add-icon">
-                <img src="img/addicon.png" alt="Add Icon">
+                <div class="pagination">
+                    <button class="pagination-button">1</button>
+                    <button class="pagination-button">2</button>
+                    <button class="pagination-button">3</button>
+                    <button class="pagination-button">4</button>
+                    <button class="pagination-button">5</button>
+                    <button class="pagination-button">6</button>
+                    <button class="pagination-button">7</button>
+                    <button class="pagination-button">8</button>
+                    <button class="pagination-button">9</button>
+                    <button class="pagination-button active">10</button>
+                    <button class="pagination-button">11</button>
+                    <button class="pagination-button">12</button>
+                    <button class="pagination-button">13</button>
+                    <button class="pagination-button">14</button>
+                    <button class="pagination-button">15</button>
+                    <button class="pagination-button">16</button>
+                    <button class="pagination-button">17</button>
+                    <button class="pagination-button">18</button>
+                    <button class="pagination-button">19</button>
+                    <button class="pagination-button">20</button>
+                    <button class="save-button">Simpan</button>
+                </div>
             </div>
         </div>
     </div>
 </body>
-
 </html>

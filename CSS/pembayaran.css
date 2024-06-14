@@ -2,14 +2,13 @@
 
 body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
+  background-color: #f9f9f9;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('img/wave.png');
+  margin: 0 10px 0 0;
+  background-image: url("img/wave.png");
 }
 
 /* NAVBAR */
@@ -37,7 +36,6 @@ body {
 .menu li {
   display: inline-block; /* Menyusun menu secara horizontal */
   margin-right: 20px; /* Jarak antar menu */
-  margin-bottom: 15px;
 }
 
 .menu li:last-child {
@@ -55,34 +53,33 @@ body {
   color: black; /* Warna teks saat digulirkan (misalnya, merah) */
 }
 
-.menu li img {
-  height: 30px;
-  border-radius: 50%;
-}
-
-.user-icon{
-  margin-top: 15px;
+.menu li button {
+  padding: 4px 10px;
+  background-color: #ffc107;
+  color: #070707;
+  text-decoration: none;
+  border-radius: 7px;
 }
 
 .logo img {
   height: 40px;
 }
 
-/* PILIHAN MATAKULIAH */
+/* PEMBAYARAN */
 .container {
-  background-color: #fff;
-  padding: 40px;
+  background-color: white;
+  width: 700px; /* Make the container wider */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   text-align: center;
-  width: 100%;
-  max-width: 1500px;
-  margin-top: 50px;
+  position: relative;
+  margin-top: 40px;
 }
 
 .back-button {
   font-size: 30px;
-  padding: 5px 30px;
+  padding: 10px 30px;
   cursor: pointer;
   background-color: transparent;
   color: #0056b3;
@@ -104,59 +101,70 @@ body {
 }
 
 h1 {
-  margin-bottom: 30px;
+  font-size: 36px;
+  margin: 0 0 40px 0;
 }
 
-.year-buttons {
-  margin-bottom: 30px;
-}
-
-.year-buttons .year-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.year-buttons .year-button.active {
-  background-color: #0056b3;
-}
-
-.courses {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.course-button {
-  background-color: #AFCFFF;
+.payment-box {
+  background-color: #e0f0ff;
   border-radius: 10px;
-  margin: 20px;
-  padding: 20px; 
-  width: 200px; 
-  text-align: center;
-  text-align: center;
-  cursor: pointer;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.package {
+  background-color: #b3d4fc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.package p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.price {
+  background-color: #9abfe3;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.payment-method {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-method label {
+  background-color: #b3d4fc;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.payment-method input {
+  margin-right: 10px;
+}
+
+.confirm-button {
+  background-color: #ffa500;
+  color: white;
   border: none;
-}
-
-.course-button img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-.course-button span {
-  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
   font-size: 16px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  color: #333;
+}
+
+.confirm-button:hover {
+  background-color: #e69500;
 }

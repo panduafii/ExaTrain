@@ -1,0 +1,141 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.user-icon {
+  width: 30px; /* Atur lebar sesuai kebutuhan */
+  height: auto; /* Otomatis menyesuaikan tinggi agar proporsional */
+  border-radius: 50%; /* Membuat gambar berbentuk lingkaran jika diperlukan */
+}
+
+.menu {
+  margin-left: auto;
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #0056b3;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: rgba(0, 119, 255, 0.578);
+}
+
+.menu li button {
+  padding: 4px 10px;
+  background-color: #ffc107;
+  color: #070707;
+  text-decoration: none;
+  border-radius: 7px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.container {
+  text-align: center;
+  padding: 100px 20px 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.back-button {
+  font-size: 30px;
+  padding: 10px 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #0056b3;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  transition: color 0.3s;
+}
+
+.back-button:hover {
+  color: #003f7f;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.leaderboard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between buttons */
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #e7f1ff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.leaderboard-item:hover {
+  background-color: #cfe0ff;
+}
+
+.rank,
+.username,
+.stars,
+.score {
+  flex: 1;
+  text-align: center;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.stars {
+  color: #ffc107;
+  font-weight: bold;
+}

@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="CSS/loginRegist.css" />
     <title>Login and Register</title>
   </head>
-  <body>
+  <body  style="background-image: url('img/background.png'); background-repeat:no-repeat; background-size:cover;">
+    
     <!-- NAVBAR -->
     <nav class="navbar">
       <div class="logo">
@@ -26,25 +27,30 @@
       <div class="form">
         <!-- Register -->
         <form class="register-form" action="fungsiPHP/add_user.php" method="post">
-          <label for="username">Username:</label><br>
-          <input type="text" id="username" name="username" required><br><br>
+          <h2>Register</h2>
+          <!-- <label for="username">Username:</label><br> -->
+          <input type="text" id="username" name="username" placeholder="username" required><br><br>
 
-          <label for="password">Password:</label><br>
+          <!-- <label for="password">Password:</label><br> -->
           <input type="password" id="password" name="password" required><br><br>
 
           <button type="submit" name="submit">Tambah Pengguna</button>
-          <p class="message">Already registered? <a href="#">Sign In</a></p>
+          <p class="message">Belum Punya Akun? <a href="#">Sign In</a></p>
         </form>
+        
         <!-- Login -->
         <form class="login-form" action="fungsiPHP/login.php" method="post">
-          <label for="username">Username:</label><br>
-          <input type="text" id="username" name="username" required><br><br>
+          <h2>Login Page</h2>
+          <!-- <label for="username">Username:</label><br> -->
+          <input type="text" id="username" name="username" placeholder="username" required><br><br>
 
-          <label for="password">Password:</label><br>
-          <input type="password" id="password" name="password" required><br><br>
+          <!-- <label for="password">Password:</label><br> -->
+          <input type="password" id="password" name="password" placeholder="password" required><br><br>
 
-          <button type="submit" name="submit">Login</button>
-          <p class="message">Not registered? <a href="#">Create an account</a></p>
+          <button class="login-button" type="submit" name="submit">Login</button>
+
+          <p class="message">Not registered? <br> <a href="#">Create an account</a></p>
+          <button class="admin-button">I'm admin</button>
         </form>
       </div>
     </div>
