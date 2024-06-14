@@ -1,16 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-/* NAVBAR */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f3f4f6;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #f9f9f9;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
+  margin: 0 10px 0 0;
+  background-image: url('img/label.png');
 }
 
+/* NAVBAR */
 .navbar {
   width: 100%;
   height: 60px;
@@ -43,13 +44,13 @@ body {
 
 .menu li a {
   text-decoration: none; /* Menghilangkan garis bawah pada tautan */
-  color: #e9f7f9; /* Warna teks */
+  color: #808080; /* Warna teks */
   font-weight: bold; /* Ketebalan teks */
   transition: color 0.3s; /* Efek transisi pada warna teks */
 }
 
 .menu li a:hover {
-  color: rgba(0, 119, 255, 0.578); /* Warna teks saat digulirkan (misalnya, merah) */
+  color: black; /* Warna teks saat digulirkan (misalnya, merah) */
 }
 
 .menu li button {
@@ -65,16 +66,6 @@ body {
 }
 
 /* PEMBAYARAN */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
 .container {
   background-color: white;
   width: 700px; /* Make the container wider */
@@ -83,6 +74,7 @@ body {
   padding: 20px;
   text-align: center;
   position: relative;
+  margin-top: 40px;
 }
 
 .back-button {
@@ -110,8 +102,7 @@ body {
 
 h1 {
   font-size: 36px;
-  margin: 0;
-  padding: 40px 0;
+  margin: 0 0 40px 0;
 }
 
 .payment-box {
@@ -171,6 +162,7 @@ h1 {
   cursor: pointer;
   width: 100%;
   font-size: 16px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .confirm-button:hover {

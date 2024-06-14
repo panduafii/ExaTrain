@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("img/background.png");
+  background-image: url('img/label.png');
   background-repeat: no-repeat;
   background-size: cover; /* Menutupi seluruh layar */
   background-position: center; /* Menempatkan gambar di tengah */
