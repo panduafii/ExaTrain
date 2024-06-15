@@ -2,148 +2,149 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f3f4f6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #ffffff;
+}
+
+.container {
+width: 1920px;
+height: 1080px;
+margin: 0 auto;
 }
 
 .navbar {
   width: 100%;
-  height: 60px;
-  background-color: #fff;
+  height: 108px;
+  background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  justify-content: space-between;
+  padding: 0 64px;
   box-sizing: border-box;
   position: fixed;
-  /* Membuat navbar tetap di tempat */
   top: 0;
-  /* Memastikan navbar di atas halaman */
   left: 0;
-  /* Memastikan navbar dimulai dari sisi kiri halaman */
   z-index: 1000;
-  /* Memastikan navbar berada di atas elemen lainnya */
 }
 
-.logo img {
-  height: 40px;
-  padding-left: 20px;
+.navbar .logo img {
+  height: 82px;
+  width: 100%;
 }
 
 .menu {
-  margin-left: auto;
-  /* Menempatkan menu di sisi kanan */
-  list-style-type: none;
-  /* Menghilangkan bullet list */
-  padding: 0;
-}
-
-.menu li {
-  display: inline-block;
-  /* Menyusun menu secara horizontal */
-  margin-right: 20px;
-  /* Jarak antar menu */
-}
-
-.menu li:last-child {
-  margin-right: 0;
-  /* Menghilangkan margin-right pada menu terakhir */
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .menu li a {
   text-decoration: none;
-  /* Menghilangkan garis bawah pada tautan */
-  color: #c5c7c8;
-  /* Warna teks */
+  color: #808080;
   font-weight: bold;
-  /* Ketebalan teks */
-  transition: color 0.3s;
-  /* Efek transisi pada warna teks */
+}
+
+.menu li button.signup-btn {
+  width: 100%;
+  height: 42px;
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: #070707;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .menu li a:hover {
   color: rgba(0, 0, 0, 0.578);
   /* Warna teks saat digulirkan (misalnya, merah) */
 }
-.menu li button {
-  padding: 4px 10px;
-  background-color: #ffc107;
-  color: #070707;
-  text-decoration: none;
-  border-radius: 7px;
-}
 
-main .hero {
+.hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
-  background-color: #ffffff;
+  padding-top: 108px;
+  height: calc(1080px - 120px);
 }
 
-main .hero .content {
-  max-width: 50%;
-  padding-left: 100px;
-}
-
-main .hero .content h1 {
-
-  padding-top: 100px;
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-main .hero .content .highlight {
+.hero .content .highlight {
   color: #007bff;
 }
 
-main .hero .content p {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 20px;
-  padding-bottom: 40px;
-
+.hero .content {
+  max-width: 50%;
+  padding-left: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
-main .hero .content button {
+.hero h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.hero button {
   margin-left: 170px;
+  width: 175px;
+  height: 64px;
+  background-color: #f39c12;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
   padding: 12px;
-  background-color: #ffc107;
   color: #070707;
-  text-decoration: none;
+  font-weight: 1000;
   border-radius: 8px;
 }
 
-main .hero .image img {
-  padding-top: 50px;
-  padding-right: 0px;
-  width: 470px;
-  height: 500px;
+.hero .image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-left: 15px;
 }
 
-main .imagerectangle img {
-  background-color: #fff;
-  padding-top: 15px;
-  width: 100%
+.hero .image img {
+  width: 691px;
+  height: 696px;
+}
+
+.imagerectangle {
+  width: 100%;
+  height: 122px;
+  display: flex;
+  justify-content: center;
+}
+
+.imagerectangle img {
+  width: 100%;
+  height: auto;
 }
 
 .benefits {
-  padding: 50px;
+  padding: 30px;
   background-color: #fff;
   text-align: center;
 }
 
 .benefits h2 {
-  font-size: 36px;
+  font-size: 54px;
   margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 .benefits .highlight {
@@ -151,58 +152,78 @@ main .imagerectangle img {
 }
 
 .benefits p {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 40px;
+  font-size: 15px;
+  margin-bottom: 50px;
 }
 
 .benefit-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 45px; /* Gap between cards */
+  justify-content: center; /* Center the cards horizontally */
+  align-items: start;
+  margin: 0 auto; /* Center the grid container */
+  max-width: 1000px; /* Ensure grid container doesn't take full width */
 }
 
-.benefit-cards .card {
-  background-color: #fff;
+.card {
+  background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  width: 30%;
-  margin-bottom: 20px;
   padding: 20px;
+  border-radius: 8px;
   text-align: center;
+  width: 390px;
+  height: 320px;
 }
 
-.benefit-cards .card img {
-  width: 70px;
-  height: 70px;
+.card img {
+  width: 80px;
+  height: 80px;
+  margin-top: 40px;
 }
 
-.benefit-cards .card h3 {
+.card h2 {
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.benefit-cards .card p {
-  font-size: 14px;
-  color: #666;
+.card p {
+  font-size: 15px;
+  color: #555;
 }
 
 .difficulty {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Mengatur jarak antara gambar dan konten */
+  align-items: center;            /* Meratakan konten secara vertikal */
+  padding: 90px 90px;            /* Padding luar dikurangi menjadi 100px */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+}
+
+.difficulty .image {
+  flex: 1;                         /* Membuat gambar fleksibel */
+  display: flex;
+  justify-content: center;         /* Mengatur gambar di tengah (ubah jika perlu) */
   align-items: center;
-  padding: 50px;
-  background-color: #ffffff;
+  margin-right: 20px;              /* Geser gambar ke kanan */
+}
+
+.difficulty .image img {
+  width: 710px;                 /* Mengatur lebar gambar agar tidak melebihi kontainer */
+  height: 700px;                    /* Menjaga aspek rasio gambar */
 }
 
 .difficulty .content {
-  margin-bottom: 80px;
-  max-width: 50%;
+  flex: 1;                         /* Membuat konten fleksibel */
+  padding-left: 20px;
+  padding-right: 150px;              /* Menambahkan padding kiri untuk memberi jarak antara gambar dan konten */
+  text-align: left;                /* Mengatur teks agar rata kiri */
 }
 
 .difficulty .content h2 {
-  padding-bottom: 50px;
-  font-size: 36px;
+  font-size: 50px;
   color: #333;
 }
 
@@ -211,146 +232,556 @@ main .imagerectangle img {
 }
 
 .difficulty .content p {
-  font-size: 16px;
+  font-size: 23px;
   color: #666;
 }
 
-.difficulty .image img {
-  max-width: 100%;
-  height: auto;
-}
 
-.testimonial-section {
-  padding: 50px 20px;
+/* Testimonial Section */
+.testimonial {
   text-align: center;
+  padding: 0px 20px;
   background-color: #ffffff;
+  padding-bottom: 135px;
 }
 
-.testimonial-container {
-  max-width: 1200px;
-  margin: 0 auto;
+.testimonial h2 {
+  font-size: 57px;
+  color: #000;
+  margin-bottom: 40px;
 }
 
-.testimonial-section h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.testimonial-section .highlight {
+.testimonial h2 span {
   color: #007bff;
 }
 
-.testimonial-section p {
-  font-size: 16px;
-  color: #ffffff;
-  margin-bottom: 30px;
+.testimonial-grid {
+  display: flex;
+  justify-content: center;
+  gap: 100px; /* Perlebar jarak antara grid */
 }
 
-.testimonial-box {
-  background-color: #007bff;
+.testimonial-item {
+  width: 350px;
+  height: 550px;
+  background-image: url('../img/background-testimonial.png'); /* Ganti dengan URL gambar Anda */
+  background-size: cover; /* Sesuaikan ukuran gambar agar menutupi seluruh elemen */
+  background-position: center; /* Posisikan gambar di tengah */
   color: #fff;
-  padding: 20px;
   border-radius: 10px;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: left;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.testimonial-quote {
-  position: relative;
+  justify-content: flex-end; /* Menggeser konten ke bawah */
   padding: 20px;
-  background-color: #4c57d6;
-  border-radius: 10px;
-  margin-bottom: 30px;
-  color: #fff;
-}
-
-.testimonial-quote p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.quote-icon {
-  position: absolute;
-  top: -20px;
-  left: 20px;
-  font-size: 50px;
-  color: #ffc107;
-}
-
-.testimonial-author {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Menambahkan posisi relatif untuk positioning absolut anak */
   text-align: center;
 }
 
-.testimonial-author img {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.testimonial-author h3 {
+.testimonial-content {
+  flex: 1;
   font-size: 18px;
-  margin: 10px 0 5px;
-}
-
-.testimonial-author p {
-  font-size: 14px;
-  color: #fff;
-}
-.footer {
-  background-color: #1b1b32;
-  color: #fff;
-  padding: 50px;
-  padding-left: 100px;
-  width: 100%;
-}
-
-.footer-container {
   display: flex;
-  justify-content: space-around;
-  max-width: 1400px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 60px; /* Memberikan ruang untuk profil */
+}
+
+.profile {
+  position: absolute;
+  bottom: -120px; /* Menggeser profil ke bawah */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.profile img {
+  width: 110px;
+  height: 110px;
+  margin-bottom: 10px;;
+}
+
+.profile h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #000; /* Mengubah warna teks menjadi hitam */
+}
+
+.profile p {
+  font-size: 16px;
+  margin: 5px 0 0;
+  color: #000; /* Mengubah warna teks menjadi hitam */
+}
+
+/* Footer */
+footer {
+  background-color: #30476B;
+  color: #fff;
+  padding: 40px 10px;
+  height: 270px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80%;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .footer-section {
   flex: 1;
-  padding: 0 40px;
+  padding: 10px;
+  min-width: 200px;
+  margin-left:0px;
+}
+
+.footer-section h1 {
+  margin-top: -30px;
+  font-size: 62px;
+  margin-bottom: 0px;
 }
 
 .footer-section h2 {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  margin-left: 100px;
 }
 
 .footer-section p {
   font-size: 16px;
-  line-height: 1.6;
 }
 
-.footer-section a {
-  display: block;
-  color: #fff;
-  margin-bottom: 10px;
-  text-decoration: none;
+.footer-section ul, .footer-section li {
   font-size: 16px;
+  margin-left: 50px;
+  padding: 0;
+  list-style: none;
 }
 
-.footer-section a:hover {
-  text-decoration: underline;
+.footer-section ul {
+  margin-top: 10px;
 }
 
-.socials a {
-  display: inline-block;
-  margin-right: 10px;
+.footer-section li a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.socials img {
-  width: 24px;
-  height: 24px;
+/* Social Icons */
+.footer-section .socials {
+  margin-right: 100px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adjust the space between icons */
+}
+
+.footer-section .social-icon {
+  width: 20px; /* Adjust the icon size as needed */
+  height: 20px; /* Adjust the icon size as needed */
+}
+
+/* Media Queries */
+/* General Responsive Adjustments */
+
+@media (max-width: 1440px) {
+  .container {
+    width: 1400px;
+    height: auto;
+    padding: 25px;
+}
+  .benefit-cards {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navbar {
+      padding: 0 32px;
+  }
+
+  .hero .content {
+      padding-left: 90px;
+  }
+
+  .hero button {
+      margin-left: 85px;
+  }
+
+  .difficulty .content {
+      padding-right: 80px;
+  }
+
+  .testimonial-grid {
+      flex-direction: column;
+      gap: 40px;
+  }
+
+  .testimonial-item {
+      width: 100%;
+      height: auto;
+  }
+
+  .profile {
+      position: static;
+      transform: none;
+      margin-top: 20px;
+  }
+  .footer-section.socials {
+    gap: 30px;
+  }
+  .footer-section .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .container {
+    width: 1040px;
+    height: auto;
+    padding: 20px;
+}
+  .navbar {
+      padding: 0 16px;
+  }
+
+  .hero {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+  }
+
+  .hero .content {
+      max-width: 100%;
+      padding-left: 0;
+  }
+
+  .hero .image img {
+      width: 100%;
+      height: auto;
+  }
+
+  .hero button {
+      margin: 20px auto;
+  }
+
+  .benefit-cards {
+      grid-template-columns: 1fr;
+  }
+  
+  .difficulty {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .difficulty .image {
+      margin-right: 0;
+  }
+  
+  .difficulty .content {
+      padding-left: 0;
+      padding-right: 0;
+  }
+  .footer-section.socials {
+    gap: 25px;
+}
+.footer-section .social-icon {
+    width: 35px;
+    height: 35px;
+}
+}
+
+@media (max-width: 720px) {
+  .container {
+    width: 700px;
+    height: auto;
+    padding: 15px;
+}
+
+  .navbar {
+      padding: 0 8px;
+  }
+
+  .hero h1 {
+      font-size: 36px;
+  }
+
+  .hero p {
+      font-size: 14px;
+  }
+
+  .hero button {
+      width: 150px;
+      height: 50px;
+      padding: 10px;
+  }
+
+  .benefits h2 {
+      font-size: 36px;
+  }
+
+  .card {
+      width: 100%;
+  }
+
+  .testimonial h2 {
+      font-size: 32px;
+  }
+
+  .testimonial-item {
+      height: auto;
+  }
+
+  .testimonial-content {
+      font-size: 16px;
+  }
+
+  .profile img {
+      width: 80px;
+      height: 80px;
+  }
+
+  .profile h3 {
+      font-size: 16px;
+  }
+
+  .profile p {
+      font-size: 14px;
+  }
+
+  .footer-section h1 {
+      font-size: 36px;
+  }
+
+  .footer-section h2 {
+      font-size: 18px;
+  }
+
+  .footer-section ul, .footer-section li {
+      font-size: 14px;
+  }
+
+  .footer-section li a {
+      font-size: 14px;
+  }
+
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-section {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+  .footer-section.socials {
+    gap: 25px;
+}
+.footer-section .social-icon {
+    width: 35px;
+    height: 35px;
+}
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 460px;
+    height: auto;
+    padding: 10px;
+}
+  .navbar {
+      padding: 0 4px;
+  }
+
+  .hero h1 {
+      font-size: 28px;
+  }
+
+  .hero p {
+      font-size: 12px;
+  }
+
+  .hero button {
+      width: 130px;
+      height: 45px;
+      padding: 8px;
+  }
+
+  .benefits h2 {
+      font-size: 30px;
+  }
+
+  .benefit-cards {
+      grid-template-columns: 1fr;
+  }
+
+  .card {
+      width: 100%;
+  }
+
+  .difficulty .content h2 {
+      font-size: 36px;
+  }
+
+  .difficulty .content p {
+      font-size: 18px;
+  }
+
+  .testimonial h2 {
+      font-size: 28px;
+  }
+
+  .testimonial-item {
+      height: auto;
+  }
+
+  .testimonial-content {
+      font-size: 14px;
+  }
+
+  .profile img {
+      width: 70px;
+      height: 70px;
+  }
+
+  .profile h3 {
+      font-size: 14px;
+  }
+
+  .profile p {
+      font-size: 12px;
+  }
+
+  .footer-section h1 {
+      font-size: 30px;
+  }
+
+  .footer-section h2 {
+      font-size: 16px;
+  }
+
+  .footer-section ul, .footer-section li {
+      font-size: 12px;
+  }
+
+  .footer-section li a {
+      font-size: 12px;
+  }
+
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-section {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+  .footer-section.socials {
+    gap: 15px;
+}
+.footer-section .social-icon {
+    width: 25px;
+    height: 25px;
+}
+}
+
+@media (max-width: 360px) {
+  .container {
+    width: 340px;
+    height: auto;
+    padding: 10px;
+}
+  .hero h1 {
+      font-size: 24px;
+  }
+
+  .hero p {
+      font-size: 10px;
+  }
+
+  .hero button {
+      width: 120px;
+      height: 40px;
+      padding: 8px;
+  }
+
+  .benefits h2 {
+      font-size: 24px;
+  }
+
+  .benefit-cards {
+      grid-template-columns: 1fr;
+  }
+
+  .card {
+      width: 100%;
+  }
+
+  .difficulty .content h2 {
+      font-size: 28px;
+  }
+
+  .difficulty .content p {
+      font-size: 16px;
+  }
+
+  .testimonial h2 {
+      font-size: 24px;
+  }
+
+  .testimonial-item {
+      height: auto;
+  }
+
+  .testimonial-content {
+      font-size: 12px;
+  }
+
+  .profile img {
+      width: 60px;
+      height: 60px;
+  }
+
+  .profile h3 {
+      font-size: 12px;
+  }
+
+  .profile p {
+      font-size: 10px;
+  }
+
+  .footer-section h1 {
+      font-size: 24px;
+  }
+
+  .footer-section h2 {
+      font-size: 14px;
+  }
+
+  .footer-section ul, .footer-section li {
+      font-size: 10px;
+  }
+
+  .footer-section li a {
+      font-size: 10px;
+  }
+
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-section {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+  }
 }
