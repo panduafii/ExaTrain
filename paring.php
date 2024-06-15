@@ -17,7 +17,7 @@
         <li><a href="#">Mata Kuliah</a></li>
         <li><a href="#">Papan Peringkat</a></li>
         <li><a href="#">Tentang Kami</a></li>
-        <li><button>Sign Up</button></li>
+        <li><a href="#"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
       </ul>
     </nav>
 

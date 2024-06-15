@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="CSS/pembayaran.css" />
     <title>Pembayaran</title>
   </head>
-  <body>
+  <body style="background-image: url('img/background.png');">
     <!-- NAVBAR -->
     <nav class="navbar">
       <div class="logo">
@@ -29,8 +29,8 @@
     <!-- End -->
 
     <!-- Pembayaran -->
-    <h1>Konfirmasi Pembayaran</h1>
     <div class="container">
+      <h1>Konfirmasi Pembayaran</h1>
       <div class="payment-box">
         <div class="package">
           <p>Paket Kamu</p>

@@ -1,3 +1,15 @@
+<?php
+// Memulai sesi
+session_start();
+
+// Memeriksa apakah pengguna sudah login
+if (!isset($_SESSION['username'])) {
+    // Jika tidak ada sesi username, arahkan pengguna kembali ke halaman login
+    header("Location: loginRegist.php");
+    exit; // Pastikan tidak ada kode ekstra yang dijalankan setelah pengalihan header
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +18,8 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="CSS/dashboard.css" />
   </head>
-  <body>
+
+  <body style="background-image: url('img/wave.png'); background-repeat: no-repeat; background-size: cover">
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo">
@@ -17,7 +30,19 @@
         <li><a href="#">Mata Kuliah</a></li>
         <li><a href="#">Papan Peringkat</a></li>
         <li><a href="#">Tentang Kami</a></li>
-        <li><button>Sign Up</button></li>
+        <li>
+          <?php
+            session_start();
+            // Menampilkan nama pengguna jika ada yang masuk
+            if (isset($_SESSION["username"])) {
+                $username = $_SESSION["username"];
+                echo "Hi! $username";
+            } else {
+                echo "Hi!";
+            }
+            ?>
+          <a href="#"><img src="img/.png" alt="user" /></a>
+        </li>
       </ul>
     </nav>
     <!-- End Navbar -->

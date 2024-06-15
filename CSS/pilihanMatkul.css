@@ -1,16 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-/* NAVBAR */
 body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f3f4f6;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-image: url('img/wave.png');
 }
 
+/* NAVBAR */
 .navbar {
   width: 100%;
   height: 60px;
@@ -35,6 +37,7 @@ body {
 .menu li {
   display: inline-block; /* Menyusun menu secara horizontal */
   margin-right: 20px; /* Jarak antar menu */
+  margin-bottom: 15px;
 }
 
 .menu li:last-child {
@@ -43,104 +46,29 @@ body {
 
 .menu li a {
   text-decoration: none; /* Menghilangkan garis bawah pada tautan */
-  color: #e9f7f9; /* Warna teks */
+  color: #808080; /* Warna teks */
   font-weight: bold; /* Ketebalan teks */
   transition: color 0.3s; /* Efek transisi pada warna teks */
 }
 
 .menu li a:hover {
-  color: rgba(0, 119, 255, 0.578); /* Warna teks saat digulirkan (misalnya, merah) */
+  color: black; /* Warna teks saat digulirkan (misalnya, merah) */
 }
 
-.menu li button {
-  padding: 4px 10px;
-  background-color: #ffc107;
-  color: #070707;
-  text-decoration: none;
-  border-radius: 7px;
+.menu li img {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.user-icon{
+  margin-top: 15px;
 }
 
 .logo img {
   height: 40px;
 }
 
-.login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-}
-
-.form {
-  position: relative;
-  z-index: 1;
-  background: #ffffff;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  border-radius: 10px;
-}
-
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-.form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #2196f3;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #ffffff;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.form button:hover,
-.form button:active,
-.form button:focus {
-  background: #0b7dda;
-}
-
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-
-.form .message a {
-  color: #2196f3;
-  text-decoration: none;
-}
-
-.form .register-form {
-  display: none;
-}
-
 /* PILIHAN MATAKULIAH */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .container {
   background-color: #fff;
   padding: 40px;
@@ -148,12 +76,13 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
+  margin-top: 50px;
 }
 
 .back-button {
   font-size: 30px;
-  padding: 10px 30px;
+  padding: 5px 30px;
   cursor: pointer;
   background-color: transparent;
   color: #0056b3;
@@ -175,15 +104,11 @@ body {
 }
 
 h1 {
-  margin-bottom: 20px;
-}
-
-.filter {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .year-buttons {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .year-buttons .year-button {
@@ -201,17 +126,19 @@ h1 {
 }
 
 .courses {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .course-button {
-  background-color: #e0f7fa;
+  background-color: #AFCFFF;
   border-radius: 10px;
-  margin: 10px;
-  padding: 20px;
-  width: 200px;
+  margin: 20px;
+  padding: 20px; 
+  width: 200px; 
+  text-align: center;
   text-align: center;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -230,5 +157,6 @@ h1 {
 .course-button span {
   display: block;
   font-size: 16px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #333;
 }

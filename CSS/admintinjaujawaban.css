@@ -74,7 +74,7 @@ h2 {
     box-sizing: border-box;
     text-align: left;
     position: relative;
-    min-height: 200px;
+    height: 350px;
 }
 
 .answer-explanation {
@@ -89,15 +89,15 @@ h2 {
     margin: 10px 0;
     box-sizing: border-box;
     text-align: left;
-    width: 48%;
-    min-height: 100px;
+    width: 49%;
+    height: 300px;
 }
 
 .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 50px;
     flex-wrap: wrap;
 }
 
