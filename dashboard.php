@@ -41,7 +41,6 @@ if (!isset($_SESSION['username'])) {
                 echo "Hi!";
             }
             ?>
-          <a href="#"><img src="img/.png" alt="user" /></a>
         </li>
       </ul>
     </nav>
@@ -51,7 +50,7 @@ if (!isset($_SESSION['username'])) {
     <main>
       <h1>Dashboard</h1>
       <div class="dashboard">
-        <a href="pilihanMatkul.html" class="card-link">
+        <a href="pilihanMatkul.php" class="card-link">
           <div class="card">
             <img src="img/icon matkul.png" alt="Mata Kuliah" />
             <p>Mata Kuliah</p>

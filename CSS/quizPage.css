@@ -1,0 +1,31 @@
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.question-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.question-buttons button {
+    margin-right: 5px;
+    background-color: white; /* Warna default putih */
+    color: black; /* Warna teks hitam */
+    border: 1px solid #ccc; /* Border warna abu-abu muda */
+    padding: 10px 15px; /* Padding untuk tombol */
+    cursor: pointer; /* Mengubah kursor saat mouse berada di atas tombol */
+}
+.question-buttons button.answered {
+    background-color: lightblue; /* Warna biru muda jika sudah dijawab */
+}
+.form-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.user-info {
+    text-align: center;
+    margin-bottom: 10px;
+}

@@ -126,11 +126,12 @@ h1 {
 }
 
 .courses {
-  margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap; /* Wrap items within the flex container */
+  gap: 20px; /* Spacing between flex items */
 }
+
 
 .course-button {
   background-color: #AFCFFF;
