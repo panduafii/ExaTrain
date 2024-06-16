@@ -32,7 +32,7 @@ if (!isset($_SESSION['username'])) {
         <li><a href="#">Tentang Kami</a></li>
         <li>
           <?php
-            session_start();
+           
             // Menampilkan nama pengguna jika ada yang masuk
             if (isset($_SESSION["username"])) {
                 $username = $_SESSION["username"];

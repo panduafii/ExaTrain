@@ -25,7 +25,7 @@
     <!-- LOGIN DAN REGISTER -->
     <div class="login-page">
         <div class="form">
-            <form class="register-form">
+            <form class="register-form" action="fungsiPHP/add_user.php" method="post">
               <!-- Pembayaran -->
               <div class="payment">
               <h3>Paket Kamu</h3>
@@ -44,21 +44,29 @@
                 </label>
                 <button>Konfirmasi</button>
               </div>
+              <!-- Registrasi -->
               <div class="registrasi">
-                <!-- Register -->
-                <h2>Register</h2>
-                <input type="text" placeholder="Name" />
-                <input type="password" placeholder="Password" />
-                <button type="submit">Create Account</button>
-                <p class="message">Already registered? <a href="#">Sign In</a></p>
-              </div>
+              <h2>Register</h2>
+                <!-- <label for="username">Username:</label><br> -->
+                <input type="text" id="username" name="username" placeholder="username" required><br><br>
+
+                <!-- <label for="password">Password:</label><br> -->
+                <input type="password" id="password" name="password" placeholder="password" required><br><br>
+
+                <button type="submit" name="submit">Tambah Pengguna</button>
+                <p class="message">Belum Punya Akun? <a href="#">Sign In</a></p>
+                </div>
             </form>
             <!-- Login -->
-            <form class="login-form">
+            <form class="login-form" action="fungsiPHP/login.php" method="post">
                 <h2>Login Page</h2>
-                <input type="text" placeholder="username" />
-                <input type="password" placeholder="password" />
-                <button class="login-button">login</button>
+                <!-- <label for="username">Username:</label><br> -->
+                <input type="text" id="username" name="username" placeholder="username" required><br><br>
+
+                <!-- <label for="password">Password:</label><br> -->
+                <input type="password" id="password" name="password" placeholder="password" required><br><br>
+
+                <button class="login-button" type="submit" name="submit">Login</button>
                 <p class="message">Not registered? <a href="#">Create an account</a></p>
                 <button class="admin-button">I'm admin</button>
             </form>

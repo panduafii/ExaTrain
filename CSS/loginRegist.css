@@ -5,11 +5,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("img/background.png");
-  background-repeat: no-repeat;
-  background-size: cover; /* Menutupi seluruh layar */
-  background-position: center; /* Menempatkan gambar di tengah */
-  height: 100vh; /* Tinggi body sesuai dengan tinggi viewport */
 }
 
 /* NAVBAR */
@@ -65,7 +60,6 @@ body {
 .logo img {
   height: 40px;
 }
-/* END NAVBAR */
 
 /* LOGIN DAN REGISTER */
 .form h2,
@@ -75,8 +69,8 @@ p {
 }
 
 .login-page {
-  width: 360px;
-  padding: 10% 0 0;
+  width: 900px; /* Perbesar lebar form */
+  padding: 2% 0;
   margin: auto;
 }
 
@@ -84,12 +78,15 @@ p {
   position: relative;
   z-index: 1;
   background: #ffffff;
-  max-width: 360px;
+  width: 100%;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 10px;
+}
+
+.register-container {
   display: flex; /* Gunakan flexbox untuk mengatur tata letak */
   justify-content: space-between; /* Jarak antara kedua bagian */
 }
@@ -152,4 +149,48 @@ p {
 
 .form .register-form {
   display: none;
+}
+
+.payment {
+  width: 45%; /* Setengah lebar form */
+  text-align: left;
+}
+
+.payment h3 {
+  font-size: 24px;
+}
+
+.payment p {
+  font-size: 20px;
+  color: #007bff;
+}
+
+.payment label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.payment input[type="radio"] {
+  margin-right: 10px;
+}
+
+.payment button {
+  background-color: #ffc107;
+  color: #070707;
+  border-radius: 7px;
+  font-size: 18px;
+}
+
+.registrasi {
+  width: 45%; /* Setengah lebar form */
+  text-align: left;
+}
+
+.registrasi h2 {
+  font-size: 24px;
+}
+
+.registrasi input {
+  margin-bottom: 10;
 }
