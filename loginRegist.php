@@ -48,10 +48,7 @@
                 <!-- Register -->
                 <h2>Register</h2>
                 <input type="text" placeholder="Name" />
-                <input type="text" placeholder="E-mail" />
-                <input type="text" placeholder="Phone" />
                 <input type="password" placeholder="Password" />
-                  
                 <button type="submit">Create Account</button>
                 <p class="message">Already registered? <a href="#">Sign In</a></p>
               </div>
