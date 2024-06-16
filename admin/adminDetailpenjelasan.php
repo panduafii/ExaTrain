@@ -10,7 +10,7 @@
     <div class="container">
         <header>
             <div class="logo">
-                <img src="img/logo1.png" alt="Exatrain">
+                <img src="../img/logo1.png" alt="Exatrain">
             </div>
             <div class="user-info">
                 <span>Admin</span>

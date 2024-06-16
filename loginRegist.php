@@ -44,18 +44,17 @@
                 </label>
                 <button>Konfirmasi</button>
               </div>
-              <!-- Registrasi -->
               <div class="registrasi">
-              <h2>Register</h2>
-                <!-- <label for="username">Username:</label><br> -->
-                <input type="text" id="username" name="username" placeholder="username" required><br><br>
-
-                <!-- <label for="password">Password:</label><br> -->
-                <input type="password" id="password" name="password" placeholder="password" required><br><br>
-
-                <button type="submit" name="submit">Tambah Pengguna</button>
-                <p class="message">Belum Punya Akun? <a href="#">Sign In</a></p>
-                </div>
+                <!-- Register -->
+                <h2>Register</h2>
+                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="E-mail" />
+                <input type="text" placeholder="Phone" />
+                <input type="password" placeholder="Password" />
+                  
+                <button type="submit">Create Account</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+              </div>
             </form>
             <!-- Login -->
             <form class="login-form" action="fungsiPHP/login.php" method="post">
