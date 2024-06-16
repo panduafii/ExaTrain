@@ -7,37 +7,37 @@
     <title>EXATrain Dashboard - Manajemen Soal</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="CSS/adminPenggunadetailjawaban.css">
+    <link rel="stylesheet" href="../CSS/adminPenggunadetailjawaban.css">
 </head>
 
 <body>
     <div class="container">
         <nav class="sidebar">
             <div class="logo">
-                <img src="img/logo1.png" alt="EXATrain Logo">
+                <img src="../img/logo1.png" alt="EXATrain Logo">
                 <div class="logo-line"></div> <!-- Div untuk garis putih -->
             </div>
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
-                    <img src="img/penggunaicon.png" alt="Icon">
+                    <img src="../img/penggunaicon.png" alt="Icon">
                     <span>Edit Pengguna</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/manajemenicon.png" alt="Icon">
+                    <img src="../img/manajemenicon.png" alt="Icon">
                     <span>Manajemen Soal</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/statistikicon.png" alt="Icon">
+                    <img src="../img/statistikicon.png" alt="Icon">
                     <span>Data & Statistik</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/wallet-2.png" alt="Icon">
+                    <img src="../img/wallet-2.png" alt="Icon">
                     <span>Pembayaran</span>
                 </li>
             </ul>
             <ul class="logout">
                 <li class="sidebar-item">
-                    <img src="img/logouticon.png" alt="Icon">
+                    <img src="../img/logouticon.png" alt="Icon">
                     <span>Logout</span>
                 </li>
             </ul>
@@ -46,14 +46,14 @@
             <header class="header">
                 <ul class="header-menu">
                     <li class="menu-icon">
-                        <img src="img/garistiga.png" alt="Menu">
+                        <img src="../img/garistiga.png" alt="Menu">
                     </li>
                     <li class="header-right">
                         <div class="notification-icon">
-                            <img src="img/Notifikasi.png" alt="Notification">
+                            <img src="../img/Notifikasi.png" alt="Notification">
                         </div>
                         <div class="user-icon">
-                            <img src="img/adminicon.png" alt="User">
+                            <img src="../img/adminicon.png" alt="User">
                         </div>
                         <span>Admin</span>
                     </li>
@@ -72,41 +72,70 @@
                         <option value="">Select...</option>
                     </select>
                     <div class="year-buttons">
-                        <button class="year-button">2023</button>
-                        <button class="year-button">2022</button>
-                        <button class="year-button">2021</button>
+                        <button class="year-button" data-year="2023">2023</button>
+                        <button class="year-button" data-year="2022">2022</button>
+                        <button class="year-button" data-year="2021">2021</button>
                     </div>
                     <div class="line-atas"></div> <!-- Div untuk garis putih -->
                 </div>
                 <div class="questions">
-                    <div class="question-card">
-                        <img src="img/iconpsi.png" alt="Icon">
+                    <!-- 2023 -->
+                    <div class="question-card" data-year="2023">
+                        <img src="../img/iconpsi.png" alt="Icon">
                         <span>Pengembangan Sistem Informasi</span>
                     </div>
-                    <div class="question-card">
-                        <img src="img/icongmm.png" alt="Icon">
+                    <div class="question-card" data-year="2023">
+                        <img src="../img/icongmm.png" alt="Icon">
                         <span>Grafika dan Multimedia</span>
                     </div>
-                    <div class="question-card">
-                        <img src="img/iconscpk.png" alt="Icon">
+                    <div class="question-card" data-year="2023">
+                        <img src="../img/iconscpk.png" alt="Icon">
                         <span>Sistem Cerdas dan Pendukung Keputusan</span>
                     </div>
-                    <div class="question-card">
-                        <img src="img/iconbiki.png" alt="Icon">
+                    <div class="question-card" data-year="2023">
+                        <img src="../img/iconbiki.png" alt="Icon">
                         <span>Bahasa Indonesia Komunikasi Ilmiah</span>
                     </div>
-                    <div class="question-card">
-                        <img src="img/iconbiti.png" alt="Icon">
+                    <div class="question-card" data-year="2023">
+                        <img src="../img/iconbiti.png" alt="Icon">
                         <span>Bahasa Inggris Teknologi Informasi</span>
                     </div>
-                    <div class="question-card">
-                        <img src="img/iconulil.png" alt="Icon">
+                    <div class="question-card" data-year="2023">
+                        <img src="../img/iconulil.png" alt="Icon">
                         <span>Islam Ulil Albab</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+    // Menangani perubahan tampilan mata kuliah berdasarkan tahun yang dipilih
+const yearButtons = document.querySelectorAll('.year-button');
+const questionCards = document.querySelectorAll('.question-card');
+
+yearButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const selectedYear = button.getAttribute('data-year');
+
+        questionCards.forEach(card => {
+            if (card.getAttribute('data-year') === selectedYear) {
+                card.style.visibility = 'visible';
+            } else {
+                card.style.visibility = 'hidden';
+            }
+        });
+    });
+});
+
+// Menangani navigasi saat question card diklik
+questionCards.forEach(card => {
+    card.addEventListener('click', () => {
+        window.location.href = 'adminPenggunadetailjawaban2.php';
+    });
+});
+
+</script>
 </body>
 
 </html>

@@ -7,37 +7,37 @@
     <title>Edit Pengguna</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="CSS/adminpengguna.css">
+    <link rel="stylesheet" href="../CSS/adminpengguna.css">
 </head>
 
 <body>
     <div class="container">
         <nav class="sidebar">
             <div class="logo">
-                <img src="img/logo1.png" alt="EXATrain Logo">
+                <img src="../img/logo1.png" alt="EXATrain Logo">
                 <div class="logo-line"></div> <!-- Div untuk garis putih -->
             </div>
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
-                    <img src="img/penggunaicon.png" alt="Icon">
+                    <img src="../img/penggunaicon.png" alt="Icon">
                     <span>Edit Pengguna</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/manajemenicon.png" alt="Icon">
+                    <img src="../img/manajemenicon.png" alt="Icon">
                     <span>Manajemen Soal</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/statistikicon.png" alt="Icon">
+                    <img src="../img/statistikicon.png" alt="Icon">
                     <span>Data & Statistik</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/wallet-2.png" alt="Icon">
+                    <img src="../img/wallet-2.png" alt="Icon">
                     <span>Pembayaran</span>
                 </li>
             </ul>
             <ul class="logout">
                 <li class="sidebar-item">
-                    <img src="img/logouticon.png" alt="Icon">
+                    <img src="../img/logouticon.png" alt="Icon">
                     <span>Logout</span>
                 </li>
             </ul>
@@ -46,14 +46,14 @@
             <header class="header">
                 <ul class="header-menu">
                     <li class="menu-icon">
-                        <img src="img/garistiga.png" alt="Menu">
+                        <img src="../img/garistiga.png" alt="Menu">
                     </li>
                     <li class="header-right">
                         <div class="notification-icon">
-                            <img src="img/Notifikasi.png" alt="Notification">
+                            <img src="../img/Notifikasi.png" alt="Notification">
                         </div>
                         <div class="user-icon">
-                            <img src="img/adminicon.png" alt="User">
+                            <img src="../img/adminicon.png" alt="User">
                         </div>
                         <span>Admin</span>
                     </li>
@@ -86,10 +86,10 @@
                                 <td>087855551234</td>
                                 <td>**********</td>
                                 <td class="table-icons">
-                                    <img src="img/editicon.png" alt="Edit">
-                                    <img src="img/deleteicon.png" alt="Delete">
-                                    <img src="img/addicon.png" alt="Add">
-                                    <img src="img/saveicon.png" alt="Save">
+                                    <img src="../img/editicon.png" alt="Edit">
+                                    <img src="../img/deleteicon.png" alt="Delete">
+                                    <img src="../img/addicon.png" alt="Add">
+                                    <img src="../img/saveicon.png" alt="Save">
                                 </td>
                             </tr>
                         </tbody>
@@ -104,13 +104,15 @@
                         <span>Dari 1 Total Data</span>
                     </div>
                 </div>
-                <div class="user-review">
-                    <div class="review-header">
-                        <img src="img/teropong.png" alt="Search">
-                        <span>Tinjau Jawaban Pengguna</span>
-                        <img src="img/polygon.png" alt="Polygon" class="polygon-icon">
+                <a href="adminPenggunadetailjawaban.php" class="user-review-link">
+                    <div class="user-review">
+                        <div class="review-header">
+                            <img src="../img/teropong.png" alt="Search">
+                            <span>Tinjau Jawaban Pengguna</span>
+                            <img src="../img/polygon.png" alt="Polygon" class="polygon-icon">
+                        </div>
                     </div>
-                </div>
+                    </a>
                 <div class="charts">
                     <div class="chart" id="user-profile"></div>
                     <div class="chart" id="course-distribution"></div>

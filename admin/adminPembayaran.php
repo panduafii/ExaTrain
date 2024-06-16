@@ -15,30 +15,30 @@
     <div class="container">
         <nav class="sidebar">
             <div class="logo">
-                <img src="img/logo1.png" alt="EXATrain Logo">
+                <img src="../img/logo1.png" alt="EXATrain Logo">
                 <div class="logo-line"></div> <!-- Div untuk garis putih -->
             </div>
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
-                    <img src="img/penggunaicon.png" alt="Icon">
+                    <img src="../img/penggunaicon.png" alt="Icon">
                     <span>Edit Pengguna</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/manajemenicon.png" alt="Icon">
+                    <img src="../img/manajemenicon.png" alt="Icon">
                     <span>Manajemen Soal</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/statistikicon.png" alt="Icon">
+                    <img src="../img/statistikicon.png" alt="Icon">
                     <span>Data & Statistik</span>
                 </li>
                 <li class="sidebar-item active">
-                    <img src="img/wallet-2.png" alt="Icon">
+                    <img src="../img/wallet-2.png" alt="Icon">
                     <span>Pembayaran</span>
                 </li>
             </ul>
             <ul class="logout">
                 <li class="sidebar-item">
-                    <img src="img/logouticon.png" alt="Icon">
+                    <img src="../img/logouticon.png" alt="Icon">
                     <span>Logout</span>
                 </li>
             </ul>
@@ -47,14 +47,14 @@
             <header class="header">
                 <ul class="header-menu">
                     <li class="menu-icon">
-                        <img src="img/garistiga.png" alt="Menu">
+                        <img src="../img/garistiga.png" alt="Menu">
                     </li>
                     <li class="header-right">
                         <div class="notification-icon">
-                            <img src="img/Notifikasi.png" alt="Notification">
+                            <img src="../img/Notifikasi.png" alt="Notification">
                         </div>
                         <div class="user-icon">
-                            <img src="img/adminicon.png" alt="User">
+                            <img src="../img/adminicon.png" alt="User">
                         </div>
                         <span>Admin</span>
                     </li>
@@ -91,7 +91,7 @@
                                 <td class="table-icons">
                                     <span class="status-text active">Aktif</span>
                                     <span class="icon-container">
-                                        <img src="img/editicon.png" alt="Edit Icon">
+                                        <img src="../img/editicon.png" alt="Edit Icon">
                                     </span>
                                 </td>
                             </tr>
@@ -117,7 +117,7 @@
                                 <td>1189356</td>
                                 <td>
                                     <div class="table-icons">
-                                        <img src="img/iconriwayat.png" alt="User Icon" class="icon-container">
+                                        <img src="../img/iconriwayat.png" alt="User Icon" class="icon-container">
                                         <span>Dubi1</span>
                                     </div>
                                 </td>
@@ -131,7 +131,7 @@
                                 <td>1189356</td>
                                 <td>
                                     <div class="table-icons">
-                                        <img src="img/iconriwayat.png" alt="User Icon" class="icon-container">
+                                        <img src="../img/iconriwayat.png" alt="User Icon" class="icon-container">
                                         <span>RyaBlessing</span>
                                     </div>
                                 </td>

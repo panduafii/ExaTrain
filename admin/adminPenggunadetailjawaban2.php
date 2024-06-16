@@ -6,36 +6,36 @@
     <title>EXATrain Dashboard - Detail Jawaban Pengguna</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="CSS/adminPenggunadetailjawaban2.css">
+    <link rel="stylesheet" href="../CSS/adminPenggunadetailjawaban2.css">
 </head>
 <body>
     <div class="container">
         <nav class="sidebar">
             <div class="logo">
-                <img src="img/logo1.png" alt="EXATrain Logo">
+                <img src="../img/logo1.png" alt="EXATrain Logo">
                 <div class="logo-line"></div>
             </div>
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
-                    <img src="img/penggunaicon.png" alt="Icon">
+                    <img src="../img/penggunaicon.png" alt="Icon">
                     <span>Edit Pengguna</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/manajemenicon.png" alt="Icon">
+                    <img src="../img/manajemenicon.png" alt="Icon">
                     <span>Manajemen Soal</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/statistikicon.png" alt="Icon">
+                    <img src="../img/statistikicon.png" alt="Icon">
                     <span>Data & Statistik</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/wallet-2.png" alt="Icon">
+                    <img src="../img/wallet-2.png" alt="Icon">
                     <span>Pembayaran</span>
                 </li>
             </ul>
             <ul class="logout">
                 <li class="sidebar-item">
-                    <img src="img/logouticon.png" alt="Icon">
+                    <img src="../img/logouticon.png" alt="Icon">
                     <span>Logout</span>
                 </li>
             </ul>
@@ -44,14 +44,14 @@
             <header class="header">
                 <ul class="header-menu">
                     <li class="menu-icon">
-                        <img src="img/garistiga.png" alt="Menu">
+                        <img src="../img/garistiga.png" alt="Menu">
                     </li>
                     <li class="header-right">
                         <div class="notification-icon">
-                            <img src="img/Notifikasi.png" alt="Notification">
+                            <img src="..img/Notifikasi.png" alt="Notification">
                         </div>
                         <div class="user-icon">
-                            <img src="img/adminicon.png" alt="User">
+                            <img src="../img/adminicon.png" alt="User">
                         </div>
                         <span>Admin</span>
                     </li>
@@ -84,17 +84,7 @@
                     <button class="pagination-button">7</button>
                     <button class="pagination-button">8</button>
                     <button class="pagination-button">9</button>
-                    <button class="pagination-button active">10</button>
-                    <button class="pagination-button">11</button>
-                    <button class="pagination-button">12</button>
-                    <button class="pagination-button">13</button>
-                    <button class="pagination-button">14</button>
-                    <button class="pagination-button">15</button>
-                    <button class="pagination-button">16</button>
-                    <button class="pagination-button">17</button>
-                    <button class="pagination-button">18</button>
-                    <button class="pagination-button">19</button>
-                    <button class="pagination-button">20</button>
+                    <button class="pagination-button">10</button>
                     <button class="save-button">Simpan</button>
                 </div>
             </div>
