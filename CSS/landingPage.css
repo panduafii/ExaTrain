@@ -10,14 +10,14 @@ body {
 }
 
 .container {
-width: 1920px;
+width: 100%;
 height: 1080px;
 margin: 0 auto;
 }
 
 .navbar {
   width: 100%;
-  height: 108px;
+  height: 60px;
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -32,7 +32,7 @@ margin: 0 auto;
 }
 
 .navbar .logo img {
-  height: 82px;
+  height: 40px;
   width: 100%;
 }
 
@@ -51,8 +51,8 @@ margin: 0 auto;
 
 .menu li button.signup-btn {
   width: 100%;
-  height: 42px;
-  padding: 10px 20px;
+  height: 35px;
+  padding: 0px 15px;
   background-color: #f39c12;
   color: #070707;
   border: none;
@@ -63,7 +63,6 @@ margin: 0 auto;
 
 .menu li a:hover {
   color: rgba(0, 0, 0, 0.578);
-  /* Warna teks saat digulirkan (misalnya, merah) */
 }
 
 .hero {
@@ -88,7 +87,7 @@ margin: 0 auto;
 }
 
 .hero h1 {
-  font-size: 52px;
+  font-size: 46px;
   margin-bottom: 20px;
 }
 
@@ -99,13 +98,13 @@ margin: 0 auto;
 
 .hero button {
   margin-left: 170px;
-  width: 175px;
-  height: 64px;
+  width: 150px;
+  height: 45px;
   background-color: #f39c12;
   border: none;
   cursor: pointer;
   align-self: flex-start;
-  padding: 12px;
+  padding: 10px;
   color: #070707;
   font-weight: 1000;
   border-radius: 8px;
@@ -125,7 +124,7 @@ margin: 0 auto;
 
 .imagerectangle {
   width: 100%;
-  height: 122px;
+  height: 120px;
   display: flex;
   justify-content: center;
 }
@@ -142,7 +141,7 @@ margin: 0 auto;
 }
 
 .benefits h2 {
-  font-size: 54px;
+  font-size: 42px;
   margin-bottom: 20px;
   margin-top: 50px;
 }
@@ -211,8 +210,8 @@ margin: 0 auto;
 }
 
 .difficulty .image img {
-  width: 710px;                 /* Mengatur lebar gambar agar tidak melebihi kontainer */
-  height: 700px;                    /* Menjaga aspek rasio gambar */
+  width: 680px;                 /* Mengatur lebar gambar agar tidak melebihi kontainer */
+  height: 640px;                    /* Menjaga aspek rasio gambar */
 }
 
 .difficulty .content {
@@ -223,7 +222,7 @@ margin: 0 auto;
 }
 
 .difficulty .content h2 {
-  font-size: 50px;
+  font-size: 40px;
   color: #333;
 }
 
@@ -232,7 +231,7 @@ margin: 0 auto;
 }
 
 .difficulty .content p {
-  font-size: 23px;
+  font-size: 17px;
   color: #666;
 }
 
@@ -246,7 +245,7 @@ margin: 0 auto;
 }
 
 .testimonial h2 {
-  font-size: 57px;
+  font-size: 45px;
   color: #000;
   margin-bottom: 40px;
 }
@@ -320,7 +319,7 @@ footer {
   background-color: #30476B;
   color: #fff;
   padding: 40px 10px;
-  height: 270px;
+  height: 293px;
 }
 
 .footer-content {
