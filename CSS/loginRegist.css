@@ -5,6 +5,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 /* NAVBAR */
@@ -17,36 +18,36 @@ body {
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
-  position: fixed; /* Membuat navbar tetap di tempat */
-  top: 0; /* Memastikan navbar di atas halaman */
-  left: 0; /* Memastikan navbar dimulai dari sisi kiri halaman */
-  z-index: 1000; /* Memastikan navbar berada di atas elemen lainnya */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .menu {
-  margin-left: auto; /* Menempatkan menu di sisi kanan */
-  list-style-type: none; /* Menghilangkan bullet list */
+  margin-left: auto;
+  list-style-type: none;
   padding: 0;
 }
 
 .menu li {
-  display: inline-block; /* Menyusun menu secara horizontal */
-  margin-right: 20px; /* Jarak antar menu */
+  display: inline-block;
+  margin-right: 20px;
 }
 
 .menu li:last-child {
-  margin-right: 0; /* Menghilangkan margin-right pada menu terakhir */
+  margin-right: 0;
 }
 
 .menu li a {
-  text-decoration: none; /* Menghilangkan garis bawah pada tautan */
-  color: #808080; /* Warna teks */
-  font-weight: bold; /* Ketebalan teks */
-  transition: color 0.3s; /* Efek transisi pada warna teks */
+  text-decoration: none;
+  color: #808080;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 .menu li a:hover {
-  color: black; /* Warna teks saat digulirkan (misalnya, merah) */
+  color: black;
 }
 
 .menu li button {
@@ -69,26 +70,24 @@ p {
 }
 
 .login-page {
-  width: 900px; /* Perbesar lebar form */
-  padding: 2% 0;
-  margin: auto;
+  width: 800px;
+  padding: 20px;
+  margin-top: 80px;
 }
 
 .form {
   position: relative;
   z-index: 1;
   background: #ffffff;
-  width: 100%;
-  margin: 0 auto 100px;
-  padding: 45px;
+  padding: 40px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 10px;
 }
 
 .register-container {
-  display: flex; /* Gunakan flexbox untuk mengatur tata letak */
-  justify-content: space-between; /* Jarak antara kedua bagian */
+  display: flex;
+  justify-content: space-between;
 }
 
 .form input {
@@ -118,22 +117,14 @@ p {
 }
 
 .form .login-button {
-  background-color: #f9d068;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #ffb600;
 }
 
 .form .admin-button {
-  background-color: #8ab8ff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #2196f3;
   margin: 15px 0 0 0;
-}
-
-.form .login-button:hover {
-  background: #ffb600;
-}
-
-.form button:hover,
-.form button:active,
-.form button:focus {
-  background: #0b7dda;
 }
 
 .form .message {
@@ -151,13 +142,23 @@ p {
   display: none;
 }
 
+.register-container {
+  width: 100%;
+}
+
 .payment {
-  width: 45%; /* Setengah lebar form */
-  text-align: left;
+  width: 45%;
+  background: #dceeff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .payment h3 {
   font-size: 24px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
 }
 
 .payment p {
@@ -166,24 +167,32 @@ p {
 }
 
 .payment label {
-  display: block;
+  display: absolute;
+  align-items: left;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .payment input[type="radio"] {
-  margin-right: 10px;
+  margin-bottom: 5px;
+  float: left;
 }
 
 .payment button {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: #ffc107;
   color: #070707;
   border-radius: 7px;
-  font-size: 18px;
+}
+
+.vertical-divider {
+  width: 1px;
+  background-color: #d3d3d3;
+  margin: 0 20px;
 }
 
 .registrasi {
-  width: 45%; /* Setengah lebar form */
+  width: 45%;
   text-align: left;
 }
 
@@ -192,5 +201,10 @@ p {
 }
 
 .registrasi input {
-  margin-bottom: 10;
+  margin-bottom: 10px;
+}
+
+.registrasi button {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #2196f3;
 }

@@ -26,34 +26,29 @@
     <div class="login-page">
         <div class="form">
             <form class="register-form" action="fungsiPHP/add_user.php" method="post">
-              <!-- Pembayaran -->
-              <div class="payment">
-              <h3>Paket Kamu</h3>
-                <p>Rp 11.999 / 6 Bulan</p>
-                <label>
-                    <input type="radio" name="payment-method" value="bank-transfer" />
-                    Transfer Bank
-                </label>
-                <label>
-                    <input type="radio" name="payment-method" value="e-wallet" />
-                    E-Wallet
-                </label>
-                <label>
-                    <input type="radio" name="payment-method" value="m-banking" />
-                    M-Banking
-                </label>
-                <button>Konfirmasi</button>
-              </div>
-              <div class="registrasi">
-                <!-- Register -->
-                <h2>Register</h2>
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="E-mail" />
-                <input type="text" placeholder="Phone" />
-                <input type="password" placeholder="Password" />
-                  
-                <button type="submit">Create Account</button>
-                <p class="message">Already registered? <a href="#">Sign In</a></p>
+              <div class="register-container">
+                <!-- Pembayaran -->
+                <div class="payment">
+                <h3>Paket Kamu</h3>
+                  <p>Rp 11.999 / 6 Bulan</p>
+                      <input type="radio" name="payment-method" value="bank-transfer" />
+                        <label for="payment1"> Transfer Bank</label><br>
+                      <input type="radio" name="payment-method" value="e-wallet" />
+                        <label for="payment2"> E-Wallet</label><br>
+                      <input type="radio" name="payment-method" value="m-banking" />
+                        <label for="payment3">M-Banking</label><br>
+                  <button type="button">Konfirmasi</button>
+                </div>
+                <!-- Vertical Divider -->
+                <div class="vertical-divider"></div>
+                 <!-- Register --> 
+                <div class="registrasi">
+                  <h2>Register</h2>
+                  <input type="text" placeholder="Name" required/>
+                  <input type="password" placeholder="Password" required/>
+                  <button type="submit">Create Account</button>
+                  <p class="message">Already registered? <a href="#">Sign In</a></p>
+                </div>
               </div>
             </form>
             <!-- Login -->
