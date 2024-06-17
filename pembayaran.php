@@ -45,10 +45,13 @@
       </div>
     </div>
     <!-- End -->
+
+    <!-- Back button -->
     <script>
       function goBack() {
         window.history.back();
       }
     </script>
+    <!-- End -->
   </body>
 </html>
