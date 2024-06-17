@@ -67,12 +67,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
             </div>
         </form>
     </div>
+    <!-- End -->
    
-
+    <!-- Back Button -->
     <script>
-        function goBack() {
-            window.history.back("dashboard.php");
-        }
+      function goBack() {
+        window.history.back();
+      }
     </script>
 </body>
 </html>

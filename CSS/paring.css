@@ -74,24 +74,6 @@ body {
   max-width: 800px;
 }
 
-.back-button {
-  font-size: 30px;
-  padding: 10px 30px;
-  cursor: pointer;
-  background-color: transparent;
-  color: #0056b3;
-  border: none;
-  border-radius: 5px;
-  position: absolute;
-  top: 100px;
-  left: 20px;
-  transition: color 0.3s;
-}
-
-.back-button:hover {
-  color: #003f7f;
-}
-
 h1 {
   font-size: 40px;
   margin-bottom: 20px;
@@ -138,4 +120,29 @@ h1 {
 .stars {
   color: #ffc107;
   font-weight: bold;
+}
+
+/* Back Button */
+
+.back-button {
+  font-size: 30px;
+  padding: 10px 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #0056b3;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  transition: color 0.3s;
+}
+
+.back-button a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent */
+}
+
+.back-button:hover {
+  color: #003f7f;
 }
