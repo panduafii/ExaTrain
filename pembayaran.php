@@ -6,18 +6,28 @@
     <link rel="stylesheet" href="CSS/pembayaran.css" />
     <title>Pembayaran</title>
   </head>
-  <body style="background-image: url('img/background.png');">
+  <body style="background-image: url('img/background.png'); background-size: cover; background-repeat: no-repeat;">
     <!-- NAVBAR -->
     <nav class="navbar">
       <div class="logo">
         <img src="img/logo.png" alt="Logo" />
       </div>
       <ul class="menu">
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Mata Kuliah</a></li>
-        <li><a href="#">Papan Peringkat</a></li>
+        <li><a href="landingPage.php">Beranda</a></li>
+        <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
+        <li><a href="paring.php">Papan Peringkat</a></li>
         <li><a href="#">Tentang Kami</a></li>
-        <li><button>Logo Sign Up</button></li>
+        <li>
+          <?php
+          // Menampilkan nama pengguna jika ada yang masuk
+            if (isset($_SESSION["username"])) {
+            $username = $_SESSION["username"];
+              echo "Hi! $username";
+              } else {
+              echo "Hi!";
+              }
+            ?>
+        </li>
       </ul>
     </nav>
     <!-- end navbar -->

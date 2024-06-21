@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -10,20 +10,21 @@ body {
 }
 
 .container {
-width: 100%;
-height: 1080px;
-margin: 0 auto;
+  width: 100%;
+  height: 1080px;
+  margin: 0 auto;
 }
 
+/* NAVBAR */
 .navbar {
   width: 100%;
   height: 60px;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 64px;
+  padding: 0 20px;
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -31,39 +32,94 @@ margin: 0 auto;
   z-index: 1000;
 }
 
-.navbar .logo img {
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
   height: 40px;
-  width: 100%;
 }
 
 .menu {
-  list-style: none;
   display: flex;
   align-items: center;
-  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
 }
 
 .menu li a {
   text-decoration: none;
   color: #808080;
   font-weight: bold;
-}
-
-.menu li button.signup-btn {
-  width: 100%;
-  height: 35px;
-  padding: 0px 15px;
-  background-color: #f39c12;
-  color: #070707;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: color 0.3s;
 }
 
 .menu li a:hover {
-  color: rgba(0, 0, 0, 0.578);
+  color: black;
 }
+
+.menu li img {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .menu li a {
+    padding: 10px 0;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+}
+
+/* end navbar */
 
 .hero {
   display: flex;
@@ -194,31 +250,31 @@ margin: 0 auto;
 .difficulty {
   display: flex;
   justify-content: space-between; /* Mengatur jarak antara gambar dan konten */
-  align-items: center;            /* Meratakan konten secara vertikal */
-  padding: 90px 90px;            /* Padding luar dikurangi menjadi 100px */
+  align-items: center; /* Meratakan konten secara vertikal */
+  padding: 90px 90px; /* Padding luar dikurangi menjadi 100px */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
 }
 
 .difficulty .image {
-  flex: 1;                         /* Membuat gambar fleksibel */
+  flex: 1; /* Membuat gambar fleksibel */
   display: flex;
-  justify-content: center;         /* Mengatur gambar di tengah (ubah jika perlu) */
+  justify-content: center; /* Mengatur gambar di tengah (ubah jika perlu) */
   align-items: center;
-  margin-right: 20px;              /* Geser gambar ke kanan */
+  margin-right: 20px; /* Geser gambar ke kanan */
 }
 
 .difficulty .image img {
-  width: 680px;                 /* Mengatur lebar gambar agar tidak melebihi kontainer */
-  height: 640px;                    /* Menjaga aspek rasio gambar */
+  width: 680px; /* Mengatur lebar gambar agar tidak melebihi kontainer */
+  height: 640px; /* Menjaga aspek rasio gambar */
 }
 
 .difficulty .content {
-  flex: 1;                         /* Membuat konten fleksibel */
+  flex: 1; /* Membuat konten fleksibel */
   padding-left: 20px;
-  padding-right: 150px;              /* Menambahkan padding kiri untuk memberi jarak antara gambar dan konten */
-  text-align: left;                /* Mengatur teks agar rata kiri */
+  padding-right: 150px; /* Menambahkan padding kiri untuk memberi jarak antara gambar dan konten */
+  text-align: left; /* Mengatur teks agar rata kiri */
 }
 
 .difficulty .content h2 {
@@ -234,7 +290,6 @@ margin: 0 auto;
   font-size: 17px;
   color: #666;
 }
-
 
 /* Testimonial Section */
 .testimonial {
@@ -263,7 +318,7 @@ margin: 0 auto;
 .testimonial-item {
   width: 350px;
   height: 550px;
-  background-image: url('../img/background-testimonial.png'); /* Ganti dengan URL gambar Anda */
+  background-image: url("../img/background-testimonial.png"); /* Ganti dengan URL gambar Anda */
   background-size: cover; /* Sesuaikan ukuran gambar agar menutupi seluruh elemen */
   background-position: center; /* Posisikan gambar di tengah */
   color: #fff;
@@ -299,7 +354,7 @@ margin: 0 auto;
 .profile img {
   width: 110px;
   height: 110px;
-  margin-bottom: 10px;;
+  margin-bottom: 10px;
 }
 
 .profile h3 {
@@ -316,7 +371,7 @@ margin: 0 auto;
 
 /* Footer */
 footer {
-  background-color: #30476B;
+  background-color: #30476b;
   color: #fff;
   padding: 40px 10px;
   height: 293px;
@@ -334,7 +389,7 @@ footer {
   flex: 1;
   padding: 10px;
   min-width: 200px;
-  margin-left:0px;
+  margin-left: 0px;
 }
 
 .footer-section h1 {
@@ -353,7 +408,8 @@ footer {
   font-size: 16px;
 }
 
-.footer-section ul, .footer-section li {
+.footer-section ul,
+.footer-section li {
   font-size: 16px;
   margin-left: 50px;
   padding: 0;
@@ -394,41 +450,41 @@ footer {
     width: 1400px;
     height: auto;
     padding: 25px;
-}
+  }
   .benefit-cards {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .navbar {
-      padding: 0 32px;
+    padding: 0 32px;
   }
 
   .hero .content {
-      padding-left: 90px;
+    padding-left: 90px;
   }
 
   .hero button {
-      margin-left: 85px;
+    margin-left: 85px;
   }
 
   .difficulty .content {
-      padding-right: 80px;
+    padding-right: 80px;
   }
 
   .testimonial-grid {
-      flex-direction: column;
-      gap: 40px;
+    flex-direction: column;
+    gap: 40px;
   }
 
   .testimonial-item {
-      width: 100%;
-      height: auto;
+    width: 100%;
+    height: auto;
   }
 
   .profile {
-      position: static;
-      transform: none;
-      margin-top: 20px;
+    position: static;
+    transform: none;
+    margin-top: 20px;
   }
   .footer-section.socials {
     gap: 30px;
@@ -444,55 +500,55 @@ footer {
     width: 1040px;
     height: auto;
     padding: 20px;
-}
+  }
   .navbar {
-      padding: 0 16px;
+    padding: 0 16px;
   }
 
   .hero {
-      flex-direction: column;
-      text-align: center;
-      height: auto;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
   }
 
   .hero .content {
-      max-width: 100%;
-      padding-left: 0;
+    max-width: 100%;
+    padding-left: 0;
   }
 
   .hero .image img {
-      width: 100%;
-      height: auto;
+    width: 100%;
+    height: auto;
   }
 
   .hero button {
-      margin: 20px auto;
+    margin: 20px auto;
   }
 
   .benefit-cards {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
-  
+
   .difficulty {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
-  
+
   .difficulty .image {
-      margin-right: 0;
+    margin-right: 0;
   }
-  
+
   .difficulty .content {
-      padding-left: 0;
-      padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
   .footer-section.socials {
     gap: 25px;
-}
-.footer-section .social-icon {
+  }
+  .footer-section .social-icon {
     width: 35px;
     height: 35px;
-}
+  }
 }
 
 @media (max-width: 720px) {
@@ -500,92 +556,93 @@ footer {
     width: 700px;
     height: auto;
     padding: 15px;
-}
+  }
 
   .navbar {
-      padding: 0 8px;
+    padding: 0 8px;
   }
 
   .hero h1 {
-      font-size: 36px;
+    font-size: 36px;
   }
 
   .hero p {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .hero button {
-      width: 150px;
-      height: 50px;
-      padding: 10px;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
   }
 
   .benefits h2 {
-      font-size: 36px;
+    font-size: 36px;
   }
 
   .card {
-      width: 100%;
+    width: 100%;
   }
 
   .testimonial h2 {
-      font-size: 32px;
+    font-size: 32px;
   }
 
   .testimonial-item {
-      height: auto;
+    height: auto;
   }
 
   .testimonial-content {
-      font-size: 16px;
+    font-size: 16px;
   }
 
   .profile img {
-      width: 80px;
-      height: 80px;
+    width: 80px;
+    height: 80px;
   }
 
   .profile h3 {
-      font-size: 16px;
+    font-size: 16px;
   }
 
   .profile p {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .footer-section h1 {
-      font-size: 36px;
+    font-size: 36px;
   }
 
   .footer-section h2 {
-      font-size: 18px;
+    font-size: 18px;
   }
 
-  .footer-section ul, .footer-section li {
-      font-size: 14px;
+  .footer-section ul,
+  .footer-section li {
+    font-size: 14px;
   }
 
   .footer-section li a {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .footer-content {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-section {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
   }
   .footer-section.socials {
     gap: 25px;
-}
-.footer-section .social-icon {
+  }
+  .footer-section .social-icon {
     width: 35px;
     height: 35px;
-}
+  }
 }
 
 @media (max-width: 480px) {
@@ -593,103 +650,104 @@ footer {
     width: 460px;
     height: auto;
     padding: 10px;
-}
+  }
   .navbar {
-      padding: 0 4px;
+    padding: 0 4px;
   }
 
   .hero h1 {
-      font-size: 28px;
+    font-size: 28px;
   }
 
   .hero p {
-      font-size: 12px;
+    font-size: 12px;
   }
 
   .hero button {
-      width: 130px;
-      height: 45px;
-      padding: 8px;
+    width: 130px;
+    height: 45px;
+    padding: 8px;
   }
 
   .benefits h2 {
-      font-size: 30px;
+    font-size: 30px;
   }
 
   .benefit-cards {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .card {
-      width: 100%;
+    width: 100%;
   }
 
   .difficulty .content h2 {
-      font-size: 36px;
+    font-size: 36px;
   }
 
   .difficulty .content p {
-      font-size: 18px;
+    font-size: 18px;
   }
 
   .testimonial h2 {
-      font-size: 28px;
+    font-size: 28px;
   }
 
   .testimonial-item {
-      height: auto;
+    height: auto;
   }
 
   .testimonial-content {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .profile img {
-      width: 70px;
-      height: 70px;
+    width: 70px;
+    height: 70px;
   }
 
   .profile h3 {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .profile p {
-      font-size: 12px;
+    font-size: 12px;
   }
 
   .footer-section h1 {
-      font-size: 30px;
+    font-size: 30px;
   }
 
   .footer-section h2 {
-      font-size: 16px;
+    font-size: 16px;
   }
 
-  .footer-section ul, .footer-section li {
-      font-size: 12px;
+  .footer-section ul,
+  .footer-section li {
+    font-size: 12px;
   }
 
   .footer-section li a {
-      font-size: 12px;
+    font-size: 12px;
   }
 
   .footer-content {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-section {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
   }
   .footer-section.socials {
     gap: 15px;
-}
-.footer-section .social-icon {
+  }
+  .footer-section .social-icon {
     width: 25px;
     height: 25px;
-}
+  }
 }
 
 @media (max-width: 360px) {
@@ -697,90 +755,91 @@ footer {
     width: 340px;
     height: auto;
     padding: 10px;
-}
+  }
   .hero h1 {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .hero p {
-      font-size: 10px;
+    font-size: 10px;
   }
 
   .hero button {
-      width: 120px;
-      height: 40px;
-      padding: 8px;
+    width: 120px;
+    height: 40px;
+    padding: 8px;
   }
 
   .benefits h2 {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .benefit-cards {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .card {
-      width: 100%;
+    width: 100%;
   }
 
   .difficulty .content h2 {
-      font-size: 28px;
+    font-size: 28px;
   }
 
   .difficulty .content p {
-      font-size: 16px;
+    font-size: 16px;
   }
 
   .testimonial h2 {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .testimonial-item {
-      height: auto;
+    height: auto;
   }
 
   .testimonial-content {
-      font-size: 12px;
+    font-size: 12px;
   }
 
   .profile img {
-      width: 60px;
-      height: 60px;
+    width: 60px;
+    height: 60px;
   }
 
   .profile h3 {
-      font-size: 12px;
+    font-size: 12px;
   }
 
   .profile p {
-      font-size: 10px;
+    font-size: 10px;
   }
 
   .footer-section h1 {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .footer-section h2 {
-      font-size: 14px;
+    font-size: 14px;
   }
 
-  .footer-section ul, .footer-section li {
-      font-size: 10px;
+  .footer-section ul,
+  .footer-section li {
+    font-size: 10px;
   }
 
   .footer-section li a {
-      font-size: 10px;
+    font-size: 10px;
   }
 
   .footer-content {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-section {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
   }
 }

@@ -1,15 +1,18 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
 body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
+  background-image: url("img/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Prevent scrolling */
 }
 
+/* NAVBAR */
 .navbar {
   width: 100%;
   height: 60px;
@@ -17,6 +20,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 20px;
   box-sizing: border-box;
   position: fixed;
@@ -25,16 +29,25 @@ body {
   z-index: 1000;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
 .menu {
-  margin-left: auto;
+  display: flex;
+  align-items: center;
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .menu li {
-  display: inline-block;
   margin-right: 20px;
-  margin-bottom: 15px;
 }
 
 .menu li:last-child {
@@ -57,12 +70,61 @@ body {
   border-radius: 50%;
 }
 
-.user-icon {
-  margin-top: 15px;
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-.logo img {
-  height: 40px;
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .menu li a {
+    padding: 10px 0;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+}
+
+/* Header Title */
+.header {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 50px; /* Just below the navbar */
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+  padding: 10px 0;
 }
 
 .container {
@@ -71,9 +133,14 @@ body {
   text-align: center;
   width: 100%;
   max-width: 1500px;
-  margin-top: 80px;
+  margin-top: 65px; /* Adjust based on navbar and header height */
   background: none;
-  height: calc(100vh - 100px); /* Adjust based on navbar and margin */
+  flex: 1; /* Ensure the container takes the remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Ensure content starts from the top */
+  align-items: center;
+  overflow-y: auto; /* Allow scrolling within the container if content overflows */
 }
 
 .back-button {
@@ -99,10 +166,6 @@ body {
   color: #003f7f;
 }
 
-h1 {
-  margin-bottom: 30px;
-}
-
 .year-buttons {
   margin-bottom: 30px;
 }
@@ -122,7 +185,6 @@ h1 {
 }
 
 .courses {
-  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -155,26 +217,63 @@ h1 {
   color: #333;
 }
 
-/* Back Button */
-.back-button {
-  font-size: 30px;
-  padding: 10px 30px;
-  cursor: pointer;
-  background-color: transparent;
-  color: #0056b3;
-  border: none;
-  border-radius: 5px;
-  position: absolute;
-  top: 100px;
-  left: 20px;
-  transition: color 0.3s;
+@media (max-width: 1200px) {
+  .container {
+    padding: 10px;
+  }
+
+  .course-button {
+    width: 150px;
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .course-button img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .course-button span {
+    font-size: 14px;
+  }
 }
 
-.back-button a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit color from parent */
+@media (max-width: 768px) {
+  .container {
+    margin-top: 140px;
+    padding: 5px;
+  }
+
+  .course-button {
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .course-button img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .course-button span {
+    font-size: 12px;
+  }
 }
 
-.back-button:hover {
-  color: #003f7f;
+@media (max-width: 480px) {
+  .menu li {
+    margin-right: 10px;
+  }
+
+  .back-button {
+    font-size: 20px;
+    padding: 5px 15px;
+    top: 60px;
+    left: 10px;
+  }
+
+  .year-buttons .year-button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
 }

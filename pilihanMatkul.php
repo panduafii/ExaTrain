@@ -29,9 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
                 <img src="img/logo.png" alt="Logo" />
             </div>
             <ul class="menu">
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Mata Kuliah</a></li>
-                <li><a href="#">Papan Peringkat</a></li>
+                <li><a href="landingPage.php">Beranda</a></li>
+                <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
+                <li><a href="paring.php">Papan Peringkat</a></li>
                 <li><a href="#">Tentang Kami</a></li>
                 <li>
                     <?php
@@ -43,13 +43,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
                         echo "Hi!";
                     }
                     ?>
+                    <a href="#"><img src="img/avatar.png" alt="User" class="user-icon"></a>
                 </li>
-                <li><a href="#"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
+                <!-- <li></li> -->
             </ul>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </nav>
     </header>
     <!-- End Navbar -->
 
+     <!-- Tombol Back -->
+     <div class="back-button" onclick="goBack()">
+      <a href="#">&larr;</a>
+    </div>
+    <!-- End -->
 
     <!-- Pilihan Matkul -->
     <div class="container">

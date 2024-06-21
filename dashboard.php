@@ -26,9 +26,9 @@ if (!isset($_SESSION['username'])) {
         <img src="img/logo.png" alt="Logo" />
       </div>
       <ul class="menu">
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Mata Kuliah</a></li>
-        <li><a href="#">Papan Peringkat</a></li>
+        <li><a href="landingPage.php">Beranda</a></li>
+        <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
+        <li><a href="paring.php">Papan Peringkat</a></li>
         <li><a href="#">Tentang Kami</a></li>
         <li>
           <?php

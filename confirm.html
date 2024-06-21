@@ -7,20 +7,6 @@
     <link rel="stylesheet" href="CSS/confirm.css" />
   </head>
   <body>
-    
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="img/logo.png" alt="Logo" />
-        </div>
-        <ul class="menu">
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Mata Kuliah</a></li>
-            <li><a href="#">Papan Peringkat</a></li>
-            <li><a href="#">Tentang Kami</a></li>
-            <li><button>Sign Up</button></li>
-        </ul>
-    </nav>
     <!-- Warning -->
     <div class="background-blur">
       <div class="alert-box">

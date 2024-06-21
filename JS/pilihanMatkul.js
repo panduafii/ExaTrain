@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const yearButtons = document.querySelectorAll(".year-button");
   const coursesContainer = document.querySelector(".courses");
+  const menuToggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
 
   const courses = {
     2023: [
       { id: 1, name: "Matematika Lanjut", img: "img/matlan.png" },
-      { id: 2, name: "Algoritma dan Struktur Sata", img: "img/asd.png" },
+      { id: 2, name: "Algoritma dan Struktur Data", img: "img/asd.png" },
       { id: 3, name: "Fundamen Pengembangan Aplikasi", img: "img/fpa.png" },
       { id: 4, name: "Rekayasa Perangkat Lunak", img: "img/rpl.png" },
     ],
@@ -16,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { id: 8, name: "Bahasa Indonesia Komunikasi Ilmiah", img: "img/bindo.png" },
       { id: 9, name: "Bahasa Inggris Teknologi Informasi", img: "img/bingris.png" },
       { id: 10, name: "Islam Ulil Albab", img: "img/islam.png" },
-      { id: 10, name: "Kewirausahaan Syariah", img: "img/wirus.png" },
+      { id: 11, name: "Kewirausahaan Syariah", img: "img/wirus.png" },
     ],
     2021: [
       { id: 13, name: "Islam Rahmatan lil 'Alamin", img: "img/iru.png" },
@@ -56,4 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial display
   displayCourses("2022");
+
+  // Handle menu toggle for mobile view
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
 });

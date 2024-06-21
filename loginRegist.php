@@ -14,12 +14,17 @@
             <img src="img/logo.png" alt="Logo" />
         </div>
         <ul class="menu">
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Mata Kuliah</a></li>
-            <li><a href="#">Papan Peringkat</a></li>
+            <li><a href="landingPage.php">Beranda</a></li>
+            <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
+            <li><a href="paring.php">Papan Peringkat</a></li>
             <li><a href="#">Tentang Kami</a></li>
             <li><button>Sign Up</button></li>
         </ul>
+        <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
     </nav>
 
     <!-- LOGIN DAN REGISTER -->
@@ -40,7 +45,7 @@
                   <button type="button">Konfirmasi</button>
                 </div>
                 <!-- Vertical Divider -->
-                <div class="vertical-divider"></div>
+                <div class="vertical-divider"></div> 
                  <!-- Register --> 
                 <div class="registrasi">
                   <h2>Register</h2>
@@ -51,18 +56,28 @@
                 </div>
               </div>
             </form>
+
             <!-- Login -->
             <form class="login-form" action="fungsiPHP/login.php" method="post">
-                <h2>Login Page</h2>
-                <!-- <label for="username">Username:</label><br> -->
-                <input type="text" id="username" name="username" placeholder="username" required><br><br>
+              <div class="login-container">
+                <!-- LOGIN -->
+                <div class="login">
+                  <h2>Login</h2>
+                  <input type="text" id="username" name="username" placeholder="username" required><br><br>
+                  <input type="password" id="password" name="password" placeholder="password" required><br><br>
+                  <button class="login-button" type="submit" name="submit">Login</button>
+                  <p class="message">Not registered? <a href="#">Create an account</a></p>
+                  <button class="admin-button">I'm admin</button>
+                </div>
 
-                <!-- <label for="password">Password:</label><br> -->
-                <input type="password" id="password" name="password" placeholder="password" required><br><br>
+                <!-- Vertical Divider -->
+                <div class="vertical-divider"></div> 
 
-                <button class="login-button" type="submit" name="submit">Login</button>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>
-                <button class="admin-button">I'm admin</button>
+                <!-- picture -->
+                <div class="picture">
+                  <img src="img/landingpage1.jpg" alt="">
+                </div>
+              </div>
             </form>
         </div>
     </div>
