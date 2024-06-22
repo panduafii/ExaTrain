@@ -50,14 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
     </header>
     <!-- End Navbar -->
 
-    <!-- Tombol Back -->
-    <div class="back-button" onclick="goBack()">
-      <a href="#">&larr;</a>
-    </div>
 
     <!-- Pilihan Matkul -->
     <div class="container">
-        <button class="back-button" onclick="goBack()">&#8592;</button>
         <h1>Pilihan Mata Kuliah</h1>
         <div class="year-buttons">
             <button id="2023" class="year-button">2023</button>

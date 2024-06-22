@@ -258,6 +258,8 @@ body {
     transition: background-color 0.3s ease;
     cursor: pointer;
     position: relative;
+    height: 100px; /* Menetapkan tinggi tetap untuk semua kartu */
+    visibility: hidden; /* Menyembunyikan kartu tanpa menghapusnya dari layout */
 }
 
 .question-card::after {
@@ -280,4 +282,8 @@ body {
 .question-card img {
     margin-right: 10px;
     width: 80px;
+}
+
+.question-card[data-year="2023"] {
+    visibility: visible; /* Menampilkan kartu untuk tahun 2023 */
 }

@@ -22,25 +22,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Logika untuk submit jawaban akhir
     if (isset($_POST['submit_final'])) {
-        foreach ($_SESSION['answers'] as $questionId => $answer) {
-            // Simpan jawaban ke dalam tabel answers
-            $sql = "INSERT INTO answers (user_id, question_id, answer) VALUES ('1', '$questionId', '$answer') ON DUPLICATE KEY UPDATE answer='$answer'";
-            $conn->query($sql);
+        // Pastikan user_id dan subject_id ada dalam sesi
+        if (isset($_SESSION['user_id']) && isset($_SESSION['selected_course_id'])) {
+            $userId = $_SESSION['user_id'];
+            $selectedCourseId = $_SESSION['selected_course_id'];
+
+            foreach ($_SESSION['answers'] as $questionId => $answer) {
+                $userId = $_SESSION['user_id'];
+                $selectedCourseId = $_SESSION['selected_course_id'];
+                // Simpan jawaban ke dalam tabel answers
+                $sql = "INSERT INTO answers (user_id, subject_id, question_id, answer) VALUES ('$userId', '$selectedCourseId', '$questionId', '$answer') ON DUPLICATE KEY UPDATE answer='$answer'";
+
+                if ($conn->query($sql) === FALSE) {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+            }
+
+            // Hapus jawaban dari sesi setelah disimpan
+            unset($_SESSION['answers']);
+
+            // Redirect ke halaman pilihanMatkul.php setelah submit jawaban
+            header("Location: pilihanMatkul.php");
+            exit; // Pastikan tidak ada output HTML setelah header redirect
+        } else {
+            echo "User ID atau Subject ID tidak ditemukan.";
         }
-
-        // Hapus jawaban dari sesi setelah disimpan
-        unset($_SESSION['answers']);
-
-        // Redirect ke halaman pilihanMatkul.php setelah submit jawaban
-        header("Location: pilihanMatkul.php");
-        exit; // Pastikan tidak ada output HTML setelah header redirect
     }
 }
 
+
 // Tentukan selected_course_id dari session
-if (isset($_SESSION['selected_course_id'])) {
+if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
 
     $selectedCourseId = $_SESSION['selected_course_id'];
+    $userId = $_SESSION['user_id'];
+    echo "=====" . $selectedCourseId;
+    echo "=====" . $userId;
 
     // Query untuk menghitung jumlah soal berdasarkan selected_course_id
     $sql_count_questions = "SELECT COUNT(*) AS total_questions FROM questions WHERE subject_id = $selectedCourseId";
