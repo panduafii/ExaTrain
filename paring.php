@@ -9,7 +9,7 @@
   <body>
     <!-- Navbar -->
     <header>
-        <nav class="navbar">
+    <nav class="navbar">
             <div class="logo">
                 <img src="img/logo.png" alt="Logo" />
             </div>
@@ -28,9 +28,15 @@
                         echo "Hi!";
                     }
                     ?>
+                    <a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a>
                 </li>
-                <li><a href="#"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
+                <!-- <li></li> -->
             </ul>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </nav>
     </header>
     <!-- End -->

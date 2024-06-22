@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
                         echo "Hi!";
                     }
                     ?>
-                    <a href="#"><img src="img/avatar.png" alt="User" class="user-icon"></a>
+                    <a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a>
                 </li>
                 <!-- <li></li> -->
             </ul>
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
     <!-- Back Button -->
     <script>
       function goBack() {
-        window.history.back();
+        window.history.back("dashboard.php");
       }
     </script>
 </body>
