@@ -16,58 +16,70 @@
             <img src="img/logo.png" alt="Logo" />
         </div>
         <ul class="menu">
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Mata Kuliah</a></li>
-            <li><a href="#">Papan Peringkat</a></li>
+            <li><a href="landingPage.php">Beranda</a></li>
+            <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
+            <li><a href="paring.php">Papan Peringkat</a></li>
             <li><a href="#">Tentang Kami</a></li>
             <li><button>Sign Up</button></li>
         </ul>
+        <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
     </nav>
 
     <!-- LOGIN DAN REGISTER -->
     <div class="login-page">
         <div class="form">
             <form class="register-form" action="fungsiPHP/add_user.php" method="post">
-              <!-- Pembayaran -->
-              <div class="payment">
-              <h3>Paket Kamu</h3>
-                <p>Rp 11.999 / 6 Bulan</p>
-                <label>
-                    <input type="radio" name="payment-method" value="bank-transfer" />
-                    Transfer Bank
-                </label>
-                <label>
-                    <input type="radio" name="payment-method" value="e-wallet" />
-                    E-Wallet
-                </label>
-                <label>
-                    <input type="radio" name="payment-method" value="m-banking" />
-                    M-Banking
-                </label>
-                <button>Konfirmasi</button>
+              <div class="register-container">
+                <!-- Pembayaran -->
+                <div class="payment">
+                <h3>Paket Kamu</h3>
+                  <p>Rp 11.999 / 6 Bulan</p>
+                      <input type="radio" name="payment-method" value="bank-transfer" />
+                        <label for="payment1"> Transfer Bank</label><br>
+                      <input type="radio" name="payment-method" value="e-wallet" />
+                        <label for="payment2"> E-Wallet</label><br>
+                      <input type="radio" name="payment-method" value="m-banking" />
+                        <label for="payment3">M-Banking</label><br>
+                  <button type="button">Konfirmasi</button>
+                </div>
+                <!-- Vertical Divider -->
+                <div class="vertical-divider"></div> 
+                 <!-- Register --> 
+                <div class="registrasi">
+                  <h2>Register</h2>
+                  <input type="text" placeholder="Name" required/>
+                  <input type="password" placeholder="Password" required/>
+                  <button type="submit">Create Account</button>
+                  <p class="message">Already registered? <a href="#">Sign In</a></p>
+                </div>
               </div>
-              <h2>Register</h2>
-                <!-- <label for="username">Username:</label><br> -->
-                <input type="text" id="username" name="username" placeholder="username" required><br><br>
-
-                <!-- <label for="password">Password:</label><br> -->
-                <input type="password" id="password" name="password" placeholder="password" required><br><br>
-
-                <button type="submit" name="submit">Tambah Pengguna</button>
-                <p class="message">Belum Punya Akun? <a href="#">Sign In</a></p>
             </form>
+
             <!-- Login -->
             <form class="login-form" action="fungsiPHP/login.php" method="post">
-                <h2>Login Page</h2>
-                <!-- <label for="username">Username:</label><br> -->
-                <input type="text" id="username" name="username" placeholder="username" required><br><br>
+              <div class="login-container">
+                <!-- LOGIN -->
+                <div class="login">
+                  <h2>Login</h2>
+                  <input type="text" id="username" name="username" placeholder="username" required><br><br>
+                  <input type="password" id="password" name="password" placeholder="password" required><br><br>
+                  <button class="login-button" type="submit" name="submit">Login</button>
+                  <p class="message">Not registered? <a href="#">Create an account</a></p>
+                  <button class="admin-button">I'm admin</button>
+                </div>
 
-                <!-- <label for="password">Password:</label><br> -->
-                <input type="password" id="password" name="password" placeholder="password" required><br><br>
+                <!-- Vertical Divider -->
+                <div class="vertical-divider"></div> 
 
-                <button class="login-button" type="submit" name="submit">Login</button>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>
-                <button class="admin-button">I'm admin</button>
+                <!-- picture -->
+                <div class="picture">
+                  <img src="img/landingpage1.jpg" alt="">
+                </div>
+              </div>
             </form>
         </div>
     </div>

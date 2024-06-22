@@ -8,18 +8,44 @@
   </head>
   <body>
     <!-- Navbar -->
+    <header>
     <nav class="navbar">
-      <div class="logo">
-        <img src="img/logo.png" alt="Logo" />
-      </div>
-      <ul class="menu">
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Mata Kuliah</a></li>
-        <li><a href="#">Papan Peringkat</a></li>
-        <li><a href="#">Tentang Kami</a></li>
-        <li><a href="#"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
-      </ul>
-    </nav>
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo" />
+            </div>
+            <ul class="menu">
+                <li><a href="landingPage.php">Beranda</a></li>
+                <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
+                <li><a href="paring.php">Papan Peringkat</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+                <li>
+                    <?php
+                    // Menampilkan nama pengguna jika ada yang masuk
+                    if (isset($_SESSION["username"])) {
+                        $username = $_SESSION["username"];
+                        echo "Hi! $username";
+                    } else {
+                        echo "Hi!";
+                    }
+                    ?>
+                    <a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a>
+                </li>
+                <!-- <li></li> -->
+            </ul>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+    <!-- End -->
+
+     <!-- Tombol Back -->
+     <div class="back-button" onclick="goBack()">
+      <a href="#">&larr;</a>
+    </div>
+    <!-- End -->
 
     <!-- Container -->
     <div class="container">

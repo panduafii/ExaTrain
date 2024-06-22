@@ -1,18 +1,94 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
 body {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  width: 90%;
+  height: 85vh; /* Reduced height from 90% to 85vh */
+  background-color: #f2f7ff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 80px auto 20px; /* Adjusting margin to account for fixed navbar */
+  overflow: hidden;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.sidebar {
+  width: 25%;
+  background-color: #cfe4ff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile {
+  text-align: center;
+}
+
+.user-profile img {
+  width: 50%;
+  border-radius: 50%;
+}
+
+.user-profile h2 {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.user-profile button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: #ffc107;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+}
+
+.user-profile p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.main-content {
+  width: 75%;
+  padding: 20px;
+  overflow-y: auto; /* Added for scrolling */
+}
+
+.main-content h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chart {
+  width: 100%;
+  height: 300px;
+  background-color: #eef2f7;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-image: url("img/label.png");
 }
 
-/* NAVBAR */
+/* Navbar */
 .navbar {
   width: 100%;
   height: 60px;
@@ -27,6 +103,7 @@ body {
   top: 0;
   left: 0;
   z-index: 1000;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .menu-container {
@@ -125,61 +202,4 @@ body {
   .menu.active {
     display: flex;
   }
-}
-/* end navbar */
-/* DASHBOARD */
-header {
-  width: 100%;
-  background-color: #fff;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-main {
-  text-align: center;
-  padding-top: 80px; /* Adjusted to move the content down */
-}
-
-h1 {
-  font-size: 50px;
-  padding-bottom: 20px; /* Reduced padding to move the title up */
-}
-
-.dashboard {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
-}
-
-.card-link {
-  text-decoration: none;
-}
-
-.card {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 40px; /* Increased padding to make the cards larger */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 250px; /* Increased width to make the cards larger */
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-  width: 55%;
-  /* height: 100px; */
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 30px; /* Increased font size for better readability */
-  font-weight: bold;
-  color: #333;
 }

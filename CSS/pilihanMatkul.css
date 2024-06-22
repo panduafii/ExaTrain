@@ -1,15 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
 body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
-  background-image: url('img/wave.png');
+  background-image: url("img/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Prevent scrolling */
 }
 
 /* NAVBAR */
@@ -20,39 +20,49 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 20px;
   box-sizing: border-box;
-  position: fixed; /* Membuat navbar tetap di tempat */
-  top: 0; /* Memastikan navbar di atas halaman */
-  left: 0; /* Memastikan navbar dimulai dari sisi kiri halaman */
-  z-index: 1000; /* Memastikan navbar berada di atas elemen lainnya */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
 }
 
 .menu {
-  margin-left: auto; /* Menempatkan menu di sisi kanan */
-  list-style-type: none; /* Menghilangkan bullet list */
+  display: flex;
+  align-items: center;
+  list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .menu li {
-  display: inline-block; /* Menyusun menu secara horizontal */
-  margin-right: 20px; /* Jarak antar menu */
-  margin-bottom: 15px;
+  margin-right: 20px;
 }
 
 .menu li:last-child {
-  margin-right: 0; /* Menghilangkan margin-right pada menu terakhir */
+  margin-right: 0;
 }
 
 .menu li a {
-  text-decoration: none; /* Menghilangkan garis bawah pada tautan */
-  color: #808080; /* Warna teks */
-  font-weight: bold; /* Ketebalan teks */
-  transition: color 0.3s; /* Efek transisi pada warna teks */
+  text-decoration: none;
+  color: #808080;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 .menu li a:hover {
-  color: black; /* Warna teks saat digulirkan (misalnya, merah) */
+  color: black;
 }
 
 .menu li img {
@@ -60,24 +70,77 @@ body {
   border-radius: 50%;
 }
 
-.user-icon{
-  margin-top: 15px;
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-.logo img {
-  height: 40px;
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
 }
 
-/* PILIHAN MATAKULIAH */
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .menu li a {
+    padding: 10px 0;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+}
+
+/* Header Title */
+.header {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 50px; /* Just below the navbar */
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+  padding: 10px 0;
+}
+
 .container {
-  background-color: #fff;
-  padding: 40px;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
   max-width: 1500px;
-  margin-top: 50px;
+  margin-top: 65px; /* Adjust based on navbar and header height */
+  background: none;
+  flex: 1; /* Ensure the container takes the remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Ensure content starts from the top */
+  align-items: center;
+  overflow-y: auto; /* Allow scrolling within the container if content overflows */
 }
 
 .back-button {
@@ -95,16 +158,12 @@ body {
 }
 
 .back-button a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit color from parent */
+  text-decoration: none;
+  color: inherit;
 }
 
 .back-button:hover {
   color: #003f7f;
-}
-
-h1 {
-  margin-bottom: 30px;
 }
 
 .year-buttons {
@@ -134,12 +193,11 @@ h1 {
 
 
 .course-button {
-  background-color: #AFCFFF;
+  background-color: #afcfff;
   border-radius: 10px;
+  width: 200px;
   margin: 20px;
-  padding: 20px; 
-  width: 200px; 
-  text-align: center;
+  padding: 20px;
   text-align: center;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -158,6 +216,66 @@ h1 {
 .course-button span {
   display: block;
   font-size: 16px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #333;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 10px;
+  }
+
+  .course-button {
+    width: 150px;
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .course-button img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .course-button span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 140px;
+    padding: 5px;
+  }
+
+  .course-button {
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .course-button img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .course-button span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu li {
+    margin-right: 10px;
+  }
+
+  .back-button {
+    font-size: 20px;
+    padding: 5px 15px;
+    top: 60px;
+    left: 10px;
+  }
+
+  .year-buttons .year-button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
 }
