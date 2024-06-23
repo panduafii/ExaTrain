@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EXATrain Dashboard - Manajemen Soal</title>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="../CSS/adminPenggunadetailjawaban.css">
 </head>
 
@@ -80,27 +83,27 @@
                 </div>
                 <div class="questions">
                     <!-- 2023 -->
-                    <div class="question-card" data-year="2023">
+                    <div class="question-card" data-year="2023" data-subject-id="1">
                         <img src="../img/iconpsi.png" alt="Icon">
                         <span>Pengembangan Sistem Informasi</span>
                     </div>
-                    <div class="question-card" data-year="2023">
+                    <div class="question-card" data-year="2023" data-subject-id="2">
                         <img src="../img/icongmm.png" alt="Icon">
                         <span>Grafika dan Multimedia</span>
                     </div>
-                    <div class="question-card" data-year="2023">
+                    <div class="question-card" data-year="2023" data-subject-id="3">
                         <img src="../img/iconscpk.png" alt="Icon">
                         <span>Sistem Cerdas dan Pendukung Keputusan</span>
                     </div>
-                    <div class="question-card" data-year="2023">
+                    <div class="question-card" data-year="2023" data-subject-id="4">
                         <img src="../img/iconbiki.png" alt="Icon">
                         <span>Bahasa Indonesia Komunikasi Ilmiah</span>
                     </div>
-                    <div class="question-card" data-year="2023">
+                    <div class="question-card" data-year="2023" data-subject-id="5">
                         <img src="../img/iconbiti.png" alt="Icon">
                         <span>Bahasa Inggris Teknologi Informasi</span>
                     </div>
-                    <div class="question-card" data-year="2023">
+                    <div class="question-card" data-year="2023" data-subject-id="6">
                         <img src="../img/iconulil.png" alt="Icon">
                         <span>Islam Ulil Albab</span>
                     </div>
@@ -110,32 +113,46 @@
     </div>
 
     <script>
-    // Menangani perubahan tampilan mata kuliah berdasarkan tahun yang dipilih
-const yearButtons = document.querySelectorAll('.year-button');
-const questionCards = document.querySelectorAll('.question-card');
+        // Menangani perubahan tampilan mata kuliah berdasarkan tahun yang dipilih
+        const yearButtons = document.querySelectorAll('.year-button');
+        const questionCards = document.querySelectorAll('.question-card');
 
-yearButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const selectedYear = button.getAttribute('data-year');
+        yearButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedYear = button.getAttribute('data-year');
 
-        questionCards.forEach(card => {
-            if (card.getAttribute('data-year') === selectedYear) {
-                card.style.visibility = 'visible';
-            } else {
-                card.style.visibility = 'hidden';
-            }
+                questionCards.forEach(card => {
+                    if (card.getAttribute('data-year') === selectedYear) {
+                        card.style.visibility = 'visible';
+                    } else {
+                        card.style.visibility = 'hidden';
+                    }
+                });
+            });
         });
-    });
-});
 
-// Menangani navigasi saat question card diklik
-questionCards.forEach(card => {
-    card.addEventListener('click', () => {
-        window.location.href = 'adminPenggunadetailjawaban2.php';
-    });
-});
+        // Menangani navigasi saat question card diklik
+        questionCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const subjectId = card.getAttribute('data-subject-id');
+                setSubjectSession(subjectId);
+            });
+        });
 
-</script>
+        function setSubjectSession(subjectId) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "set_subject_session.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log("Session subject ID set to: " + subjectId);
+                    // Redirect to the details page after setting the session
+                    window.location.href = 'adminPenggunadetailjawaban2.php';
+                }
+            };
+            xhr.send("subject_id=" + subjectId);
+        }
+    </script>
 </body>
 
 </html>

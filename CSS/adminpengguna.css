@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    text-decoration: none;
 }
 
 body {
@@ -270,3 +271,8 @@ body {
     grid-column: span 2;
     height: 300px;
 }
+
+
+
+
+

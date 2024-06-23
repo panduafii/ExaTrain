@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,35 +11,39 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="../CSS/adminpengguna.css">
 </head>
-
 <body>
     <div class="container">
+        <?php if (isset($_SESSION['user_id'])): ?>
+        <div class="notification">
+            Session User ID: <?php echo $_SESSION['user_id']; ?>
+        </div>
+        <?php endif; ?>
         <nav class="sidebar">
             <div class="logo">
-                <img src="img/logo1.png" alt="EXATrain Logo">
+                <img src="../img/logo1.png" alt="EXATrain Logo">
                 <div class="logo-line"></div> <!-- Div untuk garis putih -->
             </div>
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
-                    <img src="img/penggunaicon.png" alt="Icon">
+                    <img src="../img/penggunaicon.png" alt="Icon">
                     <span>Edit Pengguna</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/manajemenicon.png" alt="Icon">
+                    <img src="../img/manajemenicon.png" alt="Icon">
                     <span>Manajemen Soal</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/statistikicon.png" alt="Icon">
+                    <img src="../img/statistikicon.png" alt="Icon">
                     <span>Data & Statistik</span>
                 </li>
                 <li class="sidebar-item">
-                    <img src="img/wallet-2.png" alt="Icon">
+                    <img src="../img/wallet-2.png" alt="Icon">
                     <span>Pembayaran</span>
                 </li>
             </ul>
             <ul class="logout">
                 <li class="sidebar-item">
-                    <img src="img/logouticon.png" alt="Icon">
+                    <img src="../img/logouticon.png" alt="Icon">
                     <span>Logout</span>
                 </li>
             </ul>
@@ -44,14 +52,14 @@
             <header class="header">
                 <ul class="header-menu">
                     <li class="menu-icon">
-                        <img src="img/garistiga.png" alt="Menu">
+                        <img src="../img/garistiga.png" alt="Menu">
                     </li>
                     <li class="header-right">
                         <div class="notification-icon">
-                            <img src="img/Notifikasi.png" alt="Notification">
+                            <img src="../img/Notifikasi.png" alt="Notification">
                         </div>
                         <div class="user-icon">
-                            <img src="img/adminicon.png" alt="User">
+                            <img src="../img/adminicon.png" alt="User">
                         </div>
                         <span>Admin</span>
                     </li>
@@ -63,33 +71,53 @@
             <div class="content">
                 <div class="database-table">
                     <div class="search-container">
-                        <input type="text" class="search-bar" placeholder="Cari Pengguna">
+                        <input type="text" id="search-bar" class="search-bar" placeholder="Cari Pengguna" onkeyup="searchUser()">
                     </div>
-                    <table>
+                    <table id="user-table">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Username</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Password</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Xavier</td>
-                                <td>xavierpradana33@gmail.com</td>
-                                <td>087855551234</td>
-                                <td>**********</td>
-                                <td class="table-icons">
-                                    <img src="img/editicon.png" alt="Edit">
-                                    <img src="img/deleteicon.png" alt="Delete">
-                                    <img src="img/addicon.png" alt="Add">
-                                    <img src="img/saveicon.png" alt="Save">
-                                </td>
-                            </tr>
+                            <?php
+                            // Koneksi ke database
+                            $servername = "localhost";
+                            $username = "root";
+                            $password = "root";
+                            $dbname = "ExaTrain";
+
+                            $conn = new mysqli($servername, $username, $password, $dbname);
+
+                            if ($conn->connect_error) {
+                                die("Koneksi ke database gagal: " . $conn->connect_error);
+                            }
+
+                            $sql = "SELECT id, username, password FROM users";
+                            $result = $conn->query($sql);
+
+                            if ($result->num_rows > 0) {
+                                $index = 1;
+                                while($row = $result->fetch_assoc()) {
+                                    echo "<tr onclick='setUserSession(" . $row['id'] . ")'>";
+                                    echo "<td>" . $index++ . "</td>";
+                                    echo "<td>" . $row['username'] . "</td>";
+                                    echo "<td class='table-icons'>
+                                            <img src='../img/editicon.png' alt='Edit'>
+                                            <img src='../img/deleteicon.png' alt='Delete'>
+                                            <img src='../img/addicon.png' alt='Add'>
+                                            <img src='../img/saveicon.png' alt='Save'>
+                                        </td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='3'>Tidak ada data yang ditemukan.</td></tr>";
+                            }
+
+                            $conn->close();
+                            ?>
                         </tbody>
                     </table>
                     <div class="pagination">
@@ -102,13 +130,13 @@
                         <span>Dari 1 Total Data</span>
                     </div>
                 </div>
-                <div class="user-review">
+                <a href="adminPenggunadetailjawaban.php" class="user-review">
                     <div class="review-header">
-                        <img src="img/teropong.png" alt="Search">
+                        <img src="../img/teropong.png" alt="Search">
                         <span>Tinjau Jawaban Pengguna</span>
-                        <img src="img/polygon.png" alt="Polygon" class="polygon-icon">
+                        <img src="../img/polygon.png" alt="Polygon" class="polygon-icon">
                     </div>
-                </div>
+                </a>
                 <div class="charts">
                     <div class="chart" id="user-profile"></div>
                     <div class="chart" id="course-distribution"></div>
@@ -119,5 +147,39 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function searchUser() {
+            const input = document.getElementById('search-bar').value.toUpperCase();
+            const table = document.getElementById('user-table');
+            const tr = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < tr.length; i++) {
+                const td = tr[i].getElementsByTagName('td')[1];
+                if (td) {
+                    const txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(input) > -1) {
+                        tr[i].style.display = '';
+                    } else {
+                        tr[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        function setUserSession(userId) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "set_user_session.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log("Session user ID set to: " + userId);
+                    // Redirect to another page or refresh the current page
+                    window.location.reload();
+                }
+            };
+            xhr.send("user_id=" + userId);
+        }
+    </script>
 </body>
 </html>
