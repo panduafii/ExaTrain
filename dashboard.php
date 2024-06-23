@@ -56,13 +56,13 @@ if (!isset($_SESSION['username'])) {
             <p>Mata Kuliah</p>
           </div>
         </a>
-        <a href="paring.html" class="card-link">
+        <a href="paring.php" class="card-link">
           <div class="card">
             <img src="img/icon paring.png" alt="Papan Peringkat" />
             <p>Papan Peringkat</p>
           </div>
         </a>
-        <a href="pembayaran.html" class="card-link">
+        <a href="pembayaran.php" class="card-link">
           <div class="card">
             <img src="img/icon payment.png" alt="Pembayaran" />
             <p>Pembayaran</p>
