@@ -16,7 +16,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 20px;
   box-sizing: border-box;
   position: fixed;
@@ -25,12 +24,8 @@ body {
   z-index: 1000;
 }
 
-.menu-container {
-  display: flex;
-  align-items: center;
-}
-
 .menu {
+  margin-left: auto;
   list-style-type: none;
   padding: 0;
   display: flex;
@@ -60,7 +55,7 @@ body {
 .menu li button {
   width: 100%;
   height: 35px;
-  padding: 0 15px;
+  padding: 0px 15px;
   background-color: #f39c12;
   color: #070707;
   border: none;
@@ -72,52 +67,6 @@ body {
 .logo img {
   height: 40px;
 }
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle .bar {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 4px 0;
-}
-
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    z-index: 999;
-  }
-
-  .menu li {
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  .menu li a {
-    padding: 10px 0;
-    display: block;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .menu.active {
-    display: flex;
-  }
-}
-
 /* END NAVBAR */
 
 /* LOGIN DAN REGISTER */
@@ -128,12 +77,13 @@ p {
 }
 
 h2 {
-  text-align: center;
-  font-size: 24px;
+  text-align: center; /* Center-align the h2 elements */
+  font-size: 24px; /* Set font size to 24px */
 }
 
 .login-page {
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   padding: 20px;
   margin-top: 80px;
 }
@@ -151,6 +101,7 @@ h2 {
 .register-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .form input {
@@ -286,10 +237,11 @@ h2 {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .login {
-  width: 55%;
+  width: 55%; /* Set login form width to 55% */
   text-align: left;
 }
 
@@ -298,7 +250,7 @@ h2 {
 }
 
 .picture {
-  width: 45%;
+  width: 45%; /* Set picture width to 45% */
   text-align: left;
 }
 
