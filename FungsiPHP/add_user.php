@@ -45,8 +45,8 @@ if (isset($_POST['submit'])) {
         // Menyimpan perubahan
         $conn->commit();
 
-        // Mengarahkan pengguna ke halaman dashboard.php setelah menambahkan pengguna baru
-        header("Location: ../dashboard.php");
+        // Mengarahkan pengguna ke halaman loginRegist.php setelah menambahkan pengguna baru
+        header("Location: ../loginRegist.php");
         exit; // Memastikan tidak ada kode ekstra yang dijalankan setelah pengalihan header
     } catch (Exception $e) {
         // Melakukan rollback jika terjadi kesalahan

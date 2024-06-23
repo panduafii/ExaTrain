@@ -4,7 +4,7 @@ session_start();
 // Cek apakah session user_id ada
 if (!isset($_SESSION['user_id'])) {
     // Jika tidak ada, redirect ke halaman login atau halaman lain yang diinginkan
-    header('Location: login.php');
+    header('Location: adminPengguna.php');
     exit;
 }
 
@@ -18,17 +18,17 @@ if (!isset($_SESSION['subject_id'])) {
 $subject_id = $_SESSION['subject_id'];
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EXATrain Dashboard - Detail Jawaban Pengguna</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="../CSS/adminPenggunadetailjawaban2.css">
 </head>
-
 <body>
     <div class="container">
         <nav class="sidebar">
@@ -99,12 +99,12 @@ $subject_id = $_SESSION['subject_id'];
                         die("Koneksi ke database gagal: " . $conn->connect_error);
                     }
 
-                    // Query untuk mendapatkan jawaban dan kunci jawaban dari tabel answers dan questions berdasarkan subject_id
-                    $sql = "SELECT q.id as question_id, q.question_text, q.correct_answer, a.answer, a.id as answer_id, a.is_correct
-                            FROM answers a
-                            INNER JOIN questions q ON a.question_id = q.id
-                            WHERE a.user_id = " . $_SESSION['user_id'] . " AND q.subject_id = " . $subject_id;
-
+                    // Query untuk mendapatkan jawaban dan kunci jawaban dari tabel answers dan questions berdasarkan user_id dan subject_id
+                    $sql = "SELECT q.id as question_id, q.question_text, q.correct_answer, a.answer, a.id as answer_id
+                    FROM answers a
+                    INNER JOIN questions q ON a.question_id = q.id
+                    WHERE a.user_id = " . $_SESSION['user_id'] . " AND q.subject_id = " . $subject_id;
+                    
                     $result = $conn->query($sql);
 
                     $questions_data = array();
@@ -132,14 +132,16 @@ $subject_id = $_SESSION['subject_id'];
                             echo "</div>";
                             echo "<div class='simple-evaluation-result'>";
                             echo "<h4>Status boolean</h4>";
-                            echo "<div class='simple-evaluation-box' id='simple-evaluation-box-" . $row['answer_id'] . "'>";
-                            echo ($row['is_correct'] ? 'True' : 'False');
+                            echo "<div class='simple-evaluation-box' id='simple-evaluation-box-" . $row['answer_id'] . "'></div>";
                             echo "</div>";
+                            echo "<div class='raw-evaluation-result'>";
+                            echo "<h4>Raw Status boolean</h4>";
+                            echo "<div class='raw-evaluation-box' id='raw-evaluation-box-" . $row['answer_id'] . "'></div>";
                             echo "</div>";
                             echo "<hr>";
                         }
                     } else {
-                        echo "<tr><td colspan='3'>Tidak ada data yang ditemukan.</td></tr>";
+                        echo "Tidak ada data yang ditemukan.";
                     }
 
                     $conn->close();
@@ -202,7 +204,7 @@ $subject_id = $_SESSION['subject_id'];
             }
         }
 
-        // Fungsi async untuk meminta evaluasi sederhana (true/false)
+        // Fungsi async untuk meminta evaluasi sederhana (1/0)
         async function getSimpleEvaluation(questionText, correctAnswer, userAnswer) {
             const apiKey = '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'; // Ganti dengan API key yang benar
             const endpoint = 'https://api.groq.com/openai/v1/chat/completions'; // Ganti dengan endpoint yang benar jika berbeda
@@ -254,12 +256,17 @@ $subject_id = $_SESSION['subject_id'];
 
                 try {
                     const simpleResult = await getSimpleEvaluation(question_text, correct_answer, answer);
-                    const rawStatus = simpleResult.choices[0].message.content.trim();
-                    const isCorrect = rawStatus === '1';
+                    console.log(`Raw result for answer ${answer_id}: ${JSON.stringify(simpleResult)}`); // Debug log
 
-                    // Tampilkan hasil evaluasi sederhana (true/false) di dalam kotak evaluasi sederhana
+                    // Tampilkan hasil mentah dari evaluasi sederhana
+                    const rawEvaluationBox = document.getElementById('raw-evaluation-box-' + answer_id);
+                    rawEvaluationBox.innerText = simpleResult.choices[0].message.content.trim();
+
+                    const isCorrect = simpleResult.choices[0].message.content.trim() === '1';
+
+                    // Tampilkan hasil evaluasi sederhana (1/0) di dalam kotak evaluasi sederhana
                     const simpleEvaluationBox = document.getElementById('simple-evaluation-box-' + answer_id);
-                    simpleEvaluationBox.innerText = rawStatus;
+                    simpleEvaluationBox.innerText = isCorrect ? 'True' : 'False';
 
                     // Mengirim hasil evaluasi ke server
                     const response = await fetch('save_evaluation.php', {
@@ -267,7 +274,7 @@ $subject_id = $_SESSION['subject_id'];
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ answer_id, is_correct: isCorrect })
+                        body: JSON.stringify({ answer_id, is_correct: isCorrect ? 1 : 0 })
                     });
 
                     if (!response.ok) {
@@ -276,11 +283,6 @@ $subject_id = $_SESSION['subject_id'];
 
                     const responseData = await response.json();
                     console.log('Save response:', responseData);
-
-                    // Tampilkan notifikasi berhasil setelah penyimpanan
-                    if (responseData.success) {
-                        alert("Jawaban Pengguna Berhasil Disimpan");
-                    }
                 } catch (error) {
                     console.error('Error in saveEvaluations:', error);
                 }
@@ -297,15 +299,32 @@ $subject_id = $_SESSION['subject_id'];
                     const result = await getGroqChatCompletion(question_text, correct_answer, answer);
                     const evaluationBox = document.getElementById('evaluation-box-' + answer_id);
                     evaluationBox.innerText = result.choices[0]?.message?.content || 'No result';
+
+                    const simpleResult = await getSimpleEvaluation(question_text, correct_answer, answer);
+                    console.log(`Raw result for answer ${answer_id}: ${JSON.stringify(simpleResult)}`); // Debug log
+
+                    // Tampilkan hasil mentah dari evaluasi sederhana
+                    const rawEvaluationBox = document.getElementById('raw-evaluation-box-' + answer_id);
+                    rawEvaluationBox.innerText = simpleResult.choices[0].message.content.trim();
+
+                    const isCorrect = simpleResult.choices[0].message.content.trim() === '1';
+
+                    // Tampilkan hasil evaluasi sederhana (1/0) di dalam kotak evaluasi sederhana
+                    const simpleEvaluationBox = document.getElementById('simple-evaluation-box-' + answer_id);
+                    simpleEvaluationBox.innerText = isCorrect ? 'True' : 'False';
+
                 } catch (error) {
                     console.error('Error evaluating answer:', error);
                     const evaluationBox = document.getElementById('evaluation-box-' + answer_id);
                     evaluationBox.innerText = 'Error';
                     evaluationBox.style.color = 'orange';
+
+                    const rawEvaluationBox = document.getElementById('raw-evaluation-box-' + answer_id);
+                    rawEvaluationBox.innerText = 'Error';
+                    rawEvaluationBox.style.color = 'orange';
                 }
             }
         });
     </script>
 </body>
-
 </html>
