@@ -26,9 +26,9 @@ if (!isset($_SESSION['username'])) {
         <img src="img/logo.png" alt="Logo" />
       </div>
       <ul class="menu">
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Mata Kuliah</a></li>
-        <li><a href="#">Papan Peringkat</a></li>
+        <li><a href="landingPage.php">Beranda</a></li>
+        <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
+        <li><a href="paring.php">Papan Peringkat</a></li>
         <li><a href="#">Tentang Kami</a></li>
         <li>
           <?php
@@ -41,7 +41,7 @@ if (!isset($_SESSION['username'])) {
             }
             ?>
         </li>
-        <li><a href="#"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
+        <li><a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
       </ul>
     </nav>
     <!-- End Navbar -->
