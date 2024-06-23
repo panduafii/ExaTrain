@@ -6,7 +6,6 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-
 }
 
 /* NAVBAR */
@@ -188,6 +187,14 @@ body {
   gap: 20px; /* Spacing between flex items */
 }
 
+.course-wrapper {
+  background-color: rgba(255, 255, 255, 0.9); /* Add background color with some transparency */
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 .course-button {
   background-color: #afcfff;

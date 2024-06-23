@@ -28,9 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
                 <img src="img/logo.png" alt="Logo" />
             </div>
             <ul class="menu">
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Mata Kuliah</a></li>
-                <li><a href="#">Papan Peringkat</a></li>
+                <li><a href="landingPage.php">Beranda</a></li>
+                <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
+                <li><a href="paring.php">Papan Peringkat</a></li>
                 <li><a href="#">Tentang Kami</a></li>
                 <li>
                     <?php
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
                     }
                     ?>
                 </li>
-                <li><a href="#"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
+                <li><a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
             </ul>
             <div class="menu-toggle">
                 <div class="bar"></div>
@@ -70,7 +70,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
         </div>
         <div class="courses">
             <form action="pilihanMatkul.php" method="post" id="courseForm">
-                <!-- Courses will be injected here by JavaScript -->
+                <!-- Course wrapper for each year -->
+                <div class="course-wrapper" id="course-2023" style="display: none;">
+                    <!-- Courses for 2023 will be injected here by JavaScript -->
+                </div>
+                <div class="course-wrapper" id="course-2022">
+                    <!-- Courses for 2022 will be injected here by JavaScript -->
+                </div>
+                <div class="course-wrapper" id="course-2021" style="display: none;">
+                    <!-- Courses for 2021 will be injected here by JavaScript -->
+                </div>
             </form>
         </div>
     </div>
