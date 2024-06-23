@@ -28,8 +28,6 @@ body {
   margin-left: auto;
   list-style-type: none;
   padding: 0;
-  display: flex;
-  align-items: center;
 }
 
 .menu li {
@@ -76,14 +74,8 @@ p {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-h2 {
-  text-align: center; /* Center-align the h2 elements */
-  font-size: 24px; /* Set font size to 24px */
-}
-
 .login-page {
-  width: 100%;
-  max-width: 1000px;
+  width: 1000px;
   padding: 20px;
   margin-top: 80px;
 }
@@ -101,7 +93,6 @@ h2 {
 .register-container {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .form input {
@@ -212,10 +203,6 @@ h2 {
   text-align: left;
 }
 
-.registrasi p {
-  text-align: center;
-}
-
 .registrasi h2 {
   font-size: 24px;
 }
@@ -237,16 +224,11 @@ h2 {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  flex-wrap: wrap;
 }
 
 .login {
   width: 55%; /* Set login form width to 55% */
   text-align: left;
-}
-
-.login p {
-  text-align: center;
 }
 
 .picture {
@@ -258,45 +240,4 @@ h2 {
   width: 100%;
   height: auto;
   border-radius: 10px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .register-container,
-  .login-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .payment,
-  .registrasi,
-  .login,
-  .picture {
-    width: 100%;
-    text-align: center;
-  }
-
-  .vertical-divider {
-    display: none;
-  }
-
-  .form {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .menu li {
-    margin-right: 10px;
-  }
-
-  .form {
-    padding: 15px;
-  }
-
-  .form input,
-  .form button {
-    padding: 10px;
-    font-size: 12px;
-  }
 }

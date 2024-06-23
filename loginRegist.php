@@ -50,14 +50,14 @@
                   <p class="message">Already registered? <a href="#">Sign In</a></p>
                 </div>
               </div>
-            </form> 
+            </form>
 
             <!-- Login -->
             <form class="login-form" action="fungsiPHP/login.php" method="post">
               <div class="login-container">
                 <!-- LOGIN -->
                 <div class="login">
-                  <h2>Login</h2>
+                  <h2>Login Page</h2>
                   <input type="text" id="username" name="username" placeholder="username" required><br><br>
                   <input type="password" id="password" name="password" placeholder="password" required><br><br>
                   <button class="login-button" type="submit" name="submit">Login</button>
