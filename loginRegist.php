@@ -50,7 +50,7 @@
                   <p class="message">Already registered? <a href="#">Sign In</a></p>
                 </div>
               </div>
-            </form>
+            </form> 
 
             <!-- Login -->
             <form class="login-form" action="fungsiPHP/login.php" method="post">
