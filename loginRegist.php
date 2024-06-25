@@ -44,10 +44,11 @@
                  <!-- Register --> 
                 <div class="registrasi">
                   <h2>Register</h2>
-                  <input type="text" placeholder="Name" required/>
-                  <input type="password" placeholder="Password" required/>
-                  <button type="submit">Create Account</button>
-                  <p class="message">Already registered? <a href="#">Sign In</a></p>
+                  <input type="text" id="username" name="username" placeholder="username" required><br><br>
+                  <!-- <label for="password">Password:</label><br> -->
+                  <input type="password" id="password" name="password" placeholder="password" required><br><br>
+                  <button type="submit" name="submit">Tambah Pengguna</button>
+                  <p class="message">Belum Punya Akun? <a href="#">Sign In</a></p>
                 </div>
               </div>
             </form>
@@ -62,7 +63,7 @@
                   <input type="password" id="password" name="password" placeholder="password" required><br><br>
                   <button class="login-button" type="submit" name="submit">Login</button>
                   <p class="message">Not registered? <a href="#">Create an account</a></p>
-                  <button class="admin-button">I'm admin</button>
+                  <button class="admin-button" onclick="location.href='admin/adminPengguna.php'">I'm admin</button>
                 </div>
 
                 <!-- Vertical Divider -->

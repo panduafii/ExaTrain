@@ -10,7 +10,7 @@ $is_correct = $data['is_correct'] ? 1 : 0; // Konversi ke integer untuk BOOLEAN 
 // Koneksi ke database
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "ExaTrain";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
