@@ -7,7 +7,7 @@
     <title>Login and Register</title>
 </head>
 <body style="background-image: url('img/background.png'); background-repeat:no-repeat; background-size:cover;">
-    
+
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo">
@@ -26,7 +26,7 @@
     <div class="login-page">
         <div class="form">
             <form class="register-form" action="fungsiPHP/add_user.php" method="post">
-              <div class="register-container">
+            <div class="register-container">
                 <!-- Pembayaran -->
                 <div class="payment">
                 <h3>Paket Kamu</h3>
@@ -47,8 +47,14 @@
                   <input type="text" id="username" name="username" placeholder="username" required><br><br>
                   <!-- <label for="password">Password:</label><br> -->
                   <input type="password" id="password" name="password" placeholder="password" required><br><br>
+                <select name="angkatan" required>
+                    <option value="">Pilih Angkatan</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select><br><br>
                   <button type="submit" name="submit">Tambah Pengguna</button>
-                  <p class="message">Belum Punya Akun? <a href="#">Sign In</a></p>
+                  <p class="message">Sudah Punya Akun?<a href="#">Log In</a></p>
                 </div>
               </div>
             </form>
@@ -62,7 +68,7 @@
                   <input type="text" id="username" name="username" placeholder="username" required><br><br>
                   <input type="password" id="password" name="password" placeholder="password" required><br><br>
                   <button class="login-button" type="submit" name="submit">Login</button>
-                  <p class="message">Not registered? <a href="#">Create an account</a></p>
+                  <p class="message">Belum Punya Akun? <a href="#">Create an account</a></p>
                   <button class="admin-button">I'm admin</button>
                 </div>
 

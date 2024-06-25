@@ -104,7 +104,7 @@ $subject_id = $_SESSION['subject_id'];
                     FROM answers a
                     INNER JOIN questions q ON a.question_id = q.id
                     WHERE a.user_id = " . $_SESSION['user_id'] . " AND q.subject_id = " . $subject_id;
-                    
+
                     $result = $conn->query($sql);
 
                     $questions_data = array();
@@ -155,6 +155,17 @@ $subject_id = $_SESSION['subject_id'];
     </div>
 
     <script>
+        function showQuestion(index) {
+        var questions = document.querySelectorAll('.question-block');
+        questions.forEach(function(question) {
+            question.style.display = 'none';
+        });
+        document.getElementById('question-block-' + index).style.display = 'block';
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        showQuestion(0); // Show the first question on load
+    });
+
         // Mengambil data dari PHP
         const questionsData = <?php echo json_encode($questions_data); ?>;
         console.log('Questions Data:', questionsData); // Debug log
@@ -255,7 +266,10 @@ $subject_id = $_SESSION['subject_id'];
                 const { question_text, correct_answer, answer, answer_id } = question;
 
                 try {
+                    // Mendapatkan hasil evaluasi sederhana dan AI
                     const simpleResult = await getSimpleEvaluation(question_text, correct_answer, answer);
+                    const aiEvaluationResult = await getGroqChatCompletion(question_text, correct_answer, answer); // Asumsi ini menghasilkan evaluasi AI
+
                     console.log(`Raw result for answer ${answer_id}: ${JSON.stringify(simpleResult)}`); // Debug log
 
                     // Tampilkan hasil mentah dari evaluasi sederhana
@@ -263,6 +277,7 @@ $subject_id = $_SESSION['subject_id'];
                     rawEvaluationBox.innerText = simpleResult.choices[0].message.content.trim();
 
                     const isCorrect = simpleResult.choices[0].message.content.trim() === '1';
+                    const evaluasiAI = aiEvaluationResult.choices[0]?.message?.content || 'No result'; // Hasil AI
 
                     // Tampilkan hasil evaluasi sederhana (1/0) di dalam kotak evaluasi sederhana
                     const simpleEvaluationBox = document.getElementById('simple-evaluation-box-' + answer_id);
@@ -274,7 +289,11 @@ $subject_id = $_SESSION['subject_id'];
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ answer_id, is_correct: isCorrect ? 1 : 0 })
+                        body: JSON.stringify({ 
+                            answer_id, 
+                            is_correct: isCorrect ? 1 : 0, 
+                            evaluasi_ai: evaluasiAI  // Mengirim hasil AI
+                        })
                     });
 
                     if (!response.ok) {
