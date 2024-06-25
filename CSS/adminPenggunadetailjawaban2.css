@@ -235,6 +235,14 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
+.question-card h4{
+    margin-bottom: 15px;
+}
+
+.answer-card h4{
+    margin-bottom: 15px;
+}
+
 
 .pagination {
     display: flex;
