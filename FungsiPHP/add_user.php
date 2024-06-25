@@ -4,7 +4,7 @@ session_start();
 
 // Koneksi ke database
 $servername = "localhost";
-$username = ""; // Ganti dengan username Anda
+$username = "root"; // Ganti dengan username Anda
 $password = "root"; // Ganti dengan password Anda
 $dbname = "ExaTrain";
 
