@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pilihan Mata Kuliah</title>
     <link rel="stylesheet" href="CSS/pilihanMatkul.css" />
-</head>
+    </head>
 <body style="background-image: url('img/background.png'); background-size: cover; background-repeat: no-repeat;">
     <!-- Navbar -->
     <header>
@@ -31,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
                 <li><a href="landingPage.php">Beranda</a></li>
                 <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
                 <li><a href="paring.php">Papan Peringkat</a></li>
-                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="aboutUs.php">Tentang Kami</a></li>
                 <li>
                     <?php
                     // Menampilkan nama pengguna jika ada yang masuk
@@ -54,37 +55,87 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
     </header>
     <!-- End Navbar -->
 
-    <!-- Tombol Back -->
-    <div class="back-button" onclick="goBack()">
-        <a href="#">&larr;</a>
+     <!-- Tombol Back -->
+     <div class="back-button" onclick="goBack()">
+      <a href="#">&larr;</a>
     </div>
     <!-- End -->
 
     <!-- Pilihan Matkul -->
     <div class="container">
-        <strong><h1>Pilihan Mata Kuliah</h1></strong>
+        <strong><h1>Pilihan Mata Kuliah</h1>
         <div class="year-buttons">
             <button id="2023" class="year-button">2023</button>
             <button id="2022" class="year-button active">2022</button>
             <button id="2021" class="year-button">2021</button>
         </div>
-        <div class="courses">
+        <div class="courses" id="courses-container">
+            <!-- 2023 -->
+            <div class="course-content" id="2023">
             <form action="pilihanMatkul.php" method="post" id="courseForm">
-                <!-- Course wrapper for each year -->
-                <div class="course-wrapper" id="course-2023" style="display: none;">
-                    <!-- Courses for 2023 will be injected here by JavaScript -->
-                </div>
-                <div class="course-wrapper" id="course-2022">
-                    <!-- Courses for 2022 will be injected here by JavaScript -->
-                </div>
-                <div class="course-wrapper" id="course-2021" style="display: none;">
-                    <!-- Courses for 2021 will be injected here by JavaScript -->
-                </div>
+                <button class="course-button" name="selected_course_id" value="1">
+                    <img src="img/matlan.png" alt="Matematika Lanjut" />
+                    <span>Matematika Lanjut</span>
+                </button>
+                <button class="course-button" name="selected_course_id" value="2">
+                    <img src="img/asd.png" alt="Algoritma dan Struktur Data" />
+                    <span>Algoritma dan Struktur Data</span>
+                </button>
+                <button class="course-button" name="selected_course_id" value="3">
+                    <img src="img/fpa.png" alt="Fundamen Pengembangan Aplikasi" />
+                    <span>Fundamen Pengembangan Aplikasi</span>
+                </button>
+                <button class="course-button" name="selected_course_id" value="4">
+                    <img src="img/rpl.png" alt="Rekayasa Perangkat Lunak" />
+                    <span>Rekayasa Perangkat Lunak</span>
+                </button>
             </form>
+            </div>
+            <!-- 2022 -->
+            <div class="course-content" id="2022">
+            <form action="pilihanMatkul.php" method="post" id="courseForm">
+                <button class="course-button" name="selected_course_id" value="1">
+                    <img src="img/psi.png" alt="Pengembangan Sistem Informasi" />
+                    <span>Pengembangan Sistem Informasi</span>
+                </button>
+                <button class="course-button" name="selected_course_id" value="2">
+                    <img src="img/grafmul.png" alt="Grafika dan Multimedia" />
+                    <span>Grafika dan Multimedia</span>
+                </button>
+                <button class="course-button" name="selected_course_id" value="3">
+                    <img src="img/scpk.png" alt="Sistem Cerdas dan Pendukung Keputusan" />
+                    <span>Sistem Cerdas dan Pendukung Keputusan</span>
+                </button>
+                <button class="course-button" name="selected_course_id" value="4">
+                    <img src="img/bindo.png" alt="Bahasa Indonesia Komunikasi Ilmiah" />
+                    <span>Bahasa Indonesia Komunikasi Ilmiah</span>
+                </button>
+                <button class="course-button" name="selected_course_id" value="5">
+                    <img src="img/bingris.png" alt="Bahasa Inggris Teknologi Informasi" />
+                    <span>Bahasa Inggris Teknologi Informasi</span>
+                </button>
+                <button class="course-button" name="selected_course_id" value="6">
+                    <img src="img/islam.png" alt="Islam Ulil Albab" />
+                    <span>Islam Ulil Albab</span>
+                </button>
+            </form>
+            </div>
+            <!-- 2021 -->
+            <div class="course-content" id="2023">
+            <form action="pilihanMatkul.php" method="post" id="courseForm">
+                <button class="course-button" name="selected_course_id" value="1">
+                    <img src="img/iru.png" alt="Islam Rahmatan lil 'Alamin" />
+                    <span>Islam Rahmatan lil 'Alamin</span>
+                </button>
+                <button class="course-button" name="selected_course_id" value="2">
+                    <img src="img/profesi.png" alt="Etika Profesi" />
+                    <span>Etika Profesi</span>
+                </button>
+            </form>
+            </div>
         </div>
     </div>
 
-    <script src="JS/pilihanMatkul.js"></script>
     <script>
         function goBack() {
             window.history.back("dashboard.php");
