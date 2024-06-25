@@ -20,6 +20,7 @@ if ($conn->connect_error) {
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $angkatan = $_POST['angkatan'];
     $payment_method = $_POST['payment-method']; // Menambahkan metode pembayaran
 
     // Hash password sebelum disimpan ke database
@@ -29,9 +30,9 @@ if (isset($_POST['submit'])) {
     $conn->begin_transaction();
 
     try {
-        // Menyusun query untuk menambahkan pengguna baru ke database
-        $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-        $stmt->bind_param("ss", $username, $hashed_password);
+        // Menyusun query untuk menambahkan pengguna baru ke database termasuk kolom angkatan
+        $stmt = $conn->prepare("INSERT INTO users (username, password, angkatan) VALUES (?, ?, ?)");
+        $stmt->bind_param("ssi", $username, $hashed_password, $angkatan);
         $stmt->execute();
         $user_id = $stmt->insert_id; // Mendapatkan ID pengguna baru
         $stmt->close();
@@ -47,7 +48,7 @@ if (isset($_POST['submit'])) {
 
         // Mengarahkan pengguna ke halaman loginRegist.php setelah menambahkan pengguna baru
         header("Location: ../loginRegist.php");
-        exit; // Memastikan tidak ada kode ekstra yang dijalankan setelah pengalihan header
+        exit;
     } catch (Exception $e) {
         // Melakukan rollback jika terjadi kesalahan
         $conn->rollback();

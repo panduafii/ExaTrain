@@ -218,25 +218,43 @@ body {
 }
 
 .pagination-button, .save-button {
-    background-color: #E74C3C;
+    background-color: #007BFF; /* Change background color to blue for visibility */
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 15px 20px; /* Increase padding to make buttons larger */
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-weight: bold;
+    margin: 5px; /* Add margin to create space between buttons */
 }
 
 .pagination-button:hover, .save-button:hover {
-    background-color: #C0392B;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 .pagination-button.active {
-    background-color: #000000;
+    background-color: #4CAF50; /* Green for active/currently selected button */
 }
 
+.pagination-button.correct {
+    background-color: green;
+}
+
+.pagination-button.incorrect {
+    background-color: red;
+}
+
+
 .save-button {
-    background-color: #007BFF;
-    margin-left: 20px;
+    background-color: #28a745; /* Distinct green color for save button */
+    padding: 15px 25px; /* Slightly larger padding for save button */
+}
+
+.nav-button {
+    background-color: #d9534f; /* Default red for incorrect */
+}
+
+.nav-button.correct {
+    background-color: #5cb85c; /* Green for correct */
 }

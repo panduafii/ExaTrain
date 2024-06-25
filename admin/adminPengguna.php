@@ -15,7 +15,7 @@ session_start();
     <div class="container">
         <?php if (isset($_SESSION['user_id'])): ?>
         <div class="notification">
-            Session User ID: <?php echo $_SESSION['user_id']; ?>
+            <!-- Session User ID: <?php echo $_SESSION['user_id']; ?> -->
         </div>
         <?php endif; ?>
         <nav class="sidebar">
