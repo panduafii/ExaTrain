@@ -66,7 +66,7 @@
                 <input type="password" id="password" name="password" placeholder="password" required><br><br>
                 <button class="login-button" type="submit" name="submit">Login</button>
                 <p class="message">Not registered? <a href="#">Create an account</a></p>
-                <button class="admin-button">I'm admin</button>
+                <button class="admin-button" onclick="location.href='admin/adminPengguna.php'">I'm admin</button>
             </form>
         </div>
     </div>
