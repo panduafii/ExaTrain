@@ -194,6 +194,7 @@ body {
     justify-content: center;
     font-weight: bold;
     border-radius: 10px; /* Membuat pojok lebih melengkung */
+    padding: 25px; /* Padding di dalam container chart */
 }
 
 .chart h4 {
