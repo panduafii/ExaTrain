@@ -61,3 +61,13 @@ INSERT INTO questions (question_text, correct_answer, subject_id) VALUES
 ('Apa definisi dari multimedia?', 'Multimedia adalah kombinasi dari teks, audio, gambar, animasi, video, dan interaktivitas.', 2),
 ('Jelaskan prinsip-prinsip dasar desain grafis.', 'Prinsip-prinsip dasar desain grafis meliputi keseimbangan, kontras, penekanan, irama, dan kesatuan.', 2),
 ('Apa perbedaan antara bitmap dan vektor dalam konteks grafika komputer?', 'Bitmap adalah gambar yang terdiri dari piksel individual sedangkan vektor adalah gambar yang terdiri dari garis dan bentuk berdasarkan persamaan matematis.', 2);
+
+
+SELECT u.username, COALESCE(SUM(a.is_correct), 0) AS total_correct
+FROM users u
+LEFT JOIN answers a ON u.id = a.user_id AND a.is_correct = 1
+GROUP BY u.username
+ORDER BY total_correct DESC, u.username;
+
+
+
