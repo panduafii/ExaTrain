@@ -1,49 +1,54 @@
+<?php
+// Memulai sesi
+session_start();
+
+// Memeriksa apakah pengguna sudah login
+if (!isset($_SESSION['username'])) {
+    // Jika tidak ada sesi username, arahkan pengguna kembali ke halaman login
+    header("Location: loginRegist.php");
+    exit; // Pastikan tidak ada kode ekstra yang dijalankan setelah pengalihan header
+}
+
+// Memeriksa apakah user_id ada dalam sesi
+if (!isset($_SESSION['user_id'])) {
+    // Jika tidak ada user_id dalam sesi, arahkan pengguna kembali ke halaman login
+    header("Location: loginRegist.php");
+    exit;
+}
+
+// Memeriksa apakah selected_course_id ada dalam sesi
+if (!isset($_SESSION['selected_course_id'])) {
+    // Jika tidak ada selected_course_id dalam sesi, arahkan pengguna ke halaman pemilihan mata kuliah
+    header("Location: pilihMatkul.php");
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
+    <link rel="stylesheet" href="CSS/quizPage.css">
 </head>
 <body>
     <h1>Quiz</h1>
 
-    <a href="addUser.html">Tambah Pengguna Baru</a>
-    <form action="submit.php" method="post">
+    <div class="user-info">
         <?php
-        // Koneksi ke database
-        $servername = "localhost";
-        $username = "root"; // Ganti dengan username Anda
-        $password = "root"; // Ganti dengan password Anda
-        $dbname = "ExaTrain";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn->connect_error) {
-            die("Koneksi ke database gagal: " . $conn->connect_error);
-        }
-
-        // Ambil pertanyaan dari database
-        $sql = "SELECT * FROM questions";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            // Menampilkan pertanyaan
-            while ($row = $result->fetch_assoc()) {
-                echo "<h2>" . $row['question_text'] . "</h2>";
-
-                // Menampilkan textarea untuk jawaban essay
-                echo "<textarea name='essay_answer[]' required></textarea>";
-            }
-
-            // Tombol untuk mengirim jawaban
-            echo "<button type='submit' name='submit'>Submit Jawaban</button>";
+        // Menampilkan nama pengguna jika ada yang masuk
+        if (isset($_SESSION["username"])) {
+            $username = $_SESSION["username"];
+            echo "Hi!, $username!";
         } else {
-            echo "Tidak ada pertanyaan yang ditemukan.";
+            echo "Hi!";
         }
-
-        $conn->close();
         ?>
-    </form>
+    </div>
+
+    <!-- Menyertakan file quizPage.php -->
+    <?php include "fungsiPHP/quizPage.php"; ?>
+
 </body>
 </html>

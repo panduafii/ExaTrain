@@ -1,16 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
-/* NAVBAR */
 body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f3f4f6;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  margin-top: 20px;
 }
 
+/* NAVBAR */
 .navbar {
   width: 100%;
   height: 60px;
@@ -20,70 +19,85 @@ body {
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
-  position: fixed; /* Membuat navbar tetap di tempat */
-  top: 0; /* Memastikan navbar di atas halaman */
-  left: 0; /* Memastikan navbar dimulai dari sisi kiri halaman */
-  z-index: 1000; /* Memastikan navbar berada di atas elemen lainnya */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .menu {
-  margin-left: auto; /* Menempatkan menu di sisi kanan */
-  list-style-type: none; /* Menghilangkan bullet list */
+  margin-left: auto;
+  list-style-type: none;
   padding: 0;
 }
 
 .menu li {
-  display: inline-block; /* Menyusun menu secara horizontal */
-  margin-right: 20px; /* Jarak antar menu */
+  display: inline-block;
+  margin-right: 20px;
 }
 
 .menu li:last-child {
-  margin-right: 0; /* Menghilangkan margin-right pada menu terakhir */
+  margin-right: 0;
 }
 
 .menu li a {
-  text-decoration: none; /* Menghilangkan garis bawah pada tautan */
-  color: #e9f7f9; /* Warna teks */
-  font-weight: bold; /* Ketebalan teks */
-  transition: color 0.3s; /* Efek transisi pada warna teks */
+  text-decoration: none;
+  color: #808080;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 .menu li a:hover {
-  color: rgba(0, 119, 255, 0.578); /* Warna teks saat digulirkan (misalnya, merah) */
+  color: black;
 }
 
 .menu li button {
-  padding: 4px 10px;
-  background-color: #ffc107;
+  width: 100%;
+  height: 35px;
+  padding: 0px 15px;
+  background-color: #f39c12;
   color: #070707;
-  text-decoration: none;
-  border-radius: 7px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .logo img {
   height: 40px;
 }
+/* END NAVBAR */
+
+/* LOGIN DAN REGISTER */
+.form h2,
+a,
+p {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
 
 .login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
+  width: 1000px;
+  padding: 20px;
+  margin-top: 80px;
 }
 
 .form {
   position: relative;
   z-index: 1;
   background: #ffffff;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
+  padding: 40px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 10px;
 }
 
+.register-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .form input {
-  font-family: "Roboto", sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -94,11 +108,18 @@ body {
   font-size: 14px;
 }
 
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #2196f3;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -106,12 +127,18 @@ body {
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
+  border-radius: 10px;
 }
 
-.form button:hover,
-.form button:active,
-.form button:focus {
-  background: #0b7dda;
+.form .login-button {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #ffb600;
+}
+
+.form .admin-button {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #2196f3;
+  margin: 15px 0 0 0;
 }
 
 .form .message {
@@ -129,71 +156,97 @@ body {
   display: none;
 }
 
-/* DASHBOARD */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-header {
+.register-container {
   width: 100%;
-  background-color: #fff;
+}
+
+.payment {
+  width: 45%;
+  background: #dceeff;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-main {
-  text-align: center;
-}
-
-h1 {
-  font-size: 36px;
-  margin: 0;
-  padding: 20px 0;
-}
-
-.dashboard {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
-}
-
-.card-link {
-  text-decoration: none;
-}
-
-.card {
-  background-color: #fff;
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 200px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.card p {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
+.payment h3 {
+  font-size: 24px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
 }
 
+.payment p {
+  font-size: 20px;
+  color: #007bff;
+}
+
+.payment label {
+  display: flex;
+  align-items: left;
+  margin-bottom: 10px;
+  font-size: 15px;
+  justify-content: flex-start;
+}
+
+.payment input[type="radio"] {
+  margin-bottom: 5px;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.payment button {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #ffc107;
+  color: #070707;
+  border-radius: 7px;
+}
+
+.vertical-divider {
+  width: 1px;
+  background-color: #d3d3d3;
+  margin: 0 20px;
+}
+
+.registrasi {
+  width: 45%;
+  text-align: left;
+}
+
+.registrasi h2 {
+  font-size: 24px;
+}
+
+.registrasi input {
+  margin-bottom: 10px;
+}
+
+.registrasi button {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #2196f3;
+}
+
+.form .login-form {
+  width: 100%;
+}
+
+.login-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.login {
+  width: 55%; /* Set login form width to 55% */
+  text-align: left;
+}
+
+.picture {
+  width: 45%; /* Set picture width to 45% */
+  text-align: left;
+}
+
+.picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}

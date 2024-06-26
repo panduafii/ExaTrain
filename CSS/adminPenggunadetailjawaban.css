@@ -242,7 +242,7 @@ body {
 
 .questions {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Mengatur grid dengan auto-fit */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Mengatur grid dengan auto-fit */
     grid-gap: 30px;
 }
 
@@ -258,6 +258,8 @@ body {
     transition: background-color 0.3s ease;
     cursor: pointer;
     position: relative;
+    height: 100px; /* Menetapkan tinggi tetap untuk semua kartu */
+    visibility: hidden; /* Menyembunyikan kartu tanpa menghapusnya dari layout */
 }
 
 .question-card::after {
@@ -313,4 +315,41 @@ body {
 #average-grades-chart, #user-activity-chart {
     grid-column: span 2;
     height: 400px;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.chart {
+    background-color: #ffffff;
+    position: relative; /* Added to position text */
+    height: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 10px; /* Membuat pojok lebih melengkung */
+    padding: 25px; /* Padding di dalam container chart */
+}
+
+.chart h4 {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: #171717; /* Text color */
+}
+
+#average-grades-chart, #user-activity-chart {
+    grid-column: span 2;
+    height: 400px;
+}
+
+.question-card[data-year="2023"] {
+    visibility: visible; /* Menampilkan kartu untuk tahun 2023 */
 }

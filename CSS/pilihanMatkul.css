@@ -1,16 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
-/* NAVBAR */
 body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f3f4f6;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  background-image: url("img/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+/* NAVBAR */
 .navbar {
   width: 100%;
   height: 60px;
@@ -18,149 +19,154 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 20px;
   box-sizing: border-box;
-  position: fixed; /* Membuat navbar tetap di tempat */
-  top: 0; /* Memastikan navbar di atas halaman */
-  left: 0; /* Memastikan navbar dimulai dari sisi kiri halaman */
-  z-index: 1000; /* Memastikan navbar berada di atas elemen lainnya */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-.menu {
-  margin-left: auto; /* Menempatkan menu di sisi kanan */
-  list-style-type: none; /* Menghilangkan bullet list */
-  padding: 0;
-}
-
-.menu li {
-  display: inline-block; /* Menyusun menu secara horizontal */
-  margin-right: 20px; /* Jarak antar menu */
-}
-
-.menu li:last-child {
-  margin-right: 0; /* Menghilangkan margin-right pada menu terakhir */
-}
-
-.menu li a {
-  text-decoration: none; /* Menghilangkan garis bawah pada tautan */
-  color: #e9f7f9; /* Warna teks */
-  font-weight: bold; /* Ketebalan teks */
-  transition: color 0.3s; /* Efek transisi pada warna teks */
-}
-
-.menu li a:hover {
-  color: rgba(0, 119, 255, 0.578); /* Warna teks saat digulirkan (misalnya, merah) */
-}
-
-.menu li button {
-  padding: 4px 10px;
-  background-color: #ffc107;
-  color: #070707;
-  text-decoration: none;
-  border-radius: 7px;
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
   height: 40px;
 }
 
-.login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-}
-
-.form {
-  position: relative;
-  z-index: 1;
-  background: #ffffff;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  border-radius: 10px;
-}
-
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-.form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #2196f3;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #ffffff;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.form button:hover,
-.form button:active,
-.form button:focus {
-  background: #0b7dda;
-}
-
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-
-.form .message a {
-  color: #2196f3;
-  text-decoration: none;
-}
-
-.form .register-form {
-  display: none;
-}
-
-/* PILIHAN MATAKULIAH */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
+.menu {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #808080;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: black;
+}
+
+.menu li img {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .menu li a {
+    padding: 10px 0;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+}
+
+/* Header Title */
+.header {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 50px; /* Just below the navbar */
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+  padding: 10px 0;
 }
 
 .container {
-  background-color: #fff;
-  padding: 40px;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
+  margin-top: 65px; /* Adjust based on navbar and header height */
+  background: none;
+  flex: 1; /* Ensure the container takes the remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Ensure content starts from the top */
+  align-items: center;
+  overflow-y: auto; /* Allow scrolling within the container if content overflows */
 }
 
-h1 {
-  margin-bottom: 20px;
+.back-button {
+  font-size: 30px;
+  padding: 5px 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #0056b3;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  transition: color 0.3s;
 }
 
-.filter {
-  margin-bottom: 20px;
+.back-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.back-button:hover {
+  color: #003f7f;
 }
 
 .year-buttons {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .year-buttons .year-button {
@@ -171,24 +177,27 @@ h1 {
   margin: 0 5px;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.year-buttons .year-button.active {
+.year-buttons .year-button:hover {
   background-color: #0056b3;
 }
 
 .courses {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap; /* Wrap items within the flex container */
+  gap: 20px; /* Spacing between flex items */
 }
 
 .course-button {
-  background-color: #e0f7fa;
+  background-color: #afcfff;
   border-radius: 10px;
-  margin: 10px;
-  padding: 20px;
   width: 200px;
+  margin: 20px;
+  padding: 20px;
   text-align: center;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -208,4 +217,65 @@ h1 {
   display: block;
   font-size: 16px;
   color: #333;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 10px;
+  }
+
+  .course-button {
+    width: 150px;
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .course-button img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .course-button span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 140px;
+    padding: 5px;
+  }
+
+  .course-button {
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .course-button img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .course-button span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu li {
+    margin-right: 10px;
+  }
+
+  .back-button {
+    font-size: 20px;
+    padding: 5px 15px;
+    top: 60px;
+    left: 10px;
+  }
+
+  .year-buttons .year-button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
 }
