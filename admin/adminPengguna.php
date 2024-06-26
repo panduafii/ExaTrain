@@ -90,7 +90,7 @@ session_start();
                             // Koneksi ke database
                             $servername = "localhost";
                             $username = "root";
-                            $password = "";
+                            $password = "root";
                             $dbname = "ExaTrain";
 
                             $conn = new mysqli($servername, $username, $password, $dbname);
