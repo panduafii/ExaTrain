@@ -6,8 +6,9 @@ body {
 }
 
 .container {
-    max-width: 1920px;
+    width: 100%;
     margin: 0 auto;
+    height:100vh;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -34,7 +35,9 @@ header {
     font-size: 18px;
 }
 
+
 .content {
+    position: relative;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -55,6 +58,14 @@ h2 {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 24px;
+}
+
+.edit-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .question-section {

@@ -26,6 +26,16 @@ body {
     position: fixed;
     height: 100vh;
 }
+.sidebar a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 277px;
+    height: 77px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
 .logo {
     margin-bottom: 50px;
@@ -50,39 +60,42 @@ body {
     background-color: white;
 }
 
-.sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-weight: 600;
-}
-
 .sidebar-item {
-    width: 277px;
+    gap: 15px; /* Jarak antara gambar dan teks */
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
     height: 77px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    color: #ffffff;
+}
+
+.sidebar-item img {
+    width: 24px; /* Ukuran gambar */
+    margin-right: 15px;
+}
+
+.sidebar-item span {
+    flex-grow: 1;
+}
+
+.sidebar-item a {
     display: flex;
     align-items: center;
-    justify-content: start;
-    padding-left: 20px;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
 }
 
 .sidebar-item:hover {
     background-color: #4FAAFF;
 }
 
-.sidebar-item img {
-    margin-right: 10px;
-}
-
 .logout {
     margin-top: auto;
-    padding: 10px;
-    padding-left: 40px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 277px;
     height: 77px;
     display: flex;
     align-items: center;
@@ -93,6 +106,14 @@ body {
 
 .logout:hover {
     background-color: #4FAAFF;
+}
+
+.logout img {
+    margin-right: 10px;
+}
+
+.logout span {
+    text-align: left;
 }
 
 .main-content {
@@ -145,7 +166,7 @@ body {
     width: 18px;
     height: auto;
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 .header-right span {
@@ -271,8 +292,3 @@ body {
     grid-column: span 2;
     height: 300px;
 }
-
-
-
-
-

@@ -10,8 +10,7 @@ body {
 }
 
 .container {
-    max-width: 1920px;
-    max-height: 1080px;
+    height: 1080px;
     display: flex;
     width: 100%;
     height: 100%;
@@ -25,7 +24,16 @@ body {
     flex-direction: column;
     position: fixed;
     height: 100vh;
-   
+}
+.sidebar a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 277px;
+    height: 77px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .logo {
@@ -51,39 +59,42 @@ body {
     background-color: white;
 }
 
-.sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-weight: 600;
-}
-
 .sidebar-item {
-    width: 277px;
+    gap: 15px; /* Jarak antara gambar dan teks */
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
     height: 77px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    color: #ffffff;
+}
+
+.sidebar-item img {
+    width: 24px; /* Ukuran gambar */
+    margin-right: 15px;
+}
+
+.sidebar-item span {
+    flex-grow: 1;
+}
+
+.sidebar-item a {
     display: flex;
     align-items: center;
-    justify-content: start;
-    padding-left: 20px;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
 }
 
 .sidebar-item:hover {
     background-color: #4FAAFF;
 }
 
-.sidebar-item img {
-    margin-right: 10px;
-}
-
 .logout {
     margin-top: auto;
-    padding: 10px;
-    padding-left: 40px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 277px;
     height: 77px;
     display: flex;
     align-items: center;
@@ -94,6 +105,14 @@ body {
 
 .logout:hover {
     background-color: #4FAAFF;
+}
+
+.logout img {
+    margin-right: 10px;
+}
+
+.logout span {
+    text-align: left;
 }
 
 .main-content {
@@ -112,6 +131,10 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 86px;
+    position: fixed;
+    width: calc(100vw - 277px);
+    top: 0;
+    z-index: 1000;
 }
 
 .header-menu {
@@ -132,6 +155,8 @@ body {
 .header-right {
     display: flex;
     align-items: center;
+    margin-left: auto;
+    padding-right: 20px;
 }
 
 .notification-icon img, .user-icon img {
@@ -152,21 +177,26 @@ body {
     display: flex;
     align-items: center;
     height: 35px;
+    position: fixed;
+    width: calc(100vw - 277px);
+    top: 86px;
+    z-index: 999;
 }
 
 .title {
     text-align: center;
-    margin-top: 8px;
+    margin-top: 121px;
     font-size: 24px;
     font-weight: bold;
     position: relative;
-    display: inline-block;
 }
 
 .title h3 {
+    margin-top: 10px;
     display: inline-block;
     position: relative;
 }
+
 
 .title h3::after {
     content: "";
@@ -179,8 +209,10 @@ body {
     background-color: rgb(6, 6, 6);
 }
 
+
 .content {
     padding: 40px;
+    margin-top: 0px;
 }
 
 .question-container {
@@ -203,6 +235,14 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
+.question-card h4{
+    margin-bottom: 15px;
+}
+
+.answer-card h4{
+    margin-bottom: 15px;
+}
+
 
 .pagination {
     display: flex;

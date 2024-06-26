@@ -15,7 +15,7 @@ session_start();
     <div class="container">
         <?php if (isset($_SESSION['user_id'])): ?>
         <div class="notification">
-            Session User ID: <?php echo $_SESSION['user_id']; ?>
+            <!-- Session User ID: <?php echo $_SESSION['user_id']; ?> -->
         </div>
         <?php endif; ?>
         <nav class="sidebar">
@@ -24,40 +24,44 @@ session_start();
                 <div class="logo-line"></div> <!-- Div untuk garis putih -->
             </div>
             <ul class="sidebar-menu">
+            <a href="adminPengguna.php">
                 <li class="sidebar-item">
                     <img src="../img/penggunaicon.png" alt="Icon">
                     <span>Edit Pengguna</span>
                 </li>
+            </a>
+            <a href="adminSoal.php">
                 <li class="sidebar-item">
                     <img src="../img/manajemenicon.png" alt="Icon">
                     <span>Manajemen Soal</span>
                 </li>
+            </a>
+            <a href="adminStatistik.php">
                 <li class="sidebar-item">
                     <img src="../img/statistikicon.png" alt="Icon">
-                    <span>Data & Statistik</span>
+                    <span>Data & Statistik</span>    
                 </li>
+            </a>
+            <a href="adminPembayaran.php">
                 <li class="sidebar-item">
                     <img src="../img/wallet-2.png" alt="Icon">
-                    <span>Pembayaran</span>
+                    <span>Pembayaran</span>  
                 </li>
+            </a>
             </ul>
             <ul class="logout">
+            <a href="../loginRegist.php">
                 <li class="sidebar-item">
                     <img src="../img/logouticon.png" alt="Icon">
                     <span>Logout</span>
                 </li>
+            </a>
             </ul>
         </nav>
         <div class="main-content">
             <header class="header">
                 <ul class="header-menu">
-                    <li class="menu-icon">
-                        <img src="../img/garistiga.png" alt="Menu">
-                    </li>
                     <li class="header-right">
-                        <div class="notification-icon">
-                            <img src="../img/Notifikasi.png" alt="Notification">
-                        </div>
                         <div class="user-icon">
                             <img src="../img/adminicon.png" alt="User">
                         </div>
@@ -86,7 +90,7 @@ session_start();
                             // Koneksi ke database
                             $servername = "localhost";
                             $username = "root";
-                            $password = "root";
+                            $password = "";
                             $dbname = "ExaTrain";
 
                             $conn = new mysqli($servername, $username, $password, $dbname);

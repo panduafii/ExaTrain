@@ -10,8 +10,6 @@ body {
 }
 
 .container {
-    max-width: 1920px;
-    height: 1080px;
     display: flex;
     width: 100%;
     height: 100%;
@@ -23,11 +21,22 @@ body {
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    position: relative;
-    height: 100vh; /* Ensures the sidebar takes full height */
+    position: fixed;
+    height: 100vh;
 }
+.sidebar a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 277px;
+    height: 77px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 .logo {
-    margin-bottom: 50px; /* Add some space below the logo */
+    margin-bottom: 50px;
     padding-left: 70px;
     padding-top: 15px;
     position: relative;
@@ -42,46 +51,49 @@ body {
 
 .logo-line {
     position: absolute;
-    bottom:-10px;
+    bottom: -10px;
     left: 0;
-    width: 100%; /* Lebar garis sama dengan lebar sidebar */
-    height: 0.5px; /* Tinggi garis */
-    background-color: white; /* Warna garis */
-}
-
-.sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-weight: 600; /* Semibold */
+    width: 100%;
+    height: 0.5px;
+    background-color: white;
 }
 
 .sidebar-item {
-    width: 277px;
+    gap: 15px; /* Jarak antara gambar dan teks */
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
     height: 77px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    color: #ffffff;
+}
+
+.sidebar-item img {
+    width: 24px; /* Ukuran gambar */
+    margin-right: 15px;
+}
+
+.sidebar-item span {
+    flex-grow: 1;
+}
+
+.sidebar-item a {
     display: flex;
     align-items: center;
-    justify-content: start;
-    padding-left: 20px;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
 }
 
 .sidebar-item:hover {
     background-color: #4FAAFF;
 }
 
-.sidebar-item img {
-    margin-right: 10px;
-}
-
 .logout {
     margin-top: auto;
-    padding: 10px;
-    padding-left: 40px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 277px;
     height: 77px;
     display: flex;
     align-items: center;
@@ -94,11 +106,19 @@ body {
     background-color: #4FAAFF;
 }
 
+.logout img {
+    margin-right: 10px;
+}
+
+.logout span {
+    text-align: left;
+}
+
+
 .main-content {
     flex-grow: 1;
     background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
+    margin-left: 277px;
 }
 
 .header {
@@ -109,15 +129,19 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 86px;
+    position: fixed;
+    width: calc(100vw - 277px);
+    top: 0;
+    z-index: 1000;
 }
 
 .header-menu {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    gap: 25px; /* Jarak antar elemen header */
+    gap: 25px;
     width: 100%;
-    font-weight: 600; /* Semibold */
+    font-weight: 600;
 }
 
 .menu-icon img {
@@ -129,6 +153,8 @@ body {
 .header-right {
     display: flex;
     align-items: center;
+    margin-left: auto;
+    padding-right: 20px;
 }
 
 .notification-icon img, .user-icon img {
@@ -139,7 +165,7 @@ body {
 }
 
 .header-right span {
-    margin-left: 20px; /* Jarak yang sama dengan ikon */
+    margin-left: 20px;
 }
 
 .sub-header {
@@ -149,32 +175,38 @@ body {
     display: flex;
     align-items: center;
     height: 35px;
+    position: fixed;
+    width: calc(100vw - 277px);
+    top: 86px;
+    z-index: 999;
 }
 
 .title {
     text-align: center;
-    margin-top: 8px; /* Sesuaikan jika perlu */
-    font-size: 24px; /* Sesuaikan jika perlu */
+    margin-top: 121px;
+    font-size: 24px;
     font-weight: bold;
-    position: relative; /* Ensure relative positioning for the pseudo-element */
-    display: inline-block; /* Ensure the element's width matches its content */
+    position: relative;
 }
 
 .title h3 {
-    display: inline-block; /* Ensure the element's width matches its content */
-    position: relative; /* Ensure relative positioning for the pseudo-element */
+    margin-top: 10px;
+    display: inline-block;
+    position: relative;
 }
+
 
 .title h3::after {
     content: "";
     position: absolute;
-    bottom: -5px; /* Adjust as needed */
+    bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%; /* Make the line as wide as the h3 */
-    height: 2px; /* Adjust height as needed */
-    background-color: rgb(6, 6, 6); /* Warna garis */
+    width: 100%;
+    height: 2px;
+    background-color: rgb(6, 6, 6);
 }
+
 
 
 .content {
@@ -285,7 +317,7 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #4FAAFF;
+    background-color: #ffffff;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -298,10 +330,11 @@ body {
 }
 
 .add-icon img {
-    width: 24px;
-    height: 24px;
+    width: 60px;
+    height: 60px;
+}
+.add-icon a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits color from parent, useful if you decide to add text */
 }
 
-.add-icon:hover {
-    background-color: #19286A;
-}

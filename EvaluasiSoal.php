@@ -60,7 +60,6 @@ if (!isset($_SESSION['username'])) {
 
     <!-- MENU -->
     <div class="container">
-      <button class="back-button" onclick="goBack()">&#8592;</button>
       <h1>Soal & Evaluasi</h1>
       <div class="content">
         <div class="card">
