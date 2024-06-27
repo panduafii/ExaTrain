@@ -31,13 +31,24 @@
                 <div class="payment">
                 <h3>Paket Kamu</h3>
                   <p>Rp 11.999 / 6 Bulan</p>
-                      <input type="radio" name="payment-method" value="bank-transfer" />
-                        <label for="payment1"> Transfer Bank</label><br>
-                      <input type="radio" name="payment-method" value="e-wallet" />
-                        <label for="payment2"> E-Wallet</label><br>
-                      <input type="radio" name="payment-method" value="m-banking" />
-                        <label for="payment3">M-Banking</label><br>
-                  <button type="button">Konfirmasi</button>
+                  <!-- <button type="button">Transfer Bank</button>
+                  <button type="button">E-Wallet</button>
+                  <button type="button">M-Banking</button> -->
+        <div class="payment-button">
+            <img src="img/paypal.png" alt="Transfer Bank">
+            <span>Transfer Bank</span>
+            <input type="radio" name="payment" value="Transfer Bank">
+        </div>
+        <div class="payment-button">
+            <img src="img/applepay.png" alt="E-Wallet">
+            <span>E-Wallet</span>
+            <input type="radio" name="payment" value="E-Wallet">
+        </div>
+        <div class="payment-button">
+            <img src="img/applepay.png" alt="M-Banking">
+            <span>M-Banking</span>
+            <input type="radio" name="payment" value="M-Banking">
+        </div>
                 </div>
                 <!-- Vertical Divider -->
                 <div class="vertical-divider"></div> 
