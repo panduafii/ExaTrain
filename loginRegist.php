@@ -76,7 +76,7 @@
                   <input type="password" id="password" name="password" placeholder="password" required><br><br>
                   <button class="login-button" type="submit" name="submit">Login</button>
                   <p class="message">Belum Punya Akun? <a href="#">Create an account</a></p>
-                  <button class="admin-button">I'm admin</button>
+                  <button class="admin-button" onclick="location.href='admin/adminPengguna.php'">I'm admin</button>
                 </div>
 
                 <!-- Vertical Divider -->
