@@ -2,7 +2,7 @@
 $host = 'localhost';  // Host database
 $dbname = 'ExaTrain';  // Nama database
 $username = 'root';  // Username database
-$password = 'root';  // Password database
+$password = '';  // Password database
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
