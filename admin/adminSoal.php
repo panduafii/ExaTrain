@@ -14,47 +14,51 @@
 <body>
     <div class="container">
         <nav class="sidebar">
-            <div class="logo">
-                <img src="img/logo1.png" alt="EXATrain Logo">
+        <div class="logo">
+                <img src="../img/logo1.png" alt="EXATrain Logo">
                 <div class="logo-line"></div> <!-- Div untuk garis putih -->
             </div>
             <ul class="sidebar-menu">
+            <a href="adminPengguna.php">
                 <li class="sidebar-item">
-                    <img src="img/penggunaicon.png" alt="Icon">
+                    <img src="../img/penggunaicon.png" alt="Icon">
                     <span>Edit Pengguna</span>
                 </li>
+            </a>
+            <a href="adminSoal.php">
                 <li class="sidebar-item">
-                    <img src="img/manajemenicon.png" alt="Icon">
+                    <img src="../img/manajemenicon.png" alt="Icon">
                     <span>Manajemen Soal</span>
                 </li>
+            </a>
+            <a href="adminStatistik.php">
                 <li class="sidebar-item">
-                    <img src="img/statistikicon.png" alt="Icon">
-                    <span>Data & Statistik</span>
+                    <img src="../img/statistikicon.png" alt="Icon">
+                    <span>Data & Statistik</span>    
                 </li>
+            </a>
+            <a href="adminPembayaran.php">
                 <li class="sidebar-item">
-                    <img src="img/wallet-2.png" alt="Icon">
-                    <span>Pembayaran</span>
+                    <img src="../img/wallet-2.png" alt="Icon">
+                    <span>Pembayaran</span>  
                 </li>
+            </a>
             </ul>
             <ul class="logout">
+            <a href="../loginRegist.php">
                 <li class="sidebar-item">
-                    <img src="img/logouticon.png" alt="Icon">
+                    <img src="../img/logouticon.png" alt="Icon">
                     <span>Logout</span>
                 </li>
+            </a>
             </ul>
         </nav>
         <div class="main-content">
             <header class="header">
                 <ul class="header-menu">
-                    <li class="menu-icon">
-                        <img src="img/garistiga.png" alt="Menu">
-                    </li>
                     <li class="header-right">
-                        <div class="notification-icon">
-                            <img src="img/Notifikasi.png" alt="Notification">
-                        </div>
                         <div class="user-icon">
-                            <img src="img/adminicon.png" alt="User">
+                            <img src="../img/adminicon.png" alt="User">
                         </div>
                         <span>Admin</span>
                     </li>
@@ -81,30 +85,35 @@
                 </div>
                 <div class="questions">
                     <div class="question-card">
-                        <img src="img/iconpsi.png" alt="Icon">
+                        <img src="../img/iconpsi.png" alt="Icon">
                         <span>Pengembangan Sistem Informasi</span>
                     </div>
                     <div class="question-card">
-                        <img src="img/icongmm.png" alt="Icon">
+                        <img src="../img/icongmm.png" alt="Icon">
                         <span>Grafika dan Multimedia</span>
                     </div>
                     <div class="question-card">
-                        <img src="img/iconscpk.png" alt="Icon">
+                        <img src="../img/iconscpk.png" alt="Icon">
                         <span>Sistem Cerdas dan Pendukung Keputusan</span>
                     </div>
                     <div class="question-card">
-                        <img src="img/iconbiki.png" alt="Icon">
+                        <img src="../img/iconbiki.png" alt="Icon">
                         <span>Bahasa Indonesia Komunikasi Ilmiah</span>
                     </div>
                     <div class="question-card">
-                        <img src="img/iconbiti.png" alt="Icon">
+                        <img src="../img/iconbiti.png" alt="Icon">
                         <span>Bahasa Inggris Teknologi Informasi</span>
                     </div>
                     <div class="question-card">
-                        <img src="img/iconulil.png" alt="Icon">
+                        <img src="../img/iconulil.png" alt="Icon">
                         <span>Islam Ulil Albab</span>
                     </div>
                 </div>
+                <a href="adminTambahmatkul.php">
+                <div class="add-icon">
+                         <img src="../img/iconplesjing.png" alt="Add New">
+                </div>
+                </a>
             </div>
         </div>
     </div>

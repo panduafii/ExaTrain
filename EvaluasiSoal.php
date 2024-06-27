@@ -62,7 +62,7 @@ if (!isset($_SESSION['username'])) {
     <div class="container">
       <h1>Soal & Evaluasi</h1>
       <div class="content">
-        <div class="card">
+        <div class="card" onclick="location.href='lihatJawaban.php'">
           <img src="img/checklist.png" alt="Evaluasi" />
           <p>Evaluasi</p>
         </div>

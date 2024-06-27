@@ -13,9 +13,32 @@ if (!isset($_SESSION['subject_id'])) {
     // Jika tidak ada, redirect ke halaman yang sesuai atau berikan pesan kesalahan
     header('Location: adminPenggunadetailjawaban.php');
     exit;
+
+
 }
 
 $subject_id = $_SESSION['subject_id'];
+
+// Koneksi ke database
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "ExaTrain";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Koneksi ke database gagal: " . $conn->connect_error);
+}
+
+// Mengambil nama subject
+$subjectQuery = "SELECT subject_name FROM subject WHERE id = " . $subject_id;
+$subjectResult = $conn->query($subjectQuery);
+if ($subjectResult->num_rows > 0) {
+    $subjectRow = $subjectResult->fetch_assoc();
+    $subject_name = $subjectRow['subject_name'];
+} else {
+    $subject_name = "Nama Mata Kuliah Tidak Ditemukan";
+}
 ?>
 
 
@@ -82,21 +105,25 @@ $subject_id = $_SESSION['subject_id'];
                 <span>Manajemen Soal</span>
             </div>
             <div class="title">
-                <h3>Detail Jawaban Pengguna</h3>
+                <h3><?php echo $subject_name; ?></h3>
             </div>
             <div class="content">
                 <div class="question-container">
                     <?php
-                    // Koneksi ke database
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "ExaTrain";
-
+                    // Reconnect to the database to fetch questions and answers
                     $conn = new mysqli($servername, $username, $password, $dbname);
-
                     if ($conn->connect_error) {
                         die("Koneksi ke database gagal: " . $conn->connect_error);
+                    }
+
+                    // Mengambil nama subject
+                    $subjectQuery = "SELECT subject_name FROM subject WHERE id = " . $subject_id;
+                    $subjectResult = $conn->query($subjectQuery);
+                    if ($subjectResult->num_rows > 0) {
+                        $subjectRow = $subjectResult->fetch_assoc();
+                        $subject_name = $subjectRow['subject_name'];
+                    } else {
+                        $subject_name = "Nama Mata Kuliah Tidak Ditemukan";
                     }
 
                     // Query untuk mendapatkan jawaban dan kunci jawaban dari tabel answers dan questions berdasarkan user_id dan subject_id

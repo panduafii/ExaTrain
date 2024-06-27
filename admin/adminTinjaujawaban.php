@@ -19,6 +19,7 @@
         </header>
 
         <div class="content">
+            <span class="edit-icon">✏️</span>
             <a href="#" class="back-button">←</a>
             <h2>Rekayasa Perangkat Lunak</h2>
             <div class="question-section">

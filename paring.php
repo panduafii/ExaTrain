@@ -1,3 +1,27 @@
+<?php
+$host = 'localhost';  // Host database
+$dbname = 'ExaTrain';  // Nama database
+$username = 'root';  // Username database
+$password = 'root';  // Password database
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $pdo->query("SELECT u.username, COALESCE(SUM(a.is_correct), 0) AS total_correct
+                         FROM users u
+                         LEFT JOIN answers a ON u.id = a.user_id AND a.is_correct = 1
+                         GROUP BY u.username
+                         ORDER BY total_correct DESC, u.username");
+    
+    $rankings = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Could not connect to the database $dbname :" . $e->getMessage());
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,39 +73,32 @@
 
     <!-- Container -->
     <div class="container">
-      <button class="back-button" onclick="goBack()">&#8592;</button>
-      <h1>Papan Peringkat</h1>
-      <div class="leaderboard">
-        <button class="leaderboard-item">
-          <span class="rank">1</span>
-          <span class="username">Dudut Simalakama</span>
-          <span class="stars">⭐⭐⭐</span>
-          <span class="score">98/100</span>
-        </button>
-        <button class="leaderboard-item">
-          <span class="rank">2</span>
-          <span class="username">Combro Misro</span>
-          <span class="stars">⭐⭐</span>
-          <span class="score">96/100</span>
-        </button>
-        <button class="leaderboard-item">
-          <span class="rank">3</span>
-          <span class="username">Kamikamukamis</span>
-          <span class="stars">⭐</span>
-          <span class="score">95/100</span>
-        </button>
-        <button class="leaderboard-item">
-          <span class="rank">4</span>
-          <span class="username">John Keller</span>
-          <span class="score">88/100</span>
-        </button>
-        <button class="leaderboard-item">
-          <span class="rank">5</span>
-          <span class="username">Cimong</span>
-          <span class="score">86/100</span>
-        </button>
-      </div>
+    <h1>Papan Peringkat</h1>
+    <div class="leaderboard">
+        <?php
+        $index = 0;
+        foreach ($rankings as $row):
+            $index++;
+            $stars = '';
+            if ($index == 1) {
+                $stars = '⭐⭐⭐';  // 3 bintang untuk peringkat 1
+            } elseif ($index == 2) {
+                $stars = '⭐⭐';   // 2 bintang untuk peringkat 2
+            } elseif ($index == 3) {
+                $stars = '⭐';    // 1 bintang untuk peringkat 3
+            }
+        ?>
+        <div class="leaderboard-item">
+            <span class="rank"><?= $index ?></span>
+            <span class="username"><?= htmlspecialchars($row['username']) ?></span>
+            <span class="stars"><?= $stars ?></span>
+            <span class="score"><?= $row['total_correct'] ?></span>
+        </div>
+        <?php endforeach; ?>
     </div>
+</div>
+
+
 
     <script>
       function goBack() {

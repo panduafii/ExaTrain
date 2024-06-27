@@ -1,0 +1,302 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #808080;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.menu li a:hover {
+  color: black;
+}
+
+.menu li button {
+  width: 100%;
+  height: 35px;
+  padding: 0 15px;
+  background-color: #f39c12;
+  color: #070707;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu li img {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+}
+
+.menu li img {
+  height: 30px;
+  border-radius: 50%;
+}
+
+
+/* isi */
+.question-container {
+    width: 100%; /* Lebar kontainer */
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 100vh;
+}
+.question-block{
+    padding-top: 100px;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+.question-container h1 {
+    color: #333;
+
+}
+
+.question-container h3 {
+    color: #333;
+    margin-top: 100px;
+    margin-left: 50vh;
+    font-size-adjust: 1.4;
+
+
+}
+#user-answer {
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+}
+
+#key-and-recommendation {
+    margin-top: 20px;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.question-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    position: fixed; /* Elemen akan tetap di posisi yang ditetapkan */
+    bottom: 0; /* Letakkan di bagian bawah layar */
+    left: 0;
+    right: 0; /* Stretches from left to right */
+    background-color: #fff; /* Warna latar yang sesuai dengan desainmu */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Bayangan untuk estetika */
+    display: flex;
+    justify-content: center; /* Menyelaraskan tombol di tengah */
+    padding: 10px 0; /* Padding untuk ruang atas dan bawah */
+    z-index: 1000; /* Memastikan tidak tertutup elemen lain */
+    
+    
+}
+
+.question-navigation button {
+
+    background-color: #007bff; /* Warna tombol saat aktif */
+    color: white;
+    width: 80px; /* Lebar disesuaikan untuk membuat bentuk lebih bulat */
+    height: 50px; /* Tinggi disesuaikan agar sama dengan lebar */
+    border-radius: 10%; /* Border-radius untuk membuat sudut sangat bulat */
+    display: flex; /* Gunakan flexbox untuk pusatkan teks */
+    align-items: center; /* Pusatkan secara vertikal */
+    justify-content: center; /* Pusatkan secara horizontal */
+    font-size: 16px; /* Ukuran font yang sesuai */
+    border: none; /* Hapus border jika ada */
+    cursor: pointer; /* Cursor pointer untuk indikasi klik */
+    margin: 0 5px; /* Beri margin untuk tidak saling menempel */
+    transition: background-color 0.3s, color 0.3s; /* Transisi untuk interaksi */
+}
+
+.question-navigation button.active {
+    background-color: #000; /* Warna latar belakang hitam */
+    color: #fff; /* Warna teks putih untuk kontras */
+}
+
+
+.back-button a {
+    color: #0056b3; /* Warna tombol back */
+  }
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .menu li a {
+    padding: 10px 0;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+}
+/* MENU */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 80px 20px 20px;
+  position: relative;
+}
+
+h1 {
+  font-size: 40px; /* Larger font size for the title */
+  margin-bottom: 40px;
+}
+
+.content {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+
+.card {
+  background-color: #97adcd;
+  border-radius: 10px;
+  padding: 40px; /* Larger padding for bigger cards */
+  width: 250px; /* Wider cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card img {
+  width: 200px; /* Larger images */
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-size: 28px; /* Larger font size for the text */
+  font-weight: bold;
+  margin: 0;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Back Button */
+.back-button {
+  font-size: 30px;
+  padding: 10px 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #0056b3;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  transition: color 0.3s;
+}
+
+.back-button a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent */
+}
+
+.back-button:hover {
+  color: #003f7f;
+}
