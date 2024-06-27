@@ -75,23 +75,19 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>No</th>
                                 <th>ID</th>
                                 <th>Username</th>
                                 <th>Nominal</th>
                                 <th>Waktu Pembayaran</th>
-                                <th>Masa Pakai</th>
                                 <th>Akses</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td></td>
                                 <td>Xavier</td>
                                 <td>Rp 20.000</td>
                                 <td>12-05-2024  08.10 WIB</td>
-                                <td>6 Bulan</td>
                                 <td class="table-icons">
                                     <span class="status-text active">Aktif</span>
                                     <span class="icon-container">
@@ -112,7 +108,6 @@
                                 <th>Waktu</th>
                                 <th>Nominal</th>
                                 <th>Metode Pembayaran</th>
-                                <th>Masa Pakai</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -128,7 +123,6 @@
                                 <td>11-05-2024</td>
                                 <td>Rp30.000</td>
                                 <td>Transfer Bank</td>
-                                <td>3 Bulan</td>
                                 <td><span class="status approved">Disetujui</span></td>
                             </tr>
                             <tr>
@@ -142,7 +136,6 @@
                                 <td>01-05-2024</td>
                                 <td>Rp30.000</td>
                                 <td>Transfer Bank</td>
-                                <td>3 Bulan</td>
                                 <td><span class="status pending">Tertunda</span></td>
                             </tr>
                             <!-- Tambahkan baris data lain sesuai kebutuhan -->
