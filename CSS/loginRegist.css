@@ -6,8 +6,6 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  margin-top: 20px;
-  position:fixed;
 }
 
 /* NAVBAR */
@@ -30,6 +28,8 @@ body {
   margin-left: auto;
   list-style-type: none;
   padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .menu li {
@@ -49,7 +49,7 @@ body {
 }
 
 .menu li a:hover {
-  color: black;
+  color: #2196f3;
 }
 
 .menu li button {
@@ -76,8 +76,14 @@ p {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
+h2 {
+  text-align: center; /* Center-align the h2 elements */
+  font-size: 24px; /* Set font size to 24px */
+}
+
 .login-page {
-  width: 80%;
+  width: 100%;
+  max-width: 1000px;
   padding: 20px;
   margin-top: 80px;
 }
@@ -95,6 +101,7 @@ p {
 .register-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .form input {
@@ -109,12 +116,17 @@ p {
   font-size: 14px;
 }
 
-h2 {
-  text-align: center;
-}
-
-p {
-  text-align: center;
+.form select {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  display: block;
 }
 
 .form button {
@@ -157,15 +169,51 @@ p {
   display: none;
 }
 
-.register-page{
-  width:100%;
-}
-
 .register-container {
   width: 100%;
-
 }
-
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.credit-card-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #a1c9ff;
+  border-radius: 10px;
+  padding: 10px 20px 20px;
+  background-color: #ffffff;
+  width: 80%;
+  cursor: pointer;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.credit-card-button.selected {
+  border-color: #007bff;
+}
+.credit-card-button img {
+  width: 40px;
+}
+.credit-card-button span {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #333;
+}
+.credit-card-button .checkmark {
+  color: #007bff;
+  font-size: 20px;
+  position: absolute;
+  right: 20px;
+  visibility: hidden;
+}
+.credit-card-button.selected .checkmark {
+  visibility: visible;
+}
 .payment {
   width: 45%;
   background: #dceeff;
@@ -185,41 +233,30 @@ p {
   font-size: 20px;
   color: #007bff;
 }
-.payment-button {
+
+.payment label {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 300px;
-  padding: 10px 20px;
-  margin: 10px 0;
-  background-color: #f2f2f2;
-  border: 1px solid #dcdcdc;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  align-items: left;
+  margin-bottom: 10px;
+  font-size: 15px;
+  justify-content: flex-start;
 }
 
-.payment-button:hover {
-  background-color: #e2e2e2;
+.payment input[type="radio"] {
+  margin-bottom: 5px;
+  justify-content: flex-start;
+  display: flex;
 }
 
-.payment-button img {
-  width: 24px;
-  height: 24px;
+.payment button {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #ffc107;
+  color: #070707;
+  border-radius: 7px;
 }
 
-.payment-button span {
-  flex: 1;
-  text-align: left;
-  font-size: 16px;
-  margin-left: 10px;
-}
-
-.payment-button input[type="radio"] {
-  margin-right: auto;
-}
 .vertical-divider {
-  width: 0.1%;
+  width: 1px;
   background-color: #d3d3d3;
   margin: 0 20px;
 }
@@ -227,6 +264,10 @@ p {
 .registrasi {
   width: 45%;
   text-align: left;
+}
+
+.registrasi p {
+  text-align: center;
 }
 
 .registrasi h2 {
@@ -250,6 +291,7 @@ p {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .login {
@@ -257,8 +299,12 @@ p {
   text-align: left;
 }
 
+.login p {
+  text-align: center;
+}
+
 .picture {
-  width: 45%; /* Set picture width to 45% */
+  width: 40%; /* Set picture width to 45% */
   text-align: left;
 }
 
@@ -266,4 +312,45 @@ p {
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .register-container,
+  .login-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .payment,
+  .registrasi,
+  .login,
+  .picture {
+    width: 100%;
+    text-align: center;
+  }
+
+  .vertical-divider {
+    display: none;
+  }
+
+  .form {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu li {
+    margin-right: 10px;
+  }
+
+  .form {
+    padding: 15px;
+  }
+
+  .form input,
+  .form button {
+    padding: 10px;
+    font-size: 12px;
+  }
 }

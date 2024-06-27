@@ -30,25 +30,21 @@
                 <!-- Pembayaran -->
                 <div class="payment">
                 <h3>Paket Kamu</h3>
-                  <p>Rp 11.999 / 6 Bulan</p>
-                  <!-- <button type="button">Transfer Bank</button>
-                  <button type="button">E-Wallet</button>
-                  <button type="button">M-Banking</button> -->
-        <div class="payment-button">
-            <img src="img/paypal.png" alt="Transfer Bank">
-            <span>Transfer Bank</span>
-            <input type="radio" name="payment" value="Transfer Bank">
-        </div>
-        <div class="payment-button">
-            <img src="img/applepay.png" alt="E-Wallet">
-            <span>E-Wallet</span>
-            <input type="radio" name="payment" value="E-Wallet">
-        </div>
-        <div class="payment-button">
-            <img src="img/applepay.png" alt="M-Banking">
-            <span>M-Banking</span>
-            <input type="radio" name="payment" value="M-Banking">
-        </div>
+                <div class="credit-card-button" onclick="selectPaymentMethod(this)">
+                        <img src="visa-logo.png" alt="Tranfer" class="icon">
+                        <span>Tranfer</span>
+                        <div class="checkmark">&#10003;</div>
+                    </div>
+                    <div class="credit-card-button" onclick="selectPaymentMethod(this)">
+                        <img src="mastercard-logo.png" alt="M-Banking" class="icon">
+                        <span>M-Banking</span>
+                        <div class="checkmark">&#10003;</div>
+                    </div>
+                    <div class="credit-card-button" onclick="selectPaymentMethod(this)">
+                        <img src="paypal-logo.png" alt="E-Wallet" class="icon">
+                        <span>E-Wallet</span>
+                        <div class="checkmark">&#10003;</div>
+                    </div>
                 </div>
                 <!-- Vertical Divider -->
                 <div class="vertical-divider"></div> 
@@ -94,6 +90,11 @@
             </form>
         </div>
     </div>
+    <script> function selectPaymentMethod(element) {
+            const methods = document.querySelectorAll('.credit-card-button');
+            methods.forEach(method => method.classList.remove('selected'));
+            element.classList.add('selected');
+        }</script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="JS/login.js"></script>
 </body>
