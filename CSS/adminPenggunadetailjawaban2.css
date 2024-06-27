@@ -133,6 +133,7 @@ body {
     height: 86px;
     position: fixed;
     width: calc(100vw - 277px);
+    left: 277px;
     top: 0;
     z-index: 1000;
 }
@@ -159,11 +160,12 @@ body {
     padding-right: 20px;
 }
 
-.notification-icon img, .user-icon img {
+.notification-icon img,
+.user-icon img {
     width: 18px;
     height: auto;
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 .header-right span {
@@ -179,6 +181,7 @@ body {
     height: 35px;
     position: fixed;
     width: calc(100vw - 277px);
+    left: 277px;
     top: 86px;
     z-index: 999;
 }
