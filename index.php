@@ -33,11 +33,44 @@ if (!isset($_SESSION['selected_course_id'])) {
     <link rel="stylesheet" href="CSS/quizPage.css">
 </head>
 <body>
-    <h1>Quiz</h1>
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo" />
+            </div>
+            <ul class="menu">
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
+                <li><a href="paring.php">Papan Peringkat</a></li>
+                <li><a href="aboutUs.php">Tentang Kami</a></li>
+                <li>
+                    <?php
+                    // Menampilkan nama pengguna jika ada yang masuk
+                    if (isset($_SESSION["username"])) {
+                        $username = $_SESSION["username"];
+                        echo "Hi! $username";
+                    } else {
+                        echo "Hi!";
+                    }
+                    ?>
+                </li>
+                <li><a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
 
-    <div class="user-info">
+    <div class="exam-page">
+        <h1>Quiz</h1>
+    </div>
+
+    <!-- <div class="user-info">
         <?php
-        // Menampilkan nama pengguna jika ada yang masuk
         if (isset($_SESSION["username"])) {
             $username = $_SESSION["username"];
             echo "Hi!, $username!";
@@ -45,7 +78,7 @@ if (!isset($_SESSION['selected_course_id'])) {
             echo "Hi!";
         }
         ?>
-    </div>
+    </div> -->
 
     <!-- Menyertakan file quizPage.php -->
     <?php include "fungsiPHP/quizPage.php"; ?>

@@ -42,6 +42,7 @@ body {
 .menu li {
   display: inline-block;
   margin-right: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .menu li:last-child {
@@ -99,100 +100,83 @@ body {
   border-radius: 50%;
 }
 
-
 /* isi */
 .question-container {
-    width: 100%; /* Lebar kontainer */
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    height: 100vh;
+  width: 100%; /* Lebar kontainer */
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 100vh;
 }
-.question-block{
-    padding-top: 100px;
-    margin-left: 120px;
-    margin-right: 120px;
+.question-block {
+  padding-top: 100px;
+  margin-left: 120px;
+  margin-right: 120px;
 }
 
 .question-container h1 {
-    color: #333;
-
+  color: #333;
 }
 
 .question-container h3 {
-    color: #333;
-    margin-top: 100px;
-    margin-left: 50vh;
-    font-size-adjust: 1.4;
-
-
+  color: #333;
+  margin-top: 100px;
+  margin-left: 50vh;
+  font-size-adjust: 1.4;
 }
 #user-answer {
-    width: 100%;
-    height: 100px;
-    margin-top: 20px;
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
 }
 
 #key-and-recommendation {
-    margin-top: 20px;
-    background-color: #eee;
-    padding: 10px;
+  margin-top: 20px;
+  background-color: #eee;
+  padding: 10px;
 }
 
 .question-navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 
-    position: fixed; /* Elemen akan tetap di posisi yang ditetapkan */
-    bottom: 0; /* Letakkan di bagian bawah layar */
-    left: 0;
-    right: 0; /* Stretches from left to right */
-    background-color: #fff; /* Warna latar yang sesuai dengan desainmu */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Bayangan untuk estetika */
-    display: flex;
-    justify-content: center; /* Menyelaraskan tombol di tengah */
-    padding: 10px 0; /* Padding untuk ruang atas dan bawah */
-    z-index: 1000; /* Memastikan tidak tertutup elemen lain */
-    
-    
+  position: fixed; /* Elemen akan tetap di posisi yang ditetapkan */
+  bottom: 0; /* Letakkan di bagian bawah layar */
+  left: 0;
+  right: 0; /* Stretches from left to right */
+  background-color: #fff; /* Warna latar yang sesuai dengan desainmu */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk estetika */
+  display: flex;
+  justify-content: center; /* Menyelaraskan tombol di tengah */
+  padding: 10px 0; /* Padding untuk ruang atas dan bawah */
+  z-index: 1000; /* Memastikan tidak tertutup elemen lain */
 }
 
 .question-navigation button {
-
-    background-color: #007bff; /* Warna tombol saat aktif */
-    color: white;
-    width: 80px; /* Lebar disesuaikan untuk membuat bentuk lebih bulat */
-    height: 50px; /* Tinggi disesuaikan agar sama dengan lebar */
-    border-radius: 10%; /* Border-radius untuk membuat sudut sangat bulat */
-    display: flex; /* Gunakan flexbox untuk pusatkan teks */
-    align-items: center; /* Pusatkan secara vertikal */
-    justify-content: center; /* Pusatkan secara horizontal */
-    font-size: 16px; /* Ukuran font yang sesuai */
-    border: none; /* Hapus border jika ada */
-    cursor: pointer; /* Cursor pointer untuk indikasi klik */
-    margin: 0 5px; /* Beri margin untuk tidak saling menempel */
-    transition: background-color 0.3s, color 0.3s; /* Transisi untuk interaksi */
+  background-color: #007bff; /* Warna tombol saat aktif */
+  color: white;
+  width: 80px; /* Lebar disesuaikan untuk membuat bentuk lebih bulat */
+  height: 50px; /* Tinggi disesuaikan agar sama dengan lebar */
+  border-radius: 10%; /* Border-radius untuk membuat sudut sangat bulat */
+  display: flex; /* Gunakan flexbox untuk pusatkan teks */
+  align-items: center; /* Pusatkan secara vertikal */
+  justify-content: center; /* Pusatkan secara horizontal */
+  font-size: 16px; /* Ukuran font yang sesuai */
+  border: none; /* Hapus border jika ada */
+  cursor: pointer; /* Cursor pointer untuk indikasi klik */
+  margin: 0 5px; /* Beri margin untuk tidak saling menempel */
+  transition: background-color 0.3s, color 0.3s; /* Transisi untuk interaksi */
 }
 
 .question-navigation button.active {
-    background-color: #000; /* Warna latar belakang hitam */
-    color: #fff; /* Warna teks putih untuk kontras */
+  background-color: #000; /* Warna latar belakang hitam */
+  color: #fff; /* Warna teks putih untuk kontras */
 }
 
-
 .back-button a {
-    color: #0056b3; /* Warna tombol back */
-  }
-
-
-
-
-
-
-
-
-
+  color: #0056b3; /* Warna tombol back */
+}
 
 @media (max-width: 768px) {
   .menu {

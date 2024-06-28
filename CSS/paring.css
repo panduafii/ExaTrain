@@ -25,11 +25,6 @@ body {
   z-index: 1000;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
 .logo img {
   height: 40px;
 }
@@ -58,7 +53,7 @@ body {
 }
 
 .menu li a:hover {
-  color: black;
+  color: #276DD8;
 }
 
 .menu li img {

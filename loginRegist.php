@@ -14,10 +14,10 @@
             <img src="img/logo.png" alt="Logo" />
         </div>
         <ul class="menu">
-            <li><a href="landingPage.php">Beranda</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
             <li><a href="paring.php">Papan Peringkat</a></li>
-            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="aboutUs.php">Tentang Kami</a></li>
             <li><button>Sign Up</button></li>
         </ul>
     </nav>
@@ -31,17 +31,17 @@
                 <div class="payment">
                 <h3>Paket Kamu</h3>
                 <div class="credit-card-button" onclick="selectPaymentMethod(this)">
-                        <img src="visa-logo.png" alt="Tranfer" class="icon">
+                        <img src="img/transfer.png" alt="Tranfer" class="icon">
                         <span>Tranfer</span>
                         <div class="checkmark">&#10003;</div>
                     </div>
                     <div class="credit-card-button" onclick="selectPaymentMethod(this)">
-                        <img src="mastercard-logo.png" alt="M-Banking" class="icon">
+                        <img src="img/m_banking.png" alt="M-Banking" class="icon">
                         <span>M-Banking</span>
                         <div class="checkmark">&#10003;</div>
                     </div>
                     <div class="credit-card-button" onclick="selectPaymentMethod(this)">
-                        <img src="paypal-logo.png" alt="E-Wallet" class="icon">
+                        <img src="img/e_wallet.png" alt="E-Wallet" class="icon">
                         <span>E-Wallet</span>
                         <div class="checkmark">&#10003;</div>
                     </div>
