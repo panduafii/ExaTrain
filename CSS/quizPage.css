@@ -144,10 +144,10 @@ body {
 }
 
 .button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
 .question-buttons {
 
@@ -173,59 +173,17 @@ body {
 
 }
 .question-buttons button.answered {
-    background-color: rgb(39, 239, 139); /* Warna biru muda jika sudah dijawab */
-
-}
-
-.submitJawaban{
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    right: 0;
-
-    margin-top: 10px;
-    padding: 22px 15px; /* Padding untuk tombol */
-    border: 1px solid rgb(255, 255, 255); /* Border warna abu-abu muda */
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-right: 20px;
-    background-color: #fff;
-
-}
-
-
-.formjawaban{
-    display: block;
-    justify-content: left;
-    width: 100%;
-}
-
-.isiBox{
-    width: calc(100% - 50px); /* Menyesuaikan lebar agar sesuai dengan margin */
-    margin-top: 50px;
-    margin-left: 20px;
-    margin-right: 50px; /* Menambahkan margin 50px dari sisi kanan */
-    justify-content: left;
-    text-align: left; /* Menambahkan properti ini untuk meratakan teks ke kiri */
-    padding: 10px; /* Menambahkan padding untuk estetika */
-    border: 1px solid #ccc; /* Menambahkan border untuk estetika */
-    border-radius: 5px; /* Menambahkan border-radius untuk sudut yang lebih halus */
-    box-sizing: border-box; /* Memastikan padding tidak menambah lebar keseluruhan */
-    font-size: 14px; /* Mengatur ukuran font */
-    color: #333; /* Mengatur warna teks */
-    background-color: #fff; /* Mengatur warna latar belakang */
-    height: 600px;
-
+    background-color: lightblue; /* Warna biru muda jika sudah dijawab */
 }
 
 .form-footer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 .user-info {
-    text-align: center;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .absolute-footer-button {

@@ -14,10 +14,10 @@
                 <img src="img/logo.png" alt="Logo" />
             </div>
             <ul class="menu">
-                <li><a href="landingPage.php">Beranda</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
                 <li><a href="paring.php">Papan Peringkat</a></li>
-                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="aboutUs.php">Tentang Kami</a></li>
                 <li>
                     <?php
                     // Menampilkan nama pengguna jika ada yang masuk
@@ -28,8 +28,8 @@
                         echo "Hi!";
                     }
                     ?>
-                    <a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a>
                 </li>
+                <li><a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
                 <!-- <li></li> -->
             </ul>
             <div class="menu-toggle">
@@ -45,7 +45,6 @@
             <div class="user-profile">
                 <img src="img/avatar.png" alt="User Profile">
                 <h2>user</h2>
-                <button>Edit Profil</button>
                 <p>ID: 8797524</p>
                 <p>Username: Valesku2up</p>
                 <p>Password: *********</p>
