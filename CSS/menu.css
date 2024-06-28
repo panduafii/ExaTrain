@@ -9,7 +9,6 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
 /* NAVBAR */
 .navbar {
   width: 100%;
@@ -53,7 +52,6 @@ body {
   color: #808080;
   font-weight: bold;
   transition: color 0.3s;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .menu li a:hover {
@@ -94,11 +92,6 @@ body {
   margin: 4px 0;
 }
 
-.menu li img {
-  height: 30px;
-  border-radius: 50%;
-}
-
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -130,6 +123,7 @@ body {
     display: flex;
   }
 }
+/* end navbar */
 /* MENU */
 body {
   font-family: Arial, sans-serif;

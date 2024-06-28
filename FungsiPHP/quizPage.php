@@ -4,7 +4,7 @@
 // Koneksi ke database
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "ExaTrain";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -56,8 +56,8 @@ if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
 
     $selectedCourseId = $_SESSION['selected_course_id'];
     $userId = $_SESSION['user_id'];
-    echo "=====" . $selectedCourseId;
-    echo "=====" . $userId;
+    // echo "=====" . $selectedCourseId;
+    // echo "=====" . $userId;
 
     // Query untuk menghitung jumlah soal berdasarkan selected_course_id
     $sql_count_questions = "SELECT COUNT(*) AS total_questions FROM questions WHERE subject_id = $selectedCourseId";
@@ -88,12 +88,13 @@ if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
     if ($result->num_rows > 0) {
         // Menampilkan pertanyaan dan form jawaban
         $row = $result->fetch_assoc();
-        echo "<h2>" . $row['question_text'] . "</h2>";
+        echo "<h2 class='tulisanPertanyaan'>" . "Soal" . "</h2>";
+        echo "<h4 class='isiPertanyaan'>" . $row['question_text'] . "</h4>";
 
         // Menampilkan textarea untuk jawaban essay
         $answer = isset($_SESSION['answers'][$questionId]) ? $_SESSION['answers'][$questionId] : '';
-        echo "<form action='' method='post'>";
-        echo "<textarea name='essay_answer'>$answer</textarea>";
+        echo "<form class='formjawaban' action='' method='post'>";
+        echo "<textarea class='isiBox' name='essay_answer'>$answer</textarea>";
 
         // Tombol untuk soal nomor 1 hingga jumlah soal untuk mata kuliah yang dipilih
         echo "<input type='hidden' name='current_question' value='$questionId'>";
@@ -108,9 +109,12 @@ if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
 
             echo "<button type='submit' name='question_id' value='$questionIdForButton' class='$buttonClass'>Soal $i</button>";
         }
+       
         echo "</div>";
+
+        echo "<button class='submitJawaban' type='submit' name='submit_final'>Submit Jawaban</button>";
         // Tombol untuk mengirim jawaban
-        echo "<button type='submit' name='submit_final'>Submit Jawaban</button>";
+        
         echo "</div>";
         echo "</form>";
 

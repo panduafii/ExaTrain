@@ -56,8 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
     <!-- End Navbar -->
 
     <!-- Tombol Back -->
-    <div class="back-button" onclick="goBack()">
-        <a href="#">&larr;</a>
+    <div class="back-button" onclick="goBack(dashboard.php)">
+        <a href="dashboard.php">&larr;</a>
     </div>
     <!-- End -->
 
