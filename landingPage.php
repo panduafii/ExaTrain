@@ -18,10 +18,10 @@
                 <img src="img/logo1.png" alt="Logo" />
             </div>
             <ul class="menu">
-                <li><a href="landingPage.php">Beranda</a></li>
+                <li><a href="dashboard.php">Dashoard</a></li>
                 <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
                 <li><a href="paring.php">Papan Peringkat</a></li>
-                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="aboutUs.php">Tentang Kami</a></li>
                 <li><a href="loginRegist.php"><button class="signup-btn">Sign Up</button></a></li>
             </ul>
         </nav>
