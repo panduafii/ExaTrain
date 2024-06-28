@@ -1,3 +1,11 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin: 0;
@@ -28,11 +36,6 @@ body {
   z-index: 1000;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
 .logo img {
   height: 40px;
 }
@@ -61,7 +64,7 @@ body {
 }
 
 .menu li a:hover {
-  color: black;
+  color: #276DD8;
 }
 
 .menu li img {
@@ -131,7 +134,6 @@ body {
   border-radius: 10px;
   text-align: center;
   width: 100%;
-  max-width: 1500px;
   margin-top: 65px; /* Adjust based on navbar and header height */
   background: none;
   flex: 1; /* Ensure the container takes the remaining space */

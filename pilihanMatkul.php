@@ -29,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
                 <img src="img/logo.png" alt="Logo" />
             </div>
             <ul class="menu">
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Mata Kuliah</a></li>
-                <li><a href="#">Papan Peringkat</a></li>
-                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
+                <li><a href="paring.php">Papan Peringkat</a></li>
+                <li><a href="aboutUs.php">Tentang Kami</a></li>
                 <li>
                     <?php
                     // Menampilkan nama pengguna jika ada yang masuk
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
                     }
                     ?>
                 </li>
-                <li><a href="#"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
+                <li><a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
             </ul>
             <div class="menu-toggle">
                 <div class="bar"></div>
@@ -56,8 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
     <!-- End Navbar -->
 
     <!-- Tombol Back -->
-    <div class="back-button" onclick="goBack()">
-        <a href="#">&larr;</a>
+    <div class="back-button" onclick="goBack(dashboard.php)">
+        <a href="dashboard.php">&larr;</a>
     </div>
     <!-- End -->
 

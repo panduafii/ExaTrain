@@ -25,7 +25,7 @@ if (!isset($_SESSION['selected_course_id'])) {
 // Koneksi ke database
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "ExaTrain";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -94,10 +94,9 @@ $conn->close();
                 <li><a href="landingPage.php">Beranda</a></li>
                 <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
                 <li><a href="paring.php">Papan Peringkat</a></li>
-                <li><a href="#">Tentang Kami</a></li>
-                <li>Hi! <?= isset($_SESSION["username"]) ? $_SESSION["username"] : "Guest"; ?>
-                    <a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a>
-                </li>
+                <li><a href="aboutUs.php">Tentang Kami</a></li>
+                <li>Hi! <?= isset($_SESSION["username"]) ? $_SESSION["username"] : "Guest"; ?></li>
+                <li><a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
             </ul>
 
         </nav>
