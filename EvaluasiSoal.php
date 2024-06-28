@@ -54,7 +54,7 @@ if (!isset($_SESSION['username'])) {
 
     <!-- Tombol Back -->
     <div class="back-button" onclick="goBack()">
-      <a href="#">&larr;</a>
+      <a href="dashboard.php">&larr;</a>
     </div>
     <!-- End -->
 

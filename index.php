@@ -2,7 +2,7 @@
 // Memulai sesi
 session_start();
 
-$subject_id = $_SESSION['subject_id'];
+$subject_id = $_SESSION['selected_course_id'];
 
 // Koneksi ke database
 $servername = "localhost";

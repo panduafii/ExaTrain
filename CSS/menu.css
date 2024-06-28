@@ -9,6 +9,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 /* NAVBAR */
 .navbar {
   width: 100%;
@@ -107,7 +108,6 @@ body {
     display: flex;
   }
 }
-/* end navbar */
 /* MENU */
 body {
   font-family: Arial, sans-serif;
