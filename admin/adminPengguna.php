@@ -142,11 +142,29 @@ session_start();
                     </div>
                 </a>
                 <div class="charts">
-                    <div class="chart" id="user-profile"></div>
-                    <div class="chart" id="course-distribution"></div>
-                    <div class="chart" id="correct-incorrect"></div>
-                    <div class="chart" id="average-grades"></div>
-                    <div class="chart" id="average-scores"></div>
+                    <div class="chart" id="user-profile">
+                        <h4>Profil Pengguna</h4>
+                    </div>
+
+                    <div class="chart" id="course-distribution">
+                        <h4>Pengerjaan Mata Kuliah</h4>
+                        <canvas id="courseDistributionChart"></canvas>
+                    </div>
+
+                    <div class="chart" id="correct-incorrect">
+                        <h4>Salah dan Benar</h4>
+                        <canvas id="CRC"></canvas>
+                    </div>
+
+                    <div class="chart" id="average-grades">
+                        <h4>Rata-Rata Nilai Tiap Mata Kuliah</h4>
+                        <canvas id="averageGrades"></canvas>
+                    </div>
+
+                    <div class="chart" id="average-scores">
+                        <h4>Rata-Rata Nilai Seluruh Mata Kuliah Tiap Periode</h4>
+                        <canvas id="averageScores"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,5 +203,137 @@ session_start();
             xhr.send("user_id=" + userId);
         }
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+        // Generate random positive data without a max value constraint
+        function generateRandomData(count) {
+            let data = [];
+            for (let i = 0; i < count; i++) {
+                data.push(Math.floor(Math.random() * 100)); // Generate random numbers between 0 and 99
+            }
+            return data;
+        }
+
+    window.onload = function(){
+        // Bar Chart for Correct Incorrect
+        const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+        const DATA_COUNT = 7;
+
+        
+
+        const CRCData = {
+            labels: labels,
+            datasets: [{
+                label: 'Dataset 1',
+                data: generateRandomData(DATA_COUNT),
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgb(255, 99, 132)',
+                borderWidth: 1
+            },
+            {
+                label: 'Dataset 2',
+                data: generateRandomData(DATA_COUNT),
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgb(54, 162, 235)',
+                borderWidth: 1
+            }]
+        };
+
+        const CRCConfig = {
+            type: 'bar',
+            data: CRCData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        const CRCCtx = document.getElementById('CRC').getContext('2d');
+        new Chart(CRCCtx, CRCConfig);
+
+        // Bar Chart for Average Grades
+        const averageGradesData = {
+            labels: labels,
+            datasets: [{
+                label: 'Dataset 1',
+                data: generateRandomData(DATA_COUNT),
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgb(255, 99, 132)',
+                borderWidth: 1
+            }]
+        };
+
+        const averageGradesConfig = {
+            type: 'bar',
+            data: averageGradesData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        const averageGradesCtx = document.getElementById('averageGrades').getContext('2d');
+        new Chart(averageGradesCtx, averageGradesConfig);
+
+
+        // Doughnut Chart for Course Distribution
+        const doughnutData = {
+                labels: ['Red', 'Blue', 'Yellow'],
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ],
+                    hoverOffset: 4
+                }]
+            };
+
+            const doughnutConfig = {
+                type: 'doughnut',
+                data: doughnutData,
+            };
+
+            const doughnutCtx = document.getElementById('courseDistributionChart').getContext('2d');
+            new Chart(doughnutCtx, doughnutConfig); 
+        
+        // Line Chart
+        const averageScoresData = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+        label: 'My First Dataset',
+        data: [65, 59, 80, 81, 56, 55, 40],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+            }]
+        };
+
+        const averageScoresConfig = {
+        type: 'line',
+        data: averageScoresData,
+        };
+
+        const lineCtx = document.getElementById('averageScores').getContext('2d');
+        new Chart(lineCtx, averageScoresConfig); 
+    };
+
+    </script>
+
 </body>
 </html>

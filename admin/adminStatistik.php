@@ -84,6 +84,7 @@
 
                     <div class="chart" id="average-grades-chart">
                         <h4>Rata-Rata Nilai Tiap Angkatan / Periode</h4> <!-- Moved text to the top -->
+                        <canvas id="averageGradesChart"></canvas>
                     </div>
 
                     <div class="chart" id="user-activity-chart">
@@ -99,31 +100,42 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
     <script>
-        
-        //Bar Chart
-               window.onload = function() {
-                const userCountData = {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        // Fungsi untuk menghasilkan data acak
+        function generateRandomData(count) {
+            let data = [];
+            for (let i = 0; i < count; i++) {
+                data.push(Math.floor(Math.random() * 100));
+            }
+            return data;
+        }
+
+        const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+        const DATA_COUNT = 7;
+
+        window.onload = function() {
+            // User Count Bar Chart
+            const userCountData = {
+                labels: labels,
                 datasets: [
                     {
                         label: 'Dataset 1',
-                        data: [65, 59, 80, 81, 56, 55, 40],
+                        data: generateRandomData(DATA_COUNT),
                         backgroundColor: 'rgb(255, 99, 132)',
                     },
                     {
                         label: 'Dataset 2',
-                        data: [28, 48, 40, 19, 86, 27, 90],
+                        data: generateRandomData(DATA_COUNT),
                         backgroundColor: 'rgb(54, 162, 235)',
                     },
                     {
                         label: 'Dataset 3',
-                        data: [38, 58, 30, 39, 96, 37, 100],
+                        data: generateRandomData(DATA_COUNT),
                         backgroundColor: 'rgb(75, 192, 192)',
                     },
                 ]
             };
 
-                const userCountConfig = {
+            const userCountConfig = {
                 type: 'bar',
                 data: userCountData,
                 options: {
@@ -147,7 +159,7 @@
             const barCtx = document.getElementById('userCountChart').getContext('2d');
             new Chart(barCtx, userCountConfig);
 
-            // Doughnut Chart for Course Distribution
+            // Course Distribution Doughnut Chart
             const doughnutData = {
                 labels: ['Red', 'Blue', 'Yellow'],
                 datasets: [{
@@ -168,31 +180,73 @@
             };
 
             const doughnutCtx = document.getElementById('courseDistributionChart').getContext('2d');
-            new Chart(doughnutCtx, doughnutConfig); 
+            new Chart(doughnutCtx, doughnutConfig);
+
+            // Average Grades Bar Chart
+            const averageGradesChartData = {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Dataset 1',
+                        data: generateRandomData(DATA_COUNT),
+                        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Dataset 2',
+                        data: generateRandomData(DATA_COUNT),
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgb(54, 162, 235)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Dataset 3',
+                        data: generateRandomData(DATA_COUNT),
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                        borderColor: 'rgb(75, 192, 192)',
+                        borderWidth: 1
+                    }
+                ]
+            };
+
+            const averageGradesChartConfig = {
+                type: 'bar',
+                data: averageGradesChartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            };
+
+            const averageGradesChartCtx = document.getElementById('averageGradesChart').getContext('2d');
+            new Chart(averageGradesChartCtx, averageGradesChartConfig);
+
+            // User Activity Line Chart
+            const userActivityData = {
+                labels: labels,
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: generateRandomData(DATA_COUNT),
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            };
+
+            const userActivityConfig = {
+                type: 'line',
+                data: userActivityData,
+            };
+
+            const lineCtx = document.getElementById('userActivityChart').getContext('2d');
+            new Chart(lineCtx, userActivityConfig);
         };
-
-        
-        // Line Chart
-        const userActivityData = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-        label: 'My First Dataset',
-        data: [65, 59, 80, 81, 56, 55, 40],
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
-            }]
-        };
-
-        const userActivityConfig = {
-        type: 'line',
-        data: userActivityData,
-        };
-
-        const lineCtx = document.getElementById('userActivityChart').getContext('2d');
-     new Chart(lineCtx, userActivityConfig);
-
-
     </script>
 
 </body>
