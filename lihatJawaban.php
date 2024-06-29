@@ -25,7 +25,7 @@ if (!isset($_SESSION['selected_course_id'])) {
 // Koneksi ke database
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "ExaTrain";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -86,8 +86,8 @@ $conn->close();
                 <?php
                     $selectedCourseId = $_SESSION['selected_course_id'];
                     $userId = $_SESSION['user_id'];
-                    echo "=====" . $selectedCourseId;
-                    echo "=====" . $userId;
+                    // echo "=====" . $selectedCourseId;
+                    // echo "=====" . $userId;
                 ?>
             </div>
             <ul class="menu">
