@@ -7,7 +7,7 @@ $subject_id = $_SESSION['selected_course_id'];
 // Koneksi ke database
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "ExaTrain";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

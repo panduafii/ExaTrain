@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="CSS/loginRegist.css" />
     <title>Login and Register</title>
 </head>
-<body style="background-image: url('img/background.png'); background-repeat:no-repeat; background-size:cover;">
+<body style="background-image: url('img/background.png'); background-repeat:no-repeat; background-size:cover; background-attachment: fixed;">
 
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo">
             <img src="img/logo.png" alt="Logo" />
         </div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
         <ul class="menu">
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
@@ -59,7 +60,7 @@
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
                     <option value="2023">2023</option>
-                </select><br><br>
+                </select><br>
                   <button type="submit" name="submit">Tambah Pengguna</button>
                   <p class="message">Sudah Punya Akun?<a href="#">Log In</a></p>
                 </div>

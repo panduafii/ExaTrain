@@ -53,7 +53,7 @@ body {
 }
 
 .menu li a:hover {
-  color: #276DD8;
+  color: #276dd8;
 }
 
 .menu li img {
@@ -118,7 +118,7 @@ body {
 
 h1 {
   font-size: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .leaderboard {
@@ -134,7 +134,6 @@ h1 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 600px;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: #e7f1ff;
@@ -178,6 +177,7 @@ h1 {
   top: 100px;
   left: 20px;
   transition: color 0.3s;
+  margin-top: 50px;
 }
 
 .back-button a {
@@ -187,4 +187,95 @@ h1 {
 
 .back-button:hover {
   color: #003f7f;
+}
+/* end back button */
+
+/* Navbar Responsif */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 10px; /* Mengurangi padding agar muat pada layar kecil */
+  }
+  .menu {
+    position: static; /* Mengubah posisi agar tidak overlay pada layar kecil */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0;
+    display: none;
+  }
+
+  .menu li {
+    width: auto;
+    margin: 0;
+    text-align: left;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+  }
+}
+
+/* Container Responsif */
+.container {
+  padding: 80px 20px 20px; /* Padding default */
+  max-width: 1200px; /* Maksimum lebar konten */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Leaderboard Responsif */
+.leaderboard {
+  gap: 20px; /* Jarak antar item leaderboard */
+}
+
+.leaderboard-item {
+  padding: 15px 20px; /* Padding untuk responsivitas */
+  width: 100%;
+  max-width: 800px; /* Maksimum lebar leaderboard */
+}
+
+/* Media Query untuk Layar Lebar */
+@media (min-width: 1600px) {
+  .container {
+    padding: 100px 80px 20px; /* Padding untuk layar besar */
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    padding: 100px 150px 20px; /* Padding untuk layar 1920x1080 */
+  }
+}
+
+/* Adjustments lainnya */
+.back-button {
+  top: 60px; /* Posisi untuk responsivitas */
+  left: 20px;
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    top: 20px; /* Penyesuaian untuk layar kecil */
+  }
 }

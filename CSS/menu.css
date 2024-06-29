@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: #f3f4f6;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@ body {
 
 .menu li {
   margin-right: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .menu li:last-child {
@@ -56,7 +56,7 @@ body {
 }
 
 .menu li a:hover {
-  color: #276DD8;
+  color: #276dd8;
 }
 
 .menu li img {
@@ -182,4 +182,205 @@ h1 {
 
 .back-button:hover {
   color: #003f7f;
+}
+
+@media (min-width: 1920px) {
+  .navbar {
+    height: 100px; /* Menyesuaikan tinggi navbar untuk layar besar */
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 60px; /* Menyesuaikan tinggi logo untuk layar besar */
+  }
+
+  .menu li a {
+    font-size: 1.2vw; /* Menyesuaikan ukuran font untuk layar besar */
+  }
+
+  .menu li button {
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+  }
+
+  h1 {
+    margin-top: 100px;
+    font-size: 100px;
+  }
+
+  .card {
+    padding: 40px;
+    width: 25vw;
+    height: 27vw;
+  }
+
+  .card img {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .card p {
+    font-size: 50px;
+  }
+
+  .back-button {
+    margin-top: 90px;
+    margin-left: 100px;
+  }
+
+  .back-button a {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar {
+    height: 70px; /* Menyesuaikan tinggi navbar untuk layar sedang */
+    padding: 0 20px;
+  }
+
+  .logo img {
+    height: 50px; /* Menyesuaikan tinggi logo untuk layar sedang */
+  }
+
+  .menu li a {
+    font-size: 1rem; /* Menyesuaikan ukuran font untuk layar sedang */
+  }
+
+  .menu li button {
+    height: 25px;
+    padding: 0 10px;
+    font-size: 0.7rem;
+  }
+
+  .menu li img {
+    height: 30px;
+  }
+
+  .container {
+    padding: 60px 20px 20px;
+  }
+
+  .card {
+    padding: 20px;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px; /* Menyesuaikan tinggi navbar untuk layar kecil */
+    padding: 0 15px;
+  }
+
+  .logo img {
+    height: 40px; /* Menyesuaikan tinggi logo untuk layar kecil */
+  }
+
+  .menu li a {
+    font-size: 0.9rem; /* Menyesuaikan ukuran font untuk layar kecil */
+  }
+
+  .menu li button {
+    height: 20px;
+    padding: 0 8px;
+    font-size: 0.6rem;
+  }
+
+  .menu li img {
+    height: 25px;
+  }
+
+  .container {
+    padding: 40px 10px 10px;
+  }
+
+  .card {
+    padding: 15px;
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 50px; /* Menyesuaikan tinggi navbar untuk layar sangat kecil */
+    padding: 0 10px;
+  }
+
+  .logo img {
+    height: 30px; /* Menyesuaikan tinggi logo untuk layar sangat kecil */
+  }
+
+  .menu li a {
+    font-size: 0.8rem; /* Menyesuaikan ukuran font untuk layar sangat kecil */
+  }
+
+  .menu li button {
+    height: 15px;
+    padding: 0 6px;
+    font-size: 0.5rem;
+  }
+
+  .menu li img {
+    height: 20px;
+  }
+
+  .container {
+    padding: 20px 5px 5px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .card {
+    padding: 10px;
+    width: 100%;
+    max-width: 120px;
+  }
+
+  .card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .back-button {
+    font-size: 20px;
+    padding: 5px 15px;
+    top: 60px;
+    left: 10px;
+  }
 }

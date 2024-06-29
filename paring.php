@@ -2,7 +2,7 @@
 $host = 'localhost';  // Host database
 $dbname = 'ExaTrain';  // Nama database
 $username = 'root';  // Username database
-$password = 'root';  // Password database
+$password = '';  // Password database
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -30,7 +30,7 @@ try {
     <title>Papan Peringkat</title>
     <link rel="stylesheet" href="CSS/paring.css" />
   </head>
-  <body>
+  <body  style="background-image: url('img/background.png'); background-repeat:no-repeat; background-size:cover; background-attachment: fixed;">
     <!-- Navbar -->
     <header>
     <nav class="navbar">
