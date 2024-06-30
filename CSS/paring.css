@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 /* NAVBAR */
@@ -177,7 +178,6 @@ h1 {
   top: 100px;
   left: 20px;
   transition: color 0.3s;
-  margin-top: 50px;
 }
 
 .back-button a {
@@ -193,89 +193,129 @@ h1 {
 /* Navbar Responsif */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0 10px; /* Mengurangi padding agar muat pada layar kecil */
+    height: 50px; /* Menyesuaikan tinggi navbar untuk layar besar */
+    padding: 0 30px;
   }
-  .menu {
-    position: static; /* Mengubah posisi agar tidak overlay pada layar kecil */
-    flex-direction: row;
+
+  .logo img {
+    height: 30px; /* Menyesuaikan tinggi logo untuk layar besar */
+  }
+
+  .menu li a {
+    font-size: 1.6vw; /* Menyesuaikan ukuran font untuk layar besar */
+  }
+
+  .menu li button {
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+  }
+
+  .back-button {
+    margin-top: 1px;
+    margin-left: 1px;
+  }
+
+  .back-button a {
+    font-size: 3vw;
+  }
+
+  .container {
+    padding: 20px 10px 10px;
+    max-width: 100vh;
+    width: 100vh;
+    margin-top: 30px;
+  }
+
+  .container h1 {
+    margin-top: 60px;
+    font-size: 1.5rem;
+  }
+
+  .leaderboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Jarak antar item leaderboard */
     justify-content: center;
-    align-items: center;
-    background-color: transparent;
+  }
+
+  .leaderboard-item {
+    padding: 10px 15px; /* Padding untuk responsivitas */
+    width: 100%;
+    max-width: 70vw; /* Maksimum lebar leaderboard */
+    font-size: 1.2rem;
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar elemen */
+  }
+}
+@media (min-width: 1920px) {
+  .navbar {
+    height: 100px;
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .menu li a {
+    font-size: 1.2vw;
+  }
+
+  .menu li button {
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+  }
+
+  .back-button {
+    margin-top: 90px;
+    margin-left: 100px;
+  }
+
+  .back-button a {
+    font-size: 3vw;
+  }
+
+  .container {
+    padding: 80px 20px 20px;
+    max-width: 150vh;
     width: 100%;
     margin: 0 auto;
-    max-width: 100%;
-    padding: 0;
-    display: none;
   }
 
-  .menu li {
-    width: auto;
-    margin: 0;
-    text-align: left;
+  .container h1 {
+    margin-top: 120px;
+    font-size: 4rem;
   }
 
-  .menu-toggle {
+  .leaderboard {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    z-index: 1000;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 50%;
   }
 
-  .menu-toggle .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 4px 0;
-  }
-}
-
-/* Container Responsif */
-.container {
-  padding: 80px 20px 20px; /* Padding default */
-  max-width: 1200px; /* Maksimum lebar konten */
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* Leaderboard Responsif */
-.leaderboard {
-  gap: 20px; /* Jarak antar item leaderboard */
-}
-
-.leaderboard-item {
-  padding: 15px 20px; /* Padding untuk responsivitas */
-  width: 100%;
-  max-width: 800px; /* Maksimum lebar leaderboard */
-}
-
-/* Media Query untuk Layar Lebar */
-@media (min-width: 1600px) {
-  .container {
-    padding: 100px 80px 20px; /* Padding untuk layar besar */
-  }
-}
-
-@media (min-width: 1920px) {
-  .container {
-    padding: 100px 150px 20px; /* Padding untuk layar 1920x1080 */
-  }
-}
-
-/* Adjustments lainnya */
-.back-button {
-  top: 60px; /* Posisi untuk responsivitas */
-  left: 20px;
-}
-
-@media (max-width: 768px) {
-  .back-button {
-    top: 20px; /* Penyesuaian untuk layar kecil */
+  .leaderboard-item {
+    padding: 15px 20px;
+    width: calc(100% - 40px); /* Sesuaikan lebar item dengan mengurangi gap */
+    max-width: 120vh;
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar elemen */
+    font-size: 1.7rem;
   }
 }

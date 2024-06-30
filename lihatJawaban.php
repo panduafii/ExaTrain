@@ -91,7 +91,7 @@ $conn->close();
                 ?>
             </div>
             <ul class="menu">
-                <li><a href="landingPage.php">Beranda</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
                 <li><a href="paring.php">Papan Peringkat</a></li>
                 <li><a href="aboutUs.php">Tentang Kami</a></li>
@@ -117,12 +117,22 @@ $conn->close();
                 <div class="question-block" id="question-<?= $index ?>" style="display: <?= $index === 0 ? 'block' : 'none'; ?>">
                     <h4>Soal</h4>
                     <p><?= $question['question_text'] ?></p>
+                    
                     <h4>Jawaban Anda</h4>
                     <p><?= $question['answer'] ?></p>
+                    
+
+                    <div class="evaluation-box">
+                        <div>
                     <strong>Kunci Jawaban:</strong> 
                     <p><?= $question['correct_answer'] ?></p>
+                    </div>
+                    </div>
+
+                    <div class="answer-box">
                     <strong>Evaluasi AI:</strong>
                     <p> <?= $question['evaluasi_ai'] ?></p>
+                    </div>    
                 </div>
             <?php endforeach; ?>
             <div class="question-navigation">

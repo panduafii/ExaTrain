@@ -8,7 +8,6 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0 10px 0 0;
-  background-image: url("img/wave.png");
 }
 
 /* NAVBAR */
@@ -56,7 +55,7 @@ body {
 }
 
 .menu li a:hover {
-  color: #276DD8;
+  color: #276dd8;
 }
 
 .menu li img {
@@ -75,38 +74,6 @@ body {
   height: 3px;
   background-color: #333;
   margin: 4px 0;
-}
-
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    z-index: 999;
-  }
-
-  .menu li {
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  .menu li a {
-    padding: 10px 0;
-    display: block;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .menu.active {
-    display: flex;
-  }
 }
 /* end navbar */
 
@@ -142,7 +109,7 @@ h1 {
 
 .package p {
   margin: 0;
-  font-size: 14px;
+  font-size: 20px;
   color: #555;
 }
 
@@ -207,10 +174,175 @@ h1 {
 }
 
 .back-button a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit color from parent */
+  text-decoration: none;
+  color: inherit;
 }
 
 .back-button:hover {
   color: #003f7f;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    height: 50px; /* Menyesuaikan tinggi navbar untuk layar besar */
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 30px; /* Menyesuaikan tinggi logo untuk layar besar */
+  }
+
+  .menu li a {
+    font-size: 1.6vw; /* Menyesuaikan ukuran font untuk layar besar */
+  }
+
+  .menu li button {
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+  }
+
+  .back-button {
+    margin-top: 1px;
+    margin-left: 1px;
+  }
+
+  .back-button a {
+    font-size: 3vw;
+  }
+  .container {
+    width: 90vw; /* Menyesuaikan lebar container untuk layar kecil */
+    padding: 10px; /* Mengurangi padding untuk layar kecil */
+    margin-top: 20px; /* Mengurangi margin atas untuk layar kecil */
+  }
+
+  h1 {
+    font-size: 18px; /* Mengurangi ukuran font untuk layar kecil */
+    margin: 0 0 10px 0; /* Mengurangi margin bawah untuk layar kecil */
+  }
+
+  .payment-box {
+    padding: 10px; /* Mengurangi padding untuk layar kecil */
+  }
+
+  .package p {
+    font-size: 14px; /* Menyesuaikan ukuran font untuk layar kecil */
+  }
+
+  .price {
+    font-size: 12px; /* Menyesuaikan ukuran font untuk layar kecil */
+  }
+
+  .confirm-button {
+    font-size: 12px; /* Menyesuaikan ukuran font untuk layar kecil */
+  }
+
+  .payment-method label {
+    font-size: 12px; /* Mengurangi ukuran font untuk layar kecil */
+    padding: 5px; /* Mengurangi padding untuk layar kecil */
+  }
+
+  .back-button {
+    top: 70px; /* Menyesuaikan posisi tombol kembali untuk layar kecil */
+    left: 10px; /* Menyesuaikan posisi tombol kembali untuk layar kecil */
+  }
+}
+
+@media (min-width: 1920px) {
+  .navbar {
+    height: 100px;
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .menu li a {
+    font-size: 1.2vw;
+  }
+
+  .menu li button {
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+  }
+
+  .back-button {
+    margin-top: 80px;
+    margin-left: 100px;
+  }
+
+  .back-button a {
+    font-size: 3vw;
+  }
+
+  .back-button a {
+    font-size: 3vw;
+  }
+
+  .container {
+    width: 100vh; /* Menyesuaikan lebar container untuk layar besar */
+    padding: 40px; /* Menambahkan padding untuk layar besar */
+    margin-top: 60px; /* Menambah margin atas untuk layar besar */
+    height: 60vh;
+  }
+
+  h1 {
+    font-size: 48px; /* Menambah ukuran font untuk layar besar */
+    margin: 0 0 60px 0; /* Menambah margin bawah untuk layar besar */
+  }
+
+  .payment-box {
+    padding: 30px; /* Menambah padding untuk layar besar */
+    width: 95vh;
+    height: 42vh;
+  }
+
+  .payment-method {
+    height: max-content;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .payment-method label {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+
+  .package p {
+    font-size: 30px; /* Menambah ukuran font untuk layar besar */
+  }
+
+  .price {
+    font-size: 30px; /* Menambah ukuran font untuk layar besar */
+  }
+
+  .confirm-button {
+    font-size: 35px; /* Menambah ukuran font untuk layar besar */
+  }
+
+  .back-button {
+    top: 120px; /* Menyesuaikan posisi tombol kembali untuk layar besar */
+    left: 30px; /* Menyesuaikan posisi tombol kembali untuk layar besar */
+  }
 }
