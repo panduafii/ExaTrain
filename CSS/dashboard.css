@@ -143,6 +143,7 @@ main {
 h1 {
   font-size: 50px;
   padding-bottom: 20px; /* Reduced padding to move the title up */
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .dashboard {
@@ -150,6 +151,7 @@ h1 {
   justify-content: center;
   gap: 30px;
   padding: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .card-link {
@@ -182,6 +184,7 @@ h1 {
   font-size: 30px; /* Increased font size for better readability */
   font-weight: bold;
   color: #333;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 /* END DASHBOARD */
 @media (min-width: 1920px) {
@@ -348,7 +351,6 @@ h1 {
     font-size: 1.4rem;
   }
 }
-
 
 @media (max-width: 768px) {
   .navbar {

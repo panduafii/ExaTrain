@@ -189,7 +189,6 @@ main {
   font-size: 1.5rem;
   color: #007bff;
 }
-
 .question-navigation {
   display: flex;
   justify-content: center;
@@ -217,7 +216,8 @@ main {
   background-color: #0056b3;
 }
 
-.question-navigation button.active {
+.question-navigation button:focus,
+.question-navigation button:active {
   background-color: #000;
   color: #fff;
 }
