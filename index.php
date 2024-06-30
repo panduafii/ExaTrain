@@ -2,12 +2,12 @@
 // Memulai sesi
 session_start();
 
-$subject_id = $_SESSION['subject_id'];
+$subject_id = $_SESSION['selected_course_id'];
 
 // Koneksi ke database
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "ExaTrain";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -90,6 +90,5 @@ if (!isset($_SESSION['selected_course_id'])) {
 
     <!-- Menyertakan file quizPage.php -->
     <?php include "fungsiPHP/quizPage.php"; ?>
-
 </body>
 </html>

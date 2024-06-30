@@ -152,7 +152,7 @@ body {
 .question-buttons {
 
     position: absolute;
-    bottom: 0;
+    margin-bottom: auto;
     width: 100%;
     text-align: center;
     background-color: #1263d4;
@@ -179,15 +179,13 @@ body {
 
 .submitJawaban{
     position: absolute;
-    bottom: 0;
+    margin-bottom: auto;
     display: flex;
     right: 0;
-
     margin-top: 10px;
     padding: 22px 15px; /* Padding untuk tombol */
     border: 1px solid rgb(255, 255, 255); /* Border warna abu-abu muda */
     border-radius: 5px;
-    margin-bottom: 10px;
     margin-right: 20px;
     background-color: #fff;
 
