@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="CSS/pembayaran.css" />
     <title>Pembayaran</title>
   </head>
-  <body style="background-image: url('img/background.png'); background-size: cover; background-repeat: no-repeat;">
+  <body style="background-image: url('img/background.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
     <!-- NAVBAR -->
     <header>
         <nav class="navbar">
@@ -18,17 +18,7 @@
                 <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
                 <li><a href="paring.php">Papan Peringkat</a></li>
                 <li><a href="#">Tentang Kami</a></li>
-                <li>
-                    <?php
-                    // Menampilkan nama pengguna jika ada yang masuk
-                    if (isset($_SESSION["username"])) {
-                        $username = $_SESSION["username"];
-                        echo "Hi! $username";
-                    } else {
-                        echo "Hi!";
-                    }
-                    ?>
-                </li>
+                <li>Hi! <?= isset($_SESSION["username"]) ? $_SESSION["username"] : "Guest"; ?></li>
                 <li><a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
                 <!-- <li></li> -->
             </ul>

@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 /* NAVBAR */
@@ -53,7 +54,7 @@ body {
 }
 
 .menu li a:hover {
-  color: #276DD8;
+  color: #276dd8;
 }
 
 .menu li img {
@@ -118,7 +119,7 @@ body {
 
 h1 {
   font-size: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .leaderboard {
@@ -134,7 +135,6 @@ h1 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 600px;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: #e7f1ff;
@@ -187,4 +187,135 @@ h1 {
 
 .back-button:hover {
   color: #003f7f;
+}
+/* end back button */
+
+/* Navbar Responsif */
+@media (max-width: 768px) {
+  .navbar {
+    height: 50px; /* Menyesuaikan tinggi navbar untuk layar besar */
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 30px; /* Menyesuaikan tinggi logo untuk layar besar */
+  }
+
+  .menu li a {
+    font-size: 1.6vw; /* Menyesuaikan ukuran font untuk layar besar */
+  }
+
+  .menu li button {
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+  }
+
+  .back-button {
+    margin-top: 1px;
+    margin-left: 1px;
+  }
+
+  .back-button a {
+    font-size: 3vw;
+  }
+
+  .container {
+    padding: 20px 10px 10px;
+    max-width: 100vh;
+    width: 100vh;
+    margin-top: 30px;
+  }
+
+  .container h1 {
+    margin-top: 60px;
+    font-size: 1.5rem;
+  }
+
+  .leaderboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Jarak antar item leaderboard */
+    justify-content: center;
+  }
+
+  .leaderboard-item {
+    padding: 10px 15px; /* Padding untuk responsivitas */
+    width: 100%;
+    max-width: 70vw; /* Maksimum lebar leaderboard */
+    font-size: 1.2rem;
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar elemen */
+  }
+}
+@media (min-width: 1920px) {
+  .navbar {
+    height: 100px;
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .menu li a {
+    font-size: 1.2vw;
+  }
+
+  .menu li button {
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+  }
+
+  .back-button {
+    margin-top: 90px;
+    margin-left: 100px;
+  }
+
+  .back-button a {
+    font-size: 3vw;
+  }
+
+  .container {
+    padding: 80px 20px 20px;
+    max-width: 150vh;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .container h1 {
+    margin-top: 120px;
+    font-size: 4rem;
+  }
+
+  .leaderboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .leaderboard-item {
+    padding: 15px 20px;
+    width: calc(100% - 40px); /* Sesuaikan lebar item dengan mengurangi gap */
+    max-width: 120vh;
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar elemen */
+    font-size: 1.7rem;
+  }
 }

@@ -89,7 +89,7 @@ if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
         // Menampilkan pertanyaan dan form jawaban
         $row = $result->fetch_assoc();
         echo "<h2 class='tulisanPertanyaan'>" . "Soal" . "</h2>";
-        echo "<h4 class='isiPertanyaan'>" . $row['question_text'] . "</h4>";
+        echo "<h4 class='isiPertanyaan'>" .$row['$question_id']. $row['question_text'] . "</h4>";
 
         // Menampilkan textarea untuk jawaban essay
         $answer = isset($_SESSION['answers'][$questionId]) ? $_SESSION['answers'][$questionId] : '';
@@ -107,12 +107,11 @@ if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
             // Cek apakah pertanyaan ini sudah dijawab
             $buttonClass = isset($_SESSION['answers'][$questionIdForButton]) && !empty($_SESSION['answers'][$questionIdForButton]) ? 'answered' : '';
 
-            echo "<button type='submit' name='question_id' value='$questionIdForButton' class='$buttonClass'>Soal $i</button>";
+            echo "<button type='submit' name='question_id' value='$questionIdForButton' class='question-button $buttonClass'>Soal $i</button>";
         }
-       
         echo "</div>";
 
-        echo "<button class='submitJawaban' type='submit' name='submit_final'>Submit Jawaban</button>";
+        echo "<button class='submitJawaban' type='submit' name='submit_final'>Submit</button>";
         // Tombol untuk mengirim jawaban
         
         echo "</div>";
@@ -153,3 +152,21 @@ function getQuestionIdByOrder($conn, $subjectId, $order) {
     }
 }
 ?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Menangkap semua tombol soal
+    var buttons = document.querySelectorAll('.question-button');
+
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            // Menghapus kelas 'active-button' dari semua tombol
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active-button');
+            });
+
+            // Menambahkan kelas 'active-button' ke tombol yang ditekan
+            this.classList.add('active-button');
+        });
+    });
+});
+</script>
