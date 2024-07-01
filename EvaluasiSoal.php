@@ -18,7 +18,7 @@ if (!isset($_SESSION['username'])) {
     <title>Soal & Evaluasi</title>
     <link rel="stylesheet" href="CSS/menu.css" />
 </head>
-<body style="background-image: url('img/background.png'); background-size: cover; background-repeat: no-repeat;">
+<body style="background-image: url('img/background.png'); background-size: cover; background-repeat: no-repeat; background-attachment:fixed;">
     <!-- NAVBAR -->
     <header>
         <nav class="navbar">
@@ -54,7 +54,7 @@ if (!isset($_SESSION['username'])) {
 
     <!-- Tombol Back -->
     <div class="back-button" onclick="goBack()">
-      <a href="#">&larr;</a>
+      <a href="dashboard.php">&larr;</a>
     </div>
     <!-- End -->
 

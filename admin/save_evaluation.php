@@ -11,7 +11,7 @@ $evaluasi_ai = $data['evaluasi_ai'];  // Menerima data evaluasi AI dari frontend
 // Koneksi ke database
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "ExaTrain";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

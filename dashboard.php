@@ -19,7 +19,7 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="CSS/dashboard.css" />
   </head>
 
-  <body style="background-image: url('img/wave.png'); background-repeat: no-repeat; background-size: cover">
+  <body style="background-image: url('img/wave.png'); background-repeat: no-repeat; background-size: cover; background-attachment:fixed">
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo">

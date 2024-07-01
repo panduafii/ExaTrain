@@ -63,10 +63,6 @@ if (!isset($_SESSION['selected_course_id'])) {
         <img src="img/logo.png" alt="Logo" />
       </div>
       <ul class="menu">
-        <!-- <li><a href="landingPage.php">Beranda</a></li>
-        <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
-        <li><a href="paring.php">Papan Peringkat</a></li>
-        <li><a href="#">Tentang Kami</a></li> -->
         <li>
           <?php
             // Menampilkan nama pengguna jika ada yang masuk
@@ -82,6 +78,7 @@ if (!isset($_SESSION['selected_course_id'])) {
       </ul>
     </nav>
     <!-- End Navbar -->
+
     <h1>Quiz</h1>
     <div class="title">
                 <h1><?php echo $subject_name; ?></h1>
@@ -90,6 +87,5 @@ if (!isset($_SESSION['selected_course_id'])) {
 
     <!-- Menyertakan file quizPage.php -->
     <?php include "fungsiPHP/quizPage.php"; ?>
-
 </body>
 </html>

@@ -71,52 +71,88 @@
                 <h3>Manajemen Soal</h3>
             </div>
             <div class="content">
-                <div class="filter">
-                    <label for="filter-by">Filter By:</label>
-                    <select id="filter-by">
-                        <option value="">Select...</option>
-                    </select>
                     <div class="year-buttons">
-                        <button class="year-button">2023</button>
-                        <button class="year-button">2022</button>
-                        <button class="year-button">2021</button>
+                        <button class="year-button" data-year="2023">2023</button>
+                        <button class="year-button" data-year="2022">2022</button>
+                        <button class="year-button" data-year="2021">2021</button>
                     </div>
                     <div class="line-atas"></div> <!-- Div untuk garis putih -->
-                </div>
-                <div class="questions">
-                    <div class="question-card">
-                        <img src="../img/iconpsi.png" alt="Icon">
-                        <span>Pengembangan Sistem Informasi</span>
-                    </div>
-                    <div class="question-card">
-                        <img src="../img/icongmm.png" alt="Icon">
-                        <span>Grafika dan Multimedia</span>
-                    </div>
-                    <div class="question-card">
-                        <img src="../img/iconscpk.png" alt="Icon">
-                        <span>Sistem Cerdas dan Pendukung Keputusan</span>
-                    </div>
-                    <div class="question-card">
-                        <img src="../img/iconbiki.png" alt="Icon">
-                        <span>Bahasa Indonesia Komunikasi Ilmiah</span>
-                    </div>
-                    <div class="question-card">
-                        <img src="../img/iconbiti.png" alt="Icon">
-                        <span>Bahasa Inggris Teknologi Informasi</span>
-                    </div>
-                    <div class="question-card">
-                        <img src="../img/iconulil.png" alt="Icon">
-                        <span>Islam Ulil Albab</span>
-                    </div>
+                <div class="courses" id="courses-container">
+                    <!-- Courses will be dynamically inserted here -->
                 </div>
                 <a href="adminTambahmatkul.php">
-                <div class="add-icon">
-                         <img src="../img/iconplesjing.png" alt="Add New">
-                </div>
+                    <div class="add-icon">
+                        <img src="../img/iconplesjing.png" alt="Add New">
+                    </div>
                 </a>
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const yearButtons = document.querySelectorAll(".year-button");
+            const coursesContainer = document.getElementById("courses-container");
+
+            const courses = {
+                2023: [
+                    { id: 7, name: "Matematika Lanjut", img: "../img/matlan.png" },
+                    { id: 8, name: "Algoritma dan Struktur Data", img: "../img/asd.png" },
+                    { id: 9, name: "Fundamen Pengembangan Aplikasi", img: "../img/fpa.png" },
+                    { id: 10, name: "Rekayasa Perangkat Lunak", img: "../img/rpl.png" },
+                ],
+                2022: [
+                    { id: 1, name: "Pengembangan Sistem Informasi", img: "../img/psi.png" },
+                    { id: 2, name: "Grafika dan Multimedia", img: "../img/grafmul.png" },
+                    { id: 3, name: "Sistem Cerdas dan Pendukung Keputusan", img: "../img/scpk.png" },
+                    { id: 4, name: "Bahasa Indonesia Komunikasi Ilmiah", img: "../img/bindo.png" },
+                    { id: 5, name: "Bahasa Inggris Teknologi Informasi", img: "../img/bingris.png" },
+                    { id: 6, name: "Islam Ulil Albab", img: "../img/islam.png" },
+                ],
+                2021: [
+                    { id: 11, name: "Islam Rahmatan lil 'Alamin", img: "../img/iru.png" },
+                    { id: 12, name: "Etika Profesi", img: "../img/profesi.png" },
+                ],
+            };
+
+            function displayCourses(year) {
+                coursesContainer.innerHTML = "";
+                courses[year].forEach((course) => {
+                    const form = document.createElement("form");
+                    form.action = "pilihanMatkul.php";
+                    form.method = "post";
+
+                    const courseButton = document.createElement("button");
+                    courseButton.className = "course-button";
+                    courseButton.name = "selected_course_id";
+                    courseButton.value = course.id;
+
+                    const courseImg = document.createElement("img");
+                    courseImg.src = course.img;
+                    courseImg.alt = course.name;
+
+                    const courseName = document.createElement("span");
+                    courseName.textContent = course.name;
+
+                    courseButton.appendChild(courseImg);
+                    courseButton.appendChild(courseName);
+
+                    form.appendChild(courseButton);
+                    coursesContainer.appendChild(form);
+                });
+            }
+
+            yearButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    yearButtons.forEach((btn) => btn.classList.remove("active"));
+                    button.classList.add("active");
+                    displayCourses(button.dataset.year);
+                });
+            });
+
+            // Initial display
+            displayCourses("2022");
+        });
+    </script>
 </body>
 
 </html>

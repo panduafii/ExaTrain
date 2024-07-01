@@ -1,3 +1,6 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -14,58 +17,143 @@ body {
   background-color: #f2f7ff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin: 80px auto 20px; /* Adjusting margin to account for fixed navbar */
+  margin: 120px auto 0px; /* Adjusting margin to account for fixed navbar */
   overflow: hidden;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-.sidebar {
-  width: 25%;
-  background-color: #cfe4ff;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.user-profile {
-  text-align: center;
-}
-
-.user-profile img {
-  width: 50%;
-  border-radius: 50%;
-}
-
-.user-profile h2 {
-  margin-top: 10px;
-  font-size: 24px;
-  color: #333;
-}
-
-.user-profile button {
-  margin: 10px 0;
-  padding: 10px 20px;
-  background-color: #ffc107;
+.back-button {
+  font-size: 30px;
+  padding: 5px 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #0056b3;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
-  color: #fff;
-  font-size: 14px;
+  position: absolute;
+  top: 60px;
+  left: 8px;
+  transition: color 0.3s;
 }
 
-.user-profile p {
-  margin: 5px 0;
-  color: #555;
-  font-size: 14px;
+.back-button a {
+  text-decoration: none;
+  color: inherit;
 }
 
+.profile {
+  width: 100%;
+  height: auto;
+  width: 380px;
+  height:60vh;
+  background-color: #CFE4FF;
+  margin-left: 25px;
+  padding: 30px 20px;
+  margin-top: 20px;
+  top: 70px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0px; /* Kurangi margin-bottom */
+}
+
+.profile-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.profile table {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 0;
+  text-align: left;
+  border-collapse: collapse; /* Menghapus jarak antara sel */
+}
+
+.profile td {
+  padding: 10px 0;
+}
+
+.profile td:first-child {
+  text-align: left; /* Rata kiri untuk kolom pertama */
+}
+
+.profile td:last-child {
+  text-align: right; /* Rata kanan untuk kolom kedua */
+}
+
+.profile tr {
+  display: flex;
+  justify-content: space-between; /* Membagi ruang antara kolom kiri dan kanan */
+  border-bottom: 1px solid #ddd; /* Garis bawah untuk tiap baris */
+}
+
+.profile tr:last-child {
+  border-bottom: none; /* Hapus garis bawah untuk baris terakhir */
+}
+
+.button-icon {
+  width: 25px;
+  height: 20px;
+  margin-left: 3px;
+  margin-right: 5px;
+  padding-left: 3px;
+}
+.logout-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: auto; /* Tambahkan jarak atas yang sesuai */
+}
+
+.logout-button {
+  width: 120px;
+  height: 40px;
+  background-color: #f0a500;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-icon-logout {
+  width: 20px;
+  height: 25px;
+  margin-left: -30px;
+  margin-right: 10px;
+  padding-left: 3px;
+}
+
+.icon-email {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
 .main-content {
   width: 75%;
-  padding: 20px;
+  padding: 30px;
   overflow-y: auto; /* Added for scrolling */
 }
 
 .main-content h1 {
   font-size: 28px;
+  margin-top: -5px;
   margin-bottom: 20px;
   color: #333;
   text-align: center;
@@ -75,17 +163,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .chart {
   width: 100%;
-  height: 300px;
-  background-color: #eef2f7;
-  border-radius: 10px;
+  height: 480px;
+  background-color: #ffffff;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* NAVBAR */
