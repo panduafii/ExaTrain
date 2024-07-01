@@ -30,8 +30,8 @@
                 <div class="content">
                     <h1>Uji <span class="highlight">Kemampuanmu</span><br>Tingkatkan <span
                             class="highlight">Prestasimu</span><br>Bersama <span class="highlight">Exatrain</span></h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s....</p>
+                    <p> Dengan berbagai soal latihan dan fitur interaktif <br> ExaTrain membuat belajar menjadi menyenangkan dan efektif<br>
+                    Bergabunglah dan tingkatkan prestasimu bersama ExaTrain!</p>
                     <button>Mulai Sekarang!</button>
                 </div>
                 <div class="image">
@@ -46,8 +46,7 @@
     <div class="container">
         <section class="benefits">
             <h2>Apa itu <span class="highlight">Exatrain?</span></h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s....</p>
+            <p>Exatrain adalah platform digital yang dirancang untuk membantu mahasiswa Informatika UII<br>dalam mempersiapkan ujian semester dengan cara yang lebih mudah dan efisien</p>
             <div class="benefit-cards">
                 <div class="card">
                     <img src="img/iconflexsibel.png" alt="Icon">
