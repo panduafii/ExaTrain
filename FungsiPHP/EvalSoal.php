@@ -1,4 +1,6 @@
 <?php
+include 'connection.php';
+
 // Memulai sesi
 session_start();
 

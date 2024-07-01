@@ -1,11 +1,9 @@
 <?php
-$host = 'localhost';  // Host database
-$dbname = 'ExaTrain';  // Nama database
-$username = 'root';  // Username database
-$password = '';  // Password database
+// Koneksi ke database
+include 'fungsiPHP/connection.php';
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $pdo->query("SELECT u.username, COALESCE(SUM(a.is_correct), 0) AS total_correct
