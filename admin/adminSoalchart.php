@@ -7,7 +7,7 @@
     <title>Edit Pengguna</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="../CSS/admintambahmatkul.css">
+    <link rel="stylesheet" href="../CSS/adminsoalchart.css">
 </head>
 
 <body>
@@ -64,9 +64,22 @@
                 </ul>
             </header>
             <div class="sub-header">
-                <span>Tambah Matakuliah</span>
+                <span>Chart Soal</span>
+            </div>
+            <div class="title">
+                <h3>Statistik Matakuliah</h3>
             </div>
             <div class="content">
+                <div class="charts">
+                    <div class="chart" id="average-grades-chart">
+                        <h4></h4> <!-- Moved text to the top -->
+                    </div>
+
+                    <div class="chart" id="user-activity-chart">
+                        <h4></h4> <!-- Moved text to the top -->
+                    </div>
+
+                </div>
             </div>
         </div>
 </body>
