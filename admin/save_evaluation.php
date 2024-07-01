@@ -9,15 +9,7 @@ $is_correct = $data['is_correct'] ? 1 : 0;
 $evaluasi_ai = $data['evaluasi_ai'];  // Menerima data evaluasi AI dari frontend
 
 // Koneksi ke database
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "ExaTrain";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Koneksi ke database gagal: " . $conn->connect_error);
-}
+include '../fungsiPHP/connection.php';
 
 // Update kolom is_correct dan evaluasi_ai di tabel answers
 $sql = "UPDATE answers SET is_correct = ?, evaluasi_ai = ? WHERE id = ?";

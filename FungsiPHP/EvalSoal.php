@@ -1,4 +1,6 @@
 <?php
+include 'connection.php';
+
 // Memulai sesi
 session_start();
 
@@ -16,7 +18,7 @@ if (isset($_SESSION['selected_course'])) {
     // Koneksi ke database (sesuaikan dengan konfigurasi Anda)
     $servername = "localhost";
     $username = "root"; // Ganti dengan username Anda
-    $password = "root"; // Ganti dengan password Anda
+    $password = ""; // Ganti dengan password Anda
     $dbname = "ExaTrain";
 
     $conn = new mysqli($servername, $username, $password, $dbname);

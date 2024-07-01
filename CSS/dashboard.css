@@ -58,7 +58,7 @@ body {
 }
 
 .menu li a:hover {
-  color: #276DD8;
+  color: #276dd8;
 }
 
 .menu li button {
@@ -143,6 +143,7 @@ main {
 h1 {
   font-size: 50px;
   padding-bottom: 20px; /* Reduced padding to move the title up */
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .dashboard {
@@ -150,6 +151,7 @@ h1 {
   justify-content: center;
   gap: 30px;
   padding: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .card-link {
@@ -182,4 +184,225 @@ h1 {
   font-size: 30px; /* Increased font size for better readability */
   font-weight: bold;
   color: #333;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+/* END DASHBOARD */
+@media (min-width: 1920px) {
+  .navbar {
+    height: 100px; /* Sesuaikan tinggi navbar untuk layar besar (46.67px untuk 70px yang diskalakan) */
+    padding: 0 30px; /* Sesuaikan padding */
+  }
+
+  .logo img {
+    height: 60px; /* Sesuaikan tinggi logo untuk layar besar (33.33px untuk 50px yang diskalakan) */
+  }
+
+  .menu li a {
+    font-size: 1.2vw; /* Sesuaikan ukuran font untuk menu (0.87rem untuk 1.3rem yang diskalakan) */
+  }
+
+  .menu li button {
+    height: 30px; /* Sesuaikan tinggi tombol (30px untuk 45px yang diskalakan) */
+    padding: 0 13.33px; /* Sesuaikan padding tombol */
+    font-size: 0.8rem; /* Sesuaikan ukuran font tombol */
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  header {
+    padding: 13.33px; /* Sesuaikan padding header */
+  }
+
+  main {
+    padding-top: 30px;
+  }
+
+  h1 {
+    font-size: 5rem; /* Sesuaikan ukuran font judul */
+  }
+
+  .dashboard {
+    gap: 26.67px; /* Menambah jarak antar kartu */
+    padding: 20px; /* Sesuaikan padding dashboard */
+  }
+
+  .card {
+    padding: 35px; /* Menambah padding kartu */
+    width: 25vw; /* Sesuaikan lebar kartu */
+  }
+
+  .card img {
+    width: 50%; /* Sesuaikan lebar gambar dalam kartu */
+  }
+
+  .card p {
+    font-size: 2.5rem; /* Sesuaikan ukuran font dalam kartu */
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+  body {
+    font-size: 1.1rem;
+  }
+
+  .navbar {
+    height: 65px;
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .menu li a {
+    font-size: 1.2rem;
+  }
+
+  .menu li button {
+    height: 40px;
+    padding: 0 18px;
+    font-size: 0.9rem;
+  }
+
+  header {
+    padding: 18px;
+  }
+
+  main {
+    padding-top: 110px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .dashboard {
+    gap: 35px;
+    padding: 30px;
+  }
+
+  .card {
+    padding: 45px;
+    width: 280px;
+  }
+
+  .card img {
+    width: 55%;
+  }
+
+  .card p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .navbar {
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .menu li a {
+    font-size: 1rem;
+  }
+
+  .menu li button {
+    height: 38px;
+    padding: 0 16px;
+    font-size: 0.85rem;
+  }
+
+  header {
+    padding: 16px;
+  }
+
+  main {
+    padding-top: 100px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .dashboard {
+    gap: 30px;
+    padding: 25px;
+  }
+
+  .card {
+    padding: 40px;
+    width: 260px;
+  }
+
+  .card img {
+    width: 50%;
+  }
+
+  .card p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 50px; /* Menyesuaikan tinggi navbar untuk layar besar */
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 30px; /* Menyesuaikan tinggi logo untuk layar besar */
+  }
+
+  .menu li a {
+    font-size: 1.6vw; /* Menyesuaikan ukuran font untuk layar besar */
+  }
+
+  .menu li button {
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+  }
+
+  main {
+    padding-top: 40px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .dashboard {
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .card {
+    padding: 40px;
+    width: 15vw;
+  }
+
+  .card img {
+    width: 70%;
+  }
+
+  .card p {
+    font-size: 1.2rem;
+  }
 }

@@ -77,14 +77,14 @@ p {
 }
 
 h2 {
-  text-align: center; /* Center-align the h2 elements */
-  font-size: 24px; /* Set font size to 24px */
+  text-align: center;
+  font-size: 24px;
 }
 
 .login-page {
   width: 100%;
   max-width: 80%;
-  padding: 20px;
+  padding: 30px;
   margin-top: 80px;
 }
 
@@ -252,7 +252,7 @@ h2 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: #ffc107;
   color: #070707;
-  border-radius: 7px;
+  border-radius: 7vh;
 }
 
 .vertical-divider {
@@ -268,6 +268,7 @@ h2 {
 
 .registrasi p {
   text-align: center;
+  margin-bottom: 1vh;
 }
 
 .registrasi h2 {
@@ -275,7 +276,7 @@ h2 {
 }
 
 .registrasi input {
-  margin-bottom: 10px;
+  margin-bottom: 2vh;
 }
 
 .registrasi button {
@@ -295,7 +296,7 @@ h2 {
 }
 
 .login {
-  width: 55%; /* Set login form width to 55% */
+  width: 55%;
   text-align: left;
 }
 
@@ -304,7 +305,7 @@ h2 {
 }
 
 .picture {
-  width: 40%; /* Set picture width to 45% */
+  width: 40%;
   text-align: left;
 }
 
@@ -314,43 +315,190 @@ h2 {
   border-radius: 10px;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .register-container,
+@media (min-width: 1920px) {
+  .navbar {
+    height: 100px;
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .menu li a {
+    font-size: 1.2vw; /* Menyesuaikan ukuran font untuk layar besar */
+  }
+
+  .menu li button {
+    width: 5vw;
+    height: 35px;
+    padding: 0 13.33px;
+    font-size: 1.2rem;
+  }
+
+  .header {
+    padding: 13.33px;
+  }
+
+  .login-page {
+    max-width: 80%;
+    margin-top: 250px;
+  }
+
+  .form h2{
+    font-size: 2.5rem;
+  }
+
+  .form h3{
+    font-size: 3rem;
+  }
+
+  .form p{
+    font-size: 1rem;
+  }
+
+  .form input,
+  .form select {
+    font-size: 25px;
+    padding: 25px;
+  }
+
+  .form button {
+    font-size: 25px;
+    padding: 25px;
+  }
+
+  .credit-card-button{
+    width: 90%;
+    padding: 25px;
+    font-size: 3rem;
+  }
+}
+.vertical-divider {
+  display: block;
+
+  .payment {
+    width: 45%;
+  }
+
+  .registrasi {
+    width: 50%;
+  }
+
   .login-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .payment,
-  .registrasi,
-  .login,
-  .picture {
-    width: 100%;
+  p {
+    font-size: 35vw;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .login {
+    width: 50%;
     text-align: center;
+  }
+  .picture img {
+    height: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 50px;
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .menu li a {
+    font-size: 1.6vw;
+  }
+
+  .menu li button {
+    width: 10vw;
+    height: 20px;
+    padding: 0 13.33px;
+    font-size: 1.6vw;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+  }
+
+  .login-page {
+    max-width: 80%;
+    margin-top: 90px;
+  }
+
+  .form {
+    padding: 10px;
+  }
+
+  .form input,
+  .form select {
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  .form button {
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  .credit-card-button {
+    width: 70%;
+    padding: 10px;
   }
 
   .vertical-divider {
     display: none;
   }
 
-  .form {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .menu li {
-    margin-right: 10px;
+  .payment {
+    width: 45%;
   }
 
-  .form {
-    padding: 15px;
+  .registrasi {
+    width: 50%;
   }
 
-  .form input,
-  .form button {
-    padding: 10px;
-    font-size: 12px;
+  .login-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+ .message {
+    font-size: 10vw;
+  }
+
+  h2 {
+    font-size: 3vw;
+  }
+
+  .login {
+    width: 50%;
+    text-align: left; /* Mengubah dari center ke left */
+  }
+
+
+  .picture {
+    width: 45%;
+  }
+
+  .picture img {
+    width: 100%;
   }
 }

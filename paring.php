@@ -1,11 +1,9 @@
 <?php
-$host = 'localhost';  // Host database
-$dbname = 'ExaTrain';  // Nama database
-$username = 'root';  // Username database
-$password = 'root';  // Password database
+// Koneksi ke database
+include 'fungsiPHP/connection.php';
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $pdo->query("SELECT u.username, COALESCE(SUM(a.is_correct), 0) AS total_correct
@@ -30,7 +28,7 @@ try {
     <title>Papan Peringkat</title>
     <link rel="stylesheet" href="CSS/paring.css" />
   </head>
-  <body>
+  <body  style="background-image: url('img/background.png'); background-repeat:no-repeat; background-size:cover; background-attachment: fixed;">
     <!-- Navbar -->
     <header>
     <nav class="navbar">
@@ -42,17 +40,7 @@ try {
                 <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
                 <li><a href="paring.php">Papan Peringkat</a></li>
                 <li><a href="aboutUs.php">Tentang Kami</a></li>
-                <li>
-                    <?php
-                    // Menampilkan nama pengguna jika ada yang masuk
-                    if (isset($_SESSION["username"])) {
-                        $username = $_SESSION["username"];
-                        echo "Hi! $username";
-                    } else {
-                        echo "Hi!";
-                    }
-                    ?>
-                </li>
+                <li>Hi! <?= isset($_SESSION["username"]) ? $_SESSION["username"] : "Guest"; ?></li>
                 <li><a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
                 <!-- <li></li> -->
             </ul>

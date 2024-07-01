@@ -75,11 +75,11 @@ body {
 .profile {
     width: 100%;
     max-width: 430px;
-    max-height: 760px;
+    height: 200px;
     background-color: #CFE4FF;
     margin-top: 50px;
     padding: 30px 20px;
-    position: sticky;
+    position: fixed;
     top: 70px;
     flex-shrink: 0;
     display: flex;

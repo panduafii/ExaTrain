@@ -87,17 +87,7 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                            // Koneksi ke database
-                            $servername = "localhost";
-                            $username = "root";
-                            $password = "root";
-                            $dbname = "ExaTrain";
-
-                            $conn = new mysqli($servername, $username, $password, $dbname);
-
-                            if ($conn->connect_error) {
-                                die("Koneksi ke database gagal: " . $conn->connect_error);
-                            }
+                            include '../fungsiPHP/connection.php';
 
                             $sql = "SELECT id, username, password FROM users";
                             $result = $conn->query($sql);

@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selected_course_id']))
     <title>Pilihan Mata Kuliah</title>
     <link rel="stylesheet" href="CSS/pilihanMatkul.css" />
 </head>
-<body style="background-image: url('img/background.png'); background-size: cover; background-repeat: no-repeat;">
+<body style="background-image: url('img/background.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
     <!-- Navbar -->
     <header>
         <nav class="navbar">
