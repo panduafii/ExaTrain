@@ -1,5 +1,224 @@
 <?php
 session_start();
+
+// Fungsi untuk mendapatkan data doughnut chart
+function getDoughnutChartData($userId) {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "ExaTrain";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Koneksi ke database gagal: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT s.subject_name as subject_name, COUNT(a.subject_id) as count 
+            FROM answers a
+            JOIN subject s ON a.subject_id = s.id
+            WHERE a.user_id = ?
+            GROUP BY a.subject_id";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $data = array();
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    return json_encode($data);
+}
+
+// Fungsi untuk mendapatkan data CRC chart berdasarkan periode 3 bulan
+function getCRCChartData($userId) {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "ExaTrain";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Koneksi ke database gagal: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT 
+                CONCAT(YEAR(a.created_at), '-', LPAD(CEIL(MONTH(a.created_at) / 3), 2, '0')) as period,
+                SUM(CASE WHEN a.is_correct = 1 THEN 1 ELSE 0 END) as correct,
+                SUM(CASE WHEN a.is_correct = 0 THEN 1 ELSE 0 END) as incorrect
+            FROM answers a
+            WHERE a.user_id = ?
+            GROUP BY period";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $data = array();
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    return json_encode($data);
+}
+
+// Fungsi untuk mendapatkan data average grades chart
+function getAverageGradesChartData($userId) {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "ExaTrain";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Koneksi ke database gagal: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT s.subject_name as subject_name, AVG(a.is_correct) as average_grade 
+            FROM answers a
+            JOIN subject s ON a.subject_id = s.id
+            WHERE a.user_id = ?
+            GROUP BY a.subject_id";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $data = array();
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    return json_encode($data);
+}
+
+// Fungsi untuk mendapatkan data average scores chart
+function getAverageScoresChartData($userId) { // <--- Diperbarui
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "ExaTrain";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Koneksi ke database gagal: " . $conn->connect_error);
+    }
+
+    // Menggunakan kolom created_at untuk periode waktu
+    $sql = "SELECT DATE_FORMAT(a.created_at, '%Y-%m') as period, AVG(a.is_correct) as average_score 
+            FROM answers a
+            WHERE a.user_id = ?
+            GROUP BY period";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $data = array();
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    return json_encode($data);
+}
+
+// Fungsi untuk mendapatkan data profil pengguna
+function getUserProfileData($userId) {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "ExaTrain";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Koneksi ke database gagal: " . $conn->connect_error);
+    }
+
+    // Mendapatkan data pengguna
+    $sql = "SELECT username FROM users WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $userResult = $stmt->get_result();
+    $userData = $userResult->fetch_assoc();
+    
+    // Mendapatkan status pembayaran
+    $sql = "SELECT payment_status FROM payments WHERE user_id = ? ORDER BY payment_date DESC LIMIT 1";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $paymentResult = $stmt->get_result();
+    $paymentData = $paymentResult->fetch_assoc();
+
+    // Mendapatkan total pengerjaan
+    $sql = "SELECT COUNT(subject_id) AS total_subjects, COUNT(*) AS total_answers FROM answers WHERE user_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $totalResult = $stmt->get_result();
+    $totalData = $totalResult->fetch_assoc();
+
+    // Mendapatkan ranking
+    $sql = "SELECT user_id, username, RANK() OVER (ORDER BY SUM(is_correct) DESC) AS ranking 
+            FROM users LEFT JOIN answers ON users.id = answers.user_id 
+            GROUP BY user_id";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $rankingResult = $stmt->get_result();
+    $ranking = 0;
+    while ($row = $rankingResult->fetch_assoc()) {
+        if ($row['user_id'] == $userId) {
+            $ranking = $row['ranking'];
+            break;
+        }
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    $profileData = array_merge($userData, $paymentData, $totalData, ['ranking' => $ranking]);
+
+    return json_encode($profileData);
+}
+
+if (isset($_POST['user_id'])) {
+    if (isset($_POST['chart_type'])) {
+        if ($_POST['chart_type'] == 'crc') {
+            echo getCRCChartData($_POST['user_id']);
+        } else if ($_POST['chart_type'] == 'average_grades') {
+            echo getAverageGradesChartData($_POST['user_id']);
+        } else if ($_POST['chart_type'] == 'average_scores') {
+            echo getAverageScoresChartData($_POST['user_id']);
+        } else if ($_POST['chart_type'] == 'profile') {
+            echo getUserProfileData($_POST['user_id']);
+        }
+    } else {
+        echo getDoughnutChartData($_POST['user_id']);
+    }
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +309,7 @@ session_start();
                             // Koneksi ke database
                             $servername = "localhost";
                             $username = "root";
-                            $password = "root";
+                            $password = "";
                             $dbname = "ExaTrain";
 
                             $conn = new mysqli($servername, $username, $password, $dbname);
@@ -144,6 +363,18 @@ session_start();
                 <div class="charts">
                     <div class="chart" id="user-profile">
                         <h4>Profil Pengguna</h4>
+                        <ul id="profile-data">
+                            <li><strong>Username:</strong> <span id="profile-username"></span></li>
+                            <li><strong>User ID:</strong> <span id="profile-userid"></span></li>
+                            <li><strong>Ranking:</strong> <span id="profile-ranking"></span></li>
+                            <li><strong>Status Pembayaran:</strong> <span id="profile-payment-status"></span></li>
+                            <li><strong>Total Pengerjaan:</strong>
+                                <ul>
+                                    <li>Mata Kuliah: <span id="profile-total-subjects"></span></li>
+                                    <li>Total Soal: <span id="profile-total-answers"></span></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
 
                     <div class="chart" id="course-distribution">
@@ -196,144 +427,261 @@ session_start();
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     console.log("Session user ID set to: " + userId);
-                    // Redirect to another page or refresh the current page
                     window.location.reload();
                 }
             };
             xhr.send("user_id=" + userId);
         }
+
+        window.onload = function() {
+            // Fungsi untuk memperbarui profil pengguna
+            function updateUserProfile(userId) {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "adminPengguna.php", true); // Pastikan URL benar
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log(xhr.responseText); // Debug log
+                        const data = JSON.parse(xhr.responseText);
+                        document.getElementById('profile-username').innerText = data.username;
+                        document.getElementById('profile-userid').innerText = userId;
+                        document.getElementById('profile-ranking').innerText = data.ranking;
+                        document.getElementById('profile-payment-status').innerText = data.payment_status;
+                        document.getElementById('profile-total-subjects').innerText = data.total_subjects;
+                        document.getElementById('profile-total-answers').innerText = data.total_answers;
+                    } else if (xhr.readyState === 4) {
+                        console.error("Error fetching profile data");
+                    }
+                };
+                xhr.onerror = function() {
+                    console.error("Request error");
+                };
+                xhr.send("user_id=" + userId + "&chart_type=profile");
+            }
+
+            // Fungsi untuk memperbarui chart doughnut
+            function updateDoughnutChart(userId) {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "adminPengguna.php", true); // Pastikan URL benar
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log(xhr.responseText); // Debug log
+                        const data = JSON.parse(xhr.responseText);
+
+                        const labels = data.map(item => item.subject_name);
+                        const counts = data.map(item => item.count);
+
+                        const doughnutData = {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Subject Distribution',
+                                data: counts,
+                                backgroundColor: [
+                                    'rgb(255, 99, 132)',
+                                    'rgb(54, 162, 235)',
+                                    'rgb(255, 205, 86)',
+                                    'rgb(75, 192, 192)',
+                                    'rgb(153, 102, 255)',
+                                    'rgb(255, 159, 64)',
+                                    'rgb(201, 203, 207)'
+                                ],
+                                hoverOffset: 4
+                            }]
+                        };
+
+                        const doughnutCtx = document.getElementById('courseDistributionChart').getContext('2d');
+                        new Chart(doughnutCtx, {
+                            type: 'doughnut',
+                            data: doughnutData,
+                        });
+                    } else if (xhr.readyState === 4) {
+                        console.error("Error fetching data for doughnut chart");
+                    }
+                };
+                xhr.onerror = function() {
+                    console.error("Request error");
+                };
+                xhr.send("user_id=" + userId);
+            }
+
+            // Fungsi untuk memperbarui chart CRC berdasarkan periode 3 bulan
+            function updateCRCChart(userId) {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "adminPengguna.php", true); // Pastikan URL benar
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log(xhr.responseText); // Debug log
+                        const data = JSON.parse(xhr.responseText);
+
+                        const labels = data.map(item => item.period);
+                        const correctCounts = data.map(item => item.correct);
+                        const incorrectCounts = data.map(item => item.incorrect);
+
+                        const crcData = {
+                            labels: labels,
+                            datasets: [
+                                {
+                                    label: 'Correct',
+                                    data: correctCounts,
+                                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: 'Incorrect',
+                                    data: incorrectCounts,
+                                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderWidth: 1
+                                }
+                            ]
+                        };
+
+                        const crcCtx = document.getElementById('CRC').getContext('2d');
+                        new Chart(crcCtx, {
+                            type: 'bar',
+                            data: crcData,
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    } else if (xhr.readyState === 4) {
+                        console.error("Error fetching data for CRC chart");
+                    }
+                };
+                xhr.onerror = function() {
+                    console.error("Request error");
+                };
+                xhr.send("user_id=" + userId + "&chart_type=crc");
+            }
+
+            // Fungsi untuk memperbarui chart average grades
+            function updateAverageGradesChart(userId) {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "adminPengguna.php", true); // Pastikan URL benar
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log(xhr.responseText); // Debug log
+                        const data = JSON.parse(xhr.responseText);
+
+                        const labels = data.map(item => item.subject_name);
+                        const averages = data.map(item => item.average_grade);
+
+                        // Generate random colors for each subject
+                        const backgroundColors = labels.map(() => {
+                            const r = Math.floor(Math.random() * 255);
+                            const g = Math.floor(Math.random() * 255);
+                            const b = Math.floor(Math.random() * 255);
+                            return `rgba(${r}, ${g}, ${b}, 0.5)`;
+                        });
+
+                        const borderColors = labels.map((_, index) => backgroundColors[index].replace('0.5', '1'));
+
+                        const averageGradesData = {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Average Grades',
+                                data: averages,
+                                backgroundColor: backgroundColors,
+                                borderColor: borderColors,
+                                borderWidth: 1
+                            }]
+                        };
+
+                        const averageGradesCtx = document.getElementById('averageGrades').getContext('2d');
+                        new Chart(averageGradesCtx, {
+                            type: 'bar',
+                            data: averageGradesData,
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    } else if (xhr.readyState === 4) {
+                        console.error("Error fetching data for average grades chart");
+                    }
+                };
+                xhr.onerror = function() {
+                    console.error("Request error");
+                };
+                xhr.send("user_id=" + userId + "&chart_type=average_grades");
+            }
+
+            // Fungsi untuk memperbarui chart average scores
+            function updateAverageScoresChart(userId) {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "adminPengguna.php", true); // Pastikan URL benar
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log(xhr.responseText); // Debug log
+                        const data = JSON.parse(xhr.responseText);
+
+                        const labels = data.map(item => item.period);
+                        const averages = data.map(item => item.average_score);
+
+                        const averageScoresData = {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Average Scores per Period',
+                                data: averages,
+                                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                                borderColor: 'rgb(54, 162, 235)',
+                                borderWidth: 1
+                            }]
+                        };
+
+                        const averageScoresCtx = document.getElementById('averageScores').getContext('2d');
+                        new Chart(averageScoresCtx, {
+                            type: 'line',
+                            data: averageScoresData,
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    } else if (xhr.readyState === 4) {
+                        console.error("Error fetching data for average scores chart");
+                    }
+                };
+                xhr.onerror = function() {
+                    console.error("Request error");
+                };
+                xhr.send("user_id=" + userId + "&chart_type=average_scores");
+            }
+
+            // Panggil fungsi dengan user ID yang dipilih
+            const userId = <?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 'null'; ?>;
+            if (userId) {
+                updateUserProfile(userId);
+                updateDoughnutChart(userId);
+                updateCRCChart(userId);
+                updateAverageGradesChart(userId);
+                updateAverageScoresChart(userId);
+            }
+        };
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script>
-
-        // Generate random positive data without a max value constraint
-        function generateRandomData(count) {
-            let data = [];
-            for (let i = 0; i < count; i++) {
-                data.push(Math.floor(Math.random() * 100)); // Generate random numbers between 0 and 99
-            }
-            return data;
-        }
-
-    window.onload = function(){
-        // Bar Chart for Correct Incorrect
-        const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-        const DATA_COUNT = 7;
-
-        
-
-        const CRCData = {
-            labels: labels,
-            datasets: [{
-                label: 'Dataset 1',
-                data: generateRandomData(DATA_COUNT),
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgb(255, 99, 132)',
-                borderWidth: 1
-            },
-            {
-                label: 'Dataset 2',
-                data: generateRandomData(DATA_COUNT),
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgb(54, 162, 235)',
-                borderWidth: 1
-            }]
-        };
-
-        const CRCConfig = {
-            type: 'bar',
-            data: CRCData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        };
-
-        const CRCCtx = document.getElementById('CRC').getContext('2d');
-        new Chart(CRCCtx, CRCConfig);
-
-        // Bar Chart for Average Grades
-        const averageGradesData = {
-            labels: labels,
-            datasets: [{
-                label: 'Dataset 1',
-                data: generateRandomData(DATA_COUNT),
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgb(255, 99, 132)',
-                borderWidth: 1
-            }]
-        };
-
-        const averageGradesConfig = {
-            type: 'bar',
-            data: averageGradesData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        };
-
-        const averageGradesCtx = document.getElementById('averageGrades').getContext('2d');
-        new Chart(averageGradesCtx, averageGradesConfig);
-
-
-        // Doughnut Chart for Course Distribution
-        const doughnutData = {
-                labels: ['Red', 'Blue', 'Yellow'],
-                datasets: [{
-                    label: 'My First Dataset',
-                    data: [300, 50, 100],
-                    backgroundColor: [
-                        'rgb(255, 99, 132)',
-                        'rgb(54, 162, 235)',
-                        'rgb(255, 205, 86)'
-                    ],
-                    hoverOffset: 4
-                }]
-            };
-
-            const doughnutConfig = {
-                type: 'doughnut',
-                data: doughnutData,
-            };
-
-            const doughnutCtx = document.getElementById('courseDistributionChart').getContext('2d');
-            new Chart(doughnutCtx, doughnutConfig); 
-        
-        // Line Chart
-        const averageScoresData = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-        label: 'My First Dataset',
-        data: [65, 59, 80, 81, 56, 55, 40],
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
-            }]
-        };
-
-        const averageScoresConfig = {
-        type: 'line',
-        data: averageScoresData,
-        };
-
-        const lineCtx = document.getElementById('averageScores').getContext('2d');
-        new Chart(lineCtx, averageScoresConfig); 
-    };
-
-    </script>
-
 </body>
 </html>

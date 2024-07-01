@@ -1,3 +1,139 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "ExaTrain";
+
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Mengecek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Query untuk mengambil data pengguna berdasarkan bulan dan angkatan
+$sql = "
+    SELECT 
+        YEAR(created_at) as year, 
+        MONTH(created_at) as month, 
+        angkatan, 
+        COUNT(*) as jumlah 
+    FROM users 
+    GROUP BY year, month, angkatan
+";
+$result = $conn->query($sql);
+
+$data = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $year = $row['year'];
+        $month = $row['month'];
+        $angkatan = $row['angkatan'];
+        $jumlah = $row['jumlah'];
+
+        // Mengelompokkan data berdasarkan tahun dan bulan
+        if (!isset($data[$year])) {
+            $data[$year] = array_fill(0, 12, []);
+        }
+        $data[$year][$month-1][$angkatan] = $jumlah;
+    }
+} else {
+    echo "0 results";
+}
+
+// Query untuk mengambil jumlah pengguna yang mengerjakan setiap subject
+$sql_subject = "
+    SELECT 
+        subject.subject_name, 
+        COUNT(DISTINCT answers.user_id) as jumlah_user 
+    FROM answers 
+    JOIN subject ON answers.subject_id = subject.id 
+    GROUP BY subject.subject_name
+";
+$result_subject = $conn->query($sql_subject);
+
+$subject_data = [];
+if ($result_subject->num_rows > 0) {
+    while ($row = $result_subject->fetch_assoc()) {
+        $subject_data[] = [
+            'subject_name' => $row['subject_name'],
+            'jumlah_user' => $row['jumlah_user']
+        ];
+    }
+} else {
+    echo "0 results";
+}
+
+// Query to check data in the answers table for the current year
+$sql_check_answers = "
+    SELECT 
+        * 
+    FROM answers 
+    WHERE YEAR(created_at) = YEAR(CURRENT_DATE())
+";
+
+$result_check_answers = $conn->query($sql_check_answers);
+
+// Query untuk mengambil keaktifan pengguna berdasarkan kolom created_at
+$sql_activity = "
+    SELECT 
+        MONTH(created_at) as month, 
+        COUNT(*) as jumlah 
+    FROM answers 
+    WHERE YEAR(created_at) = YEAR(CURRENT_DATE()) 
+    GROUP BY month
+";
+
+$result_activity = $conn->query($sql_activity);
+
+$activity_data = array_fill(0, 12, 0); // Inisialisasi array dengan 12 bulan
+if ($result_activity->num_rows > 0) {
+    while ($row = $result_activity->fetch_assoc()) {
+        $month = $row['month'];
+        $jumlah = $row['jumlah'];
+        $activity_data[$month-1] = $jumlah; // Menyimpan jumlah berdasarkan bulan
+    }
+} else {
+    echo "0 results for activity<br>";
+}
+
+// Query untuk mengambil rata-rata nilai per bulan per angkatan
+$sql_grades = "
+    SELECT 
+        u.angkatan,
+        MONTH(a.created_at) as month,
+        AVG(a.is_correct) as average_grade
+    FROM answers a
+    JOIN users u ON a.user_id = u.id
+    WHERE YEAR(a.created_at) = YEAR(CURRENT_DATE())
+    GROUP BY u.angkatan, MONTH(a.created_at)
+    ORDER BY u.angkatan, MONTH(a.created_at)
+";
+
+$result_grades = $conn->query($sql_grades);
+
+$grades_data = [];
+if ($result_grades->num_rows > 0) {
+    while ($row = $result_grades->fetch_assoc()) {
+        $angkatan = $row['angkatan'];
+        $month = $row['month'];
+        $average_grade = $row['average_grade'];
+
+
+        if (!isset($grades_data[$angkatan])) {
+            $grades_data[$angkatan] = array_fill(0, 12, 0);
+        }
+        $grades_data[$angkatan][$month-1] = $average_grade;
+    }
+} else {
+    echo "0 results for grades<br>";
+}
+
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,43 +149,43 @@
 <body>
     <div class="container">
         <nav class="sidebar">
-        <div class="logo">
+            <div class="logo">
                 <img src="../img/logo1.png" alt="EXATrain Logo">
                 <div class="logo-line"></div> <!-- Div untuk garis putih -->
             </div>
             <ul class="sidebar-menu">
-            <a href="adminPengguna.php">
-                <li class="sidebar-item">
-                    <img src="../img/penggunaicon.png" alt="Icon">
-                    <span>Edit Pengguna</span>
-                </li>
-            </a>
-            <a href="adminSoal.php">
-                <li class="sidebar-item">
-                    <img src="../img/manajemenicon.png" alt="Icon">
-                    <span>Manajemen Soal</span>
-                </li>
-            </a>
-            <a href="adminStatistik.php">
-                <li class="sidebar-item">
-                    <img src="../img/statistikicon.png" alt="Icon">
-                    <span>Data & Statistik</span>    
-                </li>
-            </a>
-            <a href="adminPembayaran.php">
-                <li class="sidebar-item">
-                    <img src="../img/wallet-2.png" alt="Icon">
-                    <span>Pembayaran</span>  
-                </li>
-            </a>
+                <a href="adminPengguna.php">
+                    <li class="sidebar-item">
+                        <img src="../img/penggunaicon.png" alt="Icon">
+                        <span>Edit Pengguna</span>
+                    </li>
+                </a>
+                <a href="adminSoal.php">
+                    <li class="sidebar-item">
+                        <img src="../img/manajemenicon.png" alt="Icon">
+                        <span>Manajemen Soal</span>
+                    </li>
+                </a>
+                <a href="adminStatistik.php">
+                    <li class="sidebar-item">
+                        <img src="../img/statistikicon.png" alt="Icon">
+                        <span>Data & Statistik</span>    
+                    </li>
+                </a>
+                <a href="adminPembayaran.php">
+                    <li class="sidebar-item">
+                        <img src="../img/wallet-2.png" alt="Icon">
+                        <span>Pembayaran</span>  
+                    </li>
+                </a>
             </ul>
             <ul class="logout">
-            <a href="../loginRegist.php">
-                <li class="sidebar-item">
-                    <img src="../img/logouticon.png" alt="Icon">
-                    <span>Logout</span>
-                </li>
-            </a>
+                <a href="../loginRegist.php">
+                    <li class="sidebar-item">
+                        <img src="../img/logouticon.png" alt="Icon">
+                        <span>Logout</span>
+                    </li>
+                </a>
             </ul>
         </nav>
         <div class="main-content">
@@ -77,62 +213,64 @@
                     </div>
 
                     <div class="chart" id="course-distribution-chart">
-                        <h4>Pengerjaan Mata Kuliah Total</h4> <!-- Moved text to the top -->
+                        <h4>Pengerjaan Mata Kuliah Total</h4>
                         <canvas id="courseDistributionChart"></canvas>
-
                     </div>
 
                     <div class="chart" id="average-grades-chart">
-                        <h4>Rata-Rata Nilai Tiap Angkatan / Periode</h4> <!-- Moved text to the top -->
+                        <h4>Rata-Rata Nilai Tiap Angkatan / Periode</h4>
                         <canvas id="averageGradesChart"></canvas>
                     </div>
 
                     <div class="chart" id="user-activity-chart">
-                        <h4>Keaktifan Pengguna / Periode</h4> <!-- Moved text to the top -->
+                        <h4>Keaktifan Pengguna / Periode</h4>
                         <canvas id="userActivityChart"></canvas>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
     <script>
-        // Fungsi untuk menghasilkan data acak
-        function generateRandomData(count) {
-            let data = [];
-            for (let i = 0; i < count; i++) {
-                data.push(Math.floor(Math.random() * 100));
-            }
-            return data;
-        }
+        // Ambil data dari PHP
+        const data = <?php echo json_encode($data); ?>;
+        const subjectData = <?php echo json_encode($subject_data); ?>;
+        const activityData = <?php echo json_encode($activity_data); ?>;
+        const gradesData = <?php echo json_encode($grades_data); ?>;
 
-        const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-        const DATA_COUNT = 7;
+        // Mengatur data untuk chart
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Juni', 'Juli', 'Aug', 'Sept', 'Okt', 'Nov', 'Des'];
+        const years = Object.keys(data).map(Number);
+        const datasets = [];
+
+        // Loop through each year and create datasets
+        years.forEach(year => {
+            const angkatanData = data[year];
+            for (let angkatan in angkatanData[0]) {
+                const dataset = {
+                    label: `${angkatan} (${year})`,
+                    data: angkatanData.map(monthData => monthData[angkatan] || 0),
+                    backgroundColor: getRandomColor(),
+                };
+                datasets.push(dataset);
+            }
+        });
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
 
         window.onload = function() {
             // User Count Bar Chart
             const userCountData = {
-                labels: labels,
-                datasets: [
-                    {
-                        label: 'Dataset 1',
-                        data: generateRandomData(DATA_COUNT),
-                        backgroundColor: 'rgb(255, 99, 132)',
-                    },
-                    {
-                        label: 'Dataset 2',
-                        data: generateRandomData(DATA_COUNT),
-                        backgroundColor: 'rgb(54, 162, 235)',
-                    },
-                    {
-                        label: 'Dataset 3',
-                        data: generateRandomData(DATA_COUNT),
-                        backgroundColor: 'rgb(75, 192, 192)',
-                    },
-                ]
+                labels: months,
+                datasets: datasets
             };
 
             const userCountConfig = {
@@ -142,7 +280,7 @@
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Chart.js Bar Chart - Stacked'
+                            text: 'Jumlah Users berdasarkan Angkatan dan Bulan'
                         },
                     },
                     responsive: true,
@@ -160,16 +298,15 @@
             new Chart(barCtx, userCountConfig);
 
             // Course Distribution Doughnut Chart
+            const subjectLabels = subjectData.map(item => item.subject_name);
+            const subjectCounts = subjectData.map(item => item.jumlah_user);
+
             const doughnutData = {
-                labels: ['Red', 'Blue', 'Yellow'],
+                labels: subjectLabels,
                 datasets: [{
-                    label: 'My First Dataset',
-                    data: [300, 50, 100],
-                    backgroundColor: [
-                        'rgb(255, 99, 132)',
-                        'rgb(54, 162, 235)',
-                        'rgb(255, 205, 86)'
-                    ],
+                    label: 'Jumlah Pengguna',
+                    data: subjectCounts,
+                    backgroundColor: subjectLabels.map(() => getRandomColor()),
                     hoverOffset: 4
                 }]
             };
@@ -183,37 +320,62 @@
             new Chart(doughnutCtx, doughnutConfig);
 
             // Average Grades Bar Chart
-            const averageGradesChartData = {
-                labels: labels,
-                datasets: [
-                    {
-                        label: 'Dataset 1',
-                        data: generateRandomData(DATA_COUNT),
-                        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                        borderColor: 'rgb(255, 99, 132)',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'Dataset 2',
-                        data: generateRandomData(DATA_COUNT),
-                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                        borderColor: 'rgb(54, 162, 235)',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'Dataset 3',
-                        data: generateRandomData(DATA_COUNT),
-                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                        borderColor: 'rgb(75, 192, 192)',
-                        borderWidth: 1
-                    }
-                ]
+            const averageGradesData = {
+                labels: months,
+                datasets: []
             };
 
-            const averageGradesChartConfig = {
+            Object.keys(gradesData).forEach(angkatan => {
+                const dataset = {
+                    label: `Angkatan ${angkatan}`,
+                    data: gradesData[angkatan],
+                    backgroundColor: getRandomColor(),
+                    borderColor: getRandomColor(),
+                    borderWidth: 1
+                };
+                averageGradesData.datasets.push(dataset);
+            });
+
+            const averageGradesConfig = {
                 type: 'bar',
-                data: averageGradesChartData,
+                data: averageGradesData,
                 options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 1
+                        }
+                    }
+                }
+            };
+
+            const averageGradesCtx = document.getElementById('averageGradesChart').getContext('2d');
+            new Chart(averageGradesCtx, averageGradesConfig);
+
+            // User Activity Line Chart
+            const userActivityData = {
+                labels: months,
+                datasets: [{
+                    label: 'Keaktifan Pengguna',
+                    data: activityData,
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            };
+
+            const userActivityConfig = {
+                type: 'line',
+                data: userActivityData,
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Keaktifan Pengguna per Bulan'
+                        },
+                    },
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
@@ -224,31 +386,11 @@
                 }
             };
 
-            const averageGradesChartCtx = document.getElementById('averageGradesChart').getContext('2d');
-            new Chart(averageGradesChartCtx, averageGradesChartConfig);
-
-            // User Activity Line Chart
-            const userActivityData = {
-                labels: labels,
-                datasets: [{
-                    label: 'My First Dataset',
-                    data: generateRandomData(DATA_COUNT),
-                    fill: false,
-                    borderColor: 'rgb(75, 192, 192)',
-                    tension: 0.1
-                }]
-            };
-
-            const userActivityConfig = {
-                type: 'line',
-                data: userActivityData,
-            };
-
             const lineCtx = document.getElementById('userActivityChart').getContext('2d');
             new Chart(lineCtx, userActivityConfig);
         };
+
+
     </script>
-
 </body>
-
 </html>
