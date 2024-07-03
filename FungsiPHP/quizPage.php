@@ -41,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-
 // Tentukan selected_course_id dari session
 if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
 
@@ -142,7 +141,21 @@ function getQuestionIdByOrder($conn, $subjectId, $order) {
         return 0; // Jika tidak ada pertanyaan, kembalikan nilai 0 (ini tergantung dari kebutuhan aplikasi Anda)
     }
 }
+
+// Fungsi untuk mendapatkan urutan soal berdasarkan ID pertanyaan
+function getQuestionOrderById($conn, $subjectId, $questionId) {
+    $sql_question_order = "SELECT COUNT(*) AS question_order FROM questions WHERE subject_id = $subjectId AND id <= $questionId";
+    $result_question_order = $conn->query($sql_question_order);
+
+    if ($result_question_order && $result_question_order->num_rows > 0) {
+        $row_question_order = $result_question_order->fetch_assoc();
+        return $row_question_order['question_order'];
+    } else {
+        return 1; // Jika tidak ada pertanyaan, kembalikan nilai default 1
+    }
+}
 ?>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     // Menangkap semua tombol soal

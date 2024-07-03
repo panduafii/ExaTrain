@@ -1,15 +1,41 @@
+<?php
+session_start();
+
+// Cek apakah session subject_id ada
+if (!isset($_SESSION['subject_id'])) {
+    header('Location: adminSoal.php');
+    exit;
+}
+
+$subject_id = $_SESSION['subject_id'];
+
+// Koneksi ke database dan query untuk mendapatkan data terkait berdasarkan $subject_id
+// Misalnya, menghubungkan ke database untuk mendapatkan statistik atau informasi lain yang diperlukan
+
+
+// Koneksi ke database
+include '../fungsiPHP/connection.php';
+
+// Mengambil nama subject berdasarkan subject_id
+$subjectQuery = "SELECT subject_name FROM subject WHERE id = " . $subject_id;
+$subjectResult = $conn->query($subjectQuery);
+if ($subjectResult->num_rows > 0) {
+    $subjectRow = $subjectResult->fetch_assoc();
+    $subject_name = $subjectRow['subject_name'];
+} else {
+    $subject_name = "Nama Mata Kuliah Tidak Ditemukan";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Pengguna</title>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="../CSS/admintambahmatkul.css">
+    <title>Chart Soal</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../CSS/adminsoalchart.css">
 </head>
-
 <body>
     <div class="container">
         <nav class="sidebar">
@@ -64,11 +90,23 @@
                 </ul>
             </header>
             <div class="sub-header">
-                <span>Tambah Matakuliah</span>
+                <span>Chart Soal</span>
+            </div>
+            <div class="title">
+                <h3><?php echo $subject_name; ?></h3>
             </div>
             <div class="content">
+                <div class="charts">
+                    <div class="chart" id="average-grades-chart">
+                        <h4></h4> <!-- Moved text to the top -->
+                    </div>
+
+                    <div class="chart" id="user-activity-chart">
+                        <h4></h4> <!-- Moved text to the top -->
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 </body>
-
 </html>
