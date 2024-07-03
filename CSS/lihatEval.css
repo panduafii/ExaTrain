@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
 
 body {
   margin: 0;
@@ -45,8 +49,8 @@ body {
 }
 
 .menu li {
-  display: inline-block;
   margin-right: 20px;
+  font-size: 1.2vw;
 }
 
 .menu li:last-child {
@@ -58,7 +62,6 @@ body {
   color: #808080;
   font-weight: bold;
   transition: color 0.3s;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .menu li a:hover {
