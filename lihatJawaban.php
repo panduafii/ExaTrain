@@ -23,15 +23,7 @@ if (!isset($_SESSION['selected_course_id'])) {
 }
 
 // Koneksi ke database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ExaTrain";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'fungsiPHP/connection.php';
 
 // Mengambil ID pengguna dan ID mata kuliah dari session
 $user_id = $_SESSION['user_id'];

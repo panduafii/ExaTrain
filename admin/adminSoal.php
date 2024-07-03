@@ -76,7 +76,6 @@
                         <button class="year-button" data-year="2022">2022</button>
                         <button class="year-button" data-year="2021">2021</button>
                     </div>
-                    <div class="line-atas"></div> <!-- Div untuk garis putih -->
                 <div class="courses" id="courses-container">
                     <!-- Courses will be dynamically inserted here -->
                 </div>

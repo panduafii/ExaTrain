@@ -2,16 +2,7 @@
 // session_start();
 
 // Koneksi ke database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ExaTrain";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Koneksi ke database gagal: " . $conn->connect_error);
-}
+include 'connection.php';
 
 // Menyimpan jawaban sebelumnya jika ada
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

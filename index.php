@@ -5,15 +5,7 @@ session_start();
 $subject_id = $_SESSION['selected_course_id'];
 
 // Koneksi ke database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ExaTrain";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Koneksi ke database gagal: " . $conn->connect_error);
-}
+include 'fungsiPHP/connection.php';
 
 // Mengambil nama subject
 $subjectQuery = "SELECT subject_name FROM subject WHERE id = " . $subject_id;

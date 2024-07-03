@@ -308,17 +308,7 @@ if (isset($_POST['user_id'])) {
                         </thead>
                         <tbody>
                             <?php
-                            // Koneksi ke database
-                            $servername = "localhost";
-                            $username = "root";
-                            $password = "";
-                            $dbname = "ExaTrain";
-
-                            $conn = new mysqli($servername, $username, $password, $dbname);
-
-                            if ($conn->connect_error) {
-                                die("Koneksi ke database gagal: " . $conn->connect_error);
-                            }
+                            include '../fungsiPHP/connection.php';
 
                             $sql = "SELECT id, username, password FROM users";
                             $result = $conn->query($sql);
