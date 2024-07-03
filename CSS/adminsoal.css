@@ -267,15 +267,6 @@ body {
   color: white;
 }
 
-.line-atas {
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100%; /* Lebar garis sama dengan lebar sidebar */
-  height: 0.5px; /* Tinggi garis */
-  background-color: rgb(6, 6, 6); /* Warna garis */
-}
-
 .courses {
   display: flex;
   justify-content: center;

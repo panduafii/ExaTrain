@@ -30,8 +30,8 @@
                 <div class="content">
                     <h1>Uji <span class="highlight">Kemampuanmu</span><br>Tingkatkan <span
                             class="highlight">Prestasimu</span><br>Bersama <span class="highlight">Exatrain</span></h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s....</p>
+                    <p> Dengan berbagai soal latihan dan fitur interaktif <br> ExaTrain membuat belajar menjadi menyenangkan dan efektif<br>
+                    Bergabunglah dan tingkatkan prestasimu bersama ExaTrain!</p>
                     <button>Mulai Sekarang!</button>
                 </div>
                 <div class="image">
@@ -46,44 +46,37 @@
     <div class="container">
         <section class="benefits">
             <h2>Apa itu <span class="highlight">Exatrain?</span></h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s....</p>
+            <p>Exatrain adalah platform digital yang dirancang untuk membantu mahasiswa Informatika UII<br>dalam mempersiapkan ujian semester dengan cara yang lebih mudah dan efisien</p>
             <div class="benefit-cards">
                 <div class="card">
                     <img src="img/iconflexsibel.png" alt="Icon">
                     <h3>Platform Digital</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been...</p>
+                    <p>Exatrain menyediakan platform digital yang memudahkan akses ke berbagai materi ujian dan soal latihan kapan saja dan di mana saja</p>
                 </div>
                 <div class="card">
                     <img src="img/booklandingg.png" alt="Icon">
                     <h3>Latihan Soal</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been...</p>
+                    <p>Dapatkan akses ke berbagai soal latihan yang dirancang untuk membantu lebih siap menghadapi ujian</p>
                 </div>
                 <div class="card">
                     <img src="img/graffik.png" alt="Icon">
                     <h3>Grafik Performa</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been...</p>
+                    <p>Pantau perkembangan Anda dengan grafik performa yang menunjukkan kemajuan belajar secara real-time.</p>
                 </div>
                 <div class="card">
                     <img src="img/icontinjjau.png" alt="Icon">
                     <h3>Tinjau Jawabanmu</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been...</p>
+                    <p>Tinjau jawaban dari soal yang telah dikerjakan untuk memperbaiki dan memahami kesalahan yang mungkin terjadi</p>
                 </div>
                 <div class="card">
                     <img src="img/iconperingkaat.png" alt="Icon">
                     <h3>Papan Peringkat</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been...</p>
+                    <p>Uji kemampuan Anda dengan mahasiswa lain dan lihat peringkat berdasarkan hasil latihan soal</p>
                 </div>
                 <div class="card">
                     <img src="img/icondigital.png" alt="Icon">
                     <h3>Fleksibel</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been...</p>
+                    <p>Exatrain menawarkan fleksibilitas dalam belajar dengan fitur yang memungkinkan belajar sesuai jadwal dan kemauan Anda sendiri</p>
                 </div>
             </div>
         </section>

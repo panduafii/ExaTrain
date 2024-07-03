@@ -86,6 +86,19 @@ body {
   margin: 4px 0;
 }
 
+.signup-btn{
+  width: 80px;
+  height: 30px;
+  background-color: #f39c12;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+  padding: 5px;
+  color: #070707;
+  font-weight: 1000;
+  border-radius: 8px;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .menu {
@@ -198,7 +211,7 @@ body {
 
 .benefits h2 {
   font-size: 42px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   margin-top: 50px;
 }
 
@@ -208,7 +221,8 @@ body {
 
 .benefits p {
   font-size: 15px;
-  margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .benefit-cards {
@@ -245,6 +259,7 @@ body {
 .card p {
   font-size: 15px;
   color: #555;
+  margin-top: 10px;
 }
 
 .difficulty {
