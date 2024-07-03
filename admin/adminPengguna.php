@@ -1,5 +1,7 @@
 <?php
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 // Fungsi untuk mendapatkan data doughnut chart
 function getDoughnutChartData($userId) {
@@ -173,7 +175,7 @@ function getUserProfileData($userId) {
     $paymentData = $paymentResult->fetch_assoc();
 
     // Mendapatkan total pengerjaan
-    $sql = "SELECT COUNT(subject_id) AS total_subjects, COUNT(*) AS total_answers FROM answers WHERE user_id = ?";
+    $sql = "SELECT COUNT(DISTINCT subject_id) AS total_subjects, COUNT(*) AS total_answers FROM answers WHERE user_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $userId);
     $stmt->execute();
