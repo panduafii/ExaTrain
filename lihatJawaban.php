@@ -108,7 +108,7 @@ $conn->close();
                 
                 <div class="question-block" id="question-<?= $index ?>" style="display: <?= $index === 0 ? 'block' : 'none'; ?>">
                     <h4>Soal</h4>
-                    <p><?= $question['question_text'] ?></p>
+                    <p><?= $index + 1 ?>. <?= $question['question_text'] ?></p>
                     
                     <h4>Jawaban Anda</h4>
                     <p><?= $question['answer'] ?></p>
