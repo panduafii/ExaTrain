@@ -14,8 +14,8 @@ if (!isset($_SESSION['subject_id'])) {
     header('Location: adminPenggunadetailjawaban.php');
     exit;
 
+
 }
-echo $subject_id;
 
 $subject_id = $_SESSION['subject_id'];
 
@@ -98,7 +98,7 @@ if ($subjectResult->num_rows > 0) {
                 </ul>
             </header>
             <div class="sub-header">
-                <span>Manajemen Soal</span>
+                <span>Edit Pengguna</span>
             </div>
             <div class="title">
                 <h3><?php echo $subject_name; ?></h3>

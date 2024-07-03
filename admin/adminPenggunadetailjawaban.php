@@ -65,7 +65,7 @@ session_start();
                 </ul>
             </header>
             <div class="sub-header">
-                <span>Manajemen Soal</span>
+                <span>Edit Pengguna</span>
             </div>
             <div class="content">
                 <div class="year-buttons">
