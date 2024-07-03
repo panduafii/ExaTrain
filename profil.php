@@ -77,7 +77,7 @@ if ($user) {
             <div class="profile">
                 <div class="profile-header">
                     <img src="img/profile-picture.png" alt="User">
-                    <span class="user-name">User</span>
+                    <span class="user-name"><?php echo "$username";?></span>
                 </div>
                 <table>
                     <tr>
