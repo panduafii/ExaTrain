@@ -43,7 +43,6 @@ body {
 .menu li {
   display: inline-block;
   margin-right: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .menu li:last-child {
@@ -59,7 +58,7 @@ body {
 }
 
 .menu li a:hover {
-  color: black;
+  color: #2196f3;
 }
 
 .menu li button {
@@ -75,7 +74,7 @@ body {
 }
 
 .menu li img {
-  height: 30px;
+  height: 20px;
   border-radius: 50%;
 }
 
@@ -158,6 +157,7 @@ main {
   padding: 15px;
   margin-bottom: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid #007bff;
 }
 
 .answer-box strong {
@@ -167,7 +167,6 @@ main {
 
 .evaluation-box {
   background-color: #f9f9f9;
-  border: 2px solid #007bff;
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 20px;
@@ -192,11 +191,12 @@ main {
 .question-navigation {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
   position: fixed;
-  bottom: 20px;
+  bottom: 50%;
   left: 0;
   right: 0;
+  transform: translateY(768%); /* Vertically center */
   z-index: 1000;
 }
 
@@ -397,5 +397,9 @@ main {
   .question-navigation button {
     width: 30px;
     height: 30px;
+  }
+
+  .question-navigation {
+    align-items: center;
   }
 }

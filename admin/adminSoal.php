@@ -68,11 +68,11 @@
                 <h3>Manajemen Soal</h3>
             </div>
             <div class="content">
-                <div class="year-buttons">
-                    <button class="year-button" data-year="2023">2023</button>
-                    <button class="year-button" data-year="2022">2022</button>
-                    <button class="year-button" data-year="2021">2021</button>
-                </div>
+                    <div class="year-buttons">
+                        <button class="year-button" data-year="2023">2023</button>
+                        <button class="year-button" data-year="2022">2022</button>
+                        <button class="year-button" data-year="2021">2021</button>
+                    </div>
                 <div class="courses" id="courses-container">
                     <!-- Courses will be dynamically inserted here -->
                 </div>

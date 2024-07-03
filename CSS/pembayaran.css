@@ -52,6 +52,7 @@ body {
   color: #808080;
   font-weight: bold;
   transition: color 0.3s;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .menu li a:hover {

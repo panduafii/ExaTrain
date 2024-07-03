@@ -61,6 +61,7 @@ body {
   color: #808080;
   font-weight: bold;
   transition: color 0.3s;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .menu li a:hover {
@@ -90,7 +91,7 @@ body {
   width: 100%;
   text-align: center;
   position: fixed;
-  top: 50px; 
+  top: 50px;
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 999;
   padding: 10px 0;
@@ -101,9 +102,9 @@ body {
   border-radius: 10px;
   text-align: center;
   width: 100%;
-  margin-top: 65px; 
+  margin-top: 65px;
   background: none;
-  flex: 1; 
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -190,12 +191,12 @@ body {
 
 @media (min-width: 1920px) {
   .navbar {
-    height: 100px; 
+    height: 100px;
     padding: 0 30px;
   }
 
   .logo img {
-    height: 60px; 
+    height: 60px;
   }
 
   .menu li a {
@@ -231,11 +232,11 @@ body {
   }
 
   .year-buttons .year-button {
-    padding: 20px 40px; 
-    font-size: 1.5vw; 
+    padding: 20px 40px;
+    font-size: 1.5vw;
   }
   .course-button {
-    width: 20vw; 
+    width: 20vw;
     padding: 30px;
   }
 
@@ -244,27 +245,27 @@ body {
   }
 
   .course-button span {
-    font-size: 1.5vw; 
+    font-size: 1.5vw;
   }
   h1 {
     margin-top: 100px;
-    font-size: 4vw; 
+    font-size: 4vw;
   }
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .navbar {
-    height: 50px; 
+    height: 50px;
     padding: 0 30px;
   }
 
   .logo img {
-    height: 30px; 
+    height: 30px;
   }
 
   .menu li a {
-    font-size: 1.6vw; 
+    font-size: 1.6vw;
   }
 
   .menu li button {
@@ -301,7 +302,7 @@ body {
   }
 
   .course-button {
-    width: 15vw; 
+    width: 15vw;
     height: auto;
     padding: 30px;
   }
@@ -311,11 +312,11 @@ body {
   }
 
   .course-button span {
-    font-size: 1.5vw; 
+    font-size: 1.5vw;
   }
 
   h1 {
     margin-top: 100px;
-    font-size: 4vw; 
+    font-size: 4vw;
   }
 }
