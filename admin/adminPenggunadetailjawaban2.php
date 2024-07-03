@@ -14,8 +14,8 @@ if (!isset($_SESSION['subject_id'])) {
     header('Location: adminPenggunadetailjawaban.php');
     exit;
 
-
 }
+echo $subject_id;
 
 $subject_id = $_SESSION['subject_id'];
 
