@@ -337,12 +337,12 @@ if (isset($_POST['user_id'])) {
                     </table>
                     <div class="pagination">
                         <span>Tampilkan</span>
-                        <select>
+                        <select id="rowsPerPage" onchange="changeRowsPerPage()">
                             <option value="1">1</option>
                             <option value="10">10</option>
                             <option value="20">20</option>
                         </select>
-                        <span>Dari 1 Total Data</span>
+                        <span id="totalRows"></span>
                     </div>
                 </div>
                 <a href="adminPenggunadetailjawaban.php" class="user-review">
@@ -672,6 +672,32 @@ if (isset($_POST['user_id'])) {
             }
         };
 
+
+        function changeRowsPerPage() {
+            const select = document.getElementById('rowsPerPage');
+            const rowsPerPage = parseInt(select.value);
+            const table = document.getElementById('user-table').getElementsByTagName('tbody')[0];
+            const rows = table.getElementsByTagName('tr');
+            const totalRows = rows.length;
+
+            // Tampilkan baris sesuai dengan jumlah yang dipilih
+            for (let i = 0; i < totalRows; i++) {
+                if (i < rowsPerPage) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+
+            // Perbarui teks total data
+            const totalRowsText = document.getElementById('totalRows');
+            totalRowsText.textContent = `Dari ${totalRows} Total Data`;
+        }
+
+        // Inisialisasi jumlah baris yang ditampilkan
+        document.addEventListener('DOMContentLoaded', () => {
+            changeRowsPerPage();
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

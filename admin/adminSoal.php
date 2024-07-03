@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,49 +7,47 @@
     <link rel="stylesheet" href="../CSS/adminsoal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-
 </head>
-
 <body>
     <div class="container">
         <nav class="sidebar">
-        <div class="logo">
+            <div class="logo">
                 <img src="../img/logo1.png" alt="EXATrain Logo">
                 <div class="logo-line"></div> <!-- Div untuk garis putih -->
             </div>
             <ul class="sidebar-menu">
-            <a href="adminPengguna.php">
-                <li class="sidebar-item">
-                    <img src="../img/penggunaicon.png" alt="Icon">
-                    <span>Edit Pengguna</span>
-                </li>
-            </a>
-            <a href="adminSoal.php">
-                <li class="sidebar-item">
-                    <img src="../img/manajemenicon.png" alt="Icon">
-                    <span>Manajemen Soal</span>
-                </li>
-            </a>
-            <a href="adminStatistik.php">
-                <li class="sidebar-item">
-                    <img src="../img/statistikicon.png" alt="Icon">
-                    <span>Data & Statistik</span>    
-                </li>
-            </a>
-            <a href="adminPembayaran.php">
-                <li class="sidebar-item">
-                    <img src="../img/wallet-2.png" alt="Icon">
-                    <span>Pembayaran</span>  
-                </li>
-            </a>
+                <a href="adminPengguna.php">
+                    <li class="sidebar-item">
+                        <img src="../img/penggunaicon.png" alt="Icon">
+                        <span>Edit Pengguna</span>
+                    </li>
+                </a>
+                <a href="adminSoal.php">
+                    <li class="sidebar-item">
+                        <img src="../img/manajemenicon.png" alt="Icon">
+                        <span>Manajemen Soal</span>
+                    </li>
+                </a>
+                <a href="adminStatistik.php">
+                    <li class="sidebar-item">
+                        <img src="../img/statistikicon.png" alt="Icon">
+                        <span>Data & Statistik</span>    
+                    </li>
+                </a>
+                <a href="adminPembayaran.php">
+                    <li class="sidebar-item">
+                        <img src="../img/wallet-2.png" alt="Icon">
+                        <span>Pembayaran</span>  
+                    </li>
+                </a>
             </ul>
             <ul class="logout">
-            <a href="../loginRegist.php">
-                <li class="sidebar-item">
-                    <img src="../img/logouticon.png" alt="Icon">
-                    <span>Logout</span>
-                </li>
-            </a>
+                <a href="../loginRegist.php">
+                    <li class="sidebar-item">
+                        <img src="../img/logouticon.png" alt="Icon">
+                        <span>Logout</span>
+                    </li>
+                </a>
             </ul>
         </nav>
         <div class="main-content">
@@ -71,11 +68,11 @@
                 <h3>Manajemen Soal</h3>
             </div>
             <div class="content">
-                    <div class="year-buttons">
-                        <button class="year-button" data-year="2023">2023</button>
-                        <button class="year-button" data-year="2022">2022</button>
-                        <button class="year-button" data-year="2021">2021</button>
-                    </div>
+                <div class="year-buttons">
+                    <button class="year-button" data-year="2023">2023</button>
+                    <button class="year-button" data-year="2022">2022</button>
+                    <button class="year-button" data-year="2021">2021</button>
+                </div>
                 <div class="courses" id="courses-container">
                     <!-- Courses will be dynamically inserted here -->
                 </div>
@@ -117,7 +114,7 @@
                 coursesContainer.innerHTML = "";
                 courses[year].forEach((course) => {
                     const form = document.createElement("form");
-                    form.action = "pilihanMatkul.php";
+                    form.action = "set_chart_session.php";
                     form.method = "post";
 
                     const courseButton = document.createElement("button");
@@ -153,5 +150,4 @@
         });
     </script>
 </body>
-
 </html>

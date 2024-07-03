@@ -163,6 +163,39 @@ if (isset($_POST['chart_type'])) {
 }
 ?>
 
+<?php
+ session_start();
+
+ // Menampilkan nama pengguna jika ada yang masuk
+ if (isset($_SESSION["username"])) {
+    $username = $_SESSION["username"];
+    
+} else {
+    echo "Hi!";
+}
+
+// Menghubungkan ke database
+include 'fungsiPHP/connection.php';
+
+// Mengambil data pengguna dari database
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT id, username, angkatan FROM users WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
+
+if ($user) {
+    $user_id = $user['id'];
+    $username = $user['username'];
+    $angkatan = $user['angkatan'] ?: '-'; // Jika angkatan null, tampilkan '-'
+} else {
+    echo "Pengguna tidak ditemukan";
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -186,13 +219,7 @@ if (isset($_POST['chart_type'])) {
                 <li><a href="aboutUs.php">Tentang Kami</a></li>
                 <li>
                     <?php
-                    // Menampilkan nama pengguna jika ada yang masuk
-                    if (isset($_SESSION["username"])) {
-                        $username = $_SESSION["username"];
                         echo "Hi! $username";
-                    } else {
-                        echo "Hi!";
-                    }
                     ?>
                 </li>
                 <li><a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
@@ -212,38 +239,38 @@ if (isset($_POST['chart_type'])) {
 
     <!-- End -->
     <div class="container">
-        <div class="profile">
-            <div class="profile-header">
-                <img src="img/profile-picture.png" alt="User">
-                <span class="user-name">User</span>
-            </div>
-            <table>
-                <tr>
-                    <td>ID :</td>
-                    <td>6797524</td>
-                </tr>
-                <tr>
-                    <td>Username :</td>
-                    <td>Vale2sulap</td>
-                </tr>
-                <tr>
-                    <td>Angkatan :</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>Password :</td>
-                    <td>**********</td>
-                </tr>
-                <tr>
-                    <td>Phone :</td>
-                    <td>08xxxxxxxx</td>
-                </tr>
-                <tr>
-                    <td><img src="img/imail.png" alt="Email Icon" class="icon-email"> Email</td>
-                    <td>vale2sulap21@gmail.com</td>
-                </tr>
-            </table>
-            <a href="loginRegist.php">
+            <div class="profile">
+                <div class="profile-header">
+                    <img src="img/profile-picture.png" alt="User">
+                    <span class="user-name">User</span>
+                </div>
+                <table>
+                    <tr>
+                        <td>ID :</td>
+                        <td>6797524</td>
+                    </tr>
+                    <tr>
+                        <td>Username :</td>
+                        <td>Vale2sulap</td>
+                    </tr>
+                    <tr>
+                        <td>Angkatan :</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Password :</td>
+                        <td>**********</td>
+                    </tr>
+                    <tr>
+                        <td>Phone :</td>
+                        <td>08xxxxxxxx</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/imail.png" alt="Email Icon" class="icon-email"> Email</td>
+                        <td>vale2sulap21@gmail.com</td>
+                    </tr>
+                </table>
+                <a href="loginRegist.php">
                 <div class="logout-wrapper">
                      <button class="logout-button">
                         <img src="img/logout-hitam.png" alt="Edit Icon" class="button-icon-logout">
