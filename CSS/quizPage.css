@@ -1,225 +1,305 @@
 body {
-    margin: 0;
-    padding: 0;
-    padding-bottom: 120px; /* Menambahkan padding di bawah konten */
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f3f4f6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 120px; /* Menambahkan padding di bawah konten */
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .navbar {
-    width: 100%;
-    height: 60px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .menu-container {
-    display: relative;
-    align-items: center;
-    min-height: 100vh;
+  display: relative;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .menu {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .menu li {
-    display: inline-block;
-    margin-right: 20px;
+  display: inline-block;
+  margin-right: 20px;
 }
 
 .menu li:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .menu li a {
-    text-decoration: none;
-    color: #808080;
-    font-weight: bold;
-    transition: color 0.3s;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-decoration: none;
+  color: #808080;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .menu li a:hover {
-    color: black;
+  color: black;
 }
 
 .menu li button {
-    width: 100%;
-    height: 35px;
-    padding: 0 15px;
-    background-color: #f39c12;
-    color: #070707;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  width: 100%;
+  height: 35px;
+  padding: 0 15px;
+  background-color: #f39c12;
+  color: #070707;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .menu li img {
-    height: 30px;
-    border-radius: 50%;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .logo img {
-    height: 40px;
+  height: 40px;
 }
 
 .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .menu-toggle .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 4px 0;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
 }
 
 .tulisanPertanyaan {
-    text-align: left;
-    font-size: 20px;
-    color: #333;
-    width: 100%;
-    margin-left: 30px;
+  margin-top: 50px;
+  text-align: left;
+  font-size: 24px;
+  color: #333;
+  width: 100%;
+  margin-left: 150px;
+  margin-right: 40px;
 }
 
 .isiPertanyaan {
-    width: 100%;
-    font-size: 15px;
-    color: #333;
-    margin-left: 90px;
-    margin-bottom: 100px;
+  width: 100%;
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 60px;
+  margin-right: 15px;
+  margin-left: 200px;
 }
 
 .isiBox {
-    width: 95%;
-    margin-left: 20px;
-    margin-right: 50px;
-    justify-content: center;
-    text-align: left;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 14px;
-    color: #333;
-    background-color: #fff;
-    height: auto;
-    min-height: 150px;
+  width: 92%;
+  margin-left: 55px;
+  justify-content: center;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #333;
+  background-color: #f9f9f9;
+  height: auto;
+  min-height: 150px;
 }
 
 .question-buttons {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    background-color: #ffffff;
-    padding: 10px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    height: 60px;
-    display: flex;
-    justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+.question-buttons button {
+  background-color: #003f7f;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.question-buttons button {
-    margin-right: 5px;
-    background-color: #256fd7;
-    color: rgb(255, 255, 255);
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+.question-buttons button:hover {
+  background-color: #0056b3;
 }
 
 .question-buttons button.active-button,
 .question-buttons button:hover {
-    background-color: #f39c12; /* Warna kuning untuk tombol aktif */
-    color: #ffffff; /* Warna teks putih */
-}
-
-.question-buttons button:hover {
-    background-color: #f39c12; /* Warna kuning untuk tombol aktif */
-    color: #ffffff; /* Warna teks putih */
+  background-color: #f39c12;
+  color: #ffffff;
 }
 
 .question-buttons button.answered {
-    background-color: rgb(39, 239, 139);
+  background-color: rgb(39, 239, 139);
 }
 
 .submitJawaban {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    padding: 22px 22px;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 5px;
-    background-color: rgb(65, 197, 122);
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    font-size: 10px;
-    font-style: bold;
-    margin-right: 20px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(65, 197, 122);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 1rem;
+  font-style: bold;
+  margin-right: 20px;
+  height: 60px;
 }
 
 .formjawaban {
-    display: block;
-    justify-content: left;
-    width: 100%;
+  display: block;
+  justify-content: left;
+  width: 100%;
 }
 
 .form-footer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .user-info {
-    text-align: center;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .absolute-footer-button {
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  text-align: center;
+  background-color: #f39c12;
+  padding: 10px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit {
+  margin-left: auto;
+  background-color: #f39c12;
+  color: #070707;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.active-button {
+  background-color: #f39c12; /* Warna kuning untuk tombol aktif */
+  color: #ffffff; /* Warna teks putih */
+}
+
+/* Media query for screens larger than 1920px */
+@media (min-width: 1920px) {
+  .navbar {
+    height: 100px;
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .menu li a {
+    font-size: 1.2vw;
+  }
+
+  .menu li button {
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+    margin-bottom: 150px;
+  }
+
+  .tulisanPertanyaan {
+    margin-left: 350px;
+    margin-right: 150px;
+    font-size: 55px;
+    margin-top: 100px;
+  }
+
+  .isiPertanyaan {
+    margin-left: 400px;
+    margin-right: 15px;
+    width: 100%;
+    font-size: 40px;
+  }
+
+  .isiBox {
+    width: 100%;
+    margin-left: 100px;
+    margin-right: 100px;
+    height: auto;
+    min-height: 150px;
+  }
+
+  .absolute-footer-button {
     position: absolute;
     bottom: 0;
-    width: 70%;
+    width: 90%;
     text-align: center;
     background-color: #f39c12;
     padding: 10px;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-}
+  }
 
-.submit {
-    margin-left: auto;
-    background-color: #f39c12;
-    color: #070707;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-}
+  .question-buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
 
-.active-button {
-    background-color: #f39c12; /* Warna kuning untuk tombol aktif */
-    color: #ffffff; /* Warna teks putih */
+  .question-buttons button {
+    background-color: #003f7f;
+    color: white;
+    width: 100px;
+    height: 90px;
+  }
 }

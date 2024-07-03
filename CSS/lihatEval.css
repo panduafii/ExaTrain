@@ -75,7 +75,7 @@ body {
 }
 
 .menu li img {
-  height: 30px;
+  height: 20px;
   border-radius: 50%;
 }
 
@@ -192,11 +192,12 @@ main {
 .question-navigation {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
   position: fixed;
-  bottom: 20px;
+  bottom: 50%;
   left: 0;
   right: 0;
+  transform: translateY(768%); /* Vertically center */
   z-index: 1000;
 }
 
@@ -397,5 +398,9 @@ main {
   .question-navigation button {
     width: 30px;
     height: 30px;
+  }
+
+  .question-navigation {
+    align-items: center;
   }
 }

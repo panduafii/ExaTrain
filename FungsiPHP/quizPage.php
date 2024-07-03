@@ -80,7 +80,7 @@ if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
         // Menampilkan pertanyaan dan form jawaban
         $row = $result->fetch_assoc();
         echo "<h2 class='tulisanPertanyaan'>" . "Soal" . "</h2>";
-        echo "<h4 class='isiPertanyaan'>" .$row['$question_id']. $row['question_text'] . "</h4>";
+        echo "<h4 class='isiPertanyaan'>" /*.$row['$question_id']*/. $row['question_text'] . "</h4>";
 
         // Menampilkan textarea untuk jawaban essay
         $answer = isset($_SESSION['answers'][$questionId]) ? $_SESSION['answers'][$questionId] : '';
