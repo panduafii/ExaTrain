@@ -11,6 +11,10 @@ body {
   height: 100vh;
 }
 
+* {
+  box-sizing: inherit;
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
@@ -173,6 +177,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 40px;
 }
 
 .evaluation-box strong {
@@ -193,10 +198,9 @@ main {
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: 50%;
+  bottom: 10px; 
   left: 0;
   right: 0;
-  transform: translateY(768%); /* Vertically center */
   z-index: 1000;
 }
 
@@ -320,9 +324,9 @@ main {
   }
 
   .question-navigation button {
-    width: 70px;
-    height: 70px;
-    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
   }
 }
 
@@ -395,8 +399,8 @@ main {
   }
 
   .question-navigation button {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 
   .question-navigation {
