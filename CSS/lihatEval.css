@@ -43,7 +43,6 @@ body {
 .menu li {
   display: inline-block;
   margin-right: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .menu li:last-child {
@@ -59,7 +58,7 @@ body {
 }
 
 .menu li a:hover {
-  color: black;
+  color: #2196f3;
 }
 
 .menu li button {

@@ -44,8 +44,8 @@ body {
   width: 100%;
   height: auto;
   width: 380px;
-  height:60vh;
-  background-color: #CFE4FF;
+  height: 60vh;
+  background-color: #cfe4ff;
   margin-left: 25px;
   padding: 30px 20px;
   margin-top: 20px;
@@ -224,10 +224,11 @@ body {
   color: #808080;
   font-weight: bold;
   transition: color 0.3s;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .menu li a:hover {
-  color: #276DD8;
+  color: #276dd8;
 }
 
 .menu li img {
