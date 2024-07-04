@@ -5,16 +5,8 @@ ini_set('display_errors', 1);
 
 // Fungsi untuk mendapatkan data doughnut chart
 function getDoughnutChartData($userId) {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ExaTrain";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Koneksi ke database gagal: " . $conn->connect_error);
-    }
+    // Koneksi ke database
+    include '../fungsiPHP/connection.php';
 
     $sql = "SELECT s.subject_name as subject_name, COUNT(a.subject_id) as count 
             FROM answers a
@@ -40,16 +32,8 @@ function getDoughnutChartData($userId) {
 
 // Fungsi untuk mendapatkan data CRC chart berdasarkan periode 3 bulan
 function getCRCChartData($userId) {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ExaTrain";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Koneksi ke database gagal: " . $conn->connect_error);
-    }
+    // Koneksi ke database
+    include '../fungsiPHP/connection.php';
 
     $sql = "SELECT 
                 CONCAT(YEAR(a.created_at), '-', LPAD(CEIL(MONTH(a.created_at) / 3), 2, '0')) as period,
@@ -77,16 +61,8 @@ function getCRCChartData($userId) {
 
 // Fungsi untuk mendapatkan data average grades chart
 function getAverageGradesChartData($userId) {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ExaTrain";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Koneksi ke database gagal: " . $conn->connect_error);
-    }
+    // Koneksi ke database
+    include '../fungsiPHP/connection.php';
 
     $sql = "SELECT s.subject_name as subject_name, AVG(a.is_correct) as average_grade 
             FROM answers a
@@ -112,16 +88,8 @@ function getAverageGradesChartData($userId) {
 
 // Fungsi untuk mendapatkan data average scores chart
 function getAverageScoresChartData($userId) { // <--- Diperbarui
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ExaTrain";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Koneksi ke database gagal: " . $conn->connect_error);
-    }
+    // Koneksi ke database
+    include '../fungsiPHP/connection.php';
 
     // Menggunakan kolom created_at untuk periode waktu
     $sql = "SELECT DATE_FORMAT(a.created_at, '%Y-%m') as period, AVG(a.is_correct) as average_score 
@@ -147,16 +115,8 @@ function getAverageScoresChartData($userId) { // <--- Diperbarui
 
 // Fungsi untuk mendapatkan data profil pengguna
 function getUserProfileData($userId) {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ExaTrain";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Koneksi ke database gagal: " . $conn->connect_error);
-    }
+// Koneksi ke database
+    include '../fungsiPHP/connection.php';
 
     // Mendapatkan data pengguna
     $sql = "SELECT username FROM users WHERE id = ?";

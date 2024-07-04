@@ -1,16 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ExaTrain";
-
-// Membuat koneksi
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Mengecek koneksi
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
+// Koneksi ke database
+include '../fungsiPHP/connection.php';
 
 // Query untuk mengambil data pengguna berdasarkan bulan dan angkatan
 $sql = "
