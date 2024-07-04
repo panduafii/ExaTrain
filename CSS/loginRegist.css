@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +51,7 @@ body {
   color: #808080;
   font-weight: bold;
   transition: color 0.3s;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.2vw;
 }
 
 .menu li a:hover {
@@ -71,15 +76,16 @@ body {
 /* END NAVBAR */
 
 /* LOGIN DAN REGISTER */
-.form h2,
+/* .form h2,
 a,
 p {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
+} */
 
 h2 {
   text-align: center;
   font-size: 24px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .login-page {

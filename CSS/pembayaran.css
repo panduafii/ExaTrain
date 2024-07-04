@@ -1,7 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
 
 body {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: #f9f9f9;
   display: flex;
   justify-content: center;
@@ -41,6 +44,7 @@ body {
 
 .menu li {
   margin-right: 20px;
+  font-size: 1.2vw;
 }
 
 .menu li:last-child {
@@ -52,7 +56,6 @@ body {
   color: #808080;
   font-weight: bold;
   transition: color 0.3s;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .menu li a:hover {
@@ -87,7 +90,7 @@ body {
   padding: 20px;
   text-align: center;
   position: relative;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 h1 {

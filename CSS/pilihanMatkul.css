@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 html,
 body {
   height: 100%;
@@ -7,16 +13,13 @@ body {
 }
 
 body {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background-image: url("img/background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 /* NAVBAR */
@@ -40,6 +43,11 @@ body {
   height: 40px;
 }
 
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
 .menu {
   display: flex;
   align-items: center;
@@ -50,6 +58,7 @@ body {
 
 .menu li {
   margin-right: 20px;
+  font-size: 1.2vw;
 }
 
 .menu li:last-child {
@@ -61,7 +70,6 @@ body {
   color: #808080;
   font-weight: bold;
   transition: color 0.3s;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .menu li a:hover {
@@ -84,6 +92,39 @@ body {
   height: 3px;
   background-color: #333;
   margin: 4px 0;
+}
+
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .menu li a {
+    padding: 10px 0;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu.active {
+    display: flex;
+  }
 }
 
 /* Header Title */
@@ -121,7 +162,7 @@ body {
   border: none;
   border-radius: 5px;
   position: absolute;
-  top: 100px;
+  top: 105px;
   left: 20px;
   transition: color 0.3s;
 }

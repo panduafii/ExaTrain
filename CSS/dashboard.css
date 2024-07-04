@@ -1,7 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
 
 body {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -29,22 +33,26 @@ body {
   z-index: 1000;
 }
 
+.logo img {
+  height: 40px;
+}
+
 .menu-container {
   display: flex;
   align-items: center;
 }
 
 .menu {
-  list-style-type: none;
-  padding: 0;
   display: flex;
   align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .menu li {
-  display: inline-block;
   margin-right: 20px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.2vw;
 }
 
 .menu li:last-child {
@@ -54,7 +62,7 @@ body {
 .menu li a {
   text-decoration: none;
   color: #808080;
-  font-weight: light;
+  font-weight: bold;
   transition: color 0.3s;
 }
 
@@ -62,25 +70,9 @@ body {
   color: #276dd8;
 }
 
-.menu li button {
-  width: 100%;
-  height: 35px;
-  padding: 0 15px;
-  background-color: #f39c12;
-  color: #070707;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
 .menu li img {
   height: 30px;
   border-radius: 50%;
-}
-
-.logo img {
-  height: 40px;
 }
 
 .menu-toggle {
@@ -95,7 +87,6 @@ body {
   background-color: #333;
   margin: 4px 0;
 }
-
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -109,9 +100,8 @@ body {
   }
 
   .menu li {
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
+    display: inline-block;
+    margin-right: 20px;
   }
 
   .menu li a {
@@ -190,30 +180,30 @@ h1 {
 /* END DASHBOARD */
 @media (min-width: 1920px) {
   .navbar {
-    height: 100px; /* Sesuaikan tinggi navbar untuk layar besar (46.67px untuk 70px yang diskalakan) */
-    padding: 0 30px; /* Sesuaikan padding */
+    height: 100px;
+    padding: 0 30px;
   }
 
   .logo img {
-    height: 60px; /* Sesuaikan tinggi logo untuk layar besar (33.33px untuk 50px yang diskalakan) */
+    height: 60px;
   }
 
   .menu li a {
-    font-size: 1.2vw; /* Sesuaikan ukuran font untuk menu (0.87rem untuk 1.3rem yang diskalakan) */
+    font-size: 1.2vw;
   }
 
   .menu li button {
-    height: 30px; /* Sesuaikan tinggi tombol (30px untuk 45px yang diskalakan) */
-    padding: 0 13.33px; /* Sesuaikan padding tombol */
-    font-size: 0.8rem; /* Sesuaikan ukuran font tombol */
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
   }
 
   .menu li img {
     height: 3.5vw;
   }
 
-  header {
-    padding: 13.33px; /* Sesuaikan padding header */
+  .header {
+    padding: 13.33px;
   }
 
   main {
@@ -240,116 +230,6 @@ h1 {
 
   .card p {
     font-size: 2.5rem; /* Sesuaikan ukuran font dalam kartu */
-  }
-}
-
-@media (min-width: 1600px) and (max-width: 1919px) {
-  body {
-    font-size: 1.1rem;
-  }
-
-  .navbar {
-    height: 65px;
-    padding: 0 30px;
-  }
-
-  .logo img {
-    height: 45px;
-  }
-
-  .menu li a {
-    font-size: 1.2rem;
-  }
-
-  .menu li button {
-    height: 40px;
-    padding: 0 18px;
-    font-size: 0.9rem;
-  }
-
-  header {
-    padding: 18px;
-  }
-
-  main {
-    padding-top: 110px;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  .dashboard {
-    gap: 35px;
-    padding: 30px;
-  }
-
-  .card {
-    padding: 45px;
-    width: 280px;
-  }
-
-  .card img {
-    width: 55%;
-  }
-
-  .card p {
-    font-size: 1.6rem;
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1599px) {
-  body {
-    font-size: 1rem;
-  }
-
-  .navbar {
-    height: 60px;
-    padding: 0 20px;
-  }
-
-  .logo img {
-    height: 40px;
-  }
-
-  .menu li a {
-    font-size: 1rem;
-  }
-
-  .menu li button {
-    height: 38px;
-    padding: 0 16px;
-    font-size: 0.85rem;
-  }
-
-  header {
-    padding: 16px;
-  }
-
-  main {
-    padding-top: 100px;
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  .dashboard {
-    gap: 30px;
-    padding: 25px;
-  }
-
-  .card {
-    padding: 40px;
-    width: 260px;
-  }
-
-  .card img {
-    width: 50%;
-  }
-
-  .card p {
-    font-size: 1.4rem;
   }
 }
 

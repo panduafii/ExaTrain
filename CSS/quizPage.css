@@ -1,8 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
   padding-bottom: 120px; /* Menambahkan padding di bawah konten */
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: #f3f4f6;
   display: flex;
   flex-direction: column;
@@ -43,6 +48,7 @@ body {
 .menu li {
   display: inline-block;
   margin-right: 20px;
+  font-size: 1.2vw;
 }
 
 .menu li:last-child {
@@ -54,7 +60,6 @@ body {
   color: #808080;
   font-weight: bold;
   transition: color 0.3s;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .menu li a:hover {
@@ -299,7 +304,8 @@ body {
   .question-buttons button {
     background-color: #003f7f;
     color: white;
-    width: 100px;
-    height: 90px;
+    width: 90px;
+    height: 60px;
+    font-size: 1vw;
   }
 }

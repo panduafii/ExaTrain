@@ -2,7 +2,6 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f0f2f5;
@@ -13,12 +12,13 @@ body {
 .container {
   display: flex;
   width: 90%;
-  height: 85vh; /* Reduced height from 90% to 85vh */
+  height: 80vh; /* Reduced height from 90% to 85vh */
   background-color: #f2f7ff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin: 120px auto 0px; /* Adjusting margin to account for fixed navbar */
-  overflow: hidden;
+  margin: 110px auto 0px; /* Adjusting margin to account for fixed navbar */
+  overflow-y: auto;
+  justify-content: flex-start;
 }
 
 .back-button {
@@ -70,11 +70,13 @@ body {
   height: 100px;
   border-radius: 50%;
   margin-right: 10px;
+  justify-content: center;
 }
 
 .user-name {
   font-weight: 600;
   font-size: 20px;
+  text-align: center;
 }
 
 .profile table {
@@ -213,6 +215,7 @@ body {
 
 .menu li {
   margin-right: 20px;
+  font-size: 1.2vw;
 }
 
 .menu li:last-child {
@@ -224,7 +227,6 @@ body {
   color: #808080;
   font-weight: bold;
   transition: color 0.3s;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .menu li a:hover {
