@@ -161,18 +161,7 @@ if (isset($_POST['chart_type'])) {
     }
     exit;
 }
-?>
 
-<?php
- session_start();
-
- // Menampilkan nama pengguna jika ada yang masuk
- if (isset($_SESSION["username"])) {
-    $username = $_SESSION["username"];
-    
-} else {
-    echo "Hi!";
-}
 
 // Menghubungkan ke database
 include 'fungsiPHP/connection.php';
@@ -242,32 +231,20 @@ if ($user) {
             <div class="profile">
                 <div class="profile-header">
                     <img src="img/profile-picture.png" alt="User">
-                    <span class="user-name">User</span>
+                    <span class="user-name"><?php echo "$username";?></span>
                 </div>
                 <table>
                     <tr>
                         <td>ID :</td>
-                        <td>6797524</td>
+                        <td><?php echo $user_id; ?></td>
                     </tr>
                     <tr>
                         <td>Username :</td>
-                        <td>Vale2sulap</td>
+                        <td><?php echo "$username";?></td>
                     </tr>
                     <tr>
                         <td>Angkatan :</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>Password :</td>
-                        <td>**********</td>
-                    </tr>
-                    <tr>
-                        <td>Phone :</td>
-                        <td>08xxxxxxxx</td>
-                    </tr>
-                    <tr>
-                        <td><img src="img/imail.png" alt="Email Icon" class="icon-email"> Email</td>
-                        <td>vale2sulap21@gmail.com</td>
+                        <td><?php echo $angkatan; ?></td>
                     </tr>
                 </table>
                 <a href="loginRegist.php">
@@ -276,8 +253,8 @@ if ($user) {
                         <img src="img/logout-hitam.png" alt="Edit Icon" class="button-icon-logout">
                         <span>Logout</span>
                     </button>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
         <div class="main-content">
             <h1>Data dan Statistik</h1>
