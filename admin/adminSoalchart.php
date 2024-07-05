@@ -27,16 +27,9 @@ if ($subjectResult->num_rows > 0) {
 
 // Fungsi untuk mendapatkan data benar
 function getCorrectPercentageData($subjectId) {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ExaTrain";
+    // Koneksi ke database
+    include '../fungsiPHP/connection.php';
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Koneksi ke database gagal: " . $conn->connect_error);
-    }
 
     $sql = "SELECT q.id AS question_id, 
                    q.question_text, 
