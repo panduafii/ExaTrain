@@ -32,7 +32,7 @@
             <p>Integer et dui gravida diam vehicula condimentum at et dui. Vestibulum luctus justo sit amet velit venenatis, id tincidunt nunc iaculis.</p>
         </div>
         <div class="project-image">
-            <img src="img/project-image.jpg" alt="Project Image">
+            <img src="img/work.jpeg" alt="Project Image">
         </div>
     </section>
 
@@ -40,22 +40,27 @@
         <h2>Our Services</h2>
         <div class="services-container">
             <div class="service">
+                <img src="img/tryout.png" alt="Try Out Icon">
                 <h3>TRY OUT</h3>
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="service">
+                <img src="img/tryout.png" alt="Try Out Icon">
                 <h3>AI CHECK</h3>
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="service">
+                <img src="img/tryout.png" alt="Try Out Icon">
                 <h3>DETAIL</h3>
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
-            <div class="service">
+            <div class="service">\
+                <img src="img/tryout.png" alt="Try Out Icon">
                 <h3>RANKING</h3>
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="service">
+                <img src="img/tryout.png" alt="Try Out Icon">
                 <h3>PROGRESS</h3>
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>

@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root"; // Ganti dengan username Anda
-$password = "root"; // Ganti dengan password Anda
+$password = ""; // Ganti dengan password Anda
 $dbname = "ExaTrain";
 
 // Membuat koneksi

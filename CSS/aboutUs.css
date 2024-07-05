@@ -117,9 +117,10 @@ body {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
   border-radius: 5px;
+  text-align: center;
+  font-size: 70px;
 }
 
 /* PROJECT SECTION */
@@ -127,13 +128,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px;
-  background-color: #f9f9f9;
+  padding: 20px 20px 20px 20px;
 }
 
 .project-content {
-  width: 100%;
+  margin-left: 20px;
+  width: 90%;
   max-width: 60%;
+}
+
+.project-content h2{
+  font-size: 50px;
+  color: #007bff;
+  text-align: center;
 }
 
 .project-image {
@@ -155,6 +162,13 @@ body {
   text-align: center;
 }
 
+
+.services h2{
+  font-size: 50px;
+  color: #007bff;
+  text-align: center;
+}
+
 .services-container {
   display: flex;
   justify-content: center;
@@ -167,9 +181,26 @@ body {
 .service {
   background-color: white;
   padding: 20px;
-  width: 150px;
+  width: 200px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.service img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.service h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.service p {
+  font-size: 0.9em;
+  color: #333;
 }
 
 /* TEAM SECTION */
@@ -181,7 +212,7 @@ body {
 .team-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
@@ -196,6 +227,13 @@ body {
   height: 150px;
   border-radius: 50%;
   margin-bottom: 10px;
+}
+
+
+.team h2{
+  font-size: 50px;
+  color: #007bff;
+  text-align: center;
 }
 
 /* FOOTER */
