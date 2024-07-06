@@ -159,7 +159,8 @@ body {
   margin-bottom: 0;
   text-align: left;
   border-collapse: collapse;
-  / .profile td {
+}
+  .profile td {
     padding: 10px 0;
   }
 
@@ -296,7 +297,7 @@ body {
       display: flex;
     }
   }
-}
+
 
 /* Media query for screens larger than 1920px */
 @media (min-width: 1920px) {
