@@ -124,10 +124,11 @@ main {
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 100px);
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  margin-left: 15px;
 }
 
 .question-container h3 {
