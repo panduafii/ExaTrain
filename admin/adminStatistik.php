@@ -26,6 +26,9 @@ if ($result->num_rows > 0) {
         if (!isset($data[$year])) {
             $data[$year] = array_fill(0, 12, []);
         }
+        if (!isset($data[$year][$month-1])) {
+            $data[$year][$month-1] = [];
+        }
         $data[$year][$month-1][$angkatan] = $jumlah;
     }
 } else {
@@ -110,7 +113,6 @@ if ($result_grades->num_rows > 0) {
         $month = $row['month'];
         $average_grade = $row['average_grade'];
 
-
         if (!isset($grades_data[$angkatan])) {
             $grades_data[$angkatan] = array_fill(0, 12, 0);
         }
@@ -122,7 +124,6 @@ if ($result_grades->num_rows > 0) {
 
 $conn->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -229,24 +230,6 @@ $conn->close();
         const activityData = <?php echo json_encode($activity_data); ?>;
         const gradesData = <?php echo json_encode($grades_data); ?>;
 
-        // Mengatur data untuk chart
-        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Juni', 'Juli', 'Aug', 'Sept', 'Okt', 'Nov', 'Des'];
-        const years = Object.keys(data).map(Number);
-        const datasets = [];
-
-        // Loop through each year and create datasets
-        years.forEach(year => {
-            const angkatanData = data[year];
-            for (let angkatan in angkatanData[0]) {
-                const dataset = {
-                    label: `${angkatan} (${year})`,
-                    data: angkatanData.map(monthData => monthData[angkatan] || 0),
-                    backgroundColor: getRandomColor(),
-                };
-                datasets.push(dataset);
-            }
-        });
-
         function getRandomColor() {
             const letters = '0123456789ABCDEF';
             let color = '#';
@@ -257,7 +240,28 @@ $conn->close();
         }
 
         window.onload = function() {
-            // User Count Bar Chart
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Juni', 'Juli', 'Aug', 'Sept', 'Okt', 'Nov', 'Des'];
+            const datasets = [];
+
+            for (const year in data) {
+                const angkatanData = data[year];
+                for (const monthIndex in angkatanData) {
+                    const monthData = angkatanData[monthIndex];
+                    for (const angkatan in monthData) {
+                        let existingDataset = datasets.find(d => d.label === `${angkatan} (${year})`);
+                        if (!existingDataset) {
+                            existingDataset = {
+                                label: `${angkatan} (${year})`,
+                                data: new Array(12).fill(0),
+                                backgroundColor: getRandomColor()
+                            };
+                            datasets.push(existingDataset);
+                        }
+                        existingDataset.data[monthIndex] = monthData[angkatan];
+                    }
+                }
+            }
+
             const userCountData = {
                 labels: months,
                 datasets: datasets
@@ -284,6 +288,7 @@ $conn->close();
                     }
                 }
             };
+
             const barCtx = document.getElementById('userCountChart').getContext('2d');
             new Chart(barCtx, userCountConfig);
 
@@ -379,8 +384,6 @@ $conn->close();
             const lineCtx = document.getElementById('userActivityChart').getContext('2d');
             new Chart(lineCtx, userActivityConfig);
         };
-
-
     </script>
 </body>
 </html>
