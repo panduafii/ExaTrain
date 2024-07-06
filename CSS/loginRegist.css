@@ -85,7 +85,7 @@ p {
 h2 {
   text-align: center;
   font-size: 24px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .login-page {
@@ -321,7 +321,7 @@ h2 {
   height: auto;
   border-radius: 10px;
 }
-
+/* Responsif untuk layar besar (1920px ke atas) */
 @media (min-width: 1920px) {
   .navbar {
     height: 100px;
@@ -333,14 +333,14 @@ h2 {
   }
 
   .menu li a {
-    font-size: 1.2vw; /* Menyesuaikan ukuran font untuk layar besar */
+    font-size: 1.2vw; /* Ukuran font sesuai dengan layar besar */
   }
 
   .menu li button {
-    width: 5vw;
+    width: 5vw; /* Lebar tombol sesuai dengan persentase layar */
     height: 35px;
     padding: 0 13.33px;
-    font-size: 1rem;
+    font-size: 1rem; /* Ukuran font untuk tombol */
   }
 
   .header {
@@ -348,76 +348,83 @@ h2 {
   }
 
   .login-page {
-    max-width: 80%;
-    margin-top: 250px;
+    max-width: 80%; /* Lebar maksimum konten login page */
+    margin-top: 250px; /* Margin atas untuk tata letak halaman */
   }
 
   .form h2 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Ukuran judul form */
   }
 
   .form h3 {
-    font-size: 3rem;
+    font-size: 3rem; /* Ukuran subjudul form */
   }
 
   .form p {
-    font-size: 1rem;
+    font-size: 1rem; /* Ukuran teks dalam form */
   }
 
   .form input,
   .form select {
-    font-size: 25px;
-    padding: 25px;
+    font-size: 25px; /* Ukuran font untuk input dan select */
+    padding: 25px; /* Padding untuk input dan select */
   }
 
   .form button {
-    font-size: 25px;
-    padding: 25px;
+    font-size: 25px; /* Ukuran font tombol dalam form */
+    padding: 25px; /* Padding untuk tombol dalam form */
   }
 
   .credit-card-button {
-    width: 90%;
-    padding: 25px;
-    font-size: 3rem;
+    width: 90%; /* Lebar tombol metode pembayaran */
+    padding: 25px; /* Padding tombol metode pembayaran */
+    font-size: 3rem; /* Ukuran font tombol metode pembayaran */
   }
-}
-.vertical-divider {
-  display: block;
-}
+
+  .vertical-divider {
+    display: block; /* Tampilkan vertical divider */
+    width: 1px; /* Lebar vertical divider */
+    background-color: #433f3f; /* Warna background vertical divider */
+    margin: 0 20px;
+    height: auto; /* Tinggi dinamis */
+  }
+
   .payment {
-    width: 45%;
+    width: 45%; /* Lebar container pembayaran */
   }
 
   .registrasi {
-    width: 50%;
+    width: 50%; /* Lebar container registrasi */
   }
 
   .login-container {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   p {
-    font-size: 35vw;
+    font-size: 35vw; /* Ukuran font paragraf */
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 3rem; /* Ukuran font h2 */
   }
 
   .login {
-    width: 50%;
-    text-align: center;
-  }
-  .picture img {
-    height: 10%;
+    width: 50%; /* Lebar form login */
+    text-align: center; /* Pusatkan teks dalam form login */
   }
 
+  .picture img {
+    height: auto;
+  }
+}
 
 @media (max-width: 768px) {
   .navbar {
     height: 50px;
-    padding: 0 30px;
+    padding: 0 15px; /* Perkecil padding navbar agar muat di layar kecil */
   }
 
   .logo img {
@@ -425,86 +432,179 @@ h2 {
   }
 
   .menu li a {
-    font-size: 1.6vw;
+    font-size: 1vw; /* Sesuaikan ukuran font agar tetap terbaca pada layar kecil */
   }
 
   .menu li button {
-    width: 10vw;
-    height: 20px;
-    padding: 0 13.33px;
-    font-size: 1.6vw;
-  }
-
-  .menu li img {
-    height: 3.5vw;
+    width: auto; /* Ubah lebar tombol agar tidak terlalu besar di layar kecil */
+    padding: 5px 7px; /* Sesuaikan padding tombol untuk tampilan yang lebih baik */
+    font-size: 1vw; /* Ukuran font agar terlihat baik di layar kecil */
   }
 
   .header {
-    padding: 13.33px;
+    padding: 10px;
   }
 
   .login-page {
-    max-width: 80%;
-    margin-top: 90px;
-  }
-
-  .form {
-    padding: 10px;
+    max-width: 90%; /* Agar konten tetap dalam batas layar pada ukuran kecil */
+    margin-top: 60px; /* Sesuaikan margin atas agar tidak terlalu tinggi di layar kecil */
   }
 
   .form input,
   .form select {
-    font-size: 10px;
+    font-size: 3vw; /* Ukuran input dan select agar sesuai dengan layar kecil */
     padding: 10px;
   }
 
   .form button {
-    font-size: 10px;
-    padding: 10px;
+    font-size: 3vw; /* Ukuran tombol agar sesuai dengan layar kecil */
+    padding: 10px 15px;
   }
 
   .credit-card-button {
-    width: 70%;
-    padding: 10px;
+    width: 80%; /* Lebar tombol sesuai dengan konten pada layar kecil */
+    padding: 15px; /* Padding agar terlihat lebih baik */
+    font-size: 3vw; /* Ukuran font sesuaikan dengan ukuran layar kecil */
   }
 
   .vertical-divider {
-    display: none;
+    display: none; /* Sembunyikan divider di layar kecil */
   }
 
-  .payment {
-    width: 45%;
-  }
-
+  .payment,
   .registrasi {
-    width: 50%;
+    width: 100%; /* Lebar konten agar penuh di layar kecil */
+    margin-bottom: 10px; /* Sesuaikan margin agar tata letak lebih baik */
   }
 
   .login-container {
-    display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Tampilkan elemen login dalam satu kolom di layar kecil */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .message {
-    font-size: 10vw;
+    font-size: 3vw; /* Ukuran font agar terlihat baik di layar kecil */
   }
 
   h2 {
-    font-size: 3vw;
+    font-size: 4vw; /* Ukuran judul agar sesuai di layar kecil */
   }
 
   .login {
-    width: 50%;
-    text-align: left; /* Mengubah dari center ke left */
+    width: 90%; /* Sesuaikan lebar form login di layar kecil */
+    text-align: center; /* Tengahkan teks pada form login di layar kecil */
   }
 
   .picture {
-    width: 45%;
+    width: 90%; /* Lebar gambar sesuai dengan konten di layar kecil */
   }
 
   .picture img {
-    width: 100%;
+    width: 100%; /* Pastikan gambar terlihat baik di layar kecil */
+  }
+}
+
+/* CSS untuk layar antara 900px hingga 1200px */
+@media (min-width: 900px) and (max-width: 1200px) {
+  .navbar {
+    height: 70px;
+    padding: 0 20px; /* Sesuaikan padding navbar */
+  }
+
+  .logo img {
+    height: 40px; /* Ukuran logo */
+  }
+
+  .menu li a {
+    font-size: 1vw; /* Ukuran font untuk link menu */
+  }
+
+  .menu li button {
+    width: 4vw; /* Lebar tombol menu */
+    padding: 0 15px; /* Padding tombol menu */
+    font-size: 0.5rem; /* Ukuran font tombol */
+  }
+
+  .header {
+    padding: 12px; /* Padding header */
+  }
+
+  .login-page {
+    max-width: 85%; /* Lebar maksimum konten halaman login */
+    margin-top: 150px; /* Margin atas */
+  }
+
+  .form h2 {
+    font-size: 2rem; /* Ukuran judul form */
+  }
+
+  .form h3 {
+    font-size: 2.5rem; /* Ukuran subjudul form */
+  }
+
+  .form p {
+    font-size: 0.9rem; /* Ukuran teks dalam form */
+  }
+
+  .form input,
+  .form select {
+    font-size: 20px; /* Ukuran font input dan select */
+    padding: 15px; /* Padding input dan select */
+  }
+
+  .form button {
+    font-size: 20px; /* Ukuran font tombol dalam form */
+    padding: 15px; /* Padding tombol dalam form */
+  }
+
+  .credit-card-button {
+    width: 85%; /* Lebar tombol metode pembayaran */
+    padding: 20px; /* Padding tombol metode pembayaran */
+    font-size: 2.5rem; /* Ukuran font tombol metode pembayaran */
+  }
+
+  .vertical-divider {
+    display: block; /* Tampilkan vertical divider */
+    width: 1px; /* Lebar vertical divider */
+    background-color: #d3d3d3; /* Warna background vertical divider */
+    margin: 0 15px; /* Margin vertical divider */
+    height: auto; /* Tinggi dinamis */
+  }
+
+  .payment,
+  .registrasi {
+    width: 45%; /* Lebar container pembayaran dan registrasi */
+  }
+
+  .login-container {
+    display: flex; /* Tampilkan kontainer login dalam flex */
+    justify-content: space-between; /* Spasi antara elemen dalam kontainer */
+    align-items: flex-start; /* Pusatkan elemen ke atas */
+    margin-top: 10px; /* Margin atas */
+  }
+
+  p {
+    font-size: 25px; /* Ukuran font paragraf */
+  }
+
+  h2 {
+    font-size: 2.5rem; /* Ukuran font h2 */
+  }
+
+  .login {
+    width: 45%; /* Lebar form login */
+    text-align: center; /* Pusatkan teks dalam form login */
+  }
+
+  .picture {
+    width: 45%; /* Lebar gambar */
+    text-align: center; /* Pusatkan teks dalam gambar */
+  }
+
+  .picture img {
+    width: 100%; /* Pastikan gambar terlihat baik di layar menengah */
+    height: auto; /* Tetapkan tinggi otomatis untuk mempertahankan rasio aspek */
+    border-radius: 8px; /* Sudut bulat pada gambar */
   }
 }

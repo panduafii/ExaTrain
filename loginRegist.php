@@ -15,7 +15,7 @@
         </div>
         <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
         <ul class="menu">
-            <li><a href="landingPage.php">Beranda</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="">Mata Kuliah</a></li>
             <li><a href="">Papan Peringkat</a></li>
             <li><a href="aboutUs.php">Tentang Kami</a></li>
