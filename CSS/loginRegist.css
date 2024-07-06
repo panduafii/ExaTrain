@@ -383,7 +383,7 @@ h2 {
 }
 .vertical-divider {
   display: block;
-}
+
   .payment {
     width: 45%;
   }
@@ -412,7 +412,7 @@ h2 {
   .picture img {
     height: 10%;
   }
-
+}
 @media (max-width: 768px) {
   .navbar {
     height: 50px;
