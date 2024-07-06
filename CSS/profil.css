@@ -45,7 +45,7 @@ body {
   height: auto;
   width: 380px;
   height: 60vh;
-  background-color: #cfe4ff;
+  background-color: #002657;
   margin-left: 25px;
   padding: 30px 20px;
   margin-top: 20px;
@@ -56,6 +56,7 @@ body {
   align-items: center;
   border-radius: 10px;
   justify-content: space-between;
+  color: #f0f2f5;
 }
 
 .profile-header {
@@ -75,8 +76,10 @@ body {
 
 .user-name {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
+  padding-left: 70px;
+  color: #3fec42;
 }
 
 .profile table {
@@ -123,8 +126,12 @@ body {
   margin-top: auto; /* Tambahkan jarak atas yang sesuai */
 }
 
+.profile a{
+  width: 100%;
+}
+
 .logout-button {
-  width: 120px;
+  width: 100%;
   height: 40px;
   background-color: #f0a500;
   justify-content: flex-start;

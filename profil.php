@@ -130,7 +130,6 @@ if (isset($_POST['chart_type'])) {
     exit;
 }
 
-
 // Menghubungkan ke database
 include 'fungsiPHP/connection.php';
 
@@ -180,7 +179,6 @@ if ($user) {
                     ?>
                 </li>
                 <li><a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
-                <!-- <li></li> -->
             </ul>
             <div class="menu-toggle">
                 <div class="bar"></div>
@@ -194,36 +192,36 @@ if ($user) {
     &larr; 
     </div>
 
-    <!-- End -->
+    <!-- Main Content -->
     <div class="container">
-            <div class="profile">
-                <div class="profile-header">
-                    <img src="img/profile-picture.png" alt="User">
-                    <span class="user-name"><?php echo "$username";?></span>
-                </div>
-                <table>
-                    <tr>
-                        <td>ID :</td>
-                        <td><?php echo $user_id; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Username :</td>
-                        <td><?php echo "$username";?></td>
-                    </tr>
-                    <tr>
-                        <td>Angkatan :</td>
-                        <td><?php echo $angkatan; ?></td>
-                    </tr>
-                </table>
-                <a href="loginRegist.php">
-                <div class="logout-wrapper">
-                     <button class="logout-button">
-                        <img src="img/logout-hitam.png" alt="Edit Icon" class="button-icon-logout">
-                        <span>Logout</span>
-                    </button>
-                </a>
+        <div class="profile">
+            <div class="profile-header">
+                <img src="img/profile-picture.png" alt="User">
+                <span class="user-name"><?php echo htmlspecialchars($username); ?></span>
             </div>
+            <table>
+                <tr>
+                    <td>ID :</td>
+                    <td><?php echo htmlspecialchars($user_id); ?></td>
+                </tr>
+                <tr>
+                    <td>Username :</td>
+                    <td><?php echo htmlspecialchars($username); ?></td>
+                </tr>
+                <tr>
+                    <td>Angkatan :</td>
+                    <td><?php echo htmlspecialchars($angkatan); ?></td>
+                </tr>
+            </table>
+            
+            <a href="loginRegist.php" class="logout-wrapper">
+                <button class="logout-button">
+                    <img src="img/logout-hitam.png" alt="Logout Icon" class="button-icon-logout">
+                    <span>Logout</span>
+                </button>
+            </a>
         </div>
+
         <div class="main-content">
             <h1>Data dan Statistik</h1>
             <div class="chart-container">
@@ -252,6 +250,7 @@ if ($user) {
             </div>
         </div>
     </div>
+
     <script>
         function goBack() {
             history.back();
