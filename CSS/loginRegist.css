@@ -340,7 +340,7 @@ h2 {
     width: 5vw;
     height: 35px;
     padding: 0 13.33px;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .header {
@@ -383,7 +383,7 @@ h2 {
 }
 .vertical-divider {
   display: block;
-
+}
   .payment {
     width: 45%;
   }
@@ -412,7 +412,7 @@ h2 {
   .picture img {
     height: 10%;
   }
-}
+
 
 @media (max-width: 768px) {
   .navbar {

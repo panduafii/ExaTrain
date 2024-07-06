@@ -277,10 +277,18 @@ body {
 
 .chart {
     background-color: #ffffff;
+    position: relative;
     height: 300px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 10px; /* Membuat pojok lebih melengkung */
+    padding: 25px; /* Padding di dalam container chart */
 }
+
+
 
 #correct-incorrect {
     grid-column: span 2;
@@ -291,4 +299,13 @@ body {
 #average-scores {
     grid-column: span 2;
     height: 300px;
+}
+
+.chart h4 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: #171717;
 }

@@ -9,21 +9,57 @@ if (!isset($_SESSION['subject_id'])) {
 
 $subject_id = $_SESSION['subject_id'];
 
-// Koneksi ke database dan query untuk mendapatkan data terkait berdasarkan $subject_id
-// Misalnya, menghubungkan ke database untuk mendapatkan statistik atau informasi lain yang diperlukan
-
-
 // Koneksi ke database
 include '../fungsiPHP/connection.php';
 
 // Mengambil nama subject berdasarkan subject_id
-$subjectQuery = "SELECT subject_name FROM subject WHERE id = " . $subject_id;
-$subjectResult = $conn->query($subjectQuery);
+$subjectQuery = "SELECT subject_name FROM subject WHERE id = ?";
+$stmt = $conn->prepare($subjectQuery);
+$stmt->bind_param("i", $subject_id);
+$stmt->execute();
+$subjectResult = $stmt->get_result();
 if ($subjectResult->num_rows > 0) {
     $subjectRow = $subjectResult->fetch_assoc();
     $subject_name = $subjectRow['subject_name'];
 } else {
     $subject_name = "Nama Mata Kuliah Tidak Ditemukan";
+}
+
+// Fungsi untuk mendapatkan data benar
+function getCorrectPercentageData($subjectId) {
+    // Koneksi ke database
+    include '../fungsiPHP/connection.php';
+
+
+    $sql = "SELECT q.id AS question_id, 
+                   q.question_text, 
+                   SUM(CASE WHEN a.is_correct = 1 THEN 1 ELSE 0 END) AS correct_count,
+                   COUNT(a.is_correct) AS total_count
+            FROM questions q
+            LEFT JOIN answers a ON q.id = a.question_id
+            WHERE q.subject_id = ?
+            GROUP BY q.id";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $subjectId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $data = array();
+    while ($row = $result->fetch_assoc()) {
+        $row['correct_percentage'] = $row['correct_count'] / $row['total_count'] * 100;
+        $data[] = $row;
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    return json_encode($data);
+}
+
+if (isset($_GET['subject_id'])) {
+    echo getCorrectPercentageData($_GET['subject_id']);
+    exit;
 }
 ?>
 
@@ -35,6 +71,7 @@ if ($subjectResult->num_rows > 0) {
     <title>Chart Soal</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="../CSS/adminsoalchart.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
@@ -97,8 +134,9 @@ if ($subjectResult->num_rows > 0) {
             </div>
             <div class="content">
                 <div class="charts">
-                    <div class="chart" id="average-grades-chart">
-                        <h4></h4> <!-- Moved text to the top -->
+                    <div class="chart" id="CRCSubject">
+                        <h4>Persentase Jawaban Benar</h4>
+                        <canvas id="crcChart"></canvas>
                     </div>
 
                     <div class="chart" id="user-activity-chart">
@@ -108,5 +146,49 @@ if ($subjectResult->num_rows > 0) {
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const subjectId = <?php echo $subject_id; ?>;
+            fetch(`adminSoalchart.php?subject_id=${subjectId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const labels = data.map((item, index) => `Soal ${index + 1}`);
+                    const correctData = data.map(item => item.correct_percentage);
+
+                    const ctx = document.getElementById('crcChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [
+                                {
+                                    label: 'Benar (%)',
+                                    data: correctData,
+                                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                    borderWidth: 1
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    max: 100,
+                                    ticks: {
+                                        callback: function(value) {
+                                            return value + '%';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+        });
+    </script>
 </body>
 </html>
