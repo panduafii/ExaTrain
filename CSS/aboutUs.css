@@ -255,3 +255,55 @@ body {
 .footer-section {
   margin: 10px;
 }
+
+@media (min-width: 1920px) {
+  .navbar {
+    height: 100px;
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .menu li a {
+    font-size: 1.2vw;
+  }
+
+  .menu li button {
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    width: 100%;
+    padding: 13.33px;
+    margin-top: 100px;
+  }
+
+  .header h1 {
+    margin-top: 150px;
+    font-size: 90px;
+  }
+
+  .project-content h2 {
+    font-size: 60px;
+  }
+
+  .services h2 {
+    font-size: 60px;
+  }
+
+  .service {
+    width: 250px;
+  }
+
+  .team h2 {
+    font-size: 60px;
+  }
+}
