@@ -18,7 +18,7 @@
                 <img src="img/logo1.png" alt="Logo" />
             </div>
             <ul class="menu">
-                <li><a href="dashboard.php">Dashoard</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
                 <li><a href="paring.php">Papan Peringkat</a></li>
                 <li><a href="aboutUs.php">Tentang Kami</a></li>
@@ -30,7 +30,7 @@
                 <div class="content">
                     <h1>Uji <span class="highlight">Kemampuanmu</span><br>Tingkatkan <span
                             class="highlight">Prestasimu</span><br>Bersama <span class="highlight">Exatrain</span></h1>
-                    <p> Dengan berbagai soal latihan dan fitur interaktif <br> ExaTrain membuat belajar menjadi menyenangkan dan efektif<br>
+                    <p> Dilengkapi dengan teknologi AI yang canggih dan beragam soal latihan<br> ExaTrain membuatmu belajar menjadi lebih menarik dan menyenangkan<br>
                     Bergabunglah dan tingkatkan prestasimu bersama ExaTrain!</p>
                     <button>Mulai Sekarang!</button>
                 </div>
@@ -49,7 +49,7 @@
             <p>Exatrain adalah platform digital yang dirancang untuk membantu mahasiswa Informatika UII<br>dalam mempersiapkan ujian semester dengan cara yang lebih mudah dan efisien</p>
             <div class="benefit-cards">
                 <div class="card">
-                    <img src="img/iconflexsibel.png" alt="Icon">
+                    <img src="img/icondigital2.png" alt="Icon">
                     <h3>Platform Digital</h3>
                     <p>Exatrain menyediakan platform digital yang memudahkan akses ke berbagai materi ujian dan soal latihan kapan saja dan di mana saja</p>
                 </div>
@@ -69,14 +69,14 @@
                     <p>Tinjau jawaban dari soal yang telah dikerjakan untuk memperbaiki dan memahami kesalahan yang mungkin terjadi</p>
                 </div>
                 <div class="card">
+                    <img src="img/iconai.png" alt="Icon">
+                    <h3>AI Engine</h3>
+                    <p>Dilengkapi fitur AI canggih yang mampu memberikan penjelasan detail jawaban dan rekomendasi belajar yang sesuai untuk Anda</p>
+                </div>
+                <div class="card">
                     <img src="img/iconperingkaat.png" alt="Icon">
                     <h3>Papan Peringkat</h3>
                     <p>Uji kemampuan Anda dengan mahasiswa lain dan lihat peringkat berdasarkan hasil latihan soal</p>
-                </div>
-                <div class="card">
-                    <img src="img/icondigital.png" alt="Icon">
-                    <h3>Fleksibel</h3>
-                    <p>Exatrain menawarkan fleksibilitas dalam belajar dengan fitur yang memungkinkan belajar sesuai jadwal dan kemauan Anda sendiri</p>
                 </div>
             </div>
         </section>
@@ -90,11 +90,11 @@
             <div class="content">
                 <h2>Merasa <span class="highlight">Kesulitan </span><br>saat mengerjakan <br><span
                         class="highlight">soal ujian?</span></h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...
+                <p>Dengan Exatrain, Anda tidak perlu khawatir lagi. Platform kami menyediakan berbagai soal latihan yang dirancang khusus untuk membantu Anda memahami materi lebih baik
                 </p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...
+                <p>Dilengkapi dengan teknologi AI canggih, Exatrain menganalisis jawaban Anda, memberikan penjelasan yang mendetail, dan memberikan rekomendasi belajar yang sesuai dengan kebutuhan Anda
                 </p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...
+                <p>Tingkatkan prestasi Anda bersama Exatrain dan hadapi ujian dengan percaya diri!
                 </p>
             </div>
         </section>
@@ -106,9 +106,7 @@
             <div class="testimonial-grid">
                 <div class="testimonial-item">
                     <div class="testimonial-content">
-                        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book.</p>
+                        <p>Sebagai mahasiswa, saya sangat terbantu dengan Exatrain. Fitur-fitur yang ditawarkan sangat memudahkan dalam mempersiapkan ujian. Analisis jawaban dan rekomendasi belajar dari AI benar-benar meningkatkan pemahaman saya terhadap materi</p>
                     </div>
                     <div class="profile">
                         <img src="img/profile-james.png" alt="James Arthur">
@@ -118,9 +116,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-content">
-                        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book.</p>
+                        <p>Exatrain telah mengubah cara saya belajar. Dengan berbagai fitur interaktif dan analisis mendalam dari AI, saya bisa memahami materi lebih baik dan mempersiapkan ujian dengan percaya diri. Sangat merekomendasikan platform ini untuk semua mahasiswa!</p>
                     </div>
                     <div class="profile">
                         <img src="img/profile-james.png" alt="James Arthur">
@@ -130,9 +126,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-content">
-                        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book.</p>
+                        <p>Exatrain menyediakan berbagai soal latihan yang sangat membantu dalam memahami konsep-konsep sulit. AI memberikan penjelasan yang sangat jelas dan rekomendasi belajar yang tepat sasaran. Pengalaman belajar saya menjadi lebih efektif dan efisien.</p>
                     </div>
                     <div class="profile">
                         <img src="img/profile-james.png" alt="James Arthur">
@@ -146,8 +140,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h1>Exatrain</h1>
-                    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been
-                        the industry's...</p>
+                    <p>Exatrain adalah platform digital yang menyediakan akses mudah ke soal-soal latihan. Dengan fitur canggih seperti analisis AI, Exatrain membantu mencapai prestasi akademik yang lebih baik</p>
                         <div class="socials">
                             <img src="img/facebook.png" alt="Facebook Icon" class="social-icon">
                             <img src="img/instagram.png" alt="Instagram Icon" class="social-icon">

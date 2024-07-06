@@ -116,7 +116,7 @@ body {
   height: auto;
   width: 380px;
   height: 60vh;
-  background-color: #cfe4ff;
+  background-color: #002657;
   margin-left: 25px;
   padding: 30px 20px;
   margin-top: 20px;
@@ -127,6 +127,7 @@ body {
   align-items: center;
   border-radius: 10px;
   justify-content: space-between;
+  color: #f0f2f5;
 }
 
 .profile-header {
@@ -146,8 +147,10 @@ body {
 
 .user-name {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
+  padding-left: 70px;
+  color: #3fec42;
 }
 
 .profile table {
@@ -156,7 +159,8 @@ body {
   margin-bottom: 0;
   text-align: left;
   border-collapse: collapse;
-  / .profile td {
+}
+  .profile td {
     padding: 10px 0;
   }
 
@@ -192,15 +196,19 @@ body {
     margin-top: auto; /* Tambahkan jarak atas yang sesuai */
   }
 
-  .logout-button {
-    width: 120px;
-    height: 40px;
-    background-color: #f0a500;
-    justify-content: flex-start;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.profile a{
+  width: 100%;
+}
+
+.logout-button {
+  width: 100%;
+  height: 40px;
+  background-color: #f0a500;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
   .button-icon-logout {
     width: 20px;
@@ -289,7 +297,7 @@ body {
       display: flex;
     }
   }
-}
+
 
 /* Media query for screens larger than 1920px */
 @media (min-width: 1920px) {

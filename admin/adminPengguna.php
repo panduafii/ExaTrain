@@ -3,10 +3,60 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+include '../fungsiPHP/connection.php';
+
+// Fungsi untuk mendapatkan data profil pengguna
+function getUserProfileData($userId, $conn) {
+    // Mendapatkan data pengguna
+    $sql = "SELECT username FROM users WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $userResult = $stmt->get_result();
+    $userData = $userResult->fetch_assoc();
+
+    // Mendapatkan status pembayaran
+    $sql = "SELECT payment_status FROM payments WHERE user_id = ? ORDER BY id DESC LIMIT 1";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $paymentResult = $stmt->get_result();
+    $paymentData = $paymentResult->fetch_assoc();
+
+    // Mendapatkan total pengerjaan
+    $sql = "SELECT COUNT(DISTINCT subject_id) AS total_subjects, COUNT(*) AS total_answers FROM answers WHERE user_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $totalResult = $stmt->get_result();
+    $totalData = $totalResult->fetch_assoc();
+
+    // Mendapatkan ranking
+    $sql = "SELECT user_id, RANK() OVER (ORDER BY SUM(is_correct) DESC) AS ranking 
+            FROM users 
+            LEFT JOIN answers ON users.id = answers.user_id 
+            GROUP BY user_id";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $rankingResult = $stmt->get_result();
+    $ranking = 0;
+    while ($row = $rankingResult->fetch_assoc()) {
+        if ($row['user_id'] == $userId) {
+            $ranking = $row['ranking'];
+            break;
+        }
+    }
+
+    $stmt->close();
+
+    $profileData = array_merge($userData, $paymentData, $totalData, ['ranking' => $ranking]);
+
+    return json_encode($profileData);
+}
+
 // Fungsi untuk mendapatkan data doughnut chart
 function getDoughnutChartData($userId) {
-    // Koneksi ke database
-    include '../fungsiPHP/connection.php';
+    global $conn;
 
     $sql = "SELECT s.subject_name as subject_name, COUNT(a.subject_id) as count 
             FROM answers a
@@ -25,15 +75,12 @@ function getDoughnutChartData($userId) {
     }
 
     $stmt->close();
-    $conn->close();
-
     return json_encode($data);
 }
 
 // Fungsi untuk mendapatkan data CRC chart berdasarkan periode 3 bulan
 function getCRCChartData($userId) {
-    // Koneksi ke database
-    include '../fungsiPHP/connection.php';
+    global $conn;
 
     $sql = "SELECT 
                 CONCAT(YEAR(a.created_at), '-', LPAD(CEIL(MONTH(a.created_at) / 3), 2, '0')) as period,
@@ -54,15 +101,12 @@ function getCRCChartData($userId) {
     }
 
     $stmt->close();
-    $conn->close();
-
     return json_encode($data);
 }
 
 // Fungsi untuk mendapatkan data average grades chart
 function getAverageGradesChartData($userId) {
-    // Koneksi ke database
-    include '../fungsiPHP/connection.php';
+    global $conn;
 
     $sql = "SELECT s.subject_name as subject_name, AVG(a.is_correct) as average_grade 
             FROM answers a
@@ -81,17 +125,13 @@ function getAverageGradesChartData($userId) {
     }
 
     $stmt->close();
-    $conn->close();
-
     return json_encode($data);
 }
 
 // Fungsi untuk mendapatkan data average scores chart
-function getAverageScoresChartData($userId) { // <--- Diperbarui
-    // Koneksi ke database
-    include '../fungsiPHP/connection.php';
+function getAverageScoresChartData($userId) {
+    global $conn;
 
-    // Menggunakan kolom created_at untuk periode waktu
     $sql = "SELECT DATE_FORMAT(a.created_at, '%Y-%m') as period, AVG(a.is_correct) as average_score 
             FROM answers a
             WHERE a.user_id = ?
@@ -108,76 +148,29 @@ function getAverageScoresChartData($userId) { // <--- Diperbarui
     }
 
     $stmt->close();
-    $conn->close();
-
     return json_encode($data);
 }
 
-// Fungsi untuk mendapatkan data profil pengguna
-function getUserProfileData($userId) {
-// Koneksi ke database
-    include '../fungsiPHP/connection.php';
+if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
+    $userId = $_POST['user_id'];
+    $chartType = $_POST['chart_type'];
 
-    // Mendapatkan data pengguna
-    $sql = "SELECT username FROM users WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $userId);
-    $stmt->execute();
-    $userResult = $stmt->get_result();
-    $userData = $userResult->fetch_assoc();
-    
-    // Mendapatkan status pembayaran
-    $sql = "SELECT payment_status FROM payments WHERE user_id = ? ORDER BY payment_date DESC LIMIT 1";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $userId);
-    $stmt->execute();
-    $paymentResult = $stmt->get_result();
-    $paymentData = $paymentResult->fetch_assoc();
-
-    // Mendapatkan total pengerjaan
-    $sql = "SELECT COUNT(DISTINCT subject_id) AS total_subjects, COUNT(*) AS total_answers FROM answers WHERE user_id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $userId);
-    $stmt->execute();
-    $totalResult = $stmt->get_result();
-    $totalData = $totalResult->fetch_assoc();
-
-    // Mendapatkan ranking
-    $sql = "SELECT user_id, username, RANK() OVER (ORDER BY SUM(is_correct) DESC) AS ranking 
-            FROM users LEFT JOIN answers ON users.id = answers.user_id 
-            GROUP BY user_id";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $rankingResult = $stmt->get_result();
-    $ranking = 0;
-    while ($row = $rankingResult->fetch_assoc()) {
-        if ($row['user_id'] == $userId) {
-            $ranking = $row['ranking'];
+    switch ($chartType) {
+        case 'profile':
+            echo getUserProfileData($userId, $conn);
             break;
-        }
-    }
-
-    $stmt->close();
-    $conn->close();
-
-    $profileData = array_merge($userData, $paymentData, $totalData, ['ranking' => $ranking]);
-
-    return json_encode($profileData);
-}
-
-if (isset($_POST['user_id'])) {
-    if (isset($_POST['chart_type'])) {
-        if ($_POST['chart_type'] == 'crc') {
-            echo getCRCChartData($_POST['user_id']);
-        } else if ($_POST['chart_type'] == 'average_grades') {
-            echo getAverageGradesChartData($_POST['user_id']);
-        } else if ($_POST['chart_type'] == 'average_scores') {
-            echo getAverageScoresChartData($_POST['user_id']);
-        } else if ($_POST['chart_type'] == 'profile') {
-            echo getUserProfileData($_POST['user_id']);
-        }
-    } else {
-        echo getDoughnutChartData($_POST['user_id']);
+        case 'doughnut':
+            echo getDoughnutChartData($userId);
+            break;
+        case 'crc':
+            echo getCRCChartData($userId);
+            break;
+        case 'average_grades':
+            echo getAverageGradesChartData($userId);
+            break;
+        case 'average_scores':
+            echo getAverageScoresChartData($userId);
+            break;
     }
     exit;
 }
@@ -202,41 +195,41 @@ if (isset($_POST['user_id'])) {
         <nav class="sidebar">
             <div class="logo">
                 <img src="../img/logo1.png" alt="EXATrain Logo">
-                <div class="logo-line"></div> <!-- Div untuk garis putih -->
+                <div class="logo-line"></div>
             </div>
             <ul class="sidebar-menu">
-            <a href="adminPengguna.php">
-                <li class="sidebar-item">
-                    <img src="../img/penggunaicon.png" alt="Icon">
-                    <span>Edit Pengguna</span>
-                </li>
-            </a>
-            <a href="adminSoal.php">
-                <li class="sidebar-item">
-                    <img src="../img/manajemenicon.png" alt="Icon">
-                    <span>Manajemen Soal</span>
-                </li>
-            </a>
-            <a href="adminStatistik.php">
-                <li class="sidebar-item">
-                    <img src="../img/statistikicon.png" alt="Icon">
-                    <span>Data & Statistik</span>    
-                </li>
-            </a>
-            <a href="adminPembayaran.php">
-                <li class="sidebar-item">
-                    <img src="../img/wallet-2.png" alt="Icon">
-                    <span>Pembayaran</span>  
-                </li>
-            </a>
+                <a href="adminPengguna.php">
+                    <li class="sidebar-item">
+                        <img src="../img/penggunaicon.png" alt="Icon">
+                        <span>Edit Pengguna</span>
+                    </li>
+                </a>
+                <a href="adminSoal.php">
+                    <li class="sidebar-item">
+                        <img src="../img/manajemenicon.png" alt="Icon">
+                        <span>Manajemen Soal</span>
+                    </li>
+                </a>
+                <a href="adminStatistik.php">
+                    <li class="sidebar-item">
+                        <img src="../img/statistikicon.png" alt="Icon">
+                        <span>Data & Statistik</span>    
+                    </li>
+                </a>
+                <a href="adminPembayaran.php">
+                    <li class="sidebar-item">
+                        <img src="../img/wallet-2.png" alt="Icon">
+                        <span>Pembayaran</span>  
+                    </li>
+                </a>
             </ul>
             <ul class="logout">
-            <a href="../loginRegist.php">
-                <li class="sidebar-item">
-                    <img src="../img/logouticon.png" alt="Icon">
-                    <span>Logout</span>
-                </li>
-            </a>
+                <a href="../loginRegist.php">
+                    <li class="sidebar-item">
+                        <img src="../img/logouticon.png" alt="Icon">
+                        <span>Logout</span>
+                    </li>
+                </a>
             </ul>
         </nav>
         <div class="main-content">
@@ -268,9 +261,7 @@ if (isset($_POST['user_id'])) {
                         </thead>
                         <tbody>
                             <?php
-                            include '../fungsiPHP/connection.php';
-
-                            $sql = "SELECT id, username, password FROM users";
+                            $sql = "SELECT id, username FROM users";
                             $result = $conn->query($sql);
 
                             if ($result->num_rows > 0) {
@@ -386,14 +377,13 @@ if (isset($_POST['user_id'])) {
         }
 
         window.onload = function() {
-            // Fungsi untuk memperbarui profil pengguna
             function updateUserProfile(userId) {
                 const xhr = new XMLHttpRequest();
-                xhr.open("POST", "adminPengguna.php", true); // Pastikan URL benar
+                xhr.open("POST", "adminPengguna.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        console.log(xhr.responseText); // Debug log
+                        console.log(xhr.responseText);
                         const data = JSON.parse(xhr.responseText);
                         document.getElementById('profile-username').innerText = data.username;
                         document.getElementById('profile-userid').innerText = userId;
@@ -411,14 +401,22 @@ if (isset($_POST['user_id'])) {
                 xhr.send("user_id=" + userId + "&chart_type=profile");
             }
 
-            // Fungsi untuk memperbarui chart doughnut
+            const userId = <?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 'null'; ?>;
+            if (userId) {
+                updateUserProfile(userId);
+                updateDoughnutChart(userId);
+                updateCRCChart(userId);
+                updateAverageGradesChart(userId);
+                updateAverageScoresChart(userId);
+            }
+
             function updateDoughnutChart(userId) {
                 const xhr = new XMLHttpRequest();
-                xhr.open("POST", "adminPengguna.php", true); // Pastikan URL benar
+                xhr.open("POST", "adminPengguna.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        console.log(xhr.responseText); // Debug log
+                        console.log(xhr.responseText);
                         const data = JSON.parse(xhr.responseText);
 
                         const labels = data.map(item => item.subject_name);
@@ -454,17 +452,16 @@ if (isset($_POST['user_id'])) {
                 xhr.onerror = function() {
                     console.error("Request error");
                 };
-                xhr.send("user_id=" + userId);
+                xhr.send("user_id=" + userId + "&chart_type=doughnut");
             }
 
-            // Fungsi untuk memperbarui chart CRC berdasarkan periode 3 bulan
             function updateCRCChart(userId) {
                 const xhr = new XMLHttpRequest();
-                xhr.open("POST", "adminPengguna.php", true); // Pastikan URL benar
+                xhr.open("POST", "adminPengguna.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        console.log(xhr.responseText); // Debug log
+                        console.log(xhr.responseText);
                         const data = JSON.parse(xhr.responseText);
 
                         const labels = data.map(item => item.period);
@@ -515,20 +512,18 @@ if (isset($_POST['user_id'])) {
                 xhr.send("user_id=" + userId + "&chart_type=crc");
             }
 
-            // Fungsi untuk memperbarui chart average grades
             function updateAverageGradesChart(userId) {
                 const xhr = new XMLHttpRequest();
-                xhr.open("POST", "adminPengguna.php", true); // Pastikan URL benar
+                xhr.open("POST", "adminPengguna.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        console.log(xhr.responseText); // Debug log
+                        console.log(xhr.responseText);
                         const data = JSON.parse(xhr.responseText);
 
                         const labels = data.map(item => item.subject_name);
                         const averages = data.map(item => item.average_grade);
 
-                        // Generate random colors for each subject
                         const backgroundColors = labels.map(() => {
                             const r = Math.floor(Math.random() * 255);
                             const g = Math.floor(Math.random() * 255);
@@ -573,14 +568,13 @@ if (isset($_POST['user_id'])) {
                 xhr.send("user_id=" + userId + "&chart_type=average_grades");
             }
 
-            // Fungsi untuk memperbarui chart average scores
             function updateAverageScoresChart(userId) {
                 const xhr = new XMLHttpRequest();
-                xhr.open("POST", "adminPengguna.php", true); // Pastikan URL benar
+                xhr.open("POST", "adminPengguna.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        console.log(xhr.responseText); // Debug log
+                        console.log(xhr.responseText);
                         const data = JSON.parse(xhr.responseText);
 
                         const labels = data.map(item => item.period);
@@ -620,18 +614,7 @@ if (isset($_POST['user_id'])) {
                 };
                 xhr.send("user_id=" + userId + "&chart_type=average_scores");
             }
-
-            // Panggil fungsi dengan user ID yang dipilih
-            const userId = <?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 'null'; ?>;
-            if (userId) {
-                updateUserProfile(userId);
-                updateDoughnutChart(userId);
-                updateCRCChart(userId);
-                updateAverageGradesChart(userId);
-                updateAverageScoresChart(userId);
-            }
         };
-
 
         function changeRowsPerPage() {
             const select = document.getElementById('rowsPerPage');
@@ -640,7 +623,6 @@ if (isset($_POST['user_id'])) {
             const rows = table.getElementsByTagName('tr');
             const totalRows = rows.length;
 
-            // Tampilkan baris sesuai dengan jumlah yang dipilih
             for (let i = 0; i < totalRows; i++) {
                 if (i < rowsPerPage) {
                     rows[i].style.display = '';
@@ -649,12 +631,10 @@ if (isset($_POST['user_id'])) {
                 }
             }
 
-            // Perbarui teks total data
             const totalRowsText = document.getElementById('totalRows');
             totalRowsText.textContent = `Dari ${totalRows} Total Data`;
         }
 
-        // Inisialisasi jumlah baris yang ditampilkan
         document.addEventListener('DOMContentLoaded', () => {
             changeRowsPerPage();
         });
