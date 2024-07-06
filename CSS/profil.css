@@ -9,9 +9,80 @@ body {
   flex-direction: column;
 }
 
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+  font-size: 1.2vw;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #808080;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #276dd8;
+}
+
+.menu li img {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+}
 .container {
   display: flex;
-  width: 90%;
+  width: 80%;
   height: 80vh; /* Reduced height from 90% to 85vh */
   background-color: #f2f7ff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -87,44 +158,42 @@ body {
   margin-top: 30px;
   margin-bottom: 0;
   text-align: left;
-  border-collapse: collapse; /* Menghapus jarak antara sel */
-}
+  border-collapse: collapse;
+  / .profile td {
+    padding: 10px 0;
+  }
 
-.profile td {
-  padding: 10px 0;
-}
+  .profile td:first-child {
+    text-align: left;
+  }
 
-.profile td:first-child {
-  text-align: left; /* Rata kiri untuk kolom pertama */
-}
+  .profile td:last-child {
+    text-align: right;
+  }
 
-.profile td:last-child {
-  text-align: right; /* Rata kanan untuk kolom kedua */
-}
+  .profile tr {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+  }
 
-.profile tr {
-  display: flex;
-  justify-content: space-between; /* Membagi ruang antara kolom kiri dan kanan */
-  border-bottom: 1px solid #ddd; /* Garis bawah untuk tiap baris */
-}
+  .profile tr:last-child {
+    border-bottom: none; /* Hapus garis bawah untuk baris terakhir */
+  }
 
-.profile tr:last-child {
-  border-bottom: none; /* Hapus garis bawah untuk baris terakhir */
-}
-
-.button-icon {
-  width: 25px;
-  height: 20px;
-  margin-left: 3px;
-  margin-right: 5px;
-  padding-left: 3px;
-}
-.logout-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  margin-top: auto; /* Tambahkan jarak atas yang sesuai */
-}
+  .button-icon {
+    width: 25px;
+    height: 20px;
+    margin-left: 3px;
+    margin-right: 5px;
+    padding-left: 3px;
+  }
+  .logout-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: auto; /* Tambahkan jarak atas yang sesuai */
+  }
 
 .profile a{
   width: 100%;
@@ -140,154 +209,208 @@ body {
   justify-content: center;
 }
 
-.button-icon-logout {
-  width: 20px;
-  height: 25px;
-  margin-left: -30px;
-  margin-right: 10px;
-  padding-left: 3px;
-}
-
-.icon-email {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-.main-content {
-  width: 75%;
-  padding: 30px;
-  overflow-y: auto; /* Added for scrolling */
-}
-
-.main-content h1 {
-  font-size: 28px;
-  margin-top: -5px;
-  margin-bottom: 20px;
-  color: #333;
-  text-align: center;
-}
-
-.chart-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-.chart {
-  width: 100%;
-  height: 480px;
-  background-color: #ffffff;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* NAVBAR */
-.navbar {
-  width: 100%;
-  height: 60px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 40px;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu li {
-  margin-right: 20px;
-  font-size: 1.2vw;
-}
-
-.menu li:last-child {
-  margin-right: 0;
-}
-
-.menu li a {
-  text-decoration: none;
-  color: #808080;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.menu li a:hover {
-  color: #276dd8;
-}
-
-.menu li img {
-  height: 30px;
-  border-radius: 50%;
-}
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle .bar {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 4px 0;
-}
-
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    z-index: 999;
+  .button-icon-logout {
+    width: 20px;
+    height: 25px;
+    margin-left: -30px;
+    margin-right: 10px;
+    padding-left: 3px;
   }
 
-  .menu li {
-    width: 100%;
+  .icon-email {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  .main-content {
+    width: 65%;
+    padding: 10px 20px; /* Adjusted padding */
+    overflow-y: auto; /* Added for scrolling */
+    margin-top: 20px; /* Added margin-top */
+  }
+
+  .main-content h1 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
     text-align: center;
-    margin: 10px 0;
+  }
+
+  .chart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Reduced margin-bottom */
+  }
+
+  .chart {
+    width: 90%;
+    height: 480px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+      height: 50px;
+      padding: 0 10px;
+    }
+
+    .logo img {
+      height: 30px;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #fff;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      z-index: 999;
+    }
+
+    .menu li {
+      width: 100%;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .menu li a {
+      padding: 10px 0;
+      display: block;
+    }
+
+    .menu.active {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+  }
+}
+
+/* Media query for screens larger than 1920px */
+@media (min-width: 1920px) {
+  .navbar {
+    height: 100px;
+    padding: 0 30px;
+  }
+
+  .logo img {
+    height: 70px;
   }
 
   .menu li a {
-    padding: 10px 0;
-    display: block;
+    font-size: 1.2vw;
   }
 
-  .menu-toggle {
-    display: flex;
+  .menu li button {
+    height: 30px;
+    padding: 0 13.33px;
+    font-size: 0.8rem;
   }
 
-  .menu.active {
-    display: flex;
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+    margin-bottom: 150px;
   }
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    height: 50px;
+    padding: 0 30px;
+  }
 
+  .logo img {
+    height: 30px;
+  }
+
+  .menu li a {
+    font-size: 1.6vw;
+  }
+
+  .menu li button {
+    width: 10vw;
+    height: 20px;
+    padding: 0 13.33px;
+    font-size: 1.6vw;
+  }
+
+  .menu li img {
+    height: 3.5vw;
+  }
+
+  .header {
+    padding: 13.33px;
+  }
+
+  .project {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-content {
+    width: 90%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .project-content h2 {
+    font-size: 8vw;
+  }
+
+  .project-image {
+    max-width: 90%;
+  }
+
+  .services h2 {
+    font-size: 8vw;
+  }
+
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .team h2 {
+    font-size: 8vw;
+  }
+
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-member img {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin: 20px 0;
+  }
+}
