@@ -455,3 +455,147 @@
 [07-Jul-2024 20:23:06 UTC] Debugging Start
 [07-Jul-2024 20:23:06 UTC] User ID: 51
 [07-Jul-2024 20:23:06 UTC] Chart Type: average_grades
+[07-Jul-2024 20:50:02 UTC] Debugging Start
+[07-Jul-2024 20:50:02 UTC] Debugging Start
+[07-Jul-2024 20:50:02 UTC] User ID: 51
+[07-Jul-2024 20:50:02 UTC] Chart Type: profile
+[07-Jul-2024 20:50:02 UTC] Debugging Start
+[07-Jul-2024 20:50:02 UTC] User ID: 51
+[07-Jul-2024 20:50:02 UTC] Chart Type: doughnut
+[07-Jul-2024 20:50:02 UTC] Debugging Start
+[07-Jul-2024 20:50:02 UTC] User ID: 51
+[07-Jul-2024 20:50:02 UTC] Chart Type: average_grades
+[07-Jul-2024 20:50:02 UTC] Debugging Start
+[07-Jul-2024 20:50:02 UTC] User ID: 51
+[07-Jul-2024 20:50:02 UTC] Chart Type: crc
+[07-Jul-2024 20:50:02 UTC] Debugging Start
+[07-Jul-2024 20:50:02 UTC] User ID: 51
+[07-Jul-2024 20:50:02 UTC] Chart Type: average_scores
+[07-Jul-2024 20:50:07 UTC] Debugging Start
+[07-Jul-2024 20:50:07 UTC] Debugging Start
+[07-Jul-2024 20:50:07 UTC] User ID: 51
+[07-Jul-2024 20:50:07 UTC] Chart Type: profile
+[07-Jul-2024 20:50:07 UTC] Debugging Start
+[07-Jul-2024 20:50:07 UTC] User ID: 51
+[07-Jul-2024 20:50:07 UTC] Chart Type: doughnut
+[07-Jul-2024 20:50:07 UTC] Debugging Start
+[07-Jul-2024 20:50:07 UTC] User ID: 51
+[07-Jul-2024 20:50:07 UTC] Chart Type: crc
+[07-Jul-2024 20:50:07 UTC] Debugging Start
+[07-Jul-2024 20:50:07 UTC] User ID: 51
+[07-Jul-2024 20:50:07 UTC] Chart Type: average_scores
+[07-Jul-2024 20:50:07 UTC] Debugging Start
+[07-Jul-2024 20:50:07 UTC] User ID: 51
+[07-Jul-2024 20:50:07 UTC] Chart Type: average_grades
+[07-Jul-2024 20:50:20 UTC] Debugging Start
+[07-Jul-2024 20:50:20 UTC] Debugging Start
+[07-Jul-2024 20:50:20 UTC] User ID: 50
+[07-Jul-2024 20:50:20 UTC] Chart Type: profile
+[07-Jul-2024 20:50:20 UTC] Debugging Start
+[07-Jul-2024 20:50:20 UTC] User ID: 50
+[07-Jul-2024 20:50:20 UTC] Chart Type: average_scores
+[07-Jul-2024 20:50:20 UTC] Debugging Start
+[07-Jul-2024 20:50:20 UTC] User ID: 50
+[07-Jul-2024 20:50:20 UTC] Chart Type: crc
+[07-Jul-2024 20:50:20 UTC] Debugging Start
+[07-Jul-2024 20:50:20 UTC] User ID: 50
+[07-Jul-2024 20:50:20 UTC] Chart Type: average_grades
+[07-Jul-2024 20:50:20 UTC] Debugging Start
+[07-Jul-2024 20:50:20 UTC] User ID: 50
+[07-Jul-2024 20:50:20 UTC] Chart Type: doughnut
+[07-Jul-2024 20:50:21 UTC] Debugging Start
+[07-Jul-2024 20:50:21 UTC] Debugging Start
+[07-Jul-2024 20:50:21 UTC] User ID: 51
+[07-Jul-2024 20:50:21 UTC] Chart Type: profile
+[07-Jul-2024 20:50:21 UTC] Debugging Start
+[07-Jul-2024 20:50:21 UTC] User ID: 51
+[07-Jul-2024 20:50:21 UTC] Chart Type: doughnut
+[07-Jul-2024 20:50:21 UTC] Debugging Start
+[07-Jul-2024 20:50:21 UTC] User ID: 51
+[07-Jul-2024 20:50:21 UTC] Chart Type: crc
+[07-Jul-2024 20:50:21 UTC] Debugging Start
+[07-Jul-2024 20:50:21 UTC] User ID: 51
+[07-Jul-2024 20:50:21 UTC] Chart Type: average_grades
+[07-Jul-2024 20:50:21 UTC] Debugging Start
+[07-Jul-2024 20:50:21 UTC] User ID: 51
+[07-Jul-2024 20:50:21 UTC] Chart Type: average_scores
+[07-Jul-2024 20:50:28 UTC] Debugging Start
+[07-Jul-2024 20:50:28 UTC] Debugging Start
+[07-Jul-2024 20:50:28 UTC] User ID: 51
+[07-Jul-2024 20:50:28 UTC] Chart Type: profile
+[07-Jul-2024 20:50:28 UTC] Debugging Start
+[07-Jul-2024 20:50:28 UTC] User ID: 51
+[07-Jul-2024 20:50:28 UTC] Chart Type: average_grades
+[07-Jul-2024 20:50:28 UTC] Debugging Start
+[07-Jul-2024 20:50:28 UTC] User ID: 51
+[07-Jul-2024 20:50:28 UTC] Chart Type: crc
+[07-Jul-2024 20:50:28 UTC] Debugging Start
+[07-Jul-2024 20:50:28 UTC] User ID: 51
+[07-Jul-2024 20:50:28 UTC] Chart Type: average_scores
+[07-Jul-2024 20:50:28 UTC] Debugging Start
+[07-Jul-2024 20:50:28 UTC] User ID: 51
+[07-Jul-2024 20:50:28 UTC] Chart Type: doughnut
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] User ID: 51
+[07-Jul-2024 20:50:31 UTC] Chart Type: profile
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] User ID: 51
+[07-Jul-2024 20:50:31 UTC] Chart Type: doughnut
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] User ID: 51
+[07-Jul-2024 20:50:31 UTC] Chart Type: average_grades
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] User ID: 51
+[07-Jul-2024 20:50:31 UTC] Chart Type: crc
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] User ID: 51
+[07-Jul-2024 20:50:31 UTC] Chart Type: average_scores
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] User ID: 51
+[07-Jul-2024 20:50:31 UTC] Chart Type: profile
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] User ID: 51
+[07-Jul-2024 20:50:31 UTC] Chart Type: doughnut
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] User ID: 51
+[07-Jul-2024 20:50:31 UTC] Chart Type: crc
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] User ID: 51
+[07-Jul-2024 20:50:31 UTC] Chart Type: average_grades
+[07-Jul-2024 20:50:31 UTC] Debugging Start
+[07-Jul-2024 20:50:31 UTC] User ID: 51
+[07-Jul-2024 20:50:31 UTC] Chart Type: average_scores
+[07-Jul-2024 20:56:27 UTC] Debugging Start
+[07-Jul-2024 20:56:27 UTC] Debugging Start
+[07-Jul-2024 20:56:27 UTC] User ID: 51
+[07-Jul-2024 20:56:27 UTC] Chart Type: profile
+[07-Jul-2024 20:56:27 UTC] Debugging Start
+[07-Jul-2024 20:56:27 UTC] User ID: 51
+[07-Jul-2024 20:56:27 UTC] Chart Type: doughnut
+[07-Jul-2024 20:56:27 UTC] Debugging Start
+[07-Jul-2024 20:56:27 UTC] User ID: 51
+[07-Jul-2024 20:56:27 UTC] Chart Type: average_grades
+[07-Jul-2024 20:56:27 UTC] Debugging Start
+[07-Jul-2024 20:56:27 UTC] User ID: 51
+[07-Jul-2024 20:56:27 UTC] Chart Type: crc
+[07-Jul-2024 20:56:27 UTC] Debugging Start
+[07-Jul-2024 20:56:27 UTC] User ID: 51
+[07-Jul-2024 20:56:27 UTC] Chart Type: average_scores
+[07-Jul-2024 20:56:32 UTC] Debugging Start
+[07-Jul-2024 20:56:32 UTC] Debugging Start
+[07-Jul-2024 20:56:32 UTC] User ID: 51
+[07-Jul-2024 20:56:32 UTC] Chart Type: profile
+[07-Jul-2024 20:56:32 UTC] Debugging Start
+[07-Jul-2024 20:56:32 UTC] User ID: 51
+[07-Jul-2024 20:56:32 UTC] Chart Type: crc
+[07-Jul-2024 20:56:32 UTC] Debugging Start
+[07-Jul-2024 20:56:32 UTC] User ID: 51
+[07-Jul-2024 20:56:32 UTC] Chart Type: doughnut
+[07-Jul-2024 20:56:32 UTC] Debugging Start
+[07-Jul-2024 20:56:32 UTC] User ID: 51
+[07-Jul-2024 20:56:32 UTC] Chart Type: average_grades
+[07-Jul-2024 20:56:32 UTC] Debugging Start
+[07-Jul-2024 20:56:32 UTC] User ID: 51
+[07-Jul-2024 20:56:32 UTC] Chart Type: average_scores

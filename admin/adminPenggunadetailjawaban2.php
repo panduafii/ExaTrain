@@ -206,7 +206,7 @@ if ($subjectResult->num_rows > 0) {
                 messages: [
                     {
                         "role": "system",
-                        "content": "Kamu adalah seorang pemeriksa Essay. Kamu akan diberikan Soal, Kunci Jawaban, dan Jawaban pengguna. Berdasarkan soal dan kunci jawaban, kamu harus menilai jawaban pengguna itu dengan template 'Hasil : benar/salah' lalu berikan penjelasannya dan jawab menggunakan bahasa indonesia"
+                        "content": "Kamu adalah seorang pemeriksa Essay. Kamu akan diberikan Soal, Kunci Jawaban, dan Jawaban pengguna. Berdasarkan soal dan kunci jawaban, kamu harus menilai jawaban pengguna itu dengan template 'Hasil : benar/salah' lalu berikan penjelasannya dan jawab menggunakan bahasa indonesia setelah itu berikan 'Rekomendasi Materi: ' yang berisi saran materi yang harus dipelajari tentang materi dari soal tersebut agar kedepannya bisa menjawab dengan benar"
                     },
                     {
                         "role": "user",
@@ -251,7 +251,7 @@ if ($subjectResult->num_rows > 0) {
                 messages: [
                     {
                         "role": "system",
-                        "content": "Kamu adalah seorang pemeriksa Essay. Kamu akan diberikan Soal, Kunci Jawaban, dan Jawaban pengguna. Berdasarkan soal dan kunci jawaban, kamu harus menilai jawaban pengguna itu dengan hanya '1' jika jawaban pengguna benar, atau '0' jika jawaban pengguna salah"
+                        "content": "Kamu adalah seorang pemeriksa Essay. Kamu akan diberikan Soal, Kunci Jawaban, dan Jawaban pengguna. Berdasarkan soal dan kunci jawaban, kamu harus menilai jawaban pengguna itu dengan hanya '1' jika jawaban pengguna benar, atau hanya '0' jika jawaban pengguna salah"
                     },
                     {
                         "role": "user",
@@ -281,6 +281,11 @@ if ($subjectResult->num_rows > 0) {
                 console.error('Error in getSimpleEvaluation:', error);
                 throw error;
             }
+        }
+
+        // Fungsi untuk menampilkan alert sukses
+        function showSuccessAlert() {
+            alert('Berhasil disimpan');
         }
 
         // Fungsi untuk menyimpan hasil evaluasi ke database
@@ -329,6 +334,7 @@ if ($subjectResult->num_rows > 0) {
                     console.error('Error in saveEvaluations:', error);
                 }
             }
+            showSuccessAlert(); // Menampilkan alert setelah evaluasi berhasil disimpan
         }
 
         // Menjalankan evaluasi jawaban untuk setiap soal
