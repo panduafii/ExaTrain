@@ -2,14 +2,11 @@
 // Koneksi ke database
 include 'connection.php';
 
-// Variabel untuk menyimpan pesan error
-$error = "";
-
 // Memulai sesi
 session_start();
 
-// Memeriksa apakah data login diterima dari formulir
-if (isset($_POST['submit'])) {
+// Memeriksa apakah data login diterima dari form submission
+if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
@@ -30,14 +27,20 @@ if (isset($_POST['submit'])) {
             $_SESSION['username'] = $username;
             $_SESSION['user_id'] = $user_id;
 
-            // Mengarahkan pengguna ke halaman dashboard.php
+            // Redirect ke halaman dashboard
             header("Location: ../dashboard.php");
-            exit; // Memastikan tidak ada kode ekstra yang dijalankan setelah pengalihan header
+            exit;
         } else {
-            $error = "Password salah.";
+            // Password salah
+            $_SESSION['error_message'] = 'Password salah.';
+            header("Location: ../loginRegist.php");
+            exit;
         }
     } else {
-        $error = "Username tidak ditemukan.";
+        // Username tidak ditemukan
+        $_SESSION['error_message'] = 'Username tidak ditemukan.';
+        header("Location: ../loginRegist.php");
+        exit;
     }
 
     $stmt->close();
@@ -46,8 +49,7 @@ if (isset($_POST['submit'])) {
 // Menutup koneksi
 $conn->close();
 
-// Menampilkan pesan error jika ada
-if (!empty($error)) {
-    echo $error;
-}
+// Jika tidak ada permintaan POST, kembalikan ke halaman login
+header("Location: ../login.php");
+exit;
 ?>

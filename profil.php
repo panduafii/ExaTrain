@@ -68,7 +68,7 @@ function getAverageGradesChartData($userId) {
     // Koneksi ke database
     include 'fungsiPHP/connection.php';
 
-    $sql = "SELECT s.subject_name as subject_name, AVG(a.is_correct) as average_grade 
+    $sql = "SELECT s.subject_name as subject_name, AVG(a.is_correct) * 100 as average_grade 
             FROM answers a
             JOIN subject s ON a.subject_id = s.id
             WHERE a.user_id = ?
@@ -95,8 +95,9 @@ function getAverageScoresChartData($userId) {
     // Koneksi ke database
     include 'fungsiPHP/connection.php';
 
-    // Menggunakan kolom created_at untuk periode waktu
-    $sql = "SELECT DATE_FORMAT(a.created_at, '%Y-%m') as period, AVG(a.is_correct) as average_score 
+    $sql = "SELECT 
+                CONCAT(YEAR(a.created_at), '-', LPAD(CEIL(MONTH(a.created_at) / 3), 2, '0')) as period,
+                AVG(a.is_correct) * 100 as average_score 
             FROM answers a
             WHERE a.user_id = ?
             GROUP BY period";
@@ -164,7 +165,7 @@ if ($user) {
 <body>
     <!-- Navbar -->
     <header>
-    <nav class="navbar">
+        <nav class="navbar">
             <div class="logo">
                 <img src="img/logo.png" alt="Logo" />
             </div>
@@ -313,7 +314,11 @@ if ($user) {
                         console.log(xhr.responseText);
                         const data = JSON.parse(xhr.responseText);
 
-                        const labels = data.map(item => item.period);
+                        const labels = data.map(item => item.period).map((period, index) => {
+                            const quarter = parseInt(period.split('-')[1]);
+                            return quarter % 2 === 1 ? `UTS${Math.ceil(quarter / 2)}` : `UAS${Math.ceil(quarter / 2)}`;
+                        });
+
                         const correctCounts = data.map(item => item.correct);
                         const incorrectCounts = data.map(item => item.incorrect);
 
@@ -404,7 +409,8 @@ if ($user) {
                                 maintainAspectRatio: false,
                                 scales: {
                                     y: {
-                                        beginAtZero: true
+                                        beginAtZero: true,
+                                        max: 100
                                     }
                                 }
                             }
@@ -429,7 +435,11 @@ if ($user) {
                         console.log(xhr.responseText);
                         const data = JSON.parse(xhr.responseText);
 
-                        const labels = data.map(item => item.period);
+                        const labels = data.map(item => item.period).map((period, index) => {
+                            const quarter = parseInt(period.split('-')[1]);
+                            return quarter % 2 === 1 ? `UTS${Math.ceil(quarter / 2)}` : `UAS${Math.ceil(quarter / 2)}`;
+                        });
+
                         const averages = data.map(item => item.average_score);
 
                         const averageScoresData = {
@@ -452,7 +462,8 @@ if ($user) {
                                 maintainAspectRatio: false,
                                 scales: {
                                     y: {
-                                        beginAtZero: true
+                                        beginAtZero: true,
+                                        max: 100
                                     }
                                 }
                             }

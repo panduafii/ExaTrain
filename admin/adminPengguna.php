@@ -148,7 +148,7 @@ function getCRCChartData($userId) {
 function getAverageGradesChartData($userId) {
     global $conn;
 
-    $sql = "SELECT s.subject_name as subject_name, AVG(a.is_correct) as average_grade 
+    $sql = "SELECT s.subject_name as subject_name, AVG(a.is_correct) * 100 as average_grade 
             FROM answers a
             JOIN subject s ON a.subject_id = s.id
             WHERE a.user_id = ?
@@ -178,7 +178,9 @@ function getAverageGradesChartData($userId) {
 function getAverageScoresChartData($userId) {
     global $conn;
 
-    $sql = "SELECT DATE_FORMAT(a.created_at, '%Y-%m') as period, AVG(a.is_correct) as average_score 
+    $sql = "SELECT 
+                CONCAT(YEAR(a.created_at), '-', LPAD(CEIL(MONTH(a.created_at) / 3), 2, '0')) as period,
+                AVG(a.is_correct) * 100 as average_score
             FROM answers a
             WHERE a.user_id = ?
             GROUP BY period";
@@ -333,8 +335,6 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                             } else {
                                 echo "<tr><td colspan='3'>Tidak ada data yang ditemukan.</td></tr>";
                             }
-
-                            $conn->close();
                             ?>
                         </tbody>
                     </table>
@@ -412,22 +412,47 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
         const table = document.getElementById('user-table');
         const tr = table.getElementsByTagName('tr');
 
+        console.log('Search Input:', input); // Debugging log
+
+        // Ensure all rows are displayed before search
         for (let i = 1; i < tr.length; i++) {
-            const td = tr[i].getElementsByTagName('td')[1];
+            tr[i].style.display = '';
+        }
+
+        // Remove the "no-results-row" element if it exists
+        const noResultRow = document.getElementById('no-results-row');
+        if (noResultRow) {
+            noResultRow.remove();
+        }
+
+        let found = false;
+
+        for (let i = 1; i < tr.length; i++) { // Start from 1 to skip header row
+            const td = tr[i].getElementsByTagName('td')[1]; // Assume the username is in the second column
             if (td) {
                 const txtValue = td.textContent || td.innerText;
+                console.log('Checking row', i, 'value:', txtValue); // Debugging log
                 if (txtValue.toUpperCase().indexOf(input) > -1) {
                     tr[i].style.display = '';
+                    found = true;
                 } else {
                     tr[i].style.display = 'none';
                 }
             }
         }
+
+        // Show message if no results found
+        if (!found) {
+            const noResultRow = document.createElement('tr');
+            noResultRow.innerHTML = '<td colspan="3">Tidak ada data yang ditemukan.</td>';
+            noResultRow.id = 'no-results-row';
+            table.getElementsByTagName('tbody')[0].appendChild(noResultRow);
+        }
     }
 
     function setUserSession(userId) {
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "set_user_session.php", true);
+        xhr.open("POST", "adminPengguna.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
@@ -482,6 +507,24 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
         }
     };
 
+    function abbreviateSubjectName(name) {
+    const subjectMapping = {
+        "Pengembangan Sistem Informasi": "PSI",
+        "Grafika dan Multimedia": "GMM",
+        "Sistem Cerdas dan Pendukung Keputusan": "SCPK",
+        "Bahasa Indonesia Komunikasi Ilmiah": "BIKI",
+        "Bahasa Inggris Teknologi Informasi": "BITI",
+        "Islam Ulil Albab": "IUA",
+        "Matematika Lanjut": "Matlan",
+        "Algoritma dan Struktur Data": "ASD",
+        "Fundamen Pengembangan Aplikasi": "FPA",
+        "Rekayasa Perangkat Lunak": "RPL",
+        "Islam Rahmatan lil Alamin": "IRLA",
+        "Etika Profesi": "EtProf"
+    };
+    return subjectMapping[name] || name.split(' ').map(word => word.charAt(0).toUpperCase()).join('');
+}
+
     function updateDoughnutChart(userId) {
         const xhr = new XMLHttpRequest();
         xhr.open("POST", "adminPengguna.php", true);
@@ -492,7 +535,7 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                 try {
                     const data = JSON.parse(xhr.responseText);
 
-                    const labels = data.map(item => item.subject_name);
+                    const labels = data.map(item => abbreviateSubjectName(item.subject_name));
                     const counts = data.map(item => item.count);
 
                     const doughnutData = {
@@ -520,6 +563,15 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                     doughnutChart = new Chart(doughnutCtx, {
                         type: 'doughnut',
                         data: doughnutData,
+                        options: {
+                            plugins: {
+                                legend: {
+                                    position: 'right',
+                                },
+                            },
+                            responsive: true,
+                            maintainAspectRatio: false,
+                        }
                     });
                 } catch (error) {
                     console.error("Failed to parse JSON response:", error);
@@ -544,7 +596,20 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                 try {
                     const data = JSON.parse(xhr.responseText);
 
-                    const labels = data.map(item => item.period);
+                    const labels = data.map(item => {
+                        const period = item.period.split('-');
+                        const year = period[0];
+                        const quarter = parseInt(period[1]);
+
+                        let label = '';
+                        if (quarter % 2 === 0) {
+                            label = `UAS${quarter / 2}`;
+                        } else {
+                            label = `UTS${Math.ceil(quarter / 2)}`;
+                        }
+
+                        return `${year} ${label}`;
+                    });
                     const correctCounts = data.map(item => item.correct);
                     const incorrectCounts = data.map(item => item.incorrect);
 
@@ -608,7 +673,7 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                 try {
                     const data = JSON.parse(xhr.responseText);
 
-                    const labels = data.map(item => item.subject_name);
+                    const labels = data.map(item => abbreviateSubjectName(item.subject_name));
                     const averages = data.map(item => item.average_grade);
 
                     const backgroundColors = labels.map(() => {
@@ -643,7 +708,8 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                             maintainAspectRatio: false,
                             scales: {
                                 y: {
-                                    beginAtZero: true
+                                    beginAtZero: true,
+                                    max: 100
                                 }
                             }
                         }
@@ -671,7 +737,20 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                 try {
                     const data = JSON.parse(xhr.responseText);
 
-                    const labels = data.map(item => item.period);
+                    const labels = data.map(item => {
+                        const period = item.period.split('-');
+                        const year = period[0];
+                        const quarter = parseInt(period[1]);
+
+                        let label = '';
+                        if (quarter % 2 === 0) {
+                            label = `UAS${quarter / 2}`;
+                        } else {
+                            label = `UTS${Math.ceil(quarter / 2)}`;
+                        }
+
+                        return `${year} ${label}`;
+                    });
                     const averages = data.map(item => item.average_score);
 
                     const averageScoresData = {
@@ -697,7 +776,8 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                             maintainAspectRatio: false,
                             scales: {
                                 y: {
-                                    beginAtZero: true
+                                    beginAtZero: true,
+                                    max: 100
                                 }
                             }
                         }
@@ -739,8 +819,8 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
     });
 </script>
 
-
     <script src="../JS/pagination.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
+
