@@ -2,6 +2,8 @@
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', 'error_log.txt'); // Path to your error log file
 
 include '../fungsiPHP/connection.php';
 
@@ -203,9 +205,14 @@ function getAverageScoresChartData($userId) {
     return json_encode($data);
 }
 
+error_log("Debugging Start");
+
 if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
     $userId = $_POST['user_id'];
     $chartType = $_POST['chart_type'];
+
+    error_log("User ID: " . $userId);
+    error_log("Chart Type: " . $chartType);
 
     switch ($chartType) {
         case 'profile':
@@ -223,9 +230,13 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
         case 'average_scores':
             echo getAverageScoresChartData($userId);
             break;
+        default:
+            echo json_encode(['error' => 'Invalid chart type']);
+            break;
     }
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -369,7 +380,7 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                             <li><strong>Ranking:</strong> <span id="profile-ranking"></span></li>
                             <li><strong>Status Pembayaran:</strong> <span id="profile-payment-status"></span></li>
                             <li><strong>Total Pengerjaan:</strong>
-                                <ul class="menjorokSedikit">
+                                <ul>
                                     <li>Mata Kuliah: <span id="profile-total-subjects"></span></li>
                                     <li>Total Soal: <span id="profile-total-answers"></span></li>
                                 </ul>
@@ -401,6 +412,7 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
         </div>
     </div>
 
+
     <script>
     let doughnutChart = null;
     let crcChart = null;
@@ -408,6 +420,7 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
     let averageScoresChart = null;
 
     function searchUser() {
+        console.log("searchUser function called"); // Debugging
         const input = document.getElementById('search-bar').value.toUpperCase();
         const table = document.getElementById('user-table');
         const tr = table.getElementsByTagName('tr');
@@ -416,6 +429,7 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
             const td = tr[i].getElementsByTagName('td')[1];
             if (td) {
                 const txtValue = td.textContent || td.innerText;
+                console.log("Row:", i, "Text value:", txtValue); // Debugging nilai teks setiap baris
                 if (txtValue.toUpperCase().indexOf(input) > -1) {
                     tr[i].style.display = '';
                 } else {
@@ -424,6 +438,8 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
             }
         }
     }
+    document.getElementById('search-bar').addEventListener('keyup', searchUser);
+
 
     function setUserSession(userId) {
         const xhr = new XMLHttpRequest();
