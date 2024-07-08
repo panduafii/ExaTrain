@@ -104,19 +104,20 @@
         </section>
         <div class="difficulty-grid">
             <div class="difficulty-item">
-                <img src="img/icondigital2.png" alt="Icon 2">
-                <h3>Platform Digital</h3>
-                <p>Exatrain menyediakan platform digital yang memudahkan akses ke berbagai materi ujian dan soal latihan kapan saja dan di mana saja</p>
-            </div>
-            <div class="difficulty-item">
-                <img src="img/booklandingg.png" alt="Icon 3">
-                <h3>Latihan Soal</h3>
-                <p>Dapatkan akses ke berbagai soal latihan yang dirancang untuk membantu lebih siap menghadapi ujian</p>
-            </div>
-            <div class="difficulty-item">
-                <img src="img/graffik.png" alt="Icon 4">
+                <img src="img/profilLanding.png" alt="Icon 2">
                 <h3>Grafik Pembelajaran</h3>
-                <p>Pantau perkembangan Anda dengan grafik performa yang menunjukkan kemajuan belajar secara real-time</p>
+                <p>Exatrain menyediakan grafik pembelajaran anda yang dapat dilihat di halaman profil</p>
+            </div>
+            <div class="difficulty-item">
+                <img src="img/evaalanding.png" alt="Icon 3">
+                <h3>Evaluasi Jawaban</h3>
+                <p>Exatrain dilengkapi dengan AI engine yang dapat menganalisis jawaban Anda, memberikan penjelasan yang mendetail
+                dan memberikan rekomendasi belajar yang sesuai dengan kebutuhan Anda </p>
+            </div>
+            <div class="difficulty-item">
+                <img src="img/pringkatlanding.png" alt="Icon 4">
+                <h3>Papan Peringkat</h3>
+                <p>Dilengkapi dengan papan peringkat yang dapat dilihat oleh semua pengguna website</p>
             </div>
             </div>
     </div>
@@ -132,9 +133,9 @@
                         <p>Sebagai mahasiswa, saya sangat terbantu dengan Exatrain. Fitur-fitur yang ditawarkan sangat memudahkan dalam mempersiapkan ujian. Analisis jawaban dan rekomendasi belajar dari AI benar-benar meningkatkan pemahaman saya terhadap materi</p>
                     </div>
                     <div class="profile">
-                        <img src="img/profile-james.png" alt="James Arthur">
-                        <h3>James Arthur</h3>
-                        <p>Britania Raya</p>
+                        <img src="img/potoabi.png" alt="James Arthur">
+                        <h3>King Abi</h3>
+                        <p>Informatika-UII</p>
                     </div>
                 </div>
                 <div class="testimonial-item">
@@ -142,9 +143,9 @@
                         <p>Exatrain telah mengubah cara saya belajar. Dengan berbagai fitur interaktif dan analisis mendalam dari AI, saya bisa memahami materi lebih baik dan mempersiapkan ujian dengan percaya diri. Sangat merekomendasikan platform ini untuk semua mahasiswa!</p>
                     </div>
                     <div class="profile">
-                        <img src="img/profile-james.png" alt="James Arthur">
-                        <h3>James Arthur</h3>
-                        <p>Britania Raya</p>
+                        <img src="img/potoopandu.png" alt="James Arthur">
+                        <h3>Panduu</h3>
+                        <p>Informatika-UII</p>
                     </div>
                 </div>
                 <div class="testimonial-item">
@@ -152,19 +153,19 @@
                         <p>Exatrain menyediakan berbagai soal latihan yang sangat membantu dalam memahami konsep-konsep sulit. AI memberikan penjelasan yang sangat jelas dan rekomendasi belajar yang tepat sasaran. Pengalaman belajar saya menjadi lebih efektif dan efisien.</p>
                     </div>
                     <div class="profile">
-                        <img src="img/profile-james.png" alt="James Arthur">
-                        <h3>James Arthur</h3>
-                        <p>Britania Raya</p>
+                        <img src="img/potooipeh.png" alt="James Arthur">
+                        <h3>Aliifaah</h3>
+                        <p>Informatika-UII</p>
                     </div>
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-content">
-                        <p>Exatrain menyediakan berbagai soal latihan yang sangat membantu dalam memahami konsep-konsep sulit. AI memberikan penjelasan yang sangat jelas dan rekomendasi belajar yang tepat sasaran. Pengalaman belajar saya menjadi lebih efektif dan efisien.</p>
+                        <p>Exatrain membantu saya mengatasi kesulitan dalam belajar dengan menyediakan soal latihan yang tepat dan analisis yang mendalam. Rekomendasi belajarnya sangat membantu dalam meningkatkan pemahaman saya terhadap materi yang sulit</p>
                     </div>
                     <div class="profile">
-                        <img src="img/profile-james.png" alt="James Arthur">
-                        <h3>James Arthur</h3>
-                        <p>Britania Raya</p>
+                        <img src="img/potolutfi.png" alt="James Arthur">
+                        <h3>Luutfii</h3>
+                        <p>Informatika-UII</p>
                     </div>
                 </div>
             </div>
