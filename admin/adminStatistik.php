@@ -96,7 +96,7 @@ $sql_grades = "
     SELECT 
         u.angkatan,
         MONTH(a.created_at) as month,
-        AVG(a.is_correct) as average_grade
+        AVG(a.is_correct) * 100 as average_grade_percentage
     FROM answers a
     JOIN users u ON a.user_id = u.id
     WHERE YEAR(a.created_at) = YEAR(CURRENT_DATE())
@@ -111,7 +111,7 @@ if ($result_grades->num_rows > 0) {
     while ($row = $result_grades->fetch_assoc()) {
         $angkatan = $row['angkatan'];
         $month = $row['month'];
-        $average_grade = $row['average_grade'];
+        $average_grade = $row['average_grade_percentage'];
 
         if (!isset($grades_data[$angkatan])) {
             $grades_data[$angkatan] = array_fill(0, 12, 0);
@@ -160,13 +160,13 @@ $conn->close();
                 <a href="adminStatistik.php">
                     <li class="sidebar-item">
                         <img src="../img/statistikicon.png" alt="Icon">
-                        <span>Data & Statistik</span>    
+                        <span>Data & Statistik</span>
                     </li>
                 </a>
                 <a href="adminPembayaran.php">
                     <li class="sidebar-item">
                         <img src="../img/wallet-2.png" alt="Icon">
-                        <span>Pembayaran</span>  
+                        <span>Pembayaran</span>
                     </li>
                 </a>
             </ul>
@@ -203,9 +203,9 @@ $conn->close();
                         <canvas id="userCountChart"></canvas>
                     </div>
 
-                    <div class="chart" id="course-distribution-chart">
+                    <div class="chart chart-container" id="course-distribution-chart">
                         <h4>Pengerjaan Mata Kuliah Total</h4>
-                        <canvas id="courseDistributionChart"></canvas>
+                        <canvas id="courseDistributionChart" width="100" height="100"></canvas>
                     </div>
 
                     <div class="chart" id="average-grades-chart">
@@ -309,6 +309,16 @@ $conn->close();
             const doughnutConfig = {
                 type: 'doughnut',
                 data: doughnutData,
+                options: {
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            align: 'center'
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
             };
 
             const doughnutCtx = document.getElementById('courseDistributionChart').getContext('2d');
@@ -340,7 +350,7 @@ $conn->close();
                     scales: {
                         y: {
                             beginAtZero: true,
-                            max: 1
+                            max: 100
                         }
                     }
                 }
@@ -386,4 +396,5 @@ $conn->close();
         };
     </script>
 </body>
+
 </html>

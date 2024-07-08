@@ -1,3 +1,4 @@
+/* Aturan umum */
 * {
     margin: 0;
     padding: 0;
@@ -291,14 +292,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     font-weight: bold;
     border-radius: 10px; /* Membuat pojok lebih melengkung */
-    padding-left: 40px; /* Padding di dalam container chart */
-
+    padding: 25px; 
+    padding-top: 35px;
 }
-
-
 
 #correct-incorrect {
     grid-column: span 2;
@@ -318,4 +317,14 @@ body {
     transform: translateX(-50%);
     z-index: 1;
     color: #171717;
+}
+
+.chart#user-profile {
+    justify-content: flex-start; /* Menyelaraskan konten di bagian atas */
+    padding: 25px;
+}
+
+.chart#user-profile h4 {
+    left: 25px;
+    transform: none;
 }

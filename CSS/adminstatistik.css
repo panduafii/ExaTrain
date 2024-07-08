@@ -228,6 +228,7 @@ body {
     font-weight: bold;
     border-radius: 10px; /* Membuat pojok lebih melengkung */
     padding: 25px; /* Padding di dalam container chart */
+    padding-top: 35px;
 }
 
 .chart h4 {
@@ -240,6 +241,11 @@ body {
 }
 
 #average-grades-chart, #user-activity-chart {
+    grid-column: span 2;
+    height: 400px;
+}
+
+#correct-incorrect {
     grid-column: span 2;
     height: 400px;
 }
