@@ -9,7 +9,6 @@ $user_id = $_SESSION['user_id'];
 
 // Fungsi untuk mendapatkan data doughnut chart
 function getDoughnutChartData($userId) {
-    // Koneksi ke database
     include 'fungsiPHP/connection.php';
 
     $sql = "SELECT s.subject_name as subject_name, COUNT(a.subject_id) as count 
@@ -36,7 +35,6 @@ function getDoughnutChartData($userId) {
 
 // Fungsi untuk mendapatkan data CRC chart berdasarkan periode 3 bulan
 function getCRCChartData($userId) {
-    // Koneksi ke database
     include 'fungsiPHP/connection.php';
 
     $sql = "SELECT 
@@ -65,7 +63,6 @@ function getCRCChartData($userId) {
 
 // Fungsi untuk mendapatkan data average grades chart
 function getAverageGradesChartData($userId) {
-    // Koneksi ke database
     include 'fungsiPHP/connection.php';
 
     $sql = "SELECT s.subject_name as subject_name, AVG(a.is_correct) * 100 as average_grade 
@@ -92,7 +89,6 @@ function getAverageGradesChartData($userId) {
 
 // Fungsi untuk mendapatkan data average scores chart
 function getAverageScoresChartData($userId) {
-    // Koneksi ke database
     include 'fungsiPHP/connection.php';
 
     $sql = "SELECT 
@@ -131,10 +127,8 @@ if (isset($_POST['chart_type'])) {
     exit;
 }
 
-// Menghubungkan ke database
 include 'fungsiPHP/connection.php';
 
-// Mengambil data pengguna dari database
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT id, username, angkatan FROM users WHERE id = ?";
 $stmt = $conn->prepare($sql);
@@ -146,13 +140,12 @@ $user = $result->fetch_assoc();
 if ($user) {
     $user_id = $user['id'];
     $username = $user['username'];
-    $angkatan = $user['angkatan'] ?: '-'; // Jika angkatan null, tampilkan '-'
+    $angkatan = $user['angkatan'] ?: '-';
 } else {
     echo "Pengguna tidak ditemukan";
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -161,6 +154,7 @@ if ($user) {
     <title>Data dan Statistik</title>
     <link rel="stylesheet" href="CSS/profil.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -190,7 +184,7 @@ if ($user) {
     </header>
 
     <div class="back-button" onclick="goBack()">
-    &larr; 
+        &larr; 
     </div>
 
     <!-- Main Content -->
@@ -225,29 +219,23 @@ if ($user) {
 
         <div class="main-content">
             <h1>Data dan Statistik</h1>
-            <div class="chart-container">
-                <div class="chart" id="course-distribution">
-                    <h4>Pengerjaan Mata Kuliah</h4>
-                    <canvas id="courseDistributionChart"></canvas>
-                </div>
-            </div>
-            <div class="chart-container">
-                <div class="chart" id="correct-incorrect">
-                    <h4>Salah dan Benar</h4>
-                    <canvas id="CRC"></canvas>
-                </div>
-            </div>
-            <div class="chart-container">
-                <div class="chart" id="average-grades">
-                    <h4>Rata-Rata Nilai Tiap Mata Kuliah</h4>
-                    <canvas id="averageGrades"></canvas>
-                </div>
-            </div>
-            <div class="chart-container">
-                <div class="chart" id="average-scores">
-                    <h4>Rata-Rata Nilai Seluruh Mata Kuliah Tiap Periode</h4>
-                    <canvas id="averageScores"></canvas>
-                </div>
+            <div class="charts">
+                    <div class="chart" id="course-distribution">
+                        <h4>Pengerjaan Mata Kuliah</h4>
+                        <canvas id="courseDistributionChart"></canvas>
+                    </div>
+                    <div class="chart" id="correct-incorrect">
+                        <h4>Salah dan Benar</h4>
+                        <canvas id="CRC"></canvas>
+                    </div>
+                    <div class="chart" id="average-grades">
+                        <h4>Rata-Rata Nilai Tiap Mata Kuliah</h4>
+                        <canvas id="averageGrades"></canvas>
+                    </div>
+                    <div class="chart" id="average-scores">
+                        <h4>Rata-Rata Nilai Seluruh Mata Kuliah Tiap Periode</h4>
+                        <canvas id="averageScores"></canvas>
+                    </div>
             </div>
         </div>
     </div>
@@ -257,18 +245,42 @@ if ($user) {
             history.back();
         }
 
+        function abbreviateSubjectName(name) {
+            const subjectMapping = {
+                "Pengembangan Sistem Informasi": "PSI",
+                "Grafika dan Multimedia": "GMM",
+                "Sistem Cerdas dan Pendukung Keputusan": "SCPK",
+                "Bahasa Indonesia Komunikasi Ilmiah": "BIKI",
+                "Bahasa Inggris Teknologi Informasi": "BITI",
+                "Islam Ulil Albab": "IUA",
+                "Matematika Lanjut": "Matlan",
+                "Algoritma dan Struktur Data": "ASD",
+                "Fundamen Pengembangan Aplikasi": "FPA",
+                "Rekayasa Perangkat Lunak": "RPL",
+                "Islam Rahmatan lil Alamin": "IRLA",
+                "Etika Profesi": "EtProf"
+            };
+            return subjectMapping[name] || name.split(' ').map(word => word.charAt(0).toUpperCase()).join('');
+        }
+
         window.onload = function() {
-            // Fungsi untuk memperbarui chart doughnut
+            function createChart(chartId, chartType, chartData, chartOptions) {
+                const ctx = document.getElementById(chartId).getContext('2d');
+                new Chart(ctx, {
+                    type: chartType,
+                    data: chartData,
+                    options: chartOptions
+                });
+            }
+
             function updateDoughnutChart() {
                 const xhr = new XMLHttpRequest();
                 xhr.open("POST", "profil.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        console.log(xhr.responseText);
                         const data = JSON.parse(xhr.responseText);
-
-                        const labels = data.map(item => item.subject_name);
+                        const labels = data.map(item => abbreviateSubjectName(item.subject_name));
                         const counts = data.map(item => item.count);
 
                         const doughnutData = {
@@ -289,11 +301,17 @@ if ($user) {
                             }]
                         };
 
-                        const doughnutCtx = document.getElementById('courseDistributionChart').getContext('2d');
-                        new Chart(doughnutCtx, {
-                            type: 'doughnut',
-                            data: doughnutData,
-                        });
+                        const chartOptions = {
+                            plugins: {
+                                legend: {
+                                    position: 'right',
+                                },
+                            },
+                            responsive: true,
+                            maintainAspectRatio: false,
+                        };
+
+                        createChart('courseDistributionChart', 'doughnut', doughnutData, chartOptions);
                     } else if (xhr.readyState === 4) {
                         console.error("Error fetching data for doughnut chart");
                     }
@@ -304,14 +322,12 @@ if ($user) {
                 xhr.send("chart_type=doughnut");
             }
 
-            // Fungsi untuk memperbarui chart CRC berdasarkan periode 3 bulan
             function updateCRCChart() {
                 const xhr = new XMLHttpRequest();
                 xhr.open("POST", "profil.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        console.log(xhr.responseText);
                         const data = JSON.parse(xhr.responseText);
 
                         const labels = data.map(item => item.period).map((period, index) => {
@@ -366,20 +382,17 @@ if ($user) {
                 xhr.send("chart_type=crc");
             }
 
-            // Fungsi untuk memperbarui chart average grades
             function updateAverageGradesChart() {
                 const xhr = new XMLHttpRequest();
                 xhr.open("POST", "profil.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        console.log(xhr.responseText);
                         const data = JSON.parse(xhr.responseText);
 
-                        const labels = data.map(item => item.subject_name);
+                        const labels = data.map(item => abbreviateSubjectName(item.subject_name));
                         const averages = data.map(item => item.average_grade);
 
-                        // Generate random colors for each subject
                         const backgroundColors = labels.map(() => {
                             const r = Math.floor(Math.random() * 255);
                             const g = Math.floor(Math.random() * 255);
@@ -400,21 +413,18 @@ if ($user) {
                             }]
                         };
 
-                        const averageGradesCtx = document.getElementById('averageGrades').getContext('2d');
-                        new Chart(averageGradesCtx, {
-                            type: 'bar',
-                            data: averageGradesData,
-                            options: {
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                scales: {
-                                    y: {
-                                        beginAtZero: true,
-                                        max: 100
-                                    }
+                        const chartOptions = {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    max: 100
                                 }
                             }
-                        });
+                        };
+
+                        createChart('averageGrades', 'bar', averageGradesData, chartOptions);
                     } else if (xhr.readyState === 4) {
                         console.error("Error fetching data for average grades chart");
                     }
@@ -425,14 +435,12 @@ if ($user) {
                 xhr.send("chart_type=average_grades");
             }
 
-            // Fungsi untuk memperbarui chart average scores
             function updateAverageScoresChart() {
                 const xhr = new XMLHttpRequest();
                 xhr.open("POST", "profil.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        console.log(xhr.responseText);
                         const data = JSON.parse(xhr.responseText);
 
                         const labels = data.map(item => item.period).map((period, index) => {
@@ -478,7 +486,6 @@ if ($user) {
                 xhr.send("chart_type=average_scores");
             }
 
-            // Panggil fungsi untuk memperbarui chart
             updateDoughnutChart();
             updateCRCChart();
             updateAverageGradesChart();
