@@ -207,10 +207,10 @@ INSERT INTO users (username, password, angkatan, created_at) VALUES
 ('XenaDewi', 'encrypted_password_47', 2023, '2024-11-22 13:48:15'),
 ('YuliGunawan', 'encrypted_password_48', 2022, '2024-12-05 16:34:25'),
 ('ZakiPrasetyo', 'encrypted_password_49', 2021, '2024-01-17 11:22:10'),
-('AdiSaputra', 'encrypted_password_50', 2023, '2024-02-09 12:11:05');
-('Abi', '123', 2022, '2024-01-09 12:11:05');
-('Pandu', '123', 2022, '2024-01-09 10:11:05');
-('Lutfi', '123', 2023, '2024-01-09 13:11:05');
+('AdiSaputra', 'encrypted_password_50', 2023, '2024-02-09 12:11:05'),
+('Abi', '123', 2022, '2024-01-09 12:11:05'),
+('Pandu', '123', 2022, '2024-01-09 10:11:05'),
+('Lutfi', '123', 2023, '2024-01-09 13:11:05'),
 ('Ipeh', '123', 2023, '2024-01-09 9:11:05');
 
 -- emasukan data payments
@@ -3275,14 +3275,13 @@ INSERT INTO answers (user_id, subject_id, question_id, answer, is_correct, evalu
 (50, 12, 2, 'Kode etik penting untuk memastikan perilaku profesional yang sesuai dan menjaga integritas profesi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-27 11:00:00'),
 (50, 12, 3, 'Etika adalah prinsip yang mengatur perilaku profesional, sedangkan moral adalah prinsip yang mengatur perilaku individu berdasarkan nilai-nilai pribadi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-28 12:00:00'),
 (50, 12, 4, 'Tanggung jawab sosial seorang profesional adalah kontribusi yang diberikan kepada masyarakat melalui profesinya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-29 13:00:00'),
-(50, 12, 5, 'Konflik kepentingan adalah situasi di mana kepentingan pribadi seorang profesional berbenturan dengan kepentingan profesinya.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-30 14:00:00');
+(50, 12, 5, 'Konflik kepentingan adalah situasi di mana kepentingan pribadi seorang profesional berbenturan dengan kepentingan profesinya.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-30 14:00:00'),
+
 (51, 1, 1, 'Analisis kebutuhan dalam pengembangan sistem informasi adalah proses mengumpulkan dan menganalisis informasi untuk memahami kebutuhan sistem.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-01 10:00:00'),
 (51, 1, 2, 'Siklus hidup pengembangan sistem informasi meliputi analisis, desain, implementasi, dan pemeliharaan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-01-02 11:00:00'),
 (51, 1, 3, 'Desain database relasional menggunakan tabel untuk mengatur data sedangkan desain non-relasional menggunakan dokumen, grafik, atau metode lainnya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-03 12:00:00'),
 (51, 1, 4, 'DFD adalah singkatan dari Data Flow Diagram, yang digunakan untuk memodelkan aliran data dalam sistem informasi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-04 13:00:00'),
 (51, 1, 5, 'Seorang analis sistem bertanggung jawab untuk menganalisis kebutuhan bisnis dan merancang solusi teknologi informasi untuk memenuhi kebutuhan tersebut.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-05 14:00:00'),
-
--- Chart Cantik
 (51, 2, 1, 'Multimedia adalah kombinasi dari teks, audio, gambar, animasi, video, dan interaktivitas.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-02-01 10:00:00'),
 (51, 2, 2, 'Prinsip-prinsip dasar desain grafis meliputi keseimbangan, kontras, penekanan, irama, dan kesatuan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-02 11:00:00'),
 (51, 2, 3, 'Bitmap adalah gambar yang terdiri dari piksel individual sedangkan vektor adalah gambar yang terdiri dari garis dan bentuk berdasarkan persamaan matematis.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-02-03 12:00:00'),
