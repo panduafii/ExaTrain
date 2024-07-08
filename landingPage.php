@@ -32,7 +32,8 @@
                             class="highlight">Prestasimu</span><br>Bersama <span class="highlight">ExaTrain</span></h1>
                     <p> Dilengkapi dengan teknologi AI yang canggih dan beragam soal latihan<br> ExaTrain membuatmu belajar menjadi lebih menarik dan menyenangkan<br>
                     Bergabunglah dan tingkatkan prestasimu bersama ExaTrain!</p>
-                    <button>Mulai Sekarang!</button>
+                    <button onclick="location.href='loginRegist.php'">Mulai Sekarang!</button>
+                    
                 </div>
                 <div class="image">
                     <img src="img/landingpage1.jpg" alt="gambar wong nggo tas">
