@@ -123,7 +123,7 @@ $conn->close();
 
                     <div class="answer-box">
                     <strong>Evaluasi AI:</strong>
-                    <p> <?= $question['evaluasi_ai'] ?></p>
+                    <p><?= nl2br(htmlspecialchars($question['evaluasi_ai'])) ?></p>
                     </div>    
                 </div>
             <?php endforeach; ?>

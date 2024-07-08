@@ -207,7 +207,11 @@ INSERT INTO users (username, password, angkatan, created_at) VALUES
 ('XenaDewi', 'encrypted_password_47', 2023, '2024-11-22 13:48:15'),
 ('YuliGunawan', 'encrypted_password_48', 2022, '2024-12-05 16:34:25'),
 ('ZakiPrasetyo', 'encrypted_password_49', 2021, '2024-01-17 11:22:10'),
-('AdiSaputra', 'encrypted_password_50', 2023, '2024-02-09 12:11:05');
+('AdiSaputra', 'encrypted_password_50', 2023, '2024-02-09 12:11:05'),
+('Abi', '123', 2022, '2024-01-09 12:11:05'),
+('Pandu', '123', 2022, '2024-01-09 10:11:05'),
+('Lutfi', '123', 2023, '2024-01-09 13:11:05'),
+('Ipeh', '123', 2023, '2024-01-09 9:11:05');
 
 -- emasukan data payments
 INSERT INTO payments (user_id, payment_status) VALUES
@@ -3271,7 +3275,299 @@ INSERT INTO answers (user_id, subject_id, question_id, answer, is_correct, evalu
 (50, 12, 2, 'Kode etik penting untuk memastikan perilaku profesional yang sesuai dan menjaga integritas profesi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-27 11:00:00'),
 (50, 12, 3, 'Etika adalah prinsip yang mengatur perilaku profesional, sedangkan moral adalah prinsip yang mengatur perilaku individu berdasarkan nilai-nilai pribadi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-28 12:00:00'),
 (50, 12, 4, 'Tanggung jawab sosial seorang profesional adalah kontribusi yang diberikan kepada masyarakat melalui profesinya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-29 13:00:00'),
-(50, 12, 5, 'Konflik kepentingan adalah situasi di mana kepentingan pribadi seorang profesional berbenturan dengan kepentingan profesinya.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-30 14:00:00');
+(50, 12, 5, 'Konflik kepentingan adalah situasi di mana kepentingan pribadi seorang profesional berbenturan dengan kepentingan profesinya.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-30 14:00:00'),
+
+(51, 1, 1, 'Analisis kebutuhan dalam pengembangan sistem informasi adalah proses mengumpulkan dan menganalisis informasi untuk memahami kebutuhan sistem.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-01 10:00:00'),
+(51, 1, 2, 'Siklus hidup pengembangan sistem informasi meliputi analisis, desain, implementasi, dan pemeliharaan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-01-02 11:00:00'),
+(51, 1, 3, 'Desain database relasional menggunakan tabel untuk mengatur data sedangkan desain non-relasional menggunakan dokumen, grafik, atau metode lainnya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-03 12:00:00'),
+(51, 1, 4, 'DFD adalah singkatan dari Data Flow Diagram, yang digunakan untuk memodelkan aliran data dalam sistem informasi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-04 13:00:00'),
+(51, 1, 5, 'Seorang analis sistem bertanggung jawab untuk menganalisis kebutuhan bisnis dan merancang solusi teknologi informasi untuk memenuhi kebutuhan tersebut.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-05 14:00:00'),
+(51, 2, 1, 'Multimedia adalah kombinasi dari teks, audio, gambar, animasi, video, dan interaktivitas.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-02-01 10:00:00'),
+(51, 2, 2, 'Prinsip-prinsip dasar desain grafis meliputi keseimbangan, kontras, penekanan, irama, dan kesatuan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-02 11:00:00'),
+(51, 2, 3, 'Bitmap adalah gambar yang terdiri dari piksel individual sedangkan vektor adalah gambar yang terdiri dari garis dan bentuk berdasarkan persamaan matematis.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-02-03 12:00:00'),
+(51, 2, 4, 'Rendering adalah proses menghasilkan gambar dari model dengan menggunakan program komputer.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-04 13:00:00'),
+(51, 2, 5, 'Animasi 2D menggunakan gambar dua dimensi yang diputar dengan cepat untuk menciptakan ilusi gerakan, sedangkan animasi 3D menggunakan model tiga dimensi yang dimanipulasi secara digital untuk menciptakan gerakan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-05 14:00:00'),
+
+(51, 3, 1, 'Sistem pakar adalah sistem komputer yang meniru kemampuan pengambilan keputusan seorang ahli.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-01 10:00:00'),
+(51, 3, 2, 'Supervised learning menggunakan data berlabel untuk melatih model, sedangkan unsupervised learning menggunakan data yang tidak berlabel.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-03-02 11:00:00'),
+(51, 3, 3, 'Fuzzy logic adalah pendekatan komputasi berdasarkan "derajat kebenaran" daripada logika biner tradisional.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-03 12:00:00'),
+(51, 3, 4, 'Algoritma genetika adalah metode optimisasi yang meniru proses seleksi alam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-04 13:00:00'),
+(51, 3, 5, 'Data mining adalah proses menemukan pola dalam data besar, sedangkan machine learning adalah subbidang dari kecerdasan buatan yang berfokus pada pengembangan algoritma yang dapat belajar dari data.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-05 14:00:00'),
+
+(51, 4, 1, 'Kalimat efektif adalah kalimat yang jelas, tepat, dan mudah dipahami.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-04-01 10:00:00'),
+(51, 4, 2, 'Ejaan adalah aturan penulisan huruf dan kata, sedangkan tanda baca adalah simbol yang digunakan untuk memperjelas makna kalimat.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-04-02 11:00:00'),
+(51, 4, 3, 'Paragraf deduktif adalah paragraf yang kalimat utamanya berada di awal paragraf.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-04-03 12:00:00'),
+(51, 4, 4, 'Konjungsi adalah kata penghubung yang digunakan untuk menghubungkan kata, frasa, atau kalimat.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-04-04 13:00:00'),
+(51, 4, 5, 'Karya ilmiah adalah tulisan yang menyajikan hasil penelitian atau pengkajian yang telah dilakukan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-04-05 14:00:00'),
+
+(51, 5, 1, 'A computer network is a group of interconnected computers that share resources and information.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-01 10:00:00'),
+(51, 5, 2, 'Cloud computing is the delivery of computing services over the internet, allowing for on-demand access to resources.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-02 11:00:00'),
+(51, 5, 3, 'Hardware refers to the physical components of a computer, while software refers to the programs and applications that run on a computer.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-03 12:00:00'),
+(51, 5, 4, 'A database is an organized collection of data that can be easily accessed, managed, and updated.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-04 13:00:00'),
+(51, 5, 5, 'Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-05 14:00:00'),
+
+(51, 6, 1, 'Tauhid adalah konsep keesaan Tuhan dalam Islam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-01 10:00:00'),
+(51, 6, 2, 'Lima rukun Islam adalah syahadat, shalat, zakat, puasa, dan haji.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-06-02 11:00:00'),
+(51, 6, 3, 'Fiqh adalah ilmu yang mempelajari tentang hukum Islam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-03 12:00:00'),
+(51, 6, 4, 'Al-Qur\'an adalah kitab suci umat Islam, sedangkan Hadis adalah kumpulan perkataan dan perbuatan Nabi Muhammad.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-04 13:00:00'),
+(51, 6, 5, 'Jihad adalah usaha sungguh-sungguh dalam mempertahankan dan menyebarkan agama Islam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-05 14:00:00'),
+
+(51, 7, 1, 'Bilangan kompleks adalah bilangan yang terdiri dari bagian nyata dan bagian imajiner.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-07-01 10:00:00'),
+(51, 7, 2, 'Teorema fundamental aljabar menyatakan bahwa setiap polinomial non-konstan dengan koefisien kompleks memiliki setidaknya satu akar kompleks.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-07-02 11:00:00'),
+(51, 7, 3, 'Matriks singular adalah matriks yang determinannya nol.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-07-03 12:00:00'),
+(51, 7, 4, 'Integral adalah konsep matematika yang mengukur luas di bawah kurva fungsi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-07-04 13:00:00'),
+(51, 7, 5, 'Deret Taylor adalah representasi fungsi sebagai jumlah tak terbatas dari turunan fungsi tersebut pada satu titik.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-07-05 14:00:00'),
+
+(51, 8, 1, 'Array memiliki ukuran tetap dan elemen-elemen disimpan dalam memori secara berurutan, sedangkan linked list memiliki ukuran dinamis dan elemen-elemen disimpan secara tidak berurutan dengan pointer.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-08-01 10:00:00'),
+(51, 8, 2, 'Rekursi adalah teknik pemrograman di mana sebuah fungsi memanggil dirinya sendiri untuk menyelesaikan suatu masalah.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-08-02 11:00:00'),
+(51, 8, 3, 'Algoritma pencarian biner adalah algoritma yang mencari elemen dalam array yang telah diurutkan dengan membagi array menjadi dua bagian dan mencari di salah satu bagian tersebut.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-08-03 12:00:00'),
+(51, 8, 4, 'Stack adalah struktur data yang mengikuti prinsip LIFO (Last In, First Out) di mana elemen terakhir yang dimasukkan adalah yang pertama kali dikeluarkan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-08-04 13:00:00'),
+(51, 8, 5, 'Tree adalah struktur data hierarkis dengan satu root dan cabang-cabang, sedangkan graph adalah kumpulan node yang terhubung oleh edge tanpa struktur hierarkis.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-08-05 14:00:00'),
+
+(51, 9, 1, 'SDLC adalah singkatan dari Software Development Life Cycle yang merupakan proses untuk merencanakan, membuat, menguji, dan menerapkan sistem informasi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-09-01 10:00:00'),
+(51, 9, 2, 'Front-end development berkaitan dengan antarmuka pengguna sedangkan back-end development berkaitan dengan logika bisnis dan pengelolaan database.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-09-02 11:00:00'),
+(51, 9, 3, 'API adalah singkatan dari Application Programming Interface yang memungkinkan aplikasi untuk berkomunikasi satu sama lain.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-09-03 12:00:00'),
+(51, 9, 4, 'MVC adalah singkatan dari Model-View-Controller, sebuah pola desain yang memisahkan logika aplikasi, antarmuka pengguna, dan pengontrol.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-09-04 13:00:00'),
+(51, 9, 5, 'Continuous integration adalah praktik pengembangan perangkat lunak di mana kode yang dikembangkan secara berkala diintegrasikan ke dalam repositori bersama untuk mendeteksi masalah integrasi sejak dini.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-09-05 14:00:00'),
+
+(51, 10, 1, 'Rekayasa perangkat lunak adalah disiplin ilmu yang berkaitan dengan desain, pengembangan, dan pemeliharaan perangkat lunak.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-01 10:00:00'),
+(51, 10, 2, 'Waterfall adalah model pengembangan perangkat lunak yang linear dan berurutan, sedangkan agile adalah pendekatan yang iteratif dan inkremental.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-10-02 11:00:00'),
+(51, 10, 3, 'UML adalah singkatan dari Unified Modeling Language, yang digunakan untuk memvisualisasikan dan mendokumentasikan desain sistem perangkat lunak.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-03 12:00:00'),
+(51, 10, 4, 'Pengujian perangkat lunak adalah proses evaluasi sistem perangkat lunak untuk menemukan bug dan memastikan bahwa perangkat lunak tersebut sesuai dengan spesifikasi yang ditentukan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-04 13:00:00'),
+(51, 10, 5, 'Version control adalah sistem yang mengelola perubahan kode sumber sehingga setiap perubahan dapat dilacak dan dikelola.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-05 14:00:00'),
+
+(51, 11, 1, 'Islam Rahmatan lil \'Alamin berarti Islam sebagai rahmat bagi seluruh alam.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-11-01 10:00:00'),
+(51, 11, 2, 'Keadilan dalam Islam adalah memberikan hak kepada yang berhak dan menempatkan sesuatu pada tempatnya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-11-02 11:00:00'),
+(51, 11, 3, 'Ukhuwah Islamiyah adalah persaudaraan dalam Islam.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-11-03 12:00:00'),
+(51, 11, 4, 'Akhlak adalah perilaku mulia yang sangat penting dalam kehidupan seorang Muslim.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-11-04 13:00:00'),
+(51, 11, 5, 'Maqasid syariah adalah tujuan-tujuan syariah yang meliputi perlindungan agama, jiwa, akal, keturunan, dan harta.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-11-05 14:00:00'),
+
+(51, 12, 1, 'Etika profesi adalah standar perilaku yang diharapkan dalam suatu profesi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-12-01 10:00:00'),
+(51, 12, 2, 'Kode etik penting untuk memastikan perilaku profesional yang sesuai dan menjaga integritas profesi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-12-02 11:00:00'),
+(51, 12, 3, 'Etika adalah prinsip yang mengatur perilaku profesional, sedangkan moral adalah prinsip yang mengatur perilaku individu berdasarkan nilai-nilai pribadi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-12-03 12:00:00'),
+(51, 12, 4, 'Tanggung jawab sosial seorang profesional adalah kontribusi yang diberikan kepada masyarakat melalui profesinya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-12-04 13:00:00'),
+(51, 12, 5, 'Konflik kepentingan adalah situasi di mana kepentingan pribadi seorang profesional berbenturan dengan kepentingan profesinya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-12-05 14:00:00'),
+
+(52, 1, 1, 'Analisis kebutuhan dalam pengembangan sistem informasi merujuk pada proses mengidentifikasi, memahami, dan mendokumentasikan kebutuhan atau persyaratan yang harus dipenuhi oleh sistem informasi yang akan dikembangkan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-01-01 10:00:00'),
+(52, 1, 2, 'Siklus hidup pengembangan sistem informasi meliputi analisis, desain, implementasi, dan pemeliharaan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-02 11:00:00'),
+(52, 1, 3, 'Desain database relasional menggunakan tabel untuk mengatur data sedangkan desain non-relasional menggunakan dokumen, grafik, atau metode lainnya.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-01-03 12:00:00'),
+(52, 1, 4, 'DFD adalah singkatan dari Data Flow Diagram, yang digunakan untuk memodelkan aliran data dalam sistem informasi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-04 13:00:00'),
+(52, 1, 5, 'Seorang analis sistem bertanggung jawab untuk menganalisis kebutuhan bisnis dan merancang solusi teknologi informasi untuk memenuhi kebutuhan tersebut.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-01-05 14:00:00'),
+
+(52, 2, 1, 'Multimedia adalah kombinasi dari teks, audio, gambar, animasi, video, dan interaktivitas.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-01 10:00:00'),
+(52, 2, 2, 'Prinsip-prinsip dasar desain grafis meliputi keseimbangan, kontras, penekanan, irama, dan kesatuan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-02-02 11:00:00'),
+(52, 2, 3, 'Bitmap adalah gambar yang terdiri dari piksel individual sedangkan vektor adalah gambar yang terdiri dari garis dan bentuk berdasarkan persamaan matematis.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-03 12:00:00'),
+(52, 2, 4, 'Rendering adalah proses menghasilkan gambar dari model dengan menggunakan program komputer.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-02-04 13:00:00'),
+(52, 2, 5, 'Animasi 2D menggunakan gambar dua dimensi yang diputar dengan cepat untuk menciptakan ilusi gerakan, sedangkan animasi 3D menggunakan model tiga dimensi yang dimanipulasi secara digital untuk menciptakan gerakan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-05 14:00:00'),
+
+(52, 3, 1, 'Sistem pakar adalah sistem komputer yang meniru kemampuan pengambilan keputusan seorang ahli.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-01 10:00:00'),
+(52, 3, 2, 'Supervised learning menggunakan data berlabel untuk melatih model, sedangkan unsupervised learning menggunakan data yang tidak berlabel.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-03-02 11:00:00'),
+(52, 3, 3, 'Fuzzy logic adalah pendekatan komputasi berdasarkan "derajat kebenaran" daripada logika biner tradisional.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-03 12:00:00'),
+(52, 3, 4, 'Algoritma genetika adalah metode optimisasi yang meniru proses seleksi alam.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-03-04 13:00:00'),
+(52, 3, 5, 'Data mining adalah proses menemukan pola dalam data besar, sedangkan machine learning adalah subbidang dari kecerdasan buatan yang berfokus pada pengembangan algoritma yang dapat belajar dari data.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-05 14:00:00'),
+
+(52, 4, 1, 'Kalimat efektif adalah kalimat yang jelas, tepat, dan mudah dipahami.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-04-01 10:00:00'),
+(52, 4, 2, 'Ejaan adalah aturan penulisan huruf dan kata, sedangkan tanda baca adalah simbol yang digunakan untuk memperjelas makna kalimat.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-04-02 11:00:00'),
+(52, 4, 3, 'Paragraf deduktif adalah paragraf yang kalimat utamanya berada di awal paragraf.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-04-03 12:00:00'),
+(52, 4, 4, 'Konjungsi adalah kata penghubung yang digunakan untuk menghubungkan kata, frasa, atau kalimat.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-04-04 13:00:00'),
+(52, 4, 5, 'Karya ilmiah adalah tulisan yang menyajikan hasil penelitian atau pengkajian yang telah dilakukan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-04-05 14:00:00'),
+
+(52, 5, 1, 'A computer network is a group of interconnected computers that share resources and information.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-01 10:00:00'),
+(52, 5, 2, 'Cloud computing is the delivery of computing services over the internet, allowing for on-demand access to resources.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-02 11:00:00'),
+(52, 5, 3, 'Hardware refers to the physical components of a computer, while software refers to the programs and applications that run on a computer.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-03 12:00:00'),
+(52, 5, 4, 'A database is an organized collection of data that can be easily accessed, managed, and updated.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-04 13:00:00'),
+(52, 5, 5, 'Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-05 14:00:00'),
+
+(52, 6, 1, 'Tauhid adalah konsep keesaan Tuhan dalam Islam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-01 10:00:00'),
+(52, 6, 2, 'Lima rukun Islam adalah syahadat, shalat, zakat, puasa, dan haji.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-06-02 11:00:00'),
+(52, 6, 3, 'Fiqh adalah ilmu yang mempelajari tentang hukum Islam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-03 12:00:00'),
+(52, 6, 4, 'Al-Qur\'an adalah kitab suci umat Islam, sedangkan Hadis adalah kumpulan perkataan dan perbuatan Nabi Muhammad.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-06-04 13:00:00'),
+(52, 6, 5, 'Jihad adalah usaha sungguh-sungguh dalam mempertahankan dan menyebarkan agama Islam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-05 14:00:00'),
+
+(52, 7, 1, 'Bilangan kompleks adalah bilangan yang terdiri dari bagian nyata dan bagian imajiner.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-07-01 10:00:00'),
+(52, 7, 2, 'Teorema fundamental aljabar menyatakan bahwa setiap polinomial non-konstan dengan koefisien kompleks memiliki setidaknya satu akar kompleks.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-07-02 11:00:00'),
+(52, 7, 3, 'Matriks singular adalah matriks yang determinannya nol.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-07-03 12:00:00'),
+(52, 7, 4, 'Integral adalah konsep matematika yang mengukur luas di bawah kurva fungsi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-07-04 13:00:00'),
+(52, 7, 5, 'Deret Taylor adalah representasi fungsi sebagai jumlah tak terbatas dari turunan fungsi tersebut pada satu titik.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-07-05 14:00:00'),
+
+(52, 8, 1, 'Array memiliki ukuran tetap dan elemen-elemen disimpan dalam memori secara berurutan, sedangkan linked list memiliki ukuran dinamis dan elemen-elemen disimpan secara tidak berurutan dengan pointer.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-08-01 10:00:00'),
+(52, 8, 2, 'Rekursi adalah teknik pemrograman di mana sebuah fungsi memanggil dirinya sendiri untuk menyelesaikan suatu masalah.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-08-02 11:00:00'),
+(52, 8, 3, 'Algoritma pencarian biner adalah algoritma yang mencari elemen dalam array yang telah diurutkan dengan membagi array menjadi dua bagian dan mencari di salah satu bagian tersebut.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-08-03 12:00:00'),
+(52, 8, 4, 'Stack adalah struktur data yang mengikuti prinsip LIFO (Last In, First Out) di mana elemen terakhir yang dimasukkan adalah yang pertama kali dikeluarkan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-08-04 13:00:00'),
+(52, 8, 5, 'Tree adalah struktur data hierarkis dengan satu root dan cabang-cabang, sedangkan graph adalah kumpulan node yang terhubung oleh edge tanpa struktur hierarkis.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-08-05 14:00:00'),
+
+(52, 9, 1, 'SDLC adalah singkatan dari Software Development Life Cycle yang merupakan proses untuk merencanakan, membuat, menguji, dan menerapkan sistem informasi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-09-01 10:00:00'),
+(52, 9, 2, 'Front-end development berkaitan dengan antarmuka pengguna sedangkan back-end development berkaitan dengan logika bisnis dan pengelolaan database.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-09-02 11:00:00'),
+(52, 9, 3, 'API adalah singkatan dari Application Programming Interface yang memungkinkan aplikasi untuk berkomunikasi satu sama lain.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-09-03 12:00:00'),
+(52, 9, 4, 'MVC adalah singkatan dari Model-View-Controller, sebuah pola desain yang memisahkan logika aplikasi, antarmuka pengguna, dan pengontrol.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-09-04 13:00:00'),
+(52, 9, 5, 'Continuous integration adalah praktik pengembangan perangkat lunak di mana kode yang dikembangkan secara berkala diintegrasikan ke dalam repositori bersama untuk mendeteksi masalah integrasi sejak dini.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-09-05 14:00:00'),
+
+(52, 10, 1, 'Rekayasa perangkat lunak adalah disiplin ilmu yang berkaitan dengan desain, pengembangan, dan pemeliharaan perangkat lunak.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-01 10:00:00'),
+(52, 10, 2, 'Waterfall adalah model pengembangan perangkat lunak yang linear dan berurutan, sedangkan agile adalah pendekatan yang iteratif dan inkremental.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-10-02 11:00:00'),
+(52, 10, 3, 'UML adalah singkatan dari Unified Modeling Language, yang digunakan untuk memvisualisasikan dan mendokumentasikan desain sistem perangkat lunak.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-03 12:00:00'),
+(52, 10, 4, 'Pengujian perangkat lunak adalah proses evaluasi sistem perangkat lunak untuk menemukan bug dan memastikan bahwa perangkat lunak tersebut sesuai dengan spesifikasi yang ditentukan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-10-04 13:00:00'),
+(52, 10, 5, 'Version control adalah sistem yang mengelola perubahan kode sumber sehingga setiap perubahan dapat dilacak dan dikelola.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-05 14:00:00'),
+
+(52, 11, 1, 'Islam Rahmatan lil \'Alamin berarti Islam sebagai rahmat bagi seluruh alam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-11-01 10:00:00'),
+(52, 11, 2, 'Keadilan dalam Islam adalah memberikan hak kepada yang berhak dan menempatkan sesuatu pada tempatnya.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-11-02 11:00:00'),
+(52, 11, 3, 'Ukhuwah Islamiyah adalah persaudaraan dalam Islam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-11-03 12:00:00'),
+(52, 11, 4, 'Akhlak adalah perilaku mulia yang sangat penting dalam kehidupan seorang Muslim.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-11-04 13:00:00'),
+(52, 11, 5, 'Maqasid syariah adalah tujuan-tujuan syariah yang meliputi perlindungan agama, jiwa, akal, keturunan, dan harta.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-11-05 14:00:00'),
+
+(52, 12, 1, 'Etika profesi adalah standar perilaku yang diharapkan dalam suatu profesi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-12-01 10:00:00'),
+(52, 12, 2, 'Kode etik penting untuk memastikan perilaku profesional yang sesuai dan menjaga integritas profesi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-12-02 11:00:00'),
+(52, 12, 3, 'Etika adalah prinsip yang mengatur perilaku profesional, sedangkan moral adalah prinsip yang mengatur perilaku individu berdasarkan nilai-nilai pribadi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-12-03 12:00:00'),
+(52, 12, 4, 'Tanggung jawab sosial seorang profesional adalah kontribusi yang diberikan kepada masyarakat melalui profesinya.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-12-04 13:00:00'),
+(52, 12, 5, 'Konflik kepentingan adalah situasi di mana kepentingan pribadi seorang profesional berbenturan dengan kepentingan profesinya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-12-05 14:00:00'),
+
+(53, 1, 1, 'Analisis kebutuhan dalam pengembangan sistem informasi adalah proses mengidentifikasi, memahami, dan mendokumentasikan kebutuhan atau persyaratan yang harus dipenuhi oleh sistem informasi yang akan dikembangkan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-01-01 10:00:00'),
+(53, 1, 2, 'Siklus hidup pengembangan sistem informasi meliputi analisis, desain, implementasi, dan pemeliharaan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-02 11:00:00'),
+(53, 1, 3, 'Desain database relasional menggunakan tabel untuk mengatur data sedangkan desain non-relasional menggunakan dokumen, grafik, atau metode lainnya.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-01-03 12:00:00'),
+(53, 1, 4, 'DFD adalah singkatan dari Data Flow Diagram, yang digunakan untuk memodelkan aliran data dalam sistem informasi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-04 13:00:00'),
+(53, 1, 5, 'Seorang analis sistem bertanggung jawab untuk menganalisis kebutuhan bisnis dan merancang solusi teknologi informasi untuk memenuhi kebutuhan tersebut.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-01-05 14:00:00'),
+
+(53, 2, 1, 'Multimedia adalah kombinasi dari teks, audio, gambar, animasi, video, dan interaktivitas.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-01 10:00:00'),
+(53, 2, 2, 'Prinsip-prinsip dasar desain grafis meliputi keseimbangan, kontras, penekanan, irama, dan kesatuan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-02-02 11:00:00'),
+(53, 2, 3, 'Bitmap adalah gambar yang terdiri dari piksel individual sedangkan vektor adalah gambar yang terdiri dari garis dan bentuk berdasarkan persamaan matematis.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-03 12:00:00'),
+(53, 2, 4, 'Rendering adalah proses menghasilkan gambar dari model dengan menggunakan program komputer.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-02-04 13:00:00'),
+(53, 2, 5, 'Animasi 2D menggunakan gambar dua dimensi yang diputar dengan cepat untuk menciptakan ilusi gerakan, sedangkan animasi 3D menggunakan model tiga dimensi yang dimanipulasi secara digital untuk menciptakan gerakan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-05 14:00:00'),
+
+(53, 3, 1, 'Sistem pakar adalah sistem komputer yang meniru kemampuan pengambilan keputusan seorang ahli.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-03-01 10:00:00'),
+(53, 3, 2, 'Supervised learning menggunakan data berlabel untuk melatih model, sedangkan unsupervised learning menggunakan data yang tidak berlabel.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-02 11:00:00'),
+(53, 3, 3, 'Fuzzy logic adalah pendekatan komputasi berdasarkan "derajat kebenaran" daripada logika biner tradisional.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-03-03 12:00:00'),
+(53, 3, 4, 'Algoritma genetika adalah metode optimisasi yang meniru proses seleksi alam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-04 13:00:00'),
+(53, 3, 5, 'Data mining adalah proses menemukan pola dalam data besar, sedangkan machine learning adalah subbidang dari kecerdasan buatan yang berfokus pada pengembangan algoritma yang dapat belajar dari data.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-03-05 14:00:00'),
+
+(53, 4, 1, 'Kalimat efektif adalah kalimat yang jelas, tepat, dan mudah dipahami.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-04-01 10:00:00'),
+(53, 4, 2, 'Ejaan adalah aturan penulisan huruf dan kata, sedangkan tanda baca adalah simbol yang digunakan untuk memperjelas makna kalimat.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-04-02 11:00:00'),
+(53, 4, 3, 'Paragraf deduktif adalah paragraf yang kalimat utamanya berada di awal paragraf.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-04-03 12:00:00'),
+(53, 4, 4, 'Konjungsi adalah kata penghubung yang digunakan untuk menghubungkan kata, frasa, atau kalimat.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-04-04 13:00:00'),
+(53, 4, 5, 'Karya ilmiah adalah tulisan yang menyajikan hasil penelitian atau pengkajian yang telah dilakukan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-04-05 14:00:00'),
+
+(53, 5, 1, 'A computer network is a group of interconnected computers that share resources and information.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-01 10:00:00'),
+(53, 5, 2, 'Cloud computing is the delivery of computing services over the internet, allowing for on-demand access to resources.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-02 11:00:00'),
+(53, 5, 3, 'Hardware refers to the physical components of a computer, while software refers to the programs and applications that run on a computer.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-03 12:00:00'),
+(53, 5, 4, 'A database is an organized collection of data that can be easily accessed, managed, and updated.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-04 13:00:00'),
+(53, 5, 5, 'Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-05 14:00:00'),
+
+(53, 6, 1, 'Tauhid adalah konsep keesaan Tuhan dalam Islam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-01 10:00:00'),
+(53, 6, 2, 'Lima rukun Islam adalah syahadat, shalat, zakat, puasa, dan haji.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-06-02 11:00:00'),
+(53, 6, 3, 'Fiqh adalah ilmu yang mempelajari tentang hukum Islam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-03 12:00:00'),
+(53, 6, 4, 'Al-Qur\'an adalah kitab suci umat Islam, sedangkan Hadis adalah kumpulan perkataan dan perbuatan Nabi Muhammad.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-06-04 13:00:00'),
+(53, 6, 5, 'Jihad adalah usaha sungguh-sungguh dalam mempertahankan dan menyebarkan agama Islam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-05 14:00:00'),
+
+(53, 7, 1, 'Bilangan kompleks adalah bilangan yang terdiri dari bagian nyata dan bagian imajiner.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-07-01 10:00:00'),
+(53, 7, 2, 'Teorema fundamental aljabar menyatakan bahwa setiap polinomial non-konstan dengan koefisien kompleks memiliki setidaknya satu akar kompleks.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-07-02 11:00:00'),
+(53, 7, 3, 'Matriks singular adalah matriks yang determinannya nol.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-07-03 12:00:00'),
+(53, 7, 4, 'Integral adalah konsep matematika yang mengukur luas di bawah kurva fungsi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-07-04 13:00:00'),
+(53, 7, 5, 'Deret Taylor adalah representasi fungsi sebagai jumlah tak terbatas dari turunan fungsi tersebut pada satu titik.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-07-05 14:00:00'),
+
+(53, 8, 1, 'Array memiliki ukuran tetap dan elemen-elemen disimpan dalam memori secara berurutan, sedangkan linked list memiliki ukuran dinamis dan elemen-elemen disimpan secara tidak berurutan dengan pointer.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-08-01 10:00:00'),
+(53, 8, 2, 'Rekursi adalah teknik pemrograman di mana sebuah fungsi memanggil dirinya sendiri untuk menyelesaikan suatu masalah.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-08-02 11:00:00'),
+(53, 8, 3, 'Algoritma pencarian biner adalah algoritma yang mencari elemen dalam array yang telah diurutkan dengan membagi array menjadi dua bagian dan mencari di salah satu bagian tersebut.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-08-03 12:00:00'),
+(53, 8, 4, 'Stack adalah struktur data yang mengikuti prinsip LIFO (Last In, First Out) di mana elemen terakhir yang dimasukkan adalah yang pertama kali dikeluarkan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-08-04 13:00:00'),
+(53, 8, 5, 'Tree adalah struktur data hierarkis dengan satu root dan cabang-cabang, sedangkan graph adalah kumpulan node yang terhubung oleh edge tanpa struktur hierarkis.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-08-05 14:00:00'),
+
+(53, 9, 1, 'SDLC adalah singkatan dari Software Development Life Cycle yang merupakan proses untuk merencanakan, membuat, menguji, dan menerapkan sistem informasi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-09-01 10:00:00'),
+(53, 9, 2, 'Front-end development berkaitan dengan antarmuka pengguna sedangkan back-end development berkaitan dengan logika bisnis dan pengelolaan database.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-09-02 11:00:00'),
+(53, 9, 3, 'API adalah singkatan dari Application Programming Interface yang memungkinkan aplikasi untuk berkomunikasi satu sama lain.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-09-03 12:00:00'),
+(53, 9, 4, 'MVC adalah singkatan dari Model-View-Controller, sebuah pola desain yang memisahkan logika aplikasi, antarmuka pengguna, dan pengontrol.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-09-04 13:00:00'),
+(53, 9, 5, 'Continuous integration adalah praktik pengembangan perangkat lunak di mana kode yang dikembangkan secara berkala diintegrasikan ke dalam repositori bersama untuk mendeteksi masalah integrasi sejak dini.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-09-05 14:00:00'),
+
+(53, 10, 1, 'Rekayasa perangkat lunak adalah disiplin ilmu yang berkaitan dengan desain, pengembangan, dan pemeliharaan perangkat lunak.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-01 10:00:00'),
+(53, 10, 2, 'Waterfall adalah model pengembangan perangkat lunak yang linear dan berurutan, sedangkan agile adalah pendekatan yang iteratif dan inkremental.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-10-02 11:00:00'),
+(53, 10, 3, 'UML adalah singkatan dari Unified Modeling Language, yang digunakan untuk memvisualisasikan dan mendokumentasikan desain sistem perangkat lunak.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-03 12:00:00'),
+(53, 10, 4, 'Pengujian perangkat lunak adalah proses evaluasi sistem perangkat lunak untuk menemukan bug dan memastikan bahwa perangkat lunak tersebut sesuai dengan spesifikasi yang ditentukan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-10-04 13:00:00'),
+(53, 10, 5, 'Version control adalah sistem yang mengelola perubahan kode sumber sehingga setiap perubahan dapat dilacak dan dikelola.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-05 14:00:00'),
+
+(53, 11, 1, 'Islam Rahmatan lil \'Alamin berarti Islam sebagai rahmat bagi seluruh alam.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-11-01 10:00:00'),
+(53, 11, 2, 'Keadilan dalam Islam adalah memberikan hak kepada yang berhak dan menempatkan sesuatu pada tempatnya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-11-02 11:00:00'),
+(53, 11, 3, 'Ukhuwah Islamiyah adalah persaudaraan dalam Islam.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-11-03 12:00:00'),
+(53, 11, 4, 'Akhlak adalah perilaku mulia yang sangat penting dalam kehidupan seorang Muslim.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-11-04 13:00:00'),
+(53, 11, 5, 'Maqasid syariah adalah tujuan-tujuan syariah yang meliputi perlindungan agama, jiwa, akal, keturunan, dan harta.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-11-05 14:00:00'),
+
+(53, 12, 1, 'Etika profesi adalah standar perilaku yang diharapkan dalam suatu profesi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-12-01 10:00:00'),
+(53, 12, 2, 'Kode etik penting untuk memastikan perilaku profesional yang sesuai dan menjaga integritas profesi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-12-02 11:00:00'),
+(53, 12, 3, 'Etika adalah prinsip yang mengatur perilaku profesional, sedangkan moral adalah prinsip yang mengatur perilaku individu berdasarkan nilai-nilai pribadi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-12-03 12:00:00'),
+(53, 12, 4, 'Tanggung jawab sosial seorang profesional adalah kontribusi yang diberikan kepada masyarakat melalui profesinya.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-12-04 13:00:00'),
+(53, 12, 5, 'Konflik kepentingan adalah situasi di mana kepentingan pribadi seorang profesional berbenturan dengan kepentingan profesinya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-12-05 14:00:00'),
+
+(54, 1, 1, 'Analisis kebutuhan adalah proses mengumpulkan dan menganalisis informasi untuk memahami kebutuhan sistem.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-01 10:00:00'),
+(54, 1, 2, 'Siklus hidup pengembangan sistem informasi meliputi analisis, desain, implementasi, dan pemeliharaan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap dan tidak mendetail.', '2024-01-02 11:00:00'),
+(54, 1, 3, 'Desain database relasional menggunakan tabel untuk mengatur data sedangkan desain non-relasional menggunakan dokumen, grafik, atau metode lainnya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-03 12:00:00'),
+(54, 1, 4, 'DFD adalah singkatan dari Data Flow Diagram, yang digunakan untuk memodelkan aliran data dalam sistem informasi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-01-04 13:00:00'),
+(54, 1, 5, 'Seorang analis sistem bertanggung jawab untuk menganalisis kebutuhan bisnis dan merancang solusi teknologi informasi untuk memenuhi kebutuhan tersebut.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-01-05 14:00:00'),
+
+(54, 2, 1, 'Multimedia adalah kombinasi dari teks, audio, gambar, animasi, video, dan interaktivitas.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-01 10:00:00'),
+(54, 2, 2, 'Prinsip-prinsip dasar desain grafis meliputi keseimbangan, kontras, penekanan, irama, dan kesatuan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap dan tidak mendetail.', '2024-02-02 11:00:00'),
+(54, 2, 3, 'Bitmap adalah gambar yang terdiri dari piksel individual sedangkan vektor adalah gambar yang terdiri dari garis dan bentuk berdasarkan persamaan matematis.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-03 12:00:00'),
+(54, 2, 4, 'Rendering adalah proses menghasilkan gambar dari model dengan menggunakan program komputer.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-02-04 13:00:00'),
+(54, 2, 5, 'Animasi 2D menggunakan gambar dua dimensi yang diputar dengan cepat untuk menciptakan ilusi gerakan, sedangkan animasi 3D menggunakan model tiga dimensi yang dimanipulasi secara digital untuk menciptakan gerakan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-02-05 14:00:00'),
+
+(54, 3, 1, 'Sistem pakar adalah sistem komputer yang meniru kemampuan pengambilan keputusan seorang ahli.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-03-01 10:00:00'),
+(54, 3, 2, 'Supervised learning menggunakan data berlabel untuk melatih model, sedangkan unsupervised learning menggunakan data yang tidak berlabel.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-02 11:00:00'),
+(54, 3, 3, 'Fuzzy logic adalah pendekatan komputasi berdasarkan "derajat kebenaran" daripada logika biner tradisional.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-03-03 12:00:00'),
+(54, 3, 4, 'Algoritma genetika adalah metode optimisasi yang meniru proses seleksi alam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-04 13:00:00'),
+(54, 3, 5, 'Data mining adalah proses menemukan pola dalam data besar, sedangkan machine learning adalah subbidang dari kecerdasan buatan yang berfokus pada pengembangan algoritma yang dapat belajar dari data.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-03-05 14:00:00'),
+
+(54, 4, 1, 'Kalimat efektif adalah kalimat yang jelas, tepat, dan mudah dipahami.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-04-01 10:00:00'),
+(54, 4, 2, 'Ejaan adalah aturan penulisan huruf dan kata, sedangkan tanda baca adalah simbol yang digunakan untuk memperjelas makna kalimat.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-04-02 11:00:00'),
+(54, 4, 3, 'Paragraf deduktif adalah paragraf yang kalimat utamanya berada di awal paragraf.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-04-03 12:00:00'),
+(54, 4, 4, 'Konjungsi adalah kata penghubung yang digunakan untuk menghubungkan kata, frasa, atau kalimat.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-04-04 13:00:00'),
+(54, 4, 5, 'Karya ilmiah adalah tulisan yang menyajikan hasil penelitian atau pengkajian yang telah dilakukan.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-04-05 14:00:00'),
+
+(54, 5, 1, 'A computer network is a group of interconnected computers that share resources and information.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-01 10:00:00'),
+(54, 5, 2, 'Cloud computing is the delivery of computing services over the internet, allowing for on-demand access to resources.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-02 11:00:00'),
+(54, 5, 3, 'Hardware refers to the physical components of a computer, while software refers to the programs and applications that run on a computer.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-03 12:00:00'),
+(54, 5, 4, 'A database is an organized collection of data that can be easily accessed, managed, and updated.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-05-04 13:00:00'),
+(54, 5, 5, 'Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-05-05 14:00:00'),
+
+(54, 6, 1, 'Tauhid adalah konsep keesaan Tuhan dalam Islam.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-06-01 10:00:00'),
+(54, 6, 2, 'Lima rukun Islam adalah syahadat, shalat, zakat, puasa, dan haji.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-02 11:00:00'),
+(54, 6, 3, 'Fiqh adalah ilmu yang mempelajari tentang hukum Islam.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-06-03 12:00:00'),
+(54, 6, 4, 'Al-Qur\'an adalah kitab suci umat Islam, sedangkan Hadis adalah kumpulan perkataan dan perbuatan Nabi Muhammad.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-06-04 13:00:00'),
+(54, 6, 5, 'Jihad adalah usaha sungguh-sungguh dalam mempertahankan dan menyebarkan agama Islam.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-06-05 14:00:00'),
+
+(54, 7, 1, 'Bilangan kompleks adalah bilangan yang terdiri dari bagian nyata dan bagian imajiner.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-07-01 10:00:00'),
+(54, 7, 2, 'Teorema fundamental aljabar menyatakan bahwa setiap polinomial non-konstan dengan koefisien kompleks memiliki setidaknya satu akar kompleks.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-07-02 11:00:00'),
+(54, 7, 3, 'Matriks singular adalah matriks yang determinannya nol.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-07-03 12:00:00'),
+(54, 7, 4, 'Integral adalah konsep matematika yang mengukur luas di bawah kurva fungsi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-07-04 13:00:00'),
+(54, 7, 5, 'Deret Taylor adalah representasi fungsi sebagai jumlah tak terbatas dari turunan fungsi tersebut pada satu titik.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-07-05 14:00:00'),
+
+(54, 8, 1, 'Array memiliki ukuran tetap dan elemen-elemen disimpan dalam memori secara berurutan, sedangkan linked list memiliki ukuran dinamis dan elemen-elemen disimpan secara tidak berurutan dengan pointer.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-08-01 10:00:00'),
+(54, 8, 2, 'Rekursi adalah teknik pemrograman di mana sebuah fungsi memanggil dirinya sendiri untuk menyelesaikan suatu masalah.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-08-02 11:00:00'),
+(54, 8, 3, 'Algoritma pencarian biner adalah algoritma yang mencari elemen dalam array yang telah diurutkan dengan membagi array menjadi dua bagian dan mencari di salah satu bagian tersebut.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-08-03 12:00:00'),
+(54, 8, 4, 'Stack adalah struktur data yang mengikuti prinsip LIFO (Last In, First Out) di mana elemen terakhir yang dimasukkan adalah yang pertama kali dikeluarkan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-08-04 13:00:00'),
+(54, 8, 5, 'Tree adalah struktur data hierarkis dengan satu root dan cabang-cabang, sedangkan graph adalah kumpulan node yang terhubung oleh edge tanpa struktur hierarkis.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-08-05 14:00:00'),
+
+(54, 9, 1, 'SDLC adalah singkatan dari Software Development Life Cycle yang merupakan proses untuk merencanakan, membuat, menguji, dan menerapkan sistem informasi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-09-01 10:00:00'),
+(54, 9, 2, 'Front-end development berkaitan dengan antarmuka pengguna sedangkan back-end development berkaitan dengan logika bisnis dan pengelolaan database.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-09-02 11:00:00'),
+(54, 9, 3, 'API adalah singkatan dari Application Programming Interface yang memungkinkan aplikasi untuk berkomunikasi satu sama lain.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-09-03 12:00:00'),
+(54, 9, 4, 'MVC adalah singkatan dari Model-View-Controller, sebuah pola desain yang memisahkan logika aplikasi, antarmuka pengguna, dan pengontrol.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-09-04 13:00:00'),
+(54, 9, 5, 'Continuous integration adalah praktik pengembangan perangkat lunak di mana kode yang dikembangkan secara berkala diintegrasikan ke dalam repositori bersama untuk mendeteksi masalah integrasi sejak dini.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-09-05 14:00:00'),
+
+(54, 10, 1, 'Rekayasa perangkat lunak adalah disiplin ilmu yang berkaitan dengan desain, pengembangan, dan pemeliharaan perangkat lunak.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-10-01 10:00:00'),
+(54, 10, 2, 'Waterfall adalah model pengembangan perangkat lunak yang linear dan berurutan, sedangkan agile adalah pendekatan yang iteratif dan inkremental.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-02 11:00:00'),
+(54, 10, 3, 'UML adalah singkatan dari Unified Modeling Language, yang digunakan untuk memvisualisasikan dan mendokumentasikan desain sistem perangkat lunak.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-10-03 12:00:00'),
+(54, 10, 4, 'Pengujian perangkat lunak adalah proses evaluasi sistem perangkat lunak untuk menemukan bug dan memastikan bahwa perangkat lunak tersebut sesuai dengan spesifikasi yang ditentukan.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-10-04 13:00:00'),
+(54, 10, 5, 'Version control adalah sistem yang mengelola perubahan kode sumber sehingga setiap perubahan dapat dilacak dan dikelola.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-10-05 14:00:00'),
+
+(54, 11, 1, 'Islam Rahmatan lil Alamin berarti Islam sebagai rahmat bagi seluruh alam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-11-01 10:00:00'),
+(54, 11, 2, 'Keadilan dalam Islam adalah memberikan hak kepada yang berhak dan menempatkan sesuatu pada tempatnya.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-11-02 11:00:00'),
+(54, 11, 3, 'Ukhuwah Islamiyah adalah persaudaraan dalam Islam.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-11-03 12:00:00'),
+(54, 11, 4, 'Akhlak adalah perilaku mulia yang sangat penting dalam kehidupan seorang Muslim.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-11-04 13:00:00'),
+(54, 11, 5, 'Maqasid syariah adalah tujuan-tujuan syariah yang meliputi perlindungan agama, jiwa, akal, keturunan, dan harta.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-11-05 14:00:00'),
+
+(54, 12, 1, 'Etika profesi adalah standar perilaku yang diharapkan dalam suatu profesi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-12-01 10:00:00'),
+(54, 12, 2, 'Kode etik penting untuk memastikan perilaku profesional yang sesuai dan menjaga integritas profesi.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-12-02 11:00:00'),
+(54, 12, 3, 'Etika adalah prinsip yang mengatur perilaku profesional, sedangkan moral adalah prinsip yang mengatur perilaku individu berdasarkan nilai-nilai pribadi.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-12-03 12:00:00'),
+(54, 12, 4, 'Tanggung jawab sosial seorang profesional adalah kontribusi yang diberikan kepada masyarakat melalui profesinya.', 1, 'Hasil: benar\nPenjelasan: Jawaban pengguna tersebut sangat akurat dan lengkap.', '2024-12-04 13:00:00'),
+(54, 12, 5, 'Konflik kepentingan adalah situasi di mana kepentingan pribadi seorang profesional berbenturan dengan kepentingan profesinya.', 0, 'Hasil: salah\nPenjelasan: Jawaban pengguna tidak lengkap.', '2024-12-05 14:00:00');
+
+
+
+
+
 
 
 

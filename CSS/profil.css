@@ -239,13 +239,6 @@ body {
     text-align: center;
   }
 
-  .chart-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px; /* Reduced margin-bottom */
-  }
-
   .chart {
     width: 90%;
     height: 480px;
@@ -255,7 +248,51 @@ body {
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Menambahkan jarak antara chart */
   }
+
+  .charts {
+    display: flex;
+    flex-direction: column; /* Mengatur agar kontainer chart memiliki arah kolom */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Reduced margin-bottom */
+    text-align: center; /* Menyelaraskan teks di tengah */
+}
+
+.chart {
+    background-color: #ffffff;
+    position: relative;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 10px; /* Membuat pojok lebih melengkung */
+    padding: 25px; /* Padding di dalam container chart */
+    padding-top: 65px;
+}
+
+.chart h4 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: #171717;
+}
+
+#average-grades-chart, #user-activity-chart {
+    grid-column: span 2;
+    height: 400px;
+}
+
+#correct-incorrect {
+    grid-column: span 2;
+    height: 400px;
+}
 
   @media (max-width: 768px) {
     .navbar {
@@ -414,4 +451,5 @@ body {
   .footer-section {
     margin: 20px 0;
   }
+
 }
