@@ -29,7 +29,7 @@
             <section class="hero">
                 <div class="content">
                     <h1>Uji <span class="highlight">Kemampuanmu</span><br>Tingkatkan <span
-                            class="highlight">Prestasimu</span><br>Bersama <span class="highlight">Exatrain</span></h1>
+                            class="highlight">Prestasimu</span><br>Bersama <span class="highlight">ExaTrain</span></h1>
                     <p> Dilengkapi dengan teknologi AI yang canggih dan beragam soal latihan<br> ExaTrain membuatmu belajar menjadi lebih menarik dan menyenangkan<br>
                     Bergabunglah dan tingkatkan prestasimu bersama ExaTrain!</p>
                     <button>Mulai Sekarang!</button>
@@ -44,43 +44,49 @@
     </div>
 
     <div class="container">
-        <section class="benefits">
-            <h2>Apa itu <span class="highlight">Exatrain?</span></h2>
-            <p>Exatrain adalah platform digital yang dirancang untuk membantu mahasiswa Informatika UII<br>dalam mempersiapkan ujian semester dengan cara yang lebih mudah dan efisien</p>
-            <div class="benefit-cards">
-                <div class="card">
-                    <img src="img/icondigital2.png" alt="Icon">
-                    <h3>Platform Digital</h3>
-                    <p>Exatrain menyediakan platform digital yang memudahkan akses ke berbagai materi ujian dan soal latihan kapan saja dan di mana saja</p>
-                </div>
-                <div class="card">
-                    <img src="img/booklandingg.png" alt="Icon">
-                    <h3>Latihan Soal</h3>
-                    <p>Dapatkan akses ke berbagai soal latihan yang dirancang untuk membantu lebih siap menghadapi ujian</p>
-                </div>
-                <div class="card">
-                    <img src="img/graffik.png" alt="Icon">
-                    <h3>Grafik Performa</h3>
-                    <p>Pantau perkembangan Anda dengan grafik performa yang menunjukkan kemajuan belajar secara real-time.</p>
-                </div>
-                <div class="card">
-                    <img src="img/icontinjjau.png" alt="Icon">
-                    <h3>Tinjau Jawabanmu</h3>
-                    <p>Tinjau jawaban dari soal yang telah dikerjakan untuk memperbaiki dan memahami kesalahan yang mungkin terjadi</p>
-                </div>
-                <div class="card">
-                    <img src="img/iconai.png" alt="Icon">
-                    <h3>AI Engine</h3>
-                    <p>Dilengkapi fitur AI canggih yang mampu memberikan penjelasan detail jawaban dan rekomendasi belajar yang sesuai untuk Anda</p>
-                </div>
-                <div class="card">
-                    <img src="img/iconperingkaat.png" alt="Icon">
-                    <h3>Papan Peringkat</h3>
-                    <p>Uji kemampuan Anda dengan mahasiswa lain dan lihat peringkat berdasarkan hasil latihan soal</p>
-                </div>
+    <section class="benefits">
+        <h2 class="benefits-title">Apa itu <span>ExaTrain?</span></h2>
+        <p class="benefits-description">Exatrain adalah platform digital yang dirancang untuk membantu mahasiswa Informatika UII<br>dalam mempersiapkan ujian semester dengan cara yang lebih mudah dan efisien</p>
+        <div class="main-benefit">
+                <img src="img/aii.png" alt="Main Benefit Icon">
+                <h2>Tr<span>AI</span>ner</h2>
+                <p>Dilengkapi fitur AI canggih yang mampu memberikan penjelasan detail jawaban dan rekomendasi belajar yang sesuai untuk Anda</p>
             </div>
-        </section>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <img src="img/icondigital2.png" alt="Icon 2">
+                <h3>Platform Digital</h3>
+                <p>Exatrain menyediakan platform digital yang memudahkan akses ke berbagai materi ujian dan soal latihan kapan saja dan di mana saja</p>
+            </div>
+            <div class="benefit-item">
+                <img src="img/booklandingg.png" alt="Icon 3">
+                <h3>Latihan Soal</h3>
+                <p>Dapatkan akses ke berbagai soal latihan yang dirancang untuk membantu lebih siap menghadapi ujian</p>
+            </div>
+            <div class="benefit-item">
+                <img src="img/graffik.png" alt="Icon 4">
+                <h3>Grafik Pembelajaran</h3>
+                <p>Pantau perkembangan Anda dengan grafik performa yang menunjukkan kemajuan belajar secara real-time</p>
+            </div>
+            <div class="benefit-item">
+                <img src="img/icontinjjau.png" alt="Icon 5">
+                <h3>Tinjau Jawabanmu</h3>
+                <p>Tinjau jawaban dari soal yang telah dikerjakan untuk memperbaiki dan memahami kesalahan yang mungkin terjadi</p>
+            </div>
+            <div class="benefit-item">
+                <img src="img/iconai.png" alt="Icon 6">
+                <h3>Penilaian Cerdas</h3>
+                <p>Menggunakan AI untuk pengambilan keputusan yang menetukan benar/salah jawaban anda</p>
+            </div>
+            <div class="benefit-item">
+                <img src="img/iconperingkaat.png" alt="Icon 7">
+                <h3>Peringkat</h3>
+                <p>Uji kemampuan Anda dengan mahasiswa lain dan lihat peringkat berdasarkan hasil latihan soal</p>
+            </div>
+        </div>
+    </section>
     </div>
+
 
     <div class="container">
         <section class="difficulty">
@@ -90,15 +96,32 @@
             <div class="content">
                 <h2>Merasa <span class="highlight">Kesulitan </span><br>saat mengerjakan <br><span
                         class="highlight">soal ujian?</span></h2>
-                <p>Dengan Exatrain, Anda tidak perlu khawatir lagi. Platform kami menyediakan berbagai soal latihan yang dirancang khusus untuk membantu Anda memahami materi lebih baik
+                <p>Dengan Exatrain, Anda tidak perlu khawatir lagi tentang hal itu<br>Platform ExaTrain menyediakan berbagai soal latihan yang dirancang khusus untuk membantu Anda memahami materi
                 </p>
-                <p>Dilengkapi dengan teknologi AI canggih, Exatrain menganalisis jawaban Anda, memberikan penjelasan yang mendetail, dan memberikan rekomendasi belajar yang sesuai dengan kebutuhan Anda
-                </p>
-                <p>Tingkatkan prestasi Anda bersama Exatrain dan hadapi ujian dengan percaya diri!
-                </p>
+                <br>
+                <p>Dilengkapi dengan teknologi AI canggih, Exatrain menganalisis jawaban Anda, memberikan penjelasan yang mendetail<br> dan memberikan rekomendasi belajar yang sesuai dengan kebutuhan Anda
             </div>
         </section>
+        <div class="difficulty-grid">
+            <div class="difficulty-item">
+                <img src="img/icondigital2.png" alt="Icon 2">
+                <h3>Platform Digital</h3>
+                <p>Exatrain menyediakan platform digital yang memudahkan akses ke berbagai materi ujian dan soal latihan kapan saja dan di mana saja</p>
+            </div>
+            <div class="difficulty-item">
+                <img src="img/booklandingg.png" alt="Icon 3">
+                <h3>Latihan Soal</h3>
+                <p>Dapatkan akses ke berbagai soal latihan yang dirancang untuk membantu lebih siap menghadapi ujian</p>
+            </div>
+            <div class="difficulty-item">
+                <img src="img/graffik.png" alt="Icon 4">
+                <h3>Grafik Pembelajaran</h3>
+                <p>Pantau perkembangan Anda dengan grafik performa yang menunjukkan kemajuan belajar secara real-time</p>
+            </div>
+            </div>
     </div>
+
+  
 
     <div class="container">
         <section class="testimonial">
@@ -117,6 +140,16 @@
                 <div class="testimonial-item">
                     <div class="testimonial-content">
                         <p>Exatrain telah mengubah cara saya belajar. Dengan berbagai fitur interaktif dan analisis mendalam dari AI, saya bisa memahami materi lebih baik dan mempersiapkan ujian dengan percaya diri. Sangat merekomendasikan platform ini untuk semua mahasiswa!</p>
+                    </div>
+                    <div class="profile">
+                        <img src="img/profile-james.png" alt="James Arthur">
+                        <h3>James Arthur</h3>
+                        <p>Britania Raya</p>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>Exatrain menyediakan berbagai soal latihan yang sangat membantu dalam memahami konsep-konsep sulit. AI memberikan penjelasan yang sangat jelas dan rekomendasi belajar yang tepat sasaran. Pengalaman belajar saya menjadi lebih efektif dan efisien.</p>
                     </div>
                     <div class="profile">
                         <img src="img/profile-james.png" alt="James Arthur">

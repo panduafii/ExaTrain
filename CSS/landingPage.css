@@ -61,11 +61,12 @@ body {
   text-decoration: none;
   color: #808080;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s ease;
 }
 
 .menu li a:hover {
   color: black;
+  transform: translateY(-10px);
 }
 
 .menu li img {
@@ -86,7 +87,7 @@ body {
   margin: 4px 0;
 }
 
-.signup-btn{
+.signup-btn {
   width: 80px;
   height: 30px;
   background-color: #f39c12;
@@ -97,7 +98,13 @@ body {
   color: #070707;
   font-weight: 1000;
   border-radius: 8px;
+  transition: transform 0.3s ease;
 }
+
+.signup-btn:hover {
+  transform: translateY(-3px);
+}
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -177,6 +184,10 @@ body {
   color: #070707;
   font-weight: 1000;
   border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.hero button:hover {
+  transform: translateY(-3px);
 }
 
 .hero .image {
@@ -203,73 +214,122 @@ body {
   height: auto;
 }
 
+/* Benefits Section */
+/* Benefits Section */
 .benefits {
-  padding: 30px;
-  background-color: #fff;
   text-align: center;
+  padding: 50px 20px;
 }
 
-.benefits h2 {
-  font-size: 42px;
-  margin-bottom: 0px;
-  margin-top: 50px;
-}
-
-.benefits .highlight {
-  color: #007bff;
-}
-
-.benefits p {
-  font-size: 15px;
-  margin-top: 10px;
+.benefits-title {
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.benefit-cards {
+.benefits-title span {
+  color: #007bff; /* Warna biru yang sesuai */
+}
+
+.benefits-description {
+  font-size: 1rem;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.benefits-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 45px; /* Gap between cards */
-  justify-content: center; /* Center the cards horizontally */
-  align-items: start;
-  margin: 0 auto; /* Center the grid container */
-  max-width: 1000px; /* Ensure grid container doesn't take full width */
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-.card {
+.benefit-item {
   background: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
   text-align: center;
-  width: 390px;
-  height: 320px;
+  transition: transform 0.3s ease;
 }
 
-.card img {
-  width: 80px;
-  height: 80px;
-  margin-top: 40px;
+.benefit-item:hover {
+  transform: translateY(-20px);
 }
 
-.card h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
+.benefit-item img {
+  width: 89px;
+  height: 87px;
+  margin-bottom: 0px;
 }
 
-.card p {
-  font-size: 15px;
-  color: #555;
-  margin-top: 10px;
+.benefit-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1px;
 }
+
+.benefit-item p {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.main-benefit {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+  color: #ffffff;
+  width: 430px;
+  height:280px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease;
+}
+.main-benefit:hover {
+  transform: translateY(-30px);
+}
+
+.main-benefit img {
+  width: 110px;
+  height: 108px;
+  margin-bottom: 0px;
+}
+
+.main-benefit h2 {
+  color: #007bff; /* Warna teks khusus untuk main benefit */
+  margin-bottom: 10px;
+}
+
+.main-benefit h2 span{
+  color: #00ff00; /* Warna teks khusus untuk main benefit */
+}
+
+.main-benefit p {
+  color: #0b0b0b;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .benefits-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .main-benefit {
+      grid-column: span 1;
+  }
+}
+
 
 .difficulty {
   display: flex;
   justify-content: space-between; /* Mengatur jarak antara gambar dan konten */
   align-items: center; /* Meratakan konten secara vertikal */
-  padding: 90px 90px; /* Padding luar dikurangi menjadi 100px */
+  padding: 20px 100px; /* Padding luar dikurangi menjadi 100px */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+  margin-top: 20px;
 }
 
 .difficulty .image {
@@ -281,12 +341,13 @@ body {
 }
 
 .difficulty .image img {
-  width: 680px; /* Mengatur lebar gambar agar tidak melebihi kontainer */
-  height: 640px; /* Menjaga aspek rasio gambar */
+  width: 550px; /* Mengatur lebar gambar agar tidak melebihi kontainer */
+  height: 510px; /* Menjaga aspek rasio gambar */
 }
 
 .difficulty .content {
   flex: 1; /* Membuat konten fleksibel */
+  margin-bottom: 10px;
   padding-left: 20px;
   padding-right: 150px; /* Menambahkan padding kiri untuk memberi jarak antara gambar dan konten */
   text-align: left; /* Mengatur teks agar rata kiri */
@@ -295,6 +356,7 @@ body {
 .difficulty .content h2 {
   font-size: 40px;
   color: #333;
+  margin-bottom: 15px;
 }
 
 .difficulty .content .highlight {
@@ -305,19 +367,60 @@ body {
   font-size: 17px;
   color: #666;
 }
+.difficulty-grid {
+  margin-bottom: 0px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
 
+.difficulty-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.difficulty-item:hover {
+  transform: translateY(-40px);
+}
+
+.difficulty-item img {
+  width: 380px;
+  height: 270px;
+  margin-bottom: 0px;
+}
+
+.difficulty-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.difficulty-item p {
+  font-size: 0.875rem;
+  color: #666;
+}
+/* Responsiveness */
+@media (max-width: 768px) {
+  .benefits-grid {
+      grid-template-columns: 1fr;
+  }}
 /* Testimonial Section */
 .testimonial {
   text-align: center;
   padding: 0px 20px;
   background-color: #ffffff;
-  padding-bottom: 135px;
+  padding-bottom: 200px;
 }
 
 .testimonial h2 {
-  font-size: 45px;
+  font-size: 38px;
   color: #000;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .testimonial h2 span {
@@ -327,11 +430,11 @@ body {
 .testimonial-grid {
   display: flex;
   justify-content: center;
-  gap: 100px; /* Perlebar jarak antara grid */
+  gap: 30px; /* Perlebar jarak antara grid */
 }
 
 .testimonial-item {
-  width: 350px;
+  width: 320px;
   height: 550px;
   background-image: url("../img/background-testimonial.png"); /* Ganti dengan URL gambar Anda */
   background-size: cover; /* Sesuaikan ukuran gambar agar menutupi seluruh elemen */
@@ -346,6 +449,11 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative; /* Menambahkan posisi relatif untuk positioning absolut anak */
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-10px);
 }
 
 .testimonial-content {
