@@ -839,3 +839,1036 @@
 [08-Jul-2024 05:48:25 Europe/Berlin] Debugging Start
 [08-Jul-2024 05:48:25 Europe/Berlin] User ID: 7
 [08-Jul-2024 05:48:25 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 06:53:31 Europe/Berlin] Debugging Start
+[08-Jul-2024 06:53:31 Europe/Berlin] Debugging Start
+[08-Jul-2024 06:53:31 Europe/Berlin] User ID: 51
+[08-Jul-2024 06:53:31 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 06:53:31 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #2 must be of type array, null given in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php:82
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(82): array_merge(Array, NULL, Array, Array)
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(221): getUserProfileData('51', Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php on line 82
+[08-Jul-2024 06:53:31 Europe/Berlin] Debugging Start
+[08-Jul-2024 06:53:31 Europe/Berlin] User ID: 51
+[08-Jul-2024 06:53:31 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 06:53:31 Europe/Berlin] Debugging Start
+[08-Jul-2024 06:53:31 Europe/Berlin] User ID: 51
+[08-Jul-2024 06:53:31 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 06:53:31 Europe/Berlin] Debugging Start
+[08-Jul-2024 06:53:31 Europe/Berlin] User ID: 51
+[08-Jul-2024 06:53:31 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 06:53:31 Europe/Berlin] Debugging Start
+[08-Jul-2024 06:53:31 Europe/Berlin] User ID: 51
+[08-Jul-2024 06:53:31 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 08:33:17 Europe/Berlin] Debugging Start
+[08-Jul-2024 08:33:17 Europe/Berlin] Debugging Start
+[08-Jul-2024 08:33:17 Europe/Berlin] User ID: 55
+[08-Jul-2024 08:33:17 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 08:33:17 Europe/Berlin] Debugging Start
+[08-Jul-2024 08:33:17 Europe/Berlin] User ID: 55
+[08-Jul-2024 08:33:17 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 08:33:17 Europe/Berlin] Debugging Start
+[08-Jul-2024 08:33:17 Europe/Berlin] User ID: 55
+[08-Jul-2024 08:33:17 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 08:33:17 Europe/Berlin] Debugging Start
+[08-Jul-2024 08:33:17 Europe/Berlin] User ID: 55
+[08-Jul-2024 08:33:17 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 08:33:17 Europe/Berlin] Debugging Start
+[08-Jul-2024 08:33:17 Europe/Berlin] User ID: 55
+[08-Jul-2024 08:33:17 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 09:37:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:37:43 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 09:37:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:37:43 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 09:37:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:37:43 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 09:37:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:37:43 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 09:37:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:37:43 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 09:37:48 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:48 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:48 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:37:48 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 09:37:48 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:48 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:37:48 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 09:37:48 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:48 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:37:48 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 09:37:48 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:48 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:37:48 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 09:37:48 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:37:48 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:37:48 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 09:40:04 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:04 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:04 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:04 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 09:40:04 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:04 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:04 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 09:40:04 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:04 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:04 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 09:40:04 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:04 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:04 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 09:40:04 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:04 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:04 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 09:40:10 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:10 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:10 Europe/Berlin] User ID: 51
+[08-Jul-2024 09:40:10 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 09:40:10 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #2 must be of type array, null given in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php:82
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(82): array_merge(Array, NULL, Array, Array)
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(221): getUserProfileData('51', Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php on line 82
+[08-Jul-2024 09:40:10 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:10 Europe/Berlin] User ID: 51
+[08-Jul-2024 09:40:10 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 09:40:10 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:10 Europe/Berlin] User ID: 51
+[08-Jul-2024 09:40:10 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 09:40:10 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:10 Europe/Berlin] User ID: 51
+[08-Jul-2024 09:40:10 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 09:40:10 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:10 Europe/Berlin] User ID: 51
+[08-Jul-2024 09:40:10 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 09:40:20 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:20 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:20 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:20 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 09:40:20 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:20 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:20 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 09:40:20 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:20 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:20 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 09:40:20 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:20 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:20 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 09:40:20 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:20 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:20 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 09:40:25 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:25 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:25 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:25 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 09:40:25 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:25 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:25 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 09:40:25 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:25 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:25 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 09:40:25 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:25 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:25 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 09:40:25 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:25 Europe/Berlin] User ID: 55
+[08-Jul-2024 09:40:25 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 09:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:34 Europe/Berlin] User ID: 51
+[08-Jul-2024 09:40:34 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 09:40:34 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #2 must be of type array, null given in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php:82
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(82): array_merge(Array, NULL, Array, Array)
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(221): getUserProfileData('51', Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php on line 82
+[08-Jul-2024 09:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:34 Europe/Berlin] User ID: 51
+[08-Jul-2024 09:40:34 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 09:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:34 Europe/Berlin] User ID: 51
+[08-Jul-2024 09:40:34 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 09:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:34 Europe/Berlin] User ID: 51
+[08-Jul-2024 09:40:34 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 09:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 09:40:34 Europe/Berlin] User ID: 51
+[08-Jul-2024 09:40:34 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 11:01:33 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:01:33 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:01:33 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:01:33 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 11:01:33 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:01:33 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:01:33 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 11:01:33 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:01:33 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:01:33 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 11:01:33 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:01:33 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:01:33 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 11:01:33 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:01:33 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:01:33 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 11:14:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:14:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:14:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:14:43 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 11:14:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:14:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:14:43 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 11:14:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:14:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:14:43 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 11:14:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:14:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:14:43 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 11:14:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:14:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:14:43 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 11:36:40 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:36:40 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:36:40 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:36:40 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 11:36:40 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:36:40 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:36:40 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 11:36:40 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:36:40 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:36:40 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 11:36:40 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:36:40 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:36:40 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 11:36:40 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:36:40 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:36:40 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 11:46:44 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:46:44 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:46:44 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:46:44 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 11:46:44 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:46:44 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:46:44 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 11:46:44 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:46:44 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:46:44 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 11:46:44 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:46:44 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:46:44 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 11:46:44 Europe/Berlin] Debugging Start
+[08-Jul-2024 11:46:44 Europe/Berlin] User ID: 55
+[08-Jul-2024 11:46:44 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 12:13:14 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:13:14 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:13:14 Europe/Berlin] User ID: 55
+[08-Jul-2024 12:13:14 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 12:13:14 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:13:14 Europe/Berlin] User ID: 55
+[08-Jul-2024 12:13:14 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 12:13:14 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:13:14 Europe/Berlin] User ID: 55
+[08-Jul-2024 12:13:14 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 12:13:14 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:13:14 Europe/Berlin] User ID: 55
+[08-Jul-2024 12:13:14 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 12:13:14 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:13:14 Europe/Berlin] User ID: 55
+[08-Jul-2024 12:13:14 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 12:43:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:44:04 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:44:04 Europe/Berlin] User ID: 55
+[08-Jul-2024 12:44:04 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 12:44:04 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:44:04 Europe/Berlin] User ID: 55
+[08-Jul-2024 12:44:04 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 12:44:04 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:44:04 Europe/Berlin] User ID: 55
+[08-Jul-2024 12:44:04 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 12:44:04 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:44:04 Europe/Berlin] User ID: 55
+[08-Jul-2024 12:44:04 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 12:44:04 Europe/Berlin] Debugging Start
+[08-Jul-2024 12:44:04 Europe/Berlin] User ID: 55
+[08-Jul-2024 12:44:04 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 12:58:45 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\ExaTrain\FungsiPHP\connection.php:8
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\FungsiPHP\connection.php(8): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'ExaTrain')
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(8): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\FungsiPHP\connection.php on line 8
+[08-Jul-2024 12:58:56 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\ExaTrain\FungsiPHP\connection.php:8
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\FungsiPHP\connection.php(8): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'ExaTrain')
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(8): include('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\FungsiPHP\connection.php on line 8
+[08-Jul-2024 12:59:13 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:40 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:40 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:40 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:02:40 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 14:02:40 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:40 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:02:40 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 14:02:40 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:40 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:02:40 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 14:02:40 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:40 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:02:40 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 14:02:41 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:41 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:02:41 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 14:02:42 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:02:43 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 14:02:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:02:43 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 14:02:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:02:43 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 14:02:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:02:43 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 14:02:43 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:43 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:02:43 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 14:02:47 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:47 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:47 Europe/Berlin] User ID: 56
+[08-Jul-2024 14:02:47 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 14:02:47 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:47 Europe/Berlin] User ID: 56
+[08-Jul-2024 14:02:47 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 14:02:47 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:47 Europe/Berlin] User ID: 56
+[08-Jul-2024 14:02:47 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 14:02:47 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:47 Europe/Berlin] User ID: 56
+[08-Jul-2024 14:02:47 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 14:02:47 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:02:47 Europe/Berlin] User ID: 56
+[08-Jul-2024 14:02:47 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 14:06:44 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:06:45 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:06:45 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:06:45 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 14:06:45 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:06:45 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:06:45 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 14:06:45 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:06:45 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:06:45 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 14:06:45 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:06:45 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:06:45 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 14:06:45 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:06:45 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:06:45 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 14:29:23 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:29:23 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:29:23 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:29:23 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 14:29:23 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:29:23 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:29:23 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 14:29:23 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:29:23 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:29:23 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 14:29:23 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:29:23 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:29:23 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 14:29:23 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:29:23 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:29:23 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 14:57:49 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:49 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:49 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:57:49 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 14:57:49 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:49 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:57:49 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 14:57:49 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:49 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:57:49 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 14:57:49 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:49 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:57:49 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 14:57:49 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:49 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:57:49 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 14:57:51 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:51 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:51 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:57:51 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 14:57:51 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:51 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:57:51 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 14:57:51 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:51 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:57:51 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 14:57:51 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:51 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:57:51 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 14:57:51 Europe/Berlin] Debugging Start
+[08-Jul-2024 14:57:51 Europe/Berlin] User ID: 55
+[08-Jul-2024 14:57:51 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 15:05:11 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:11 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:11 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:05:11 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 15:05:11 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:11 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:05:11 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 15:05:11 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:11 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:05:11 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 15:05:11 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:11 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:05:11 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 15:05:11 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:11 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:05:11 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:05:12 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:05:12 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:05:12 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:05:12 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:05:12 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] User ID: 1
+[08-Jul-2024 15:05:12 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] User ID: 1
+[08-Jul-2024 15:05:12 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] User ID: 1
+[08-Jul-2024 15:05:12 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] User ID: 1
+[08-Jul-2024 15:05:12 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 15:05:12 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:05:12 Europe/Berlin] User ID: 1
+[08-Jul-2024 15:05:12 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 15:26:55 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:55 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:55 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:26:55 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 15:26:55 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:55 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:26:55 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 15:26:55 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:55 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:26:55 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 15:26:55 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:55 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:26:55 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 15:26:55 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:55 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:26:55 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] User ID: 9
+[08-Jul-2024 15:26:58 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] User ID: 9
+[08-Jul-2024 15:26:58 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] User ID: 9
+[08-Jul-2024 15:26:58 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] User ID: 9
+[08-Jul-2024 15:26:58 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] User ID: 9
+[08-Jul-2024 15:26:58 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] User ID: 9
+[08-Jul-2024 15:26:58 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] User ID: 9
+[08-Jul-2024 15:26:58 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] User ID: 9
+[08-Jul-2024 15:26:58 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] User ID: 9
+[08-Jul-2024 15:26:58 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 15:26:58 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:58 Europe/Berlin] User ID: 9
+[08-Jul-2024 15:26:58 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:26:59 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:26:59 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:26:59 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:26:59 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:26:59 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:26:59 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:26:59 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:26:59 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:26:59 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 15:26:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:26:59 Europe/Berlin] User ID: 2
+[08-Jul-2024 15:26:59 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 15:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:34 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:40:34 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 15:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:34 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:40:34 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 15:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:34 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:40:34 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 15:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:34 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:40:34 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 15:40:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:34 Europe/Berlin] User ID: 55
+[08-Jul-2024 15:40:34 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 15:40:35 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:35 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:35 Europe/Berlin] User ID: 1
+[08-Jul-2024 15:40:35 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 15:40:35 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:35 Europe/Berlin] User ID: 1
+[08-Jul-2024 15:40:35 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 15:40:35 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:35 Europe/Berlin] User ID: 1
+[08-Jul-2024 15:40:35 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 15:40:35 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:35 Europe/Berlin] User ID: 1
+[08-Jul-2024 15:40:35 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 15:40:35 Europe/Berlin] Debugging Start
+[08-Jul-2024 15:40:35 Europe/Berlin] User ID: 1
+[08-Jul-2024 15:40:35 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 16:44:59 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:00 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:00 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:00 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 16:45:00 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:00 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:00 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 16:45:00 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:00 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:00 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 16:45:00 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:00 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:00 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 16:45:00 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:00 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:00 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 16:45:24 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:24 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:24 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:24 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 16:45:24 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:24 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:24 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 16:45:24 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:24 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:24 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 16:45:24 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:24 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:24 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 16:45:24 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:24 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:24 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 16:45:53 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:53 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:53 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:53 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 16:45:53 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:53 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:53 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 16:45:53 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:53 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:53 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 16:45:53 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:54 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:54 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 16:45:54 Europe/Berlin] Debugging Start
+[08-Jul-2024 16:45:54 Europe/Berlin] User ID: 55
+[08-Jul-2024 16:45:54 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 18:52:32 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:32 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:32 Europe/Berlin] User ID: 55
+[08-Jul-2024 18:52:32 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 18:52:32 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:32 Europe/Berlin] User ID: 55
+[08-Jul-2024 18:52:32 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 18:52:32 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:32 Europe/Berlin] User ID: 55
+[08-Jul-2024 18:52:32 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 18:52:32 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:32 Europe/Berlin] User ID: 55
+[08-Jul-2024 18:52:32 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 18:52:32 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:32 Europe/Berlin] User ID: 55
+[08-Jul-2024 18:52:32 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 18:52:33 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:33 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:33 Europe/Berlin] User ID: 3
+[08-Jul-2024 18:52:33 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 18:52:33 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:33 Europe/Berlin] User ID: 3
+[08-Jul-2024 18:52:33 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 18:52:33 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:33 Europe/Berlin] User ID: 3
+[08-Jul-2024 18:52:33 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 18:52:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:34 Europe/Berlin] User ID: 3
+[08-Jul-2024 18:52:34 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 18:52:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:34 Europe/Berlin] User ID: 3
+[08-Jul-2024 18:52:34 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 18:52:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:34 Europe/Berlin] User ID: 3
+[08-Jul-2024 18:52:34 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 18:52:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:34 Europe/Berlin] User ID: 3
+[08-Jul-2024 18:52:34 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 18:52:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:34 Europe/Berlin] User ID: 3
+[08-Jul-2024 18:52:34 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 18:52:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:34 Europe/Berlin] User ID: 3
+[08-Jul-2024 18:52:34 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 18:52:34 Europe/Berlin] Debugging Start
+[08-Jul-2024 18:52:34 Europe/Berlin] User ID: 3
+[08-Jul-2024 18:52:34 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 19:19:01 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:19:01 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:19:01 Europe/Berlin] User ID: 55
+[08-Jul-2024 19:19:01 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 19:19:01 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:19:01 Europe/Berlin] User ID: 55
+[08-Jul-2024 19:19:01 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 19:19:01 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:19:01 Europe/Berlin] User ID: 55
+[08-Jul-2024 19:19:01 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 19:19:01 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:19:01 Europe/Berlin] User ID: 55
+[08-Jul-2024 19:19:01 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 19:19:01 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:19:01 Europe/Berlin] User ID: 55
+[08-Jul-2024 19:19:01 Europe/Berlin] Chart Type: average_scores
+[08-Jul-2024 19:35:56 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:35:56 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:35:56 Europe/Berlin] User ID: 55
+[08-Jul-2024 19:35:56 Europe/Berlin] Chart Type: profile
+[08-Jul-2024 19:35:56 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:35:56 Europe/Berlin] User ID: 55
+[08-Jul-2024 19:35:56 Europe/Berlin] Chart Type: doughnut
+[08-Jul-2024 19:35:56 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:35:56 Europe/Berlin] User ID: 55
+[08-Jul-2024 19:35:56 Europe/Berlin] Chart Type: crc
+[08-Jul-2024 19:35:56 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:35:56 Europe/Berlin] User ID: 55
+[08-Jul-2024 19:35:56 Europe/Berlin] Chart Type: average_grades
+[08-Jul-2024 19:35:56 Europe/Berlin] Debugging Start
+[08-Jul-2024 19:35:56 Europe/Berlin] User ID: 55
+[08-Jul-2024 19:35:56 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 04:04:30 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:31 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:31 Europe/Berlin] User ID: 55
+[09-Jul-2024 04:04:31 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 04:04:31 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:31 Europe/Berlin] User ID: 55
+[09-Jul-2024 04:04:31 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 04:04:31 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:31 Europe/Berlin] User ID: 55
+[09-Jul-2024 04:04:31 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 04:04:31 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:31 Europe/Berlin] User ID: 55
+[09-Jul-2024 04:04:31 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 04:04:31 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:31 Europe/Berlin] User ID: 55
+[09-Jul-2024 04:04:31 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 04:04:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:57 Europe/Berlin] User ID: 55
+[09-Jul-2024 04:04:57 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 04:04:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:57 Europe/Berlin] User ID: 55
+[09-Jul-2024 04:04:57 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 04:04:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:57 Europe/Berlin] User ID: 55
+[09-Jul-2024 04:04:57 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 04:04:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:57 Europe/Berlin] User ID: 55
+[09-Jul-2024 04:04:57 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 04:04:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 04:04:57 Europe/Berlin] User ID: 55
+[09-Jul-2024 04:04:57 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 06:52:32 Europe/Berlin] Debugging Start
+[09-Jul-2024 06:52:32 Europe/Berlin] Debugging Start
+[09-Jul-2024 06:52:32 Europe/Berlin] User ID: 55
+[09-Jul-2024 06:52:32 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 06:52:32 Europe/Berlin] Debugging Start
+[09-Jul-2024 06:52:32 Europe/Berlin] User ID: 55
+[09-Jul-2024 06:52:32 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 06:52:32 Europe/Berlin] Debugging Start
+[09-Jul-2024 06:52:32 Europe/Berlin] User ID: 55
+[09-Jul-2024 06:52:32 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 06:52:32 Europe/Berlin] Debugging Start
+[09-Jul-2024 06:52:32 Europe/Berlin] User ID: 55
+[09-Jul-2024 06:52:32 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 06:52:32 Europe/Berlin] Debugging Start
+[09-Jul-2024 06:52:32 Europe/Berlin] User ID: 55
+[09-Jul-2024 06:52:32 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:24:17 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:17 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:17 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:24:17 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:24:17 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #1 must be of type array, null given in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php:82
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(82): array_merge(NULL, NULL, Array, Array)
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(221): getUserProfileData('55', Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php on line 82
+[09-Jul-2024 07:24:17 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:17 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:24:17 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:24:17 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:17 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:24:17 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:24:17 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:17 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:24:17 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:24:17 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:17 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:24:17 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:24:19 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:19 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:19 Europe/Berlin] User ID: 5
+[09-Jul-2024 07:24:19 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:24:19 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:19 Europe/Berlin] User ID: 5
+[09-Jul-2024 07:24:19 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:24:19 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:19 Europe/Berlin] User ID: 5
+[09-Jul-2024 07:24:19 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:24:19 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:19 Europe/Berlin] User ID: 5
+[09-Jul-2024 07:24:19 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:24:19 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:24:19 Europe/Berlin] User ID: 5
+[09-Jul-2024 07:24:19 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:28:17 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:18 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:18 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:28:18 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:28:18 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #1 must be of type array, null given in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php:82
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(82): array_merge(NULL, NULL, Array, Array)
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(221): getUserProfileData('55', Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php on line 82
+[09-Jul-2024 07:28:18 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:18 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:28:18 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:28:18 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:18 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:28:18 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:28:18 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:18 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:28:18 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:28:18 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:18 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:28:18 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:28:23 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:23 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:23 Europe/Berlin] User ID: 17
+[09-Jul-2024 07:28:23 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:28:23 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:23 Europe/Berlin] User ID: 17
+[09-Jul-2024 07:28:23 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:28:23 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:23 Europe/Berlin] User ID: 17
+[09-Jul-2024 07:28:23 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:28:23 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:23 Europe/Berlin] User ID: 17
+[09-Jul-2024 07:28:23 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:28:23 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:23 Europe/Berlin] User ID: 17
+[09-Jul-2024 07:28:23 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:28:25 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:25 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:25 Europe/Berlin] User ID: 17
+[09-Jul-2024 07:28:25 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:28:25 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:25 Europe/Berlin] User ID: 17
+[09-Jul-2024 07:28:25 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:28:25 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:25 Europe/Berlin] User ID: 17
+[09-Jul-2024 07:28:25 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:28:25 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:25 Europe/Berlin] User ID: 17
+[09-Jul-2024 07:28:25 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:28:25 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:25 Europe/Berlin] User ID: 17
+[09-Jul-2024 07:28:25 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:28:29 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:29 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:29 Europe/Berlin] User ID: 16
+[09-Jul-2024 07:28:29 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:28:29 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:29 Europe/Berlin] User ID: 16
+[09-Jul-2024 07:28:29 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:28:29 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:29 Europe/Berlin] User ID: 16
+[09-Jul-2024 07:28:29 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:28:29 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:29 Europe/Berlin] User ID: 16
+[09-Jul-2024 07:28:29 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:28:29 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:28:29 Europe/Berlin] User ID: 16
+[09-Jul-2024 07:28:29 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:36:30 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:30 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:30 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:36:30 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:36:30 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #1 must be of type array, null given in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php:82
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(82): array_merge(NULL, NULL, Array, Array)
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(221): getUserProfileData('55', Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php on line 82
+[09-Jul-2024 07:36:30 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:30 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:36:30 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:36:30 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:30 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:36:30 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:36:30 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:30 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:36:30 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:36:30 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:30 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:36:30 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:36:34 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:34 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:34 Europe/Berlin] User ID: 20
+[09-Jul-2024 07:36:34 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:36:34 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:34 Europe/Berlin] User ID: 20
+[09-Jul-2024 07:36:34 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:36:34 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:34 Europe/Berlin] User ID: 20
+[09-Jul-2024 07:36:34 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:36:34 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:34 Europe/Berlin] User ID: 20
+[09-Jul-2024 07:36:34 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:36:34 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:36:34 Europe/Berlin] User ID: 20
+[09-Jul-2024 07:36:34 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:37:20 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:37:20 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:37:20 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:37:20 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:37:20 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #1 must be of type array, null given in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php:82
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(82): array_merge(NULL, NULL, Array, Array)
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(221): getUserProfileData('55', Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php on line 82
+[09-Jul-2024 07:37:20 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:37:20 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:37:20 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:37:20 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:37:20 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:37:20 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:37:20 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:37:20 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:37:20 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:37:20 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:37:20 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:37:20 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:38:50 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:50 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:50 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:38:50 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:38:50 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #1 must be of type array, null given in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php:82
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(82): array_merge(NULL, NULL, Array, Array)
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(221): getUserProfileData('55', Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php on line 82
+[09-Jul-2024 07:38:50 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:50 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:38:50 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:38:50 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:50 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:38:50 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:38:50 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:50 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:38:50 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:38:50 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:50 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:38:50 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:38:55 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:55 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:55 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:38:55 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:38:55 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #1 must be of type array, null given in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php:82
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(82): array_merge(NULL, NULL, Array, Array)
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(221): getUserProfileData('55', Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php on line 82
+[09-Jul-2024 07:38:55 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:55 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:38:55 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:38:55 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:55 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:38:55 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:38:55 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:55 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:38:55 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:38:55 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:55 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:38:55 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] User ID: 2
+[09-Jul-2024 07:38:57 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] User ID: 2
+[09-Jul-2024 07:38:57 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] User ID: 2
+[09-Jul-2024 07:38:57 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] User ID: 2
+[09-Jul-2024 07:38:57 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] User ID: 2
+[09-Jul-2024 07:38:57 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] User ID: 2
+[09-Jul-2024 07:38:57 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] User ID: 2
+[09-Jul-2024 07:38:57 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] User ID: 2
+[09-Jul-2024 07:38:57 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] User ID: 2
+[09-Jul-2024 07:38:57 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:38:57 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:38:57 Europe/Berlin] User ID: 2
+[09-Jul-2024 07:38:57 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:40:02 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:02 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:02 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:40:02 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:40:02 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_merge(): Argument #1 must be of type array, null given in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php:82
+Stack trace:
+#0 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(82): array_merge(NULL, NULL, Array, Array)
+#1 C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php(221): getUserProfileData('55', Object(mysqli))
+#2 {main}
+  thrown in C:\xampp\htdocs\ExaTrain\admin\adminPengguna.php on line 82
+[09-Jul-2024 07:40:02 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:02 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:40:02 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:40:02 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:02 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:40:02 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:40:02 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:02 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:40:02 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:40:02 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:02 Europe/Berlin] User ID: 55
+[09-Jul-2024 07:40:02 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] User ID: 7
+[09-Jul-2024 07:40:06 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] User ID: 7
+[09-Jul-2024 07:40:06 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] User ID: 7
+[09-Jul-2024 07:40:06 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] User ID: 7
+[09-Jul-2024 07:40:06 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] User ID: 7
+[09-Jul-2024 07:40:06 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] User ID: 7
+[09-Jul-2024 07:40:06 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] User ID: 7
+[09-Jul-2024 07:40:06 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] User ID: 7
+[09-Jul-2024 07:40:06 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] User ID: 7
+[09-Jul-2024 07:40:06 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 07:40:06 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:06 Europe/Berlin] User ID: 7
+[09-Jul-2024 07:40:06 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:40:09 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:09 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:09 Europe/Berlin] User ID: 1
+[09-Jul-2024 07:40:09 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 07:40:09 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:09 Europe/Berlin] User ID: 1
+[09-Jul-2024 07:40:09 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 07:40:09 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:09 Europe/Berlin] User ID: 1
+[09-Jul-2024 07:40:09 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 07:40:09 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:09 Europe/Berlin] User ID: 1
+[09-Jul-2024 07:40:09 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 07:40:10 Europe/Berlin] Debugging Start
+[09-Jul-2024 07:40:10 Europe/Berlin] User ID: 1
+[09-Jul-2024 07:40:10 Europe/Berlin] Chart Type: average_scores
