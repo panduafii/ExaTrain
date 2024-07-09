@@ -626,14 +626,14 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                             {
                                 label: 'Correct',
                                 data: correctCounts,
-                                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                                backgroundColor: 'rgba(75, 192, 192, 1)',
                                 borderColor: 'rgba(75, 192, 192, 1)',
                                 borderWidth: 1
                             },
                             {
                                 label: 'Incorrect',
                                 data: incorrectCounts,
-                                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                                backgroundColor: 'rgba(255, 99, 132, 1)',
                                 borderColor: 'rgba(255, 99, 132, 1)',
                                 borderWidth: 1
                             }
@@ -687,7 +687,7 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                         const r = Math.floor(Math.random() * 255);
                         const g = Math.floor(Math.random() * 255);
                         const b = Math.floor(Math.random() * 255);
-                        return `rgba(${r}, ${g}, ${b}, 0.5)`;
+                        return `rgba(${r}, ${g}, ${b}, 1)`;
                     });
 
                     const borderColors = labels.map((_, index) => backgroundColors[index].replace('0.5', '1'));
@@ -765,7 +765,7 @@ if (isset($_POST['user_id']) && isset($_POST['chart_type'])) {
                         datasets: [{
                             label: 'Average Scores per Period',
                             data: averages,
-                            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                            backgroundColor: 'rgba(54, 162, 235, 1)',
                             borderColor: 'rgb(54, 162, 235)',
                             borderWidth: 1
                         }]

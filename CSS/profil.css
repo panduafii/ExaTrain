@@ -87,7 +87,7 @@ body {
   background-color: #f2f7ff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin: 110px auto 0px; /* Adjusting margin to account for fixed navbar */
+  margin: 90px auto 0px; /* Adjusting margin to account for fixed navbar */
   overflow-y: auto;
   justify-content: flex-start;
 }
@@ -160,43 +160,43 @@ body {
   text-align: left;
   border-collapse: collapse;
 }
-  .profile td {
-    padding: 10px 0;
-  }
+.profile td {
+  padding: 10px 0;
+}
 
-  .profile td:first-child {
-    text-align: left;
-  }
+.profile td:first-child {
+  text-align: left;
+}
 
-  .profile td:last-child {
-    text-align: right;
-  }
+.profile td:last-child {
+  text-align: right;
+}
 
-  .profile tr {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #ddd;
-  }
+.profile tr {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
 
-  .profile tr:last-child {
-    border-bottom: none; /* Hapus garis bawah untuk baris terakhir */
-  }
+.profile tr:last-child {
+  border-bottom: none; /* Hapus garis bawah untuk baris terakhir */
+}
 
-  .button-icon {
-    width: 25px;
-    height: 20px;
-    margin-left: 3px;
-    margin-right: 5px;
-    padding-left: 3px;
-  }
-  .logout-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    margin-top: auto; /* Tambahkan jarak atas yang sesuai */
-  }
+.button-icon {
+  width: 25px;
+  height: 20px;
+  margin-left: 3px;
+  margin-right: 5px;
+  padding-left: 3px;
+}
+.logout-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: auto; /* Tambahkan jarak atas yang sesuai */
+}
 
-.profile a{
+.profile a {
   width: 100%;
 }
 
@@ -210,131 +210,131 @@ body {
   justify-content: center;
 }
 
-  .button-icon-logout {
-    width: 20px;
-    height: 25px;
-    margin-left: -30px;
-    margin-right: 10px;
-    padding-left: 3px;
-  }
+.button-icon-logout {
+  width: 20px;
+  height: 25px;
+  margin-left: -30px;
+  margin-right: 10px;
+  padding-left: 3px;
+}
 
-  .icon-email {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-    margin-right: 5px;
-  }
-  .main-content {
-    width: 65%;
-    padding: 10px 20px; /* Adjusted padding */
-    overflow-y: auto; /* Added for scrolling */
-    margin-top: 20px; /* Added margin-top */
-  }
+.icon-email {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.main-content {
+  width: 65%;
+  padding: 10px 20px; /* Adjusted padding */
+  overflow-y: auto; /* Added for scrolling */
+  margin-top: 20px; /* Added margin-top */
+}
 
-  .main-content h1 {
-    font-size: 28px;
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-  }
-
-  .chart {
-    width: 90%;
-    height: 480px;
-    background-color: #ffffff;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Menambahkan jarak antara chart */
-  }
-
-  .charts {
-    display: flex;
-    flex-direction: column; /* Mengatur agar kontainer chart memiliki arah kolom */
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px; /* Reduced margin-bottom */
-    text-align: center; /* Menyelaraskan teks di tengah */
+.main-content h1 {
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
 }
 
 .chart {
-    background-color: #ffffff;
-    position: relative;
-    height: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    border-radius: 10px; /* Membuat pojok lebih melengkung */
-    padding: 25px; /* Padding di dalam container chart */
-    padding-top: 65px;
+  width: 90%;
+  height: 480px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Menambahkan jarak antara chart */
+}
+
+.charts {
+  display: flex;
+  flex-direction: column; /* Mengatur agar kontainer chart memiliki arah kolom */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Reduced margin-bottom */
+  text-align: center; /* Menyelaraskan teks di tengah */
+}
+
+.chart {
+  background-color: #ffffff;
+  position: relative;
+  height: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 10px; /* Membuat pojok lebih melengkung */
+  padding: 25px; /* Padding di dalam container chart */
+  padding-top: 65px;
 }
 
 .chart h4 {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    color: #171717;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: #171717;
 }
 
-#average-grades-chart, #user-activity-chart {
-    grid-column: span 2;
-    height: 400px;
+#average-grades-chart,
+#user-activity-chart {
+  grid-column: span 2;
+  height: 400px;
 }
 
 #correct-incorrect {
-    grid-column: span 2;
-    height: 400px;
+  grid-column: span 2;
+  height: 400px;
 }
 
-  @media (max-width: 768px) {
-    .navbar {
-      height: 50px;
-      padding: 0 10px;
-    }
-
-    .logo img {
-      height: 30px;
-    }
-
-    .menu {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: #fff;
-      position: absolute;
-      top: 50px;
-      left: 0;
-      z-index: 999;
-    }
-
-    .menu li {
-      width: 100%;
-      text-align: center;
-      margin: 10px 0;
-    }
-
-    .menu li a {
-      padding: 10px 0;
-      display: block;
-    }
-
-    .menu.active {
-      display: flex;
-    }
-
-    .menu-toggle {
-      display: flex;
-    }
+@media (max-width: 768px) {
+  .navbar {
+    height: 50px;
+    padding: 0 10px;
   }
 
+  .logo img {
+    height: 30px;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 999;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .menu li a {
+    padding: 10px 0;
+    display: block;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
 
 /* Media query for screens larger than 1920px */
 @media (min-width: 1920px) {
@@ -451,5 +451,4 @@ body {
   .footer-section {
     margin: 20px 0;
   }
-
 }
