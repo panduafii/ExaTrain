@@ -7,7 +7,7 @@ if (!isset($_SESSION['subject_id'])) {
     exit;
 }
 
-$subject_id = $_SESSION['subject_id'];
+$subject_id = isset($_GET['subject_id']) ? $_GET['subject_id'] : $_SESSION['subject_id'];
 
 // Koneksi ke database
 include '../fungsiPHP/connection.php';
@@ -25,40 +25,39 @@ if ($subjectResult->num_rows > 0) {
     $subject_name = "Nama Mata Kuliah Tidak Ditemukan";
 }
 
-// Fungsi untuk mendapatkan data benar
-function getCorrectPercentageData($subjectId) {
-    // Koneksi ke database
-    include '../fungsiPHP/connection.php';
+// Endpoint to fetch chart data
+if (isset($_GET['fetch_data']) && $_GET['fetch_data'] == 'true') {
+    $totalCorrectQuery = "
+        SELECT COUNT(DISTINCT user_id) AS total_correct
+        FROM answers 
+        WHERE subject_id = ? AND is_correct = 1
+    ";
+    $stmt = $conn->prepare($totalCorrectQuery);
+    $stmt->bind_param("i", $subject_id);
+    $stmt->execute();
+    $totalCorrectResult = $stmt->get_result();
+    $totalCorrectRow = $totalCorrectResult->fetch_assoc();
+    $total_correct = $totalCorrectRow['total_correct'];
 
-
-    $sql = "SELECT q.id AS question_id, 
-                   q.question_text, 
-                   SUM(CASE WHEN a.is_correct = 1 THEN 1 ELSE 0 END) AS correct_count,
-                   COUNT(a.is_correct) AS total_count
-            FROM questions q
-            LEFT JOIN answers a ON q.id = a.question_id
-            WHERE q.subject_id = ?
-            GROUP BY q.id";
-
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $subjectId);
+    $dataQuery = "
+        SELECT q.id AS question_id, COUNT(DISTINCT a.user_id) AS correct_count 
+        FROM questions q 
+        LEFT JOIN answers a ON q.id = a.question_id AND a.is_correct = 1
+        WHERE q.subject_id = ?
+        GROUP BY q.id
+    ";
+    $stmt = $conn->prepare($dataQuery);
+    $stmt->bind_param("i", $subject_id);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    $data = array();
+    $data = [];
     while ($row = $result->fetch_assoc()) {
-        $row['correct_percentage'] = $row['correct_count'] / $row['total_count'] * 100;
+        $row['correct_percentage'] = ($total_correct > 0) ? ($row['correct_count'] / $total_correct) * 100 : 0;
         $data[] = $row;
     }
 
-    $stmt->close();
-    $conn->close();
-
-    return json_encode($data);
-}
-
-if (isset($_GET['subject_id'])) {
-    echo getCorrectPercentageData($_GET['subject_id']);
+    echo json_encode($data);
     exit;
 }
 ?>
@@ -78,7 +77,7 @@ if (isset($_GET['subject_id'])) {
         <nav class="sidebar">
             <div class="logo">
                 <img src="../img/logo1.png" alt="EXATrain Logo">
-                <div class="logo-line"></div> <!-- Div untuk garis putih -->
+                <div class="logo-line"></div>
             </div>
             <ul class="sidebar-menu">
                 <a href="adminPengguna.php">
@@ -135,12 +134,12 @@ if (isset($_GET['subject_id'])) {
             <div class="content">
                 <div class="charts">
                     <div class="chart" id="CRCSubject">
-                        <h4>Persentase Jawaban Benar</h4>
+                        <h4>Kemungkinan Soal Berhasil Dijawab Benar</h4>
                         <canvas id="crcChart"></canvas>
                     </div>
 
                     <div class="chart" id="user-activity-chart">
-                        <h4></h4> <!-- Moved text to the top -->
+                        <h4></h4>
                     </div>
                 </div>
             </div>
@@ -148,47 +147,53 @@ if (isset($_GET['subject_id'])) {
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const subjectId = <?php echo $subject_id; ?>;
-            fetch(`adminSoalchart.php?subject_id=${subjectId}`)
-                .then(response => response.json())
-                .then(data => {
-                    const labels = data.map((item, index) => `Soal ${index + 1}`);
-                    const correctData = data.map(item => item.correct_percentage);
+    document.addEventListener('DOMContentLoaded', function() {
+        const subjectId = <?php echo $subject_id; ?>;
+        fetch(?fetch_data=true&subject_id=${subjectId})
+            .then(response => response.json())
+            .then(data => {
+                if (data.length === 0) {
+                    console.log('No data available for subject_id:', subjectId);
+                    return;
+                }
 
-                    const ctx = document.getElementById('crcChart').getContext('2d');
-                    new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: labels,
-                            datasets: [
-                                {
-                                    label: 'Benar (%)',
-                                    data: correctData,
-                                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                                    borderColor: 'rgba(75, 192, 192, 1)',
-                                    borderWidth: 1
-                                }
-                            ]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    max: 100,
-                                    ticks: {
-                                        callback: function(value) {
-                                            return value + '%';
-                                        }
-                                    }
+                const labels = data.map((item, index) => Soal ${index + 1});
+                const correctData = data.map(item => item.correct_percentage.toFixed(2));
+                console.log('Data received:', data);
+
+                const ctx = document.getElementById('crcChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: 'Persentase Jawaban Benar (%)',
+                                data: correctData,
+                                backgroundColor: 'rgba(255, 127, 0, 1)',
+                                borderColor: 'rgba(255, 127, 0, 1)',
+                                borderWidth: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                ticks: {
+                                    callback: function(value) { return value + "%"; },
+                                    stepSize: 10
                                 }
                             }
                         }
-                    });
+                    }
                 });
-        });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    });
     </script>
 </body>
 </html>
