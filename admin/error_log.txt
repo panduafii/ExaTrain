@@ -1231,3 +1231,37 @@ Stack trace:
 [08-Jul-2024 13:51:41 Europe/Berlin] Debugging Start
 [08-Jul-2024 13:51:41 Europe/Berlin] User ID: 62
 [08-Jul-2024 13:51:41 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 08:04:15 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:04:18 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:04:18 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:04:18 Europe/Berlin] User ID: 1
+[09-Jul-2024 08:04:18 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 08:04:18 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:04:18 Europe/Berlin] User ID: 1
+[09-Jul-2024 08:04:18 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 08:04:18 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:04:18 Europe/Berlin] User ID: 1
+[09-Jul-2024 08:04:18 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 08:04:18 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:04:18 Europe/Berlin] User ID: 1
+[09-Jul-2024 08:04:18 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 08:04:18 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:04:18 Europe/Berlin] User ID: 1
+[09-Jul-2024 08:04:18 Europe/Berlin] Chart Type: average_scores
+[09-Jul-2024 08:04:22 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:07:43 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:07:43 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:07:43 Europe/Berlin] User ID: 22
+[09-Jul-2024 08:07:43 Europe/Berlin] Chart Type: profile
+[09-Jul-2024 08:07:43 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:07:43 Europe/Berlin] User ID: 22
+[09-Jul-2024 08:07:43 Europe/Berlin] Chart Type: average_grades
+[09-Jul-2024 08:07:43 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:07:43 Europe/Berlin] User ID: 22
+[09-Jul-2024 08:07:43 Europe/Berlin] Chart Type: doughnut
+[09-Jul-2024 08:07:43 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:07:43 Europe/Berlin] User ID: 22
+[09-Jul-2024 08:07:43 Europe/Berlin] Chart Type: crc
+[09-Jul-2024 08:07:44 Europe/Berlin] Debugging Start
+[09-Jul-2024 08:07:44 Europe/Berlin] User ID: 22
+[09-Jul-2024 08:07:44 Europe/Berlin] Chart Type: average_scores
