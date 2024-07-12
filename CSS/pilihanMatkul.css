@@ -39,13 +39,13 @@ body {
   z-index: 1000;
 }
 
-.logo img {
-  height: 40px;
-}
-
-.menu-container {
+.logo {
   display: flex;
   align-items: center;
+}
+
+.logo img {
+  height: 40px;
 }
 
 .menu {
@@ -58,7 +58,6 @@ body {
 
 .menu li {
   margin-right: 20px;
-  font-size: 1.2vw;
 }
 
 .menu li:last-child {
@@ -69,11 +68,26 @@ body {
   text-decoration: none;
   color: #808080;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s ease;
 }
 
 .menu li a:hover {
-  color: #276dd8;
+  color: black;
+  transform: translateY(-10px);
+}
+
+.menu li button {
+  width: 80px;
+  height: 30px;
+  background-color: #f39c12;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+  padding: 5px;
+  color: #ffffff;
+  font-weight: 1000;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
 .menu li img {
@@ -94,7 +108,27 @@ body {
   margin: 4px 0;
 }
 
+.signup-btn {
+  width: 80px;
+  height: 30px;
+  background-color: #f39c12;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+  padding: 5px;
+  color: #ffffff;
+  font-weight: 1000;
 
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.signup-btn:hover {
+  transform: translateY(-3px);
+}
+
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -126,6 +160,7 @@ body {
     display: flex;
   }
 }
+/* END NAVBAR */
 
 /* Header Title */
 .header {
