@@ -42,8 +42,8 @@ include 'fungsiPHP/connection.php';
     <section class="project">
         <div class="project-content">
             <h2>Our Project</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacinia ac mi ac sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Integer et dui gravida diam vehicula condimentum at et dui. Vestibulum luctus justo sit amet velit venenatis, id tincidunt nunc iaculis.</p>
+            <p>Projek ini mengambil tema pendidikan, berkaca pada negara Barat, kami memfokuskan pembuatan soal essay untuk dapat melatih logika mahasiswa. Tidak hanya itu, soal essay juga dapat melatih mahasiswa untuk dapat berpikir kritis dan belajar memahami materi dengan baik, tidak hanya berfokus pada hafalan saja.</p>
+            <p>Hal inilah yang membuat kami untuk memilih sistem AI sebagai parameter jawaban, dimana AI bekerja untuk menilai dan memberikan evaluasi bagi jawaban mahasiswa dan membandingkannya dengan kunci jawaban.</p>
         </div>
         <div class="project-image">
             <img src="img/work.jpeg" alt="Project Image">
@@ -54,29 +54,29 @@ include 'fungsiPHP/connection.php';
         <h2>Our Services</h2>
         <div class="services-container">
             <div class="service">
-                <img src="img/tryout.png" alt="Try Out Icon">
+                <img src="img/exam.png" alt="Try Out Icon">
                 <h3>TRY OUT</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Mengerjakan soal try out dengan essay</p>
             </div>
             <div class="service">
-                <img src="img/tryout.png" alt="Try Out Icon">
+                <img src="img/ai.png" alt="Try Out Icon">
                 <h3>AI CHECK</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Pengecekan jawaban menggunakan AI</p>
             </div>
             <div class="service">
-                <img src="img/tryout.png" alt="Try Out Icon">
+                <img src="img/detail.png" alt="Try Out Icon">
                 <h3>DETAIL</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="service">\
-                <img src="img/tryout.png" alt="Try Out Icon">
-                <h3>RANKING</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Kunci jawaban akan diberikan penjelasan mendetail</p>
             </div>
             <div class="service">
-                <img src="img/tryout.png" alt="Try Out Icon">
+                <img src="img/ranking.png" alt="Try Out Icon">
+                <h3>RANKING</h3>
+                <p>Melihat ranking dengan skor yang didapat</p>
+            </div>
+            <div class="service">
+                <img src="img/progress.png" alt="Try Out Icon">
                 <h3>PROGRESS</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Dapat mengetahui progres sejauh mana memahami materi dengan grafik</p>
             </div>
         </div>
     </section>
@@ -85,39 +85,32 @@ include 'fungsiPHP/connection.php';
         <h2>Meet Our Team</h2>
         <div class="team-container">
             <div class="team-member">
-                <img src="img/team-member1.jpg" alt="Team Member 1">
-                <h3>Alex Example</h3>
+                <img src="img/man.png" alt="Team Member 1">
+                <h3>Pandu Nur Afi</h3>
             </div>
             <div class="team-member">
-                <img src="img/team-member2.jpg" alt="Team Member 2">
-                <h3>Alex Example</h3>
+                <img src="img/man.png" alt="Team Member 2">
+                <h3>Lutfi Surya Pradana</h3>
             </div>
             <div class="team-member">
-                <img src="img/team-member3.jpg" alt="Team Member 3">
-                <h3>Alex Example</h3>
+                <img src="img/man.png" alt="Team Member 3">
+                <h3>M. Khalil Halabi</h3>
             </div>
             <div class="team-member">
-                <img src="img/team-member4.jpg" alt="Team Member 4">
-                <h3>Kate Example</h3>
+                <img src="img/woman.png" alt="Team Member 4">
+                <h3>Alifah Kusuma Ramadhini</h3>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-content">
+            <!-- <div class="footer-section">
+                <img src="img/logo1.png" alt="">
+            </div> -->
             <div class="footer-section">
-                <h3>Exatrain</h3>
+                <h3>Arbaach Team</h3>
             </div>
-            <div class="footer-section">
-                <h3>About</h3>
-            </div>
-            <div class="footer-section">
-                <h3>Company</h3>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-            </div>
-        </div>
     </footer>
 </body>
 </html>

@@ -57,13 +57,13 @@ body {
 
 .menu li a {
   text-decoration: none;
-  color: #808080;
+  color: #007bff;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .menu li a:hover {
-  color: black;
+  color: #007bff;
 }
 
 .menu li button {

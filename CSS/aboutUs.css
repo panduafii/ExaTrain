@@ -5,10 +5,10 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  height: 100vh;
 }
 
 /* NAVBAR */
@@ -61,7 +61,7 @@ body {
 }
 
 .menu li a:hover {
-  color: black;
+  color: #007bff;
   transform: translateY(-10px);
 }
 
@@ -77,6 +77,11 @@ body {
   font-weight: 1000;
   border-radius: 8px;
   transition: transform 0.3s ease;
+}
+
+.hi-username {
+  color: blue;
+  font-weight: bold;
 }
 
 .menu li img {
@@ -155,7 +160,7 @@ body {
   max-width: 60%;
 }
 
-.project-content h2{
+.project-content h2 {
   font-size: 50px;
   color: #007bff;
   text-align: center;
@@ -180,8 +185,7 @@ body {
   text-align: center;
 }
 
-
-.services h2{
+.services h2 {
   font-size: 50px;
   color: #007bff;
   text-align: center;
@@ -241,14 +245,13 @@ body {
 }
 
 .team-member img {
-  width: 150px;
+  width: 240px;
   height: 150px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
 
-
-.team h2{
+.team h2 {
   font-size: 50px;
   color: #007bff;
   text-align: center;
@@ -269,7 +272,12 @@ body {
   margin: 0;
   padding: 0;
 }
-
+/* img{
+  width: ;
+} */
+h3 {
+  text-align: right;
+}
 .footer-section {
   margin: 10px;
 }

@@ -63,7 +63,7 @@ body {
 }
 
 .menu li a:hover {
-  color: black;
+  color: #007bff;
   transform: translateY(-10px);
 }
 
