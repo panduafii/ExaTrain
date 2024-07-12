@@ -1,3 +1,8 @@
+<?php
+session_start();
+// Koneksi ke database
+include 'fungsiPHP/connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +23,17 @@
                 <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
                 <li><a href="paring.php">Papan Peringkat</a></li>
                 <li><a href="aboutUs.php">Tentang Kami</a></li>
-                <li>Hi! <?= isset($_SESSION["username"]) ? $_SESSION["username"] : "Guest"; ?></li>
+                <li><?php
+                    // Menampilkan nama pengguna jika ada yang masuk
+                    if (isset($_SESSION["username"])) {
+                        $username = $_SESSION["username"];
+                        echo "Hi! $username";
+                    } else {
+                        echo "Hi!";
+                    }
+                    ?>
+
+                </li>
                 <li><a href="profil.php"><img src="img/avatar.png" alt="User" class="user-icon"></a></li>
                 <!-- <li></li> -->
             </ul>

@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 
 // Koneksi ke database
 include 'connection.php';
@@ -19,9 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $selectedCourseId = $_SESSION['selected_course_id'];
 
             foreach ($_SESSION['answers'] as $questionId => $answer) {
-                $userId = $_SESSION['user_id'];
-                $selectedCourseId = $_SESSION['selected_course_id'];
-                // Simpan jawaban ke dalam tabel answers
                 $sql = "INSERT INTO answers (user_id, subject_id, question_id, answer) VALUES ('$userId', '$selectedCourseId', '$questionId', '$answer') ON DUPLICATE KEY UPDATE answer='$answer'";
 
                 if ($conn->query($sql) === FALSE) {
@@ -46,8 +43,6 @@ if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
 
     $selectedCourseId = $_SESSION['selected_course_id'];
     $userId = $_SESSION['user_id'];
-    // echo "=====" . $selectedCourseId;
-    // echo "=====" . $userId;
 
     // Query untuk menghitung jumlah soal berdasarkan selected_course_id
     $sql_count_questions = "SELECT COUNT(*) AS total_questions FROM questions WHERE subject_id = $selectedCourseId";
@@ -78,7 +73,7 @@ if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
     if ($result->num_rows > 0) {
         // Menampilkan pertanyaan dan form jawaban
         $row = $result->fetch_assoc();
-        echo "<h2 class='tulisanPertanyaan'>" . "Soal" . "</h2>";
+        echo "<h2 class='tulisanPertanyaan'>Soal</h2>";
 
         // Cek apakah tombol pertama yang ditekan
         $isFirstQuestion = ($questionId == $firstQuestionId);
@@ -99,6 +94,19 @@ if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
         // Tombol untuk soal nomor 1 hingga jumlah soal untuk mata kuliah yang dipilih
         echo "<input type='hidden' name='current_question' value='$questionId'>";
         echo "<div class='form-footer'>";
+
+        // Tombol Previous dan Next
+        $prevQuestionId = getPreviousQuestionId($conn, $selectedCourseId, $questionId);
+        $nextQuestionId = getNextQuestionId($conn, $selectedCourseId, $questionId);
+
+        if ($prevQuestionId) {
+            echo "<button type='submit' name='question_id' value='$prevQuestionId' class='question-button'>ack</button>";
+        }
+        if ($nextQuestionId) {
+            echo "<button type='submit' name='question_id' value='$nextQuestionId' class='question-button'>Next</button>";
+        }
+
+        // Tombol untuk soal nomor 1 hingga jumlah soal untuk mata kuliah yang dipilih
         echo "<div class='question-buttons'>";
         for ($i = 1; $i <= $totalQuestions; $i++) {
             // Ambil ID pertanyaan sesuai urutan soal
@@ -111,8 +119,8 @@ if (isset($_SESSION['selected_course_id']) && isset($_SESSION['user_id'])) {
         }
         echo "</div>";
 
-        echo "<button class='submitJawaban' type='submit' name='submit_final'>Submit</button>";
         // Tombol untuk mengirim jawaban
+        echo "<button class='submitJawaban' type='submit' name='submit_final'>Submit</button>";
         
         echo "</div>";
         echo "</form>";
@@ -162,6 +170,32 @@ function getQuestionOrderById($conn, $subjectId, $questionId) {
         return $row_question_order['question_order'];
     } else {
         return 1; // Jika tidak ada pertanyaan, kembalikan nilai default 1
+    }
+}
+
+// Fungsi untuk mendapatkan ID pertanyaan sebelumnya
+function getPreviousQuestionId($conn, $subjectId, $currentQuestionId) {
+    $sql_prev_question = "SELECT id FROM questions WHERE subject_id = $subjectId AND id < $currentQuestionId ORDER BY id DESC LIMIT 1";
+    $result_prev_question = $conn->query($sql_prev_question);
+
+    if ($result_prev_question && $result_prev_question->num_rows > 0) {
+        $row_prev_question = $result_prev_question->fetch_assoc();
+        return $row_prev_question['id'];
+    } else {
+        return null;
+    }
+}
+
+// Fungsi untuk mendapatkan ID pertanyaan berikutnya
+function getNextQuestionId($conn, $subjectId, $currentQuestionId) {
+    $sql_next_question = "SELECT id FROM questions WHERE subject_id = $subjectId AND id > $currentQuestionId ORDER BY id ASC LIMIT 1";
+    $result_next_question = $conn->query($sql_next_question);
+
+    if ($result_next_question && $result_next_question->num_rows > 0) {
+        $row_next_question = $result_next_question->fetch_assoc();
+        return $row_next_question['id'];
+    } else {
+        return null;
     }
 }
 ?>
