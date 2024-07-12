@@ -114,6 +114,34 @@ function getAverageScoresChartData($userId) {
     return json_encode($data);
 }
 
+// Fungsi untuk mendapatkan data spider chart
+function getSpiderChartData($userId) {
+    include 'fungsiPHP/connection.php';
+
+    $sql = "SELECT s.subject_name as subject_name, 
+                   COUNT(a.subject_id) as count, 
+                   SUM(CASE WHEN a.is_correct = 1 THEN 1 ELSE 0 END) as correct 
+            FROM answers a
+            JOIN subject s ON a.subject_id = s.id
+            WHERE a.user_id = ?
+            GROUP BY a.subject_id";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $data = array();
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    return json_encode($data);
+}
+
 if (isset($_POST['chart_type'])) {
     if ($_POST['chart_type'] == 'crc') {
         echo getCRCChartData($user_id);
@@ -121,6 +149,8 @@ if (isset($_POST['chart_type'])) {
         echo getAverageGradesChartData($user_id);
     } else if ($_POST['chart_type'] == 'average_scores') {
         echo getAverageScoresChartData($user_id);
+    } else if ($_POST['chart_type'] == 'spider') {
+        echo getSpiderChartData($user_id);
     } else {
         echo getDoughnutChartData($user_id);
     }
@@ -235,6 +265,10 @@ if ($user) {
                     <div class="chart" id="average-scores">
                         <h4>Rata-Rata Nilai Seluruh Mata Kuliah Tiap Periode</h4>
                         <canvas id="averageScores"></canvas>
+                    </div>
+                    <div class="chart" id="spider">
+                        <h4>Nilai dan Jumlah Pengerjaan Tiap Matkul</h4>
+                        <canvas id="spiderChart"></canvas>
                     </div>
             </div>
         </div>
@@ -358,17 +392,12 @@ if ($user) {
                             ]
                         };
 
-                        const crcCtx = document.getElementById('CRC').getContext('2d');
-                        new Chart(crcCtx, {
-                            type: 'bar',
-                            data: crcData,
-                            options: {
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                scales: {
-                                    y: {
-                                        beginAtZero: true
-                                    }
+                        createChart('CRC', 'bar', crcData, {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true
                                 }
                             }
                         });
@@ -413,7 +442,7 @@ if ($user) {
                             }]
                         };
 
-                        const chartOptions = {
+                        createChart('averageGrades', 'bar', averageGradesData, {
                             responsive: true,
                             maintainAspectRatio: false,
                             scales: {
@@ -422,9 +451,7 @@ if ($user) {
                                     max: 100
                                 }
                             }
-                        };
-
-                        createChart('averageGrades', 'bar', averageGradesData, chartOptions);
+                        });
                     } else if (xhr.readyState === 4) {
                         console.error("Error fetching data for average grades chart");
                     }
@@ -461,18 +488,13 @@ if ($user) {
                             }]
                         };
 
-                        const averageScoresCtx = document.getElementById('averageScores').getContext('2d');
-                        new Chart(averageScoresCtx, {
-                            type: 'line',
-                            data: averageScoresData,
-                            options: {
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                scales: {
-                                    y: {
-                                        beginAtZero: true,
-                                        max: 100
-                                    }
+                        createChart('averageScores', 'line', averageScoresData, {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    max: 100
                                 }
                             }
                         });
@@ -486,10 +508,61 @@ if ($user) {
                 xhr.send("chart_type=average_scores");
             }
 
+            function updateSpiderChart() {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "profil.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        const data = JSON.parse(xhr.responseText);
+                        const labels = data.map(item => abbreviateSubjectName(item.subject_name));
+                        const counts = data.map(item => item.count);
+                        const correctCounts = data.map(item => item.correct);
+
+                        const spiderData = {
+                            labels: labels,
+                            datasets: [
+                                {
+                                    label: 'Jumlah Pengerjaan',
+                                    data: counts,
+                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: 'Nilai Benar',
+                                    data: correctCounts,
+                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                    borderColor: 'rgba(54, 162, 235, 1)',
+                                    borderWidth: 1
+                                }
+                            ]
+                        };
+
+                        createChart('spiderChart', 'radar', spiderData, {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                r: {
+                                    beginAtZero: true
+                                }
+                            }
+                        });
+                    } else if (xhr.readyState === 4) {
+                        console.error("Error fetching data for spider chart");
+                    }
+                };
+                xhr.onerror = function() {
+                    console.error("Request error");
+                };
+                xhr.send("chart_type=spider");
+            }
+
             updateDoughnutChart();
             updateCRCChart();
             updateAverageGradesChart();
             updateAverageScoresChart();
+            updateSpiderChart();
         };
     </script>
 

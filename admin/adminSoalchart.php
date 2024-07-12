@@ -27,22 +27,24 @@ if ($subjectResult->num_rows > 0) {
 
 // Endpoint to fetch chart data
 if (isset($_GET['fetch_data']) && $_GET['fetch_data'] == 'true') {
-    $totalCorrectQuery = "
-        SELECT COUNT(DISTINCT user_id) AS total_correct
+    $totalAnswersQuery = "
+        SELECT COUNT(DISTINCT user_id) AS total_answers
         FROM answers 
-        WHERE subject_id = ? AND is_correct = 1
+        WHERE subject_id = ?
     ";
-    $stmt = $conn->prepare($totalCorrectQuery);
+    $stmt = $conn->prepare($totalAnswersQuery);
     $stmt->bind_param("i", $subject_id);
     $stmt->execute();
-    $totalCorrectResult = $stmt->get_result();
-    $totalCorrectRow = $totalCorrectResult->fetch_assoc();
-    $total_correct = $totalCorrectRow['total_correct'];
+    $totalAnswersResult = $stmt->get_result();
+    $totalAnswersRow = $totalAnswersResult->fetch_assoc();
+    $total_answers = $totalAnswersRow['total_answers'];
 
     $dataQuery = "
-        SELECT q.id AS question_id, COUNT(DISTINCT a.user_id) AS correct_count 
+        SELECT q.id AS question_id, 
+               SUM(a.is_correct = 1) AS correct_count, 
+               SUM(a.is_correct = 0) AS incorrect_count
         FROM questions q 
-        LEFT JOIN answers a ON q.id = a.question_id AND a.is_correct = 1
+        LEFT JOIN answers a ON q.id = a.question_id
         WHERE q.subject_id = ?
         GROUP BY q.id
     ";
@@ -53,7 +55,8 @@ if (isset($_GET['fetch_data']) && $_GET['fetch_data'] == 'true') {
 
     $data = [];
     while ($row = $result->fetch_assoc()) {
-        $row['correct_percentage'] = ($total_correct > 0) ? ($row['correct_count'] / $total_correct) * 100 : 0;
+        $row['correct_percentage'] = ($total_answers > 0) ? ($row['correct_count'] / $total_answers) * 100 : 0;
+        $row['incorrect_percentage'] = ($total_answers > 0) ? ($row['incorrect_count'] / $total_answers) * 100 : 0;
         $data[] = $row;
     }
 
@@ -61,6 +64,7 @@ if (isset($_GET['fetch_data']) && $_GET['fetch_data'] == 'true') {
     exit;
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -147,53 +151,65 @@ if (isset($_GET['fetch_data']) && $_GET['fetch_data'] == 'true') {
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const subjectId = <?php echo $subject_id; ?>;
-        fetch(`?fetch_data=true&subject_id=${subjectId}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.length === 0) {
-                    console.log('No data available for subject_id:', subjectId);
-                    return;
-                }
+document.addEventListener('DOMContentLoaded', function() {
+    const subjectId = <?php echo $subject_id; ?>;
+    fetch(`?fetch_data=true&subject_id=${subjectId}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length === 0) {
+                console.log('No data available for subject_id:', subjectId);
+                return;
+            }
 
-                const labels = data.map((item, index) => `Soal ${index + 1}`);
-                const correctData = data.map(item => item.correct_percentage.toFixed(2));
-                console.log('Data received:', data);
+            const labels = data.map((item, index) => `Soal ${index + 1}`);
+            const correctData = data.map(item => (item.correct_percentage ? item.correct_percentage.toFixed(2) : 0));
+            const incorrectData = data.map(item => (item.incorrect_percentage ? item.incorrect_percentage.toFixed(2) : 0));
+            console.log('Data received:', data);
 
-                const ctx = document.getElementById('crcChart').getContext('2d');
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: labels,
-                        datasets: [
-                            {
-                                label: 'Persentase Jawaban Benar (%)',
-                                data: correctData,
-                                backgroundColor: 'rgba(255, 127, 0, 1)',
-                                borderColor: 'rgba(255, 127, 0, 1)',
-                                borderWidth: 1
-                            }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 100,
-                                ticks: {
-                                    callback: function(value) { return value + "%"; },
-                                    stepSize: 10
-                                }
+            const ctx = document.getElementById('crcChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Persentase Jawaban Benar (%)',
+                            data: correctData,
+                            backgroundColor: 'rgba(75, 192, 192, 1)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Persentase Jawaban Salah (%)',
+                            data: incorrectData,
+                            backgroundColor: 'rgba(255, 99, 132, 1)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            stacked: true
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true,
+                            max: 100,  // Ensure the y-axis goes up to 100%
+                            ticks: {
+                                callback: function(value) { return value + "%"; },
+                                stepSize: 10
                             }
                         }
                     }
-                });
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    });
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+});
     </script>
 </body>
 </html>
