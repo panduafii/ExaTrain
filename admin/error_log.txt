@@ -1754,3 +1754,51 @@
 [09-Jul-2024 07:52:03 UTC] User ID: 29
 [09-Jul-2024 07:52:03 UTC] Chart Type: crc
 [10-Jul-2024 19:29:26 UTC] Debugging Start
+[12-Jul-2024 14:24:21 UTC] Debugging Start
+[12-Jul-2024 14:24:22 UTC] Debugging Start
+[12-Jul-2024 14:24:22 UTC] User ID: 21
+[12-Jul-2024 14:24:22 UTC] Chart Type: crc
+[12-Jul-2024 14:24:22 UTC] Debugging Start
+[12-Jul-2024 14:24:22 UTC] User ID: 21
+[12-Jul-2024 14:24:22 UTC] Chart Type: profile
+[12-Jul-2024 14:24:22 UTC] Debugging Start
+[12-Jul-2024 14:24:22 UTC] User ID: 21
+[12-Jul-2024 14:24:22 UTC] Chart Type: doughnut
+[12-Jul-2024 14:24:22 UTC] Debugging Start
+[12-Jul-2024 14:24:22 UTC] User ID: 21
+[12-Jul-2024 14:24:22 UTC] Chart Type: average_grades
+[12-Jul-2024 14:24:22 UTC] Debugging Start
+[12-Jul-2024 14:24:22 UTC] User ID: 21
+[12-Jul-2024 14:24:22 UTC] Chart Type: average_scores
+[12-Jul-2024 14:24:26 UTC] Debugging Start
+[12-Jul-2024 14:24:26 UTC] Debugging Start
+[12-Jul-2024 14:24:26 UTC] User ID: 21
+[12-Jul-2024 14:24:26 UTC] Chart Type: profile
+[12-Jul-2024 14:24:26 UTC] Debugging Start
+[12-Jul-2024 14:24:26 UTC] User ID: 21
+[12-Jul-2024 14:24:26 UTC] Chart Type: crc
+[12-Jul-2024 14:24:26 UTC] Debugging Start
+[12-Jul-2024 14:24:26 UTC] User ID: 21
+[12-Jul-2024 14:24:26 UTC] Chart Type: average_grades
+[12-Jul-2024 14:24:26 UTC] Debugging Start
+[12-Jul-2024 14:24:26 UTC] User ID: 21
+[12-Jul-2024 14:24:26 UTC] Chart Type: doughnut
+[12-Jul-2024 14:24:26 UTC] Debugging Start
+[12-Jul-2024 14:24:26 UTC] User ID: 21
+[12-Jul-2024 14:24:26 UTC] Chart Type: average_scores
+[12-Jul-2024 14:24:56 UTC] Debugging Start
+[12-Jul-2024 14:24:56 UTC] Debugging Start
+[12-Jul-2024 14:24:56 UTC] User ID: 21
+[12-Jul-2024 14:24:56 UTC] Chart Type: profile
+[12-Jul-2024 14:24:56 UTC] Debugging Start
+[12-Jul-2024 14:24:56 UTC] User ID: 21
+[12-Jul-2024 14:24:56 UTC] Chart Type: doughnut
+[12-Jul-2024 14:24:56 UTC] Debugging Start
+[12-Jul-2024 14:24:56 UTC] User ID: 21
+[12-Jul-2024 14:24:56 UTC] Chart Type: crc
+[12-Jul-2024 14:24:56 UTC] Debugging Start
+[12-Jul-2024 14:24:56 UTC] User ID: 21
+[12-Jul-2024 14:24:56 UTC] Chart Type: average_grades
+[12-Jul-2024 14:24:56 UTC] Debugging Start
+[12-Jul-2024 14:24:56 UTC] User ID: 21
+[12-Jul-2024 14:24:56 UTC] Chart Type: average_scores

@@ -18,15 +18,15 @@
                 <img src="img/logo1.png" alt="Logo" />
             </div>
             <ul class="menu">
-                <li><a href="dashboard.php">Dashboard</a></li>
-                <li><a href="pilihanMatkul.php">Mata Kuliah</a></li>
-                <li><a href="paring.php">Papan Peringkat</a></li>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="loginRegist.php">Mata Kuliah</a></li>
+                <li><a href="loginRegist.php">Papan Peringkat</a></li>
                 <li><a href="aboutUs.php">Tentang Kami</a></li>
                 <li><a href="loginRegist.php"><button class="signup-btn">Sign Up</button></a></li>
             </ul>
         </nav>
         <main>
-            <section class="hero">
+            <section class="hero" id="beranda">
                 <div class="content">
                     <h1>Uji <span class="highlight">Kemampuanmu</span><br>Tingkatkan <span
                             class="highlight">Prestasimu</span><br>Bersama <span class="highlight">ExaTrain</span></h1>
