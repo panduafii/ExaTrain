@@ -7,7 +7,7 @@ if (!isset($_SESSION['subject_id'])) {
     exit;
 }
 
-$subject_id = $_SESSION['subject_id'];
+$subject_id = isset($_GET['subject_id']) ? $_GET['subject_id'] : $_SESSION['subject_id'];
 
 // Koneksi ke database
 include '../fungsiPHP/connection.php';
@@ -26,52 +26,51 @@ if ($subjectResult->num_rows > 0) {
 }
 $stmt->close();
 
-// Fungsi untuk mendapatkan data benar
-function getCorrectPercentageData($subjectId, $conn) {
-    $sql = "SELECT q.id AS question_id, 
-                   q.question_text, 
-                   SUM(CASE WHEN a.is_correct = 1 THEN 1 ELSE 0 END) AS correct_count,
-                   COUNT(a.is_correct) AS total_count
-            FROM questions q
-            LEFT JOIN answers a ON q.id = a.question_id
-            WHERE q.subject_id = ?
-            GROUP BY q.id";
+// Endpoint to fetch chart data
+if (isset($_GET['fetch_data']) && $_GET['fetch_data'] == 'true') {
+    $totalAnswersQuery = "
+        SELECT COUNT(DISTINCT user_id) AS total_answers
+        FROM answers 
+        WHERE subject_id = ?
+    ";
+    $stmt = $conn->prepare($totalAnswersQuery);
+    $stmt->bind_param("i", $subject_id);
+    $stmt->execute();
+    $totalAnswersResult = $stmt->get_result();
+    $totalAnswersRow = $totalAnswersResult->fetch_assoc();
+    $total_answers = $totalAnswersRow['total_answers'];
 
-    $stmt = $conn->prepare($sql);
-    if ($stmt === false) {
-        die('Prepare failed: ' . htmlspecialchars($conn->error));
-    }
-    
-    $stmt->bind_param("i", $subjectId);
-    if ($stmt->execute() === false) {
-        die('Execute failed: ' . htmlspecialchars($stmt->error));
-    }
-
+    $dataQuery = "
+        SELECT q.id AS question_id, 
+               SUM(a.is_correct = 1) AS correct_count, 
+               SUM(a.is_correct = 0) AS incorrect_count
+        FROM questions q 
+        LEFT JOIN answers a ON q.id = a.question_id
+        WHERE q.subject_id = ?
+        GROUP BY q.id
+    ";
+    $stmt = $conn->prepare($dataQuery);
+    $stmt->bind_param("i", $subject_id);
+    $stmt->execute();
     $result = $stmt->get_result();
     if ($result === false) {
         die('Get result failed: ' . htmlspecialchars($stmt->error));
     }
 
-    $data = array();
+    $data = [];
     while ($row = $result->fetch_assoc()) {
-        $row['correct_percentage'] = ($row['total_count'] > 0) ? ($row['correct_count'] / $row['total_count'] * 100) : 0;
+        $row['correct_percentage'] = ($total_answers > 0) ? ($row['correct_count'] / $total_answers) * 100 : 0;
+        $row['incorrect_percentage'] = ($total_answers > 0) ? ($row['incorrect_count'] / $total_answers) * 100 : 0;
         $data[] = $row;
     }
 
-    $stmt->close();
-    error_log(print_r($data, true)); // Log data yang dihasilkan
-    return json_encode($data);
-}
-
-if (isset($_GET['subject_id'])) {
-    $data = getCorrectPercentageData($_GET['subject_id'], $conn);
-    header('Content-Type: application/json');
-    echo $data;
+    echo json_encode($data);
     exit;
 }
 
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +87,7 @@ $conn->close();
         <nav class="sidebar">
             <div class="logo">
                 <img src="../img/logo1.png" alt="EXATrain Logo">
-                <div class="logo-line"></div> <!-- Div untuk garis putih -->
+                <div class="logo-line"></div>
             </div>
             <ul class="sidebar-menu">
                 <a href="adminPengguna.php">
@@ -145,11 +144,11 @@ $conn->close();
             <div class="content">
                 <div class="charts">
                     <div class="chart" id="CRCSubject">
-                        <h4>Persentase Jawaban Benar</h4>
+                        <h4>Kemungkinan Soal Berhasil Dijawab Benar</h4>
                         <canvas id="crcChart"></canvas>
                     </div>
                     <div class="chart" id="user-activity-chart">
-                        <h4></h4> <!-- Moved text to the top -->
+                        <h4></h4>
                     </div>
                 </div>
             </div>
@@ -157,62 +156,65 @@ $conn->close();
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const subjectId = <?php echo $subject_id; ?>;
-            fetch(`adminSoalchart.php?subject_id=${subjectId}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Data received:', data); // Log data yang diterima
-                    if (!Array.isArray(data) || data.length === 0) {
-                        throw new Error('Invalid data format or no data received');
-                    }
-                    const labels = data.map((item, index) => `Soal ${index + 1}`);
-                    const correctData = data.map(item => item.correct_percentage);
-                    console.log('Labels:', labels); // Log labels
-                    console.log('Correct Data:', correctData); // Log correct data
+document.addEventListener('DOMContentLoaded', function() {
+    const subjectId = <?php echo $subject_id; ?>;
+    fetch(`?fetch_data=true&subject_id=${subjectId}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length === 0) {
+                console.log('No data available for subject_id:', subjectId);
+                return;
+            }
 
-                    const ctx = document.getElementById('crcChart').getContext('2d');
-                    new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: labels,
-                            datasets: [
-                                {
-                                    label: 'Benar (%)',
-                                    data: correctData,
-                                    backgroundColor: 'rgba(0, 0, 139, 1)',
-                                    borderColor: 'rgba(0, 0, 139, 1)',
-                                    borderWidth: 1
-                                }
-                            ]
+            const labels = data.map((item, index) => `Soal ${index + 1}`);
+            const correctData = data.map(item => (item.correct_percentage ? item.correct_percentage.toFixed(2) : 0));
+            const incorrectData = data.map(item => (item.incorrect_percentage ? item.incorrect_percentage.toFixed(2) : 0));
+            console.log('Data received:', data);
+
+            const ctx = document.getElementById('crcChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Persentase Jawaban Benar (%)',
+                            data: correctData,
+                            backgroundColor: 'rgba(75, 192, 192, 1)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
                         },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    max: 100,
-                                    ticks: {
-                                        callback: function(value) {
-                                            return value + '%';
-                                        }
-                                    }
-                                }
+                        {
+                            label: 'Persentase Jawaban Salah (%)',
+                            data: incorrectData,
+                            backgroundColor: 'rgba(255, 99, 132, 1)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            stacked: true
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true,
+                            max: 100,  // Ensure the y-axis goes up to 100%
+                            ticks: {
+                                callback: function(value) { return value + "%"; },
+                                stepSize: 10
                             }
                         }
-                    });
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error); // Log error
-                    alert('Failed to load chart data. Please try again later.');
-                });
-        });
+                    }
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+});
     </script>
 </body>
 </html>
